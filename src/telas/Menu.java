@@ -28,12 +28,15 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem1 = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
-        btnLogin = new javax.swing.JButton();
-        btnLogout = new javax.swing.JButton();
         lblBookStockManager = new javax.swing.JLabel();
         lblLogo = new javax.swing.JLabel();
         lblImagem = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        btnLogin = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        btnLogout = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jmnCadastrar = new javax.swing.JMenu();
         mntCliente = new javax.swing.JMenuItem();
@@ -47,34 +50,84 @@ public class Menu extends javax.swing.JFrame {
         mntAreaFuncionario = new javax.swing.JMenuItem();
         mntAreaGerente = new javax.swing.JMenuItem();
 
+        jMenuItem1.setText("jMenuItem1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu principal");
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lblBookStockManager.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        lblBookStockManager.setForeground(new java.awt.Color(255, 255, 255));
+        lblBookStockManager.setText("BookStockManager");
+        jPanel1.add(lblBookStockManager, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 420, -1, -1));
+
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/logo_digitalbooks.png"))); // NOI18N
+        jPanel1.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 0, 250, 220));
+
+        lblImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/background.jpg"))); // NOI18N
+        jPanel1.add(lblImagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 860, 660));
+
+        jPanel2.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel2.setForeground(new java.awt.Color(102, 102, 102));
+
+        btnLogin.setBackground(new java.awt.Color(102, 102, 102));
+        btnLogin.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("Login");
         btnLogin.setToolTipText("Entrar no sistema");
-        jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, -1, -1));
+        btnLogin.setBorder(null);
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
 
+        jButton1.setBackground(new java.awt.Color(102, 102, 102));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/customer_person_people_man_you_1625.png"))); // NOI18N
+        jButton1.setBorder(null);
+
+        btnLogout.setBackground(new java.awt.Color(102, 102, 102));
+        btnLogout.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        btnLogout.setForeground(new java.awt.Color(255, 255, 255));
         btnLogout.setText("Logout");
         btnLogout.setToolTipText("Sair do sistema");
+        btnLogout.setBorder(null);
         btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLogoutActionPerformed(evt);
             }
         });
-        jPanel1.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 10, -1, -1));
 
-        lblBookStockManager.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        lblBookStockManager.setForeground(new java.awt.Color(255, 255, 255));
-        lblBookStockManager.setText("BookStockManager");
-        jPanel1.add(lblBookStockManager, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 420, -1, -1));
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(55, 55, 55)
+                        .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(108, 108, 108)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(49, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 537, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnLogin)
+                    .addComponent(btnLogout))
+                .addGap(17, 17, 17))
+        );
 
-        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/logo_digitalbooks.png"))); // NOI18N
-        jPanel1.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, 250, 220));
-
-        lblImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/abstract-blurred-public-library-interior-space-blurry-room-with-bookshelves-by-defocused-effect-use-for-background-or-backdrop-in-abstract-blurred-publicbusiness-o.jpg"))); // NOI18N
-        jPanel1.add(lblImagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 660));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, 660));
 
         jmnCadastrar.setText("Cadastrar");
         jmnCadastrar.setToolTipText("Cadastrar um  novo usuário");
@@ -159,7 +212,7 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1201, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -203,6 +256,10 @@ public class Menu extends javax.swing.JFrame {
         new areaGerente().setVisible(true);
     }//GEN-LAST:event_mntAreaGerenteActionPerformed
 
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLoginActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -241,8 +298,11 @@ public class Menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnLogout;
+    private javax.swing.JButton jButton1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JMenu jmnCadastrar;
     private javax.swing.JMenu jmnFazerConsulta;
     private javax.swing.JMenu jmnPáginasUsuário;
