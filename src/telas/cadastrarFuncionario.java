@@ -42,7 +42,6 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
         txtEmailFuncionario = new javax.swing.JTextField();
         txtSenhaFuncionario = new javax.swing.JTextField();
         txtCodigoFuncionario = new javax.swing.JTextField();
-        btnNovoFuncionario = new javax.swing.JButton();
         btnCancelarFuncionario = new javax.swing.JButton();
         btnSalvarFuncionario = new javax.swing.JButton();
         btnSairFuncionario = new javax.swing.JButton();
@@ -50,6 +49,9 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de funcionários");
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/technicalsupport_support_representative_person_people_man_1641.png")).getImage());
+
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
         lblCadastroFuncionario.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblCadastroFuncionario.setText("Cadastro de Funcionários");
@@ -58,7 +60,7 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
 
         lblCPFFuncionario.setText("CPF");
 
-        lblEmailFuncionario.setText("e-mail");
+        lblEmailFuncionario.setText("E-mail");
 
         lblSenhaFuncionario.setText("Senha");
 
@@ -72,15 +74,13 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
 
         txtCodigoFuncionario.setToolTipText("Insira o código de funcionário");
 
-        btnNovoFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/add_icon-icons.com_74429 (2).png"))); // NOI18N
-        btnNovoFuncionario.setText("Novo");
-        btnNovoFuncionario.setToolTipText("Criar novo funcionário");
-
-        btnCancelarFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/cancel_77947.png"))); // NOI18N
+        btnCancelarFuncionario.setBackground(new java.awt.Color(255, 0, 0));
+        btnCancelarFuncionario.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnCancelarFuncionario.setText("Cancelar");
         btnCancelarFuncionario.setToolTipText("Cancelar operação");
 
-        btnSalvarFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/Save_37110.png"))); // NOI18N
+        btnSalvarFuncionario.setBackground(new java.awt.Color(51, 255, 0));
+        btnSalvarFuncionario.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnSalvarFuncionario.setText("Salvar");
         btnSalvarFuncionario.setToolTipText("Salvar funcionário");
         btnSalvarFuncionario.addActionListener(new java.awt.event.ActionListener() {
@@ -110,14 +110,19 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblNomeFuncionario)
-                            .addComponent(lblCPFFuncionario))
-                        .addGap(18, 18, 18)
+                        .addComponent(btnSairFuncionario)
+                        .addGap(137, 137, 137)
+                        .addComponent(lblCadastroFuncionario))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblNomeFuncionario)
+                                    .addComponent(lblCPFFuncionario))
+                                .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtNomeFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(ftxCPFFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -130,29 +135,27 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(lblSenhaFuncionario)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtSenhaFuncionario)))
-                                .addGap(31, 31, 31)
-                                .addComponent(lblCodigoFuncionario))
-                            .addComponent(btnNovoFuncionario)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(228, 228, 228)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblCadastroFuncionario)
+                                        .addComponent(txtSenhaFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btnSalvarFuncionario)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnCancelarFuncionario)
-                                .addGap(62, 62, 62)))))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtCodigoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSairFuncionario))
-                .addContainerGap(40, Short.MAX_VALUE))
+                                .addGap(178, 178, 178)
+                                .addComponent(btnSalvarFuncionario)))
+                        .addGap(31, 31, 31)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(lblCodigoFuncionario)
+                                .addComponent(txtCodigoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnCancelarFuncionario))))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(lblCadastroFuncionario)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblCadastroFuncionario)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnSairFuncionario)))
+                .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNomeFuncionario)
                     .addComponent(lblEmailFuncionario)
@@ -166,13 +169,11 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
                     .addComponent(lblSenhaFuncionario)
                     .addComponent(txtSenhaFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ftxCPFFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCancelarFuncionario)
                     .addComponent(btnSalvarFuncionario)
-                    .addComponent(btnNovoFuncionario)
-                    .addComponent(btnSairFuncionario))
-                .addGap(72, 72, 72))
+                    .addComponent(btnCancelarFuncionario))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -183,7 +184,9 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -242,7 +245,6 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelarFuncionario;
-    private javax.swing.JButton btnNovoFuncionario;
     private javax.swing.JButton btnSairFuncionario;
     private javax.swing.JButton btnSalvarFuncionario;
     private javax.swing.JFormattedTextField ftxCPFFuncionario;

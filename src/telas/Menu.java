@@ -29,14 +29,20 @@ public class Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuItem1 = new javax.swing.JMenuItem();
+        jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         lblBookStockManager = new javax.swing.JLabel();
+        jToggleButton1 = new javax.swing.JToggleButton();
+        jButton6 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        btnLogout = new javax.swing.JButton();
+        btnLogin = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         lblLogo = new javax.swing.JLabel();
         lblImagem = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        btnLogin = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        btnLogout = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jmnCadastrar = new javax.swing.JMenu();
         mntCliente = new javax.swing.JMenuItem();
@@ -45,6 +51,7 @@ public class Menu extends javax.swing.JFrame {
         jmnFazerConsulta = new javax.swing.JMenu();
         mntBuscar = new javax.swing.JMenuItem();
         mntAtualizarEstoque = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jmnPáginasUsuário = new javax.swing.JMenu();
         mntAreaCliente = new javax.swing.JMenuItem();
         mntAreaFuncionario = new javax.swing.JMenuItem();
@@ -52,40 +59,36 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuItem1.setText("jMenuItem1");
 
+        jLabel2.setText("jLabel2");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu principal");
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/imagens/logo_digitalbooks03_small3.png")).getImage());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblBookStockManager.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        lblBookStockManager.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblBookStockManager.setForeground(new java.awt.Color(255, 255, 255));
-        lblBookStockManager.setText("BookStockManager");
-        jPanel1.add(lblBookStockManager, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 420, -1, -1));
+        lblBookStockManager.setText("BookStock");
+        jPanel1.add(lblBookStockManager, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 110, -1, -1));
 
-        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/logo_digitalbooks.png"))); // NOI18N
-        jPanel1.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 0, 250, 220));
+        jToggleButton1.setText("Atualizar Estoque");
+        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, -1, -1));
 
-        lblImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/background.jpg"))); // NOI18N
-        jPanel1.add(lblImagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 860, 660));
+        jButton6.setText("Ver carrinho");
+        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, -1, -1));
 
-        jPanel2.setBackground(new java.awt.Color(102, 102, 102));
-        jPanel2.setForeground(new java.awt.Color(102, 102, 102));
+        jButton5.setText("Buscar Produto");
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, -1, -1));
 
-        btnLogin.setBackground(new java.awt.Color(102, 102, 102));
-        btnLogin.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        btnLogin.setForeground(new java.awt.Color(255, 255, 255));
-        btnLogin.setText("Login");
-        btnLogin.setToolTipText("Entrar no sistema");
-        btnLogin.setBorder(null);
-        btnLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLoginActionPerformed(evt);
-            }
-        });
+        jButton3.setText("Funcionário");
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(102, 102, 102));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/customer_person_people_man_you_1625.png"))); // NOI18N
-        jButton1.setBorder(null);
+        jButton4.setText("Gerente");
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 370, -1, -1));
+
+        jButton2.setText("Cliente");
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, -1, -1));
 
         btnLogout.setBackground(new java.awt.Color(102, 102, 102));
         btnLogout.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -98,36 +101,31 @@ public class Menu extends javax.swing.JFrame {
                 btnLogoutActionPerformed(evt);
             }
         });
+        jPanel1.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 111, -1));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(55, 55, 55)
-                        .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(113, 113, 113)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(49, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 535, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnLogin)
-                    .addComponent(btnLogout))
-                .addGap(17, 17, 17))
-        );
+        btnLogin.setBackground(new java.awt.Color(102, 102, 102));
+        btnLogin.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        btnLogin.setForeground(new java.awt.Color(255, 255, 255));
+        btnLogin.setText("Login");
+        btnLogin.setToolTipText("Entrar no sistema");
+        btnLogin.setBorder(null);
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 108, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, 660));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Manager");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 130, -1, -1));
+
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/logo_digitalbooks03_small3.png"))); // NOI18N
+        jPanel1.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 0, 140, 110));
+
+        lblImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/background.jpg"))); // NOI18N
+        jPanel1.add(lblImagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, 660));
 
         jmnCadastrar.setText("Cadastrar");
         jmnCadastrar.setToolTipText("Cadastrar um  novo usuário");
@@ -166,11 +164,29 @@ public class Menu extends javax.swing.JFrame {
 
         mntBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/searchmagnifierinterfacesymbol1_79893.png"))); // NOI18N
         mntBuscar.setText("Buscar por produto");
+        mntBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mntBuscarActionPerformed(evt);
+            }
+        });
         jmnFazerConsulta.add(mntBuscar);
 
         mntAtualizarEstoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/4105931-add-to-cart-buy-cart-sell-shop-shopping-cart_113919.png"))); // NOI18N
         mntAtualizarEstoque.setText("Atualizar Estoque");
+        mntAtualizarEstoque.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mntAtualizarEstoqueActionPerformed(evt);
+            }
+        });
         jmnFazerConsulta.add(mntAtualizarEstoque);
+
+        jMenuItem2.setText("Ver meu Carrinho");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jmnFazerConsulta.add(jMenuItem2);
 
         jMenuBar1.add(jmnFazerConsulta);
 
@@ -212,7 +228,9 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1201, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 6, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -258,7 +276,23 @@ public class Menu extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
+        new telaLogin().setVisible(true);
     }//GEN-LAST:event_btnLoginActionPerformed
+
+    private void mntAtualizarEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mntAtualizarEstoqueActionPerformed
+        // TODO add your handling code here:
+        new ControleEstoque().setVisible(true);
+    }//GEN-LAST:event_mntAtualizarEstoqueActionPerformed
+
+    private void mntBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mntBuscarActionPerformed
+        // TODO add your handling code here:
+        new verProdutos().setVisible(true);
+    }//GEN-LAST:event_mntBuscarActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        new verCarrinho().setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -298,11 +332,18 @@ public class Menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnLogout;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JMenu jmnCadastrar;
     private javax.swing.JMenu jmnFazerConsulta;
     private javax.swing.JMenu jmnPáginasUsuário;

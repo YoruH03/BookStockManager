@@ -5,12 +5,14 @@
 package telas;
 
 import classes.Cliente;
+import java.util.ArrayList;
 
 /**
  *
  * @author Yuri
  */
 public class cadastrarCliente extends javax.swing.JFrame {
+    static ArrayList<Cliente> listaClientes;
 
     /**
      * Creates new form cadastrarCliente
@@ -18,7 +20,11 @@ public class cadastrarCliente extends javax.swing.JFrame {
     public cadastrarCliente() {
         initComponents();
         
+        listaClientes = new ArrayList();
+
         setLocationRelativeTo(null);
+        lblTeste.setVisible(false);
+        
     }
 
     /**
@@ -49,9 +55,12 @@ public class cadastrarCliente extends javax.swing.JFrame {
         btnCancelarCliente = new javax.swing.JButton();
         btnSalvarCliente = new javax.swing.JButton();
         btnSairCliente = new javax.swing.JButton();
+        lblTeste = new javax.swing.JLabel();
+        btnVerify = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastrar Cliente");
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/person_user_customer_man_male_man_boy_people_1687 (1).png")).getImage());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Cadastrar Cliente");
@@ -98,6 +107,11 @@ public class cadastrarCliente extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         ftxCPFCliente.setToolTipText("insira o CPF do cliente");
+        ftxCPFCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ftxCPFClienteActionPerformed(evt);
+            }
+        });
 
         btnCancelarCliente.setBackground(new java.awt.Color(255, 0, 0));
         btnCancelarCliente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -121,6 +135,15 @@ public class cadastrarCliente extends javax.swing.JFrame {
         btnSairCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSairClienteActionPerformed(evt);
+            }
+        });
+
+        lblTeste.setText("LabelDeTeste");
+
+        btnVerify.setText("Verify");
+        btnVerify.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerifyActionPerformed(evt);
             }
         });
 
@@ -175,6 +198,12 @@ public class cadastrarCliente extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 193, Short.MAX_VALUE)
                         .addComponent(btnSairCliente)))
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(72, 72, 72)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblTeste)
+                    .addComponent(btnVerify))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -203,10 +232,13 @@ public class cadastrarCliente extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblSenhaCliente)
                     .addComponent(txtSenhaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addComponent(lblTeste)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancelarCliente)
-                    .addComponent(btnSalvarCliente))
+                    .addComponent(btnSalvarCliente)
+                    .addComponent(btnVerify))
                 .addGap(37, 37, 37))
         );
 
@@ -244,6 +276,21 @@ public class cadastrarCliente extends javax.swing.JFrame {
         Cliente cliente = new Cliente(nome,cpf,email,senha,endereco,nascimentoCliente,telefone);
         listaClientes.add(cliente);
     }//GEN-LAST:event_btnSalvarClienteActionPerformed
+
+    private void ftxCPFClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftxCPFClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ftxCPFClienteActionPerformed
+
+    private void btnVerifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerifyActionPerformed
+        // TODO add your handling code here:
+        if(listaClientes.size()>0){
+            lblTeste.setVisible(true);
+        }else{
+            lblTeste.setVisible(false);
+        }
+        
+        
+    }//GEN-LAST:event_btnVerifyActionPerformed
 
     /**
      * @param args the command line arguments
@@ -284,6 +331,7 @@ public class cadastrarCliente extends javax.swing.JFrame {
     private javax.swing.JButton btnCancelarCliente;
     private javax.swing.JButton btnSairCliente;
     private javax.swing.JButton btnSalvarCliente;
+    private javax.swing.JButton btnVerify;
     private javax.swing.JFormattedTextField ftxCPFCliente;
     private javax.swing.JFormattedTextField ftxDataCliente;
     private javax.swing.JFormattedTextField ftxTelefoneCliente;
@@ -295,6 +343,7 @@ public class cadastrarCliente extends javax.swing.JFrame {
     private javax.swing.JLabel lblNomeCliente;
     private javax.swing.JLabel lblSenhaCliente;
     private javax.swing.JLabel lblTelefoneCliente;
+    private javax.swing.JLabel lblTeste;
     private javax.swing.JLabel txtDataCliente;
     private javax.swing.JTextField txtEmailCliente;
     private javax.swing.JTextField txtEnderecoCliente;

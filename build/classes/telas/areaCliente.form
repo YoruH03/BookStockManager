@@ -28,6 +28,8 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="btnSairCliente" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
+              <Component id="lblAreaCliente" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="487" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
               <Component id="jPanel1" min="-2" pref="628" max="-2" attributes="0"/>
@@ -63,6 +65,10 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="txtCodPedido" min="-2" pref="135" max="-2" attributes="0"/>
                               </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
+                                  <Component id="lblCarrinhosAnteriores" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="jScrollPane1" min="-2" pref="499" max="-2" attributes="0"/>
@@ -72,16 +78,11 @@
                       <EmptySpace min="10" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
-                      <Component id="btnPesquisarCarrinho" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btnPesquisarCarrinho" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="147" max="-2" attributes="0"/>
                       <Component id="btnCancelarCarrinho" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="lblCarrinhosAnteriores" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="166" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -90,16 +91,24 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-              <Component id="lblCarrinhosAnteriores" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="lblAreaCliente" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="lblCarrinhosAnteriores" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblNumCarrinho" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtNumCarrinho" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblData" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtData" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblCodPedido" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtCodPedido" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblNumCarrinho" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -116,13 +125,13 @@
                   </Group>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="btnPesquisarCarrinho" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnCancelarCarrinho" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnCancelarCarrinho" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnPesquisarCarrinho" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="177" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="45" max="32767" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
@@ -212,18 +221,12 @@
                   </Group>
                   <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
               </Group>
-              <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="307" max="-2" attributes="0"/>
-                  <Component id="lblAreaCliente" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="lblAreaCliente" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Component id="lblDadosCliente" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -248,7 +251,7 @@
                       <Component id="lblCelularCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="ftxTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="206" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnAlterarCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnSalvarCliente" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -260,14 +263,6 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="lblAreaCliente">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="18" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="&#xc1;rea do Cliente"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="lblDadosCliente">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -458,7 +453,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Consultar Carrinhos"/>
+        <Property name="text" type="java.lang.String" value="Consultar Carrinhos Antigos"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnSairCliente">
@@ -573,5 +568,13 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JLabel" name="lblAreaCliente">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&#xc1;rea do Cliente"/>
+      </Properties>
+    </Component>
   </SubComponents>
 </Form>

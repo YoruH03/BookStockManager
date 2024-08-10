@@ -14,6 +14,8 @@ public class ControleEstoque extends javax.swing.JFrame {
      * Creates new form ControleEstoque
      */
     public ControleEstoque() {
+        initComponents();
+
         disableEstoqueFields();
         disableEstoqueButtons();
         //btnAddItem.setEnabled(true);
@@ -95,6 +97,7 @@ public class ControleEstoque extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Controle do estoque");
 
         txtTituloEstoque.setToolTipText("insira o título do produto");
         txtTituloEstoque.addActionListener(new java.awt.event.ActionListener() {
@@ -199,10 +202,11 @@ public class ControleEstoque extends javax.swing.JFrame {
                                     .addComponent(lblCodigoEstoque, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                             .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(0, 56, Short.MAX_VALUE)
                                 .addComponent(btnAlterarItem)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
+                                .addGap(65, 65, 65)
                                 .addComponent(btnSalvarItem)
-                                .addGap(76, 76, 76)))
+                                .addGap(64, 64, 64)))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)

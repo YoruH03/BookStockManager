@@ -41,14 +41,13 @@ public class cadastarGerente extends javax.swing.JFrame {
         txtEmailGerente = new javax.swing.JTextField();
         txtSenhaGerente = new javax.swing.JTextField();
         txtCadastroGerente = new javax.swing.JTextField();
-        btnNovoGerente = new javax.swing.JButton();
         btnSalvarGerente = new javax.swing.JButton();
         btnCancelarGerente = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        btnSair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Gerentes");
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/customer_person_people_man_you_1625.png")).getImage());
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblNomeGerente.setText("Nome");
@@ -76,11 +75,8 @@ public class cadastarGerente extends javax.swing.JFrame {
 
         txtCadastroGerente.setToolTipText("Inserir o cadastro do gerente");
 
-        btnNovoGerente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/add_icon-icons.com_74429 (2).png"))); // NOI18N
-        btnNovoGerente.setText("Novo");
-        btnNovoGerente.setToolTipText("criar novo gerente");
-
-        btnSalvarGerente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/Save_37110.png"))); // NOI18N
+        btnSalvarGerente.setBackground(new java.awt.Color(0, 255, 0));
+        btnSalvarGerente.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnSalvarGerente.setText("Salvar");
         btnSalvarGerente.setToolTipText("salvar dados do gerente");
         btnSalvarGerente.addActionListener(new java.awt.event.ActionListener() {
@@ -89,21 +85,13 @@ public class cadastarGerente extends javax.swing.JFrame {
             }
         });
 
-        btnCancelarGerente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/cancel_77947.png"))); // NOI18N
+        btnCancelarGerente.setBackground(new java.awt.Color(255, 0, 0));
+        btnCancelarGerente.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnCancelarGerente.setText("Cancelar");
         btnCancelarGerente.setToolTipText("cancelar operação");
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel6.setText("Cadastro de Gerentes");
-
-        btnSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/exit_icon-icons.com_70975.png"))); // NOI18N
-        btnSair.setText("Sair");
-        btnSair.setToolTipText("sair da criação de gerente");
-        btnSair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSairActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -138,15 +126,11 @@ public class cadastarGerente extends javax.swing.JFrame {
                 .addComponent(txtSenhaGerente)
                 .addGap(231, 231, 231))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(115, 115, 115)
-                .addComponent(btnNovoGerente)
-                .addGap(74, 74, 74)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSalvarGerente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(60, 60, 60)
+                .addGap(105, 105, 105)
+                .addComponent(btnSalvarGerente, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnCancelarGerente)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(127, 127, 127))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -167,24 +151,17 @@ public class cadastarGerente extends javax.swing.JFrame {
                     .addComponent(lblSenhaGerente)
                     .addComponent(txtCPFGerente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtSenhaGerente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSalvarGerente)
-                    .addComponent(btnNovoGerente)
                     .addComponent(btnCancelarGerente))
-                .addGap(18, 18, 18)
-                .addComponent(btnSair))
+                .addGap(57, 57, 57))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 670, 220));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 670, 220));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
-        // TODO add your handling code here:
-        this.setVisible(false);
-    }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnSalvarGerenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarGerenteActionPerformed
         // TODO add your handling code here:
@@ -240,8 +217,6 @@ public class cadastarGerente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelarGerente;
-    private javax.swing.JButton btnNovoGerente;
-    private javax.swing.JButton btnSair;
     private javax.swing.JButton btnSalvarGerente;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;

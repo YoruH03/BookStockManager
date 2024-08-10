@@ -26,18 +26,6 @@ public class verCarrinho extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        lblVisualizarCarrinho = new javax.swing.JLabel();
-        lblNumCarrinho = new javax.swing.JLabel();
-        lblProduto = new javax.swing.JLabel();
-        txtNumCarrinho = new javax.swing.JTextField();
-        txtProdutos = new javax.swing.JTextField();
-        lblTotal = new javax.swing.JLabel();
-        txtTotal = new javax.swing.JTextField();
-        lblData = new javax.swing.JLabel();
-        ftxData = new javax.swing.JFormattedTextField();
-        btnAcessarCarrinho = new javax.swing.JButton();
-        btnCancelar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblProdutos = new javax.swing.JTable();
         btnRemoverItem = new javax.swing.JButton();
@@ -45,91 +33,9 @@ public class verCarrinho extends javax.swing.JFrame {
         lblProdutosCarrinho = new javax.swing.JLabel();
         btnSair = new javax.swing.JButton();
         btnConfirmarCompra = new javax.swing.JButton();
+        lblVisualizarCarrinho = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-
-        lblVisualizarCarrinho.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblVisualizarCarrinho.setText("Visualizar Carrinho");
-
-        lblNumCarrinho.setText("Número do carrinho");
-
-        lblProduto.setText("Produtos");
-
-        txtNumCarrinho.setToolTipText("Número do carrinho");
-
-        txtProdutos.setToolTipText("Lista de produtos");
-
-        lblTotal.setText("Total");
-
-        lblData.setText("Data");
-        lblData.setToolTipText("");
-
-        try {
-            ftxData.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        ftxData.setToolTipText("data do pedido");
-
-        btnAcessarCarrinho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/searchmagnifierinterfacesymbol1_79893.png"))); // NOI18N
-        btnAcessarCarrinho.setText("Acessar carrinho");
-
-        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/cancel_77947.png"))); // NOI18N
-        btnCancelar.setText("Cancelar");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblVisualizarCarrinho)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(lblNumCarrinho)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtNumCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(42, 42, 42)
-                                .addComponent(lblProduto)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(37, 37, 37)
-                        .addComponent(lblData))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(203, 203, 203)
-                        .addComponent(btnAcessarCarrinho)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnCancelar)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ftxData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
-                .addComponent(lblTotal)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(lblVisualizarCarrinho)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNumCarrinho)
-                    .addComponent(txtNumCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblProduto)
-                    .addComponent(txtProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblTotal)
-                    .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblData)
-                    .addComponent(ftxData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAcessarCarrinho)
-                    .addComponent(btnCancelar))
-                .addContainerGap())
-        );
 
         tblProdutos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -152,62 +58,72 @@ public class verCarrinho extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblProdutos);
 
-        btnRemoverItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/delete_4219.png"))); // NOI18N
+        btnRemoverItem.setBackground(new java.awt.Color(153, 153, 153));
+        btnRemoverItem.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnRemoverItem.setText("Remover item");
 
-        btnEsvaziarCarrinho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/shopping-cart-cancel-button_icon-icons.com_56130.png"))); // NOI18N
+        btnEsvaziarCarrinho.setBackground(new java.awt.Color(255, 0, 0));
+        btnEsvaziarCarrinho.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnEsvaziarCarrinho.setText("Esvaziar carrinho");
 
-        lblProdutosCarrinho.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblProdutosCarrinho.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblProdutosCarrinho.setText("Meus produtos no carrinho");
 
         btnSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/exit_icon-icons.com_70975.png"))); // NOI18N
         btnSair.setText("Sair");
 
-        btnConfirmarCompra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/accept_icon-icons.com_74428.png"))); // NOI18N
+        btnConfirmarCompra.setBackground(new java.awt.Color(0, 255, 0));
+        btnConfirmarCompra.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnConfirmarCompra.setText("Confirmar compra");
+
+        lblVisualizarCarrinho.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblVisualizarCarrinho.setText("Visualizar Carrinho Atual");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(btnRemoverItem)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnEsvaziarCarrinho)
+                .addGap(95, 95, 95)
+                .addComponent(btnConfirmarCompra)
+                .addGap(33, 33, 33))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 762, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblProdutosCarrinho)))
+                            .addComponent(lblProdutosCarrinho)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 762, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(340, 340, 340)
-                        .addComponent(btnSair)))
+                        .addGap(337, 337, 337)
+                        .addComponent(btnSair))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(281, 281, 281)
+                        .addComponent(lblVisualizarCarrinho)))
                 .addContainerGap(20, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(133, 133, 133)
-                .addComponent(btnRemoverItem)
-                .addGap(52, 52, 52)
-                .addComponent(btnEsvaziarCarrinho)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnConfirmarCompra)
-                .addGap(86, 86, 86))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblVisualizarCarrinho)
+                .addGap(7, 7, 7)
                 .addComponent(lblProdutosCarrinho)
-                .addGap(3, 3, 3)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRemoverItem)
-                    .addComponent(btnEsvaziarCarrinho)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnRemoverItem)
+                            .addComponent(btnEsvaziarCarrinho, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addComponent(btnConfirmarCompra))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnSair)
-                .addGap(40, 40, 40))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -249,24 +165,13 @@ public class verCarrinho extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAcessarCarrinho;
-    private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnConfirmarCompra;
     private javax.swing.JButton btnEsvaziarCarrinho;
     private javax.swing.JButton btnRemoverItem;
     private javax.swing.JButton btnSair;
-    private javax.swing.JFormattedTextField ftxData;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lblData;
-    private javax.swing.JLabel lblNumCarrinho;
-    private javax.swing.JLabel lblProduto;
     private javax.swing.JLabel lblProdutosCarrinho;
-    private javax.swing.JLabel lblTotal;
     private javax.swing.JLabel lblVisualizarCarrinho;
     private javax.swing.JTable tblProdutos;
-    private javax.swing.JTextField txtNumCarrinho;
-    private javax.swing.JTextField txtProdutos;
-    private javax.swing.JTextField txtTotal;
     // End of variables declaration//GEN-END:variables
 }

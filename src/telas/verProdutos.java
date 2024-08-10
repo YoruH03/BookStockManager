@@ -16,6 +16,8 @@ public class verProdutos extends javax.swing.JPanel {
      */
     public verProdutos() {
         initComponents();
+        
+
     }
 
     /**
