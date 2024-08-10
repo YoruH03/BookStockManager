@@ -4,6 +4,8 @@
  */
 package telas;
 
+import classes.Gerente;
+
 /**
  *
  * @author Yuri
@@ -81,6 +83,11 @@ public class cadastarGerente extends javax.swing.JFrame {
         btnSalvarGerente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/Save_37110.png"))); // NOI18N
         btnSalvarGerente.setText("Salvar");
         btnSalvarGerente.setToolTipText("salvar dados do gerente");
+        btnSalvarGerente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarGerenteActionPerformed(evt);
+            }
+        });
 
         btnCancelarGerente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/cancel_77947.png"))); // NOI18N
         btnCancelarGerente.setText("Cancelar");
@@ -178,6 +185,23 @@ public class cadastarGerente extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_btnSairActionPerformed
+
+    private void btnSalvarGerenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarGerenteActionPerformed
+        // TODO add your handling code here:
+        String nome = txtNomeGerente.getText();
+        String cpf = txtCPFGerente.getText();
+        String email = txtEmailGerente.getText();
+        String senha = txtSenhaGerente.getText();
+        String idGerente = txtCadastroGerente.getText();
+        
+        Gerente gerente = new Gerente(nome,cpf,email,senha,idGerente);
+        
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_btnSalvarGerenteActionPerformed
 
     /**
      * @param args the command line arguments

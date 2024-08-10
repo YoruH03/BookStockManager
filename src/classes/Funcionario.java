@@ -23,7 +23,7 @@ public class Funcionario extends Usuario{
         super(nome, CPF, email, senha);
     }
 
-    public Funcionario(String cadastroFuncionario, String nome, String CPF, String email, String senha) {
+    public Funcionario(String nome, String CPF, String email, String senha,String cadastroFuncionario) {
         super(nome, CPF, email, senha);
         this.cadastroFuncionario = cadastroFuncionario;
     }

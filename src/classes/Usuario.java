@@ -4,6 +4,8 @@
  */
 package classes;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Yuri
@@ -13,11 +15,14 @@ abstract class Usuario {
     protected String CPF;
     protected String email;
     protected String senha;
+    static ArrayList<Cliente> listaClientes = new ArrayList();
     
     public Usuario(){
+        this.listaClientes = new ArrayList();
         
     }
     public Usuario(String nome,String CPF,String email,String senha){
+        this.listaClientes = new ArrayList();
         this.nome = nome;
         this.CPF = CPF;
         this.email = email;

@@ -10,7 +10,7 @@ import java.util.ArrayList;
  *
  * @author Yuri
  */
-public class Cliente {
+public class Cliente extends Usuario{
     private String endereco;
     private String dataNascimento;
     private String celular;
@@ -51,12 +51,19 @@ public class Cliente {
     public Cliente() {
     }
 
-    public Cliente(String endereco, String dataNascimento, String celular, ArrayList carrinho) {
+    public Cliente(String nome, String CPF, String email, String senha,String endereco, String dataNascimento, String celular) {
+        super(nome, CPF, email, senha);
         this.endereco = endereco;
         this.dataNascimento = dataNascimento;
         this.celular = celular;
-        this.carrinho = carrinho;
     }
+
+    public ArrayList getListaClientes() {
+        return listaClientes;
+    }
+    
+    
+    
     public void Comprar(String produto,int Quantidade){
         System.out.println("Item adicionado ao carrinho!");
     

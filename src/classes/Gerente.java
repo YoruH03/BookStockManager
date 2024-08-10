@@ -15,7 +15,7 @@ public class Gerente extends Usuario{
         super(nome, CPF, email, senha);
     }
 
-    public Gerente(String cadastroGerente, String nome, String CPF, String email, String senha) {
+    public Gerente(String nome, String CPF, String email, String senha, String cadastroGerente ) {
         super(nome, CPF, email, senha);
         this.cadastroGerente = cadastroGerente;
     }

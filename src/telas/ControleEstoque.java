@@ -14,7 +14,54 @@ public class ControleEstoque extends javax.swing.JFrame {
      * Creates new form ControleEstoque
      */
     public ControleEstoque() {
-        initComponents();
+        disableEstoqueFields();
+        disableEstoqueButtons();
+        //btnAddItem.setEnabled(true);
+        btnPesquisarItem.setEnabled(true);
+        
+        
+        setLocationRelativeTo(null);
+    }
+    
+    public void disableEstoqueFields(){
+        txtTituloEstoque.setEnabled(false);
+        txtPrecoEstoque.setEnabled(false);
+        txtQuantiaEstoque.setEnabled(false);
+        txtCodigoEstoque.setEnabled(false);
+        txtDescricaoEstoque.setEnabled(false);
+        
+        lblTituloEstoque.setEnabled(false);
+        lblPrecoEstoque.setEnabled(false);
+        lblQuantiaEstoque.setEnabled(false);
+        lblCodigoEstoque.setEnabled(false);
+        lblDescricaoEstoque.setEnabled(false);
+
+        
+    }
+    public void enableEstoqueFields(){
+        txtTituloEstoque.setEnabled(true);
+        txtPrecoEstoque.setEnabled(true);
+        txtQuantiaEstoque.setEnabled(true);
+        txtCodigoEstoque.setEnabled(true);
+        txtDescricaoEstoque.setEnabled(true);
+        
+        lblTituloEstoque.setEnabled(true);
+        lblPrecoEstoque.setEnabled(true);
+        lblQuantiaEstoque.setEnabled(true);
+        lblCodigoEstoque.setEnabled(true);
+        lblDescricaoEstoque.setEnabled(true);
+        
+    }
+    
+    public void disableEstoqueButtons(){
+        //btnAddItem.setEnabled(false);
+        btnAlterarItem.setEnabled(false);
+        btnSalvarItem.setEnabled(false);
+        btnExcluirItem.setEnabled(false);
+        btnCancelarItem.setEnabled(false);
+        btnPesquisarItem.setEnabled(false);
+        btnBuscar.setEnabled(false);
+        
     }
 
     /**
@@ -26,21 +73,276 @@ public class ControleEstoque extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel2 = new javax.swing.JPanel();
+        txtTituloEstoque = new javax.swing.JTextField();
+        txtQuantiaEstoque = new javax.swing.JTextField();
+        txtDescricaoEstoque = new javax.swing.JTextField();
+        txtPrecoEstoque = new javax.swing.JTextField();
+        txtCodigoEstoque = new javax.swing.JTextField();
+        lblTituloEstoque = new javax.swing.JLabel();
+        lblPrecoEstoque = new javax.swing.JLabel();
+        lblQuantiaEstoque = new javax.swing.JLabel();
+        lblCodigoEstoque = new javax.swing.JLabel();
+        lblDescricaoEstoque = new javax.swing.JLabel();
+        btnBuscar = new javax.swing.JButton();
+        btnAlterarItem = new javax.swing.JButton();
+        btnCancelarItem = new javax.swing.JButton();
+        btnSalvarItem = new javax.swing.JButton();
+        btnPesquisarItem = new javax.swing.JButton();
+        btnExcluirItem = new javax.swing.JButton();
+        lblControleEstoque = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        txtTituloEstoque.setToolTipText("insira o título do produto");
+        txtTituloEstoque.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTituloEstoqueActionPerformed(evt);
+            }
+        });
+
+        txtQuantiaEstoque.setToolTipText("insira a quantia em estoque");
+
+        txtDescricaoEstoque.setToolTipText("insira a descrição");
+
+        txtPrecoEstoque.setToolTipText("insira o preço do produto");
+
+        txtCodigoEstoque.setToolTipText("insira o código do produto");
+
+        lblTituloEstoque.setText("Titulo");
+
+        lblPrecoEstoque.setText("Preço");
+
+        lblQuantiaEstoque.setText("Quantia em estoque");
+
+        lblCodigoEstoque.setText("Código de produto");
+
+        lblDescricaoEstoque.setText("Descrição");
+
+        btnBuscar.setText("Buscar");
+        btnBuscar.setToolTipText("aperte para buscar pelo item");
+
+        btnAlterarItem.setBackground(new java.awt.Color(255, 255, 0));
+        btnAlterarItem.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnAlterarItem.setText("Alterar Item");
+        btnAlterarItem.setToolTipText("alterar dados de algum produto");
+        btnAlterarItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAlterarItemActionPerformed(evt);
+            }
+        });
+
+        btnCancelarItem.setBackground(new java.awt.Color(255, 0, 0));
+        btnCancelarItem.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnCancelarItem.setText("Cancelar");
+        btnCancelarItem.setToolTipText("cancelar operação");
+        btnCancelarItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarItemActionPerformed(evt);
+            }
+        });
+
+        btnSalvarItem.setBackground(new java.awt.Color(51, 255, 0));
+        btnSalvarItem.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnSalvarItem.setText("Salvar");
+        btnSalvarItem.setToolTipText("salvar os dados");
+        btnSalvarItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarItemActionPerformed(evt);
+            }
+        });
+
+        btnPesquisarItem.setBackground(new java.awt.Color(153, 153, 255));
+        btnPesquisarItem.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnPesquisarItem.setText("Pesquisar");
+        btnPesquisarItem.setToolTipText("pesquisar por título");
+        btnPesquisarItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPesquisarItemActionPerformed(evt);
+            }
+        });
+
+        btnExcluirItem.setBackground(new java.awt.Color(153, 153, 153));
+        btnExcluirItem.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnExcluirItem.setText("Excluir");
+        btnExcluirItem.setToolTipText("Excluir algum produto do estoque");
+
+        lblControleEstoque.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lblControleEstoque.setText("Controle do estoque");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblPrecoEstoque)
+                    .addComponent(lblTituloEstoque))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(lblControleEstoque)
+                        .addGap(386, 386, 386))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtTituloEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtPrecoEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(26, 26, 26)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblQuantiaEstoque)
+                                    .addComponent(lblCodigoEstoque, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(btnAlterarItem)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
+                                .addComponent(btnSalvarItem)
+                                .addGap(76, 76, 76)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(txtQuantiaEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtCodigoEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(61, 61, 61)
+                                        .addComponent(lblDescricaoEstoque)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txtDescricaoEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(169, 169, 169)
+                                        .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(btnCancelarItem)
+                                .addGap(122, 122, 122)
+                                .addComponent(btnExcluirItem)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                                .addComponent(btnPesquisarItem)
+                                .addGap(62, 62, 62))))))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblControleEstoque)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(lblQuantiaEstoque)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblCodigoEstoque)
+                            .addComponent(txtCodigoEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtQuantiaEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblDescricaoEstoque)
+                            .addComponent(txtDescricaoEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtTituloEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblTituloEstoque))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(txtPrecoEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblPrecoEstoque))
+                            .addComponent(btnBuscar))))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAlterarItem)
+                    .addComponent(btnCancelarItem)
+                    .addComponent(btnSalvarItem)
+                    .addComponent(btnPesquisarItem)
+                    .addComponent(btnExcluirItem)))
+        );
+
+        jScrollPane1.setToolTipText("tabela com os produtos em estoque");
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Título", "Preço", "Qnt. Estoque", "Cód. Prod.", "Descrição"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Double.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1086, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 48, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(79, 79, 79)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 820, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 742, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtTituloEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTituloEstoqueActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTituloEstoqueActionPerformed
+
+    private void btnCancelarItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarItemActionPerformed
+        // TODO add your handling code here:
+
+        disableEstoqueFields();
+        disableEstoqueButtons();
+        //btnAddItem.setEnabled(true);
+        btnPesquisarItem.setEnabled(true);
+    }//GEN-LAST:event_btnCancelarItemActionPerformed
+
+    private void btnSalvarItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarItemActionPerformed
+        // TODO add your handling code here:
+        disableEstoqueFields();
+        disableEstoqueButtons();
+        //btnAddItem.setEnabled(true);
+        btnPesquisarItem.setEnabled(true);
+    }//GEN-LAST:event_btnSalvarItemActionPerformed
+
+    private void btnPesquisarItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarItemActionPerformed
+        // TODO add your handling code here:
+        disableEstoqueFields();
+        disableEstoqueButtons();
+        btnCancelarItem.setEnabled(true);
+        lblTituloEstoque.setEnabled(true);
+        txtTituloEstoque.setEnabled(true);
+        btnBuscar.setEnabled(true);
+        txtTituloEstoque.requestFocus();
+    }//GEN-LAST:event_btnPesquisarItemActionPerformed
+
+    private void btnAlterarItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAlterarItemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +380,25 @@ public class ControleEstoque extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAlterarItem;
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnCancelarItem;
+    private javax.swing.JButton btnExcluirItem;
+    private javax.swing.JButton btnPesquisarItem;
+    private javax.swing.JButton btnSalvarItem;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JLabel lblCodigoEstoque;
+    private javax.swing.JLabel lblControleEstoque;
+    private javax.swing.JLabel lblDescricaoEstoque;
+    private javax.swing.JLabel lblPrecoEstoque;
+    private javax.swing.JLabel lblQuantiaEstoque;
+    private javax.swing.JLabel lblTituloEstoque;
+    private javax.swing.JTextField txtCodigoEstoque;
+    private javax.swing.JTextField txtDescricaoEstoque;
+    private javax.swing.JTextField txtPrecoEstoque;
+    private javax.swing.JTextField txtQuantiaEstoque;
+    private javax.swing.JTextField txtTituloEstoque;
     // End of variables declaration//GEN-END:variables
 }

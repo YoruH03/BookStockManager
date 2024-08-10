@@ -4,6 +4,8 @@
  */
 package telas;
 
+import classes.Funcionario;
+
 /**
  *
  * @author Yuri
@@ -81,6 +83,11 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
         btnSalvarFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/Save_37110.png"))); // NOI18N
         btnSalvarFuncionario.setText("Salvar");
         btnSalvarFuncionario.setToolTipText("Salvar funcionário");
+        btnSalvarFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarFuncionarioActionPerformed(evt);
+            }
+        });
 
         btnSairFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/exit_icon-icons.com_70975.png"))); // NOI18N
         btnSairFuncionario.setText("Sair");
@@ -186,6 +193,17 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_btnSairFuncionarioActionPerformed
+
+    private void btnSalvarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarFuncionarioActionPerformed
+        // TODO add your handling code here:
+        String nome = txtNomeFuncionario.getText();
+        String cpf = ftxCPFFuncionario.getText();
+        String email = txtEmailFuncionario.getText();
+        String senha = txtSenhaFuncionario.getText();
+        String idFuncionario = txtCodigoFuncionario.getText();
+        
+        Funcionario funcionario = new Funcionario(nome,cpf,email,senha,idFuncionario);
+    }//GEN-LAST:event_btnSalvarFuncionarioActionPerformed
 
     /**
      * @param args the command line arguments
