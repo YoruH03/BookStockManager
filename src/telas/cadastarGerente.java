@@ -5,6 +5,7 @@
 package telas;
 
 import classes.Gerente;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -165,6 +166,11 @@ public class cadastarGerente extends javax.swing.JFrame {
 
     private void btnSalvarGerenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarGerenteActionPerformed
         // TODO add your handling code here:
+        if (txtNomeGerente.getText().equals("") || txtCPFGerente.getText().equals("") ||
+            txtEmailGerente.getText().equals("") || txtSenhaGerente.getText().equals("")
+                || txtCadastroGerente.getText().equals("")){
+            JOptionPane.showMessageDialog(null,"Todos os campos devem ser inseridos!", "Mensagem",JOptionPane.PLAIN_MESSAGE);
+        }else{
         String nome = txtNomeGerente.getText();
         String cpf = txtCPFGerente.getText();
         String email = txtEmailGerente.getText();
@@ -173,6 +179,8 @@ public class cadastarGerente extends javax.swing.JFrame {
         
         Gerente gerente = new Gerente(nome,cpf,email,senha,idGerente);
         
+                    JOptionPane.showMessageDialog(null,"Gerente cadastrado com sucesso!", "Mensagem",JOptionPane.PLAIN_MESSAGE);
+        }
         
         
         

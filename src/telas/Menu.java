@@ -16,7 +16,8 @@ public class Menu extends javax.swing.JFrame {
     public Menu() {
         initComponents();
         
-        //setLocationRelativeTo(null);
+        setLocationRelativeTo(null);
+        this.setExtendedState(MAXIMIZED_BOTH);
     }
 
     /**
@@ -72,27 +73,37 @@ public class Menu extends javax.swing.JFrame {
         lblBookStockManager.setText("BookStock");
         jPanel1.add(lblBookStockManager, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 110, -1, -1));
 
+        jToggleButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/62914memo_109205.png"))); // NOI18N
         jToggleButton1.setText("Atualizar Estoque");
-        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, -1, -1));
+        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 320, 220, 50));
 
+        jButton6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/4105931-add-to-cart-buy-cart-sell-shop-shopping-cart_113919.png"))); // NOI18N
         jButton6.setText("Ver carrinho");
-        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, -1, -1));
+        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 240, 220, 50));
 
+        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/searchmagnifierinterfacesymbol1_79893.png"))); // NOI18N
         jButton5.setText("Buscar Produto");
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, -1, -1));
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 240, 220, 50));
 
+        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/technicalsupport_support_representative_person_people_man_1641.png"))); // NOI18N
         jButton3.setText("Funcionário");
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, -1, -1));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 220, 50));
 
+        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/customer_person_people_man_you_1625.png"))); // NOI18N
         jButton4.setText("Gerente");
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 370, -1, -1));
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, 220, 50));
 
+        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/person_user_customer_man_male_man_boy_people_1687 (1).png"))); // NOI18N
         jButton2.setText("Cliente");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, -1, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 220, 50));
 
-        btnLogout.setBackground(new java.awt.Color(102, 102, 102));
-        btnLogout.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        btnLogout.setForeground(new java.awt.Color(255, 255, 255));
+        btnLogout.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnLogout.setText("Logout");
         btnLogout.setToolTipText("Sair do sistema");
         btnLogout.setBorder(null);
@@ -101,11 +112,9 @@ public class Menu extends javax.swing.JFrame {
                 btnLogoutActionPerformed(evt);
             }
         });
-        jPanel1.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 111, -1));
+        jPanel1.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 120, 40));
 
-        btnLogin.setBackground(new java.awt.Color(102, 102, 102));
-        btnLogin.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        btnLogin.setForeground(new java.awt.Color(255, 255, 255));
+        btnLogin.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnLogin.setText("Login");
         btnLogin.setToolTipText("Entrar no sistema");
         btnLogin.setBorder(null);
@@ -114,7 +123,7 @@ public class Menu extends javax.swing.JFrame {
                 btnLoginActionPerformed(evt);
             }
         });
-        jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 108, -1));
+        jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 120, 40));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -125,7 +134,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 0, 140, 110));
 
         lblImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/background.jpg"))); // NOI18N
-        jPanel1.add(lblImagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, 660));
+        jPanel1.add(lblImagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 660));
 
         jmnCadastrar.setText("Cadastrar");
         jmnCadastrar.setToolTipText("Cadastrar um  novo usuário");
@@ -230,7 +239,7 @@ public class Menu extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

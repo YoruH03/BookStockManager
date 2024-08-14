@@ -6,6 +6,7 @@ package telas;
 
 import classes.Cliente;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -54,7 +55,6 @@ public class cadastrarCliente extends javax.swing.JFrame {
         ftxCPFCliente = new javax.swing.JFormattedTextField();
         btnCancelarCliente = new javax.swing.JButton();
         btnSalvarCliente = new javax.swing.JButton();
-        btnSairCliente = new javax.swing.JButton();
         lblTeste = new javax.swing.JLabel();
         btnVerify = new javax.swing.JButton();
 
@@ -117,6 +117,11 @@ public class cadastrarCliente extends javax.swing.JFrame {
         btnCancelarCliente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnCancelarCliente.setText("Cancelar");
         btnCancelarCliente.setToolTipText("cancelar a operação");
+        btnCancelarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarClienteActionPerformed(evt);
+            }
+        });
 
         btnSalvarCliente.setBackground(new java.awt.Color(102, 255, 0));
         btnSalvarCliente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -125,16 +130,6 @@ public class cadastrarCliente extends javax.swing.JFrame {
         btnSalvarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalvarClienteActionPerformed(evt);
-            }
-        });
-
-        btnSairCliente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnSairCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/exit_icon-icons.com_70975.png"))); // NOI18N
-        btnSairCliente.setText("Sair");
-        btnSairCliente.setToolTipText("fechar a janela");
-        btnSairCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSairClienteActionPerformed(evt);
             }
         });
 
@@ -194,10 +189,8 @@ public class cadastrarCliente extends javax.swing.JFrame {
                                     .addComponent(txtEmailCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(235, 235, 235)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 193, Short.MAX_VALUE)
-                        .addComponent(btnSairCliente)))
-                .addContainerGap())
+                        .addComponent(jLabel1)))
+                .addContainerGap(37, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(72, 72, 72)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -209,9 +202,7 @@ public class cadastrarCliente extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSairCliente)
-                    .addComponent(jLabel1))
+                .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNomeCliente)
@@ -258,13 +249,15 @@ public class cadastrarCliente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSairClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairClienteActionPerformed
-        // TODO add your handling code here:
-        this.setVisible(false);
-    }//GEN-LAST:event_btnSairClienteActionPerformed
-
     private void btnSalvarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarClienteActionPerformed
         // TODO add your handling code here:
+        
+        if (txtNomeCliente.getText().equals("") || ftxCPFCliente.getText().equals("") ||
+            ftxDataCliente.getText().equals("") || txtEnderecoCliente.getText().equals("")
+                || txtSenhaCliente.getText().equals("")|| txtEmailCliente.getText().equals("")
+                || ftxTelefoneCliente.getText().equals("")){
+            JOptionPane.showMessageDialog(null,"Todos os campos devem ser inseridos!", "Mensagem",JOptionPane.PLAIN_MESSAGE);
+        }else{
         String nome = txtNomeCliente.getText();
         String cpf = ftxCPFCliente.getText();
         String nascimentoCliente = ftxDataCliente.getText();
@@ -275,6 +268,8 @@ public class cadastrarCliente extends javax.swing.JFrame {
         
         Cliente cliente = new Cliente(nome,cpf,email,senha,endereco,nascimentoCliente,telefone);
         listaClientes.add(cliente);
+        JOptionPane.showMessageDialog(null,"Cliente criado com sucesso!", "Mensagem",JOptionPane.PLAIN_MESSAGE);
+        }
     }//GEN-LAST:event_btnSalvarClienteActionPerformed
 
     private void ftxCPFClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftxCPFClienteActionPerformed
@@ -291,6 +286,11 @@ public class cadastrarCliente extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btnVerifyActionPerformed
+
+    private void btnCancelarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarClienteActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_btnCancelarClienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -329,7 +329,6 @@ public class cadastrarCliente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelarCliente;
-    private javax.swing.JButton btnSairCliente;
     private javax.swing.JButton btnSalvarCliente;
     private javax.swing.JButton btnVerify;
     private javax.swing.JFormattedTextField ftxCPFCliente;

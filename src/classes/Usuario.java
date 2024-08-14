@@ -11,16 +11,20 @@ import java.util.ArrayList;
  * @author Yuri
  */
 abstract class Usuario {
+    //Definição da classe abstrata Usuário
+    
+    //Definição de atributos protegidos para a classe abstrata usuário
     protected String nome;
     protected String CPF;
     protected String email;
     protected String senha;
-    static ArrayList<Cliente> listaClientes = new ArrayList();
+    static ArrayList<Cliente> listaClientes = new ArrayList(); // Definição de um ArrayList para Clientes
     
     public Usuario(){
         this.listaClientes = new ArrayList();
         
     }
+    //Definição de construtor para Usuário
     public Usuario(String nome,String CPF,String email,String senha){
         this.listaClientes = new ArrayList();
         this.nome = nome;
@@ -28,6 +32,8 @@ abstract class Usuario {
         this.email = email;
         this.senha = senha;
     }
+    
+    //Definição de Getters e Setters para o Usuário, com seus respectivos atributos
 
     public String getNome() {
         return nome;
@@ -65,6 +71,7 @@ abstract class Usuario {
         return titulo;
     }
 
+    //Override com o toString
     @Override
     public String toString() {
         return "Usuario{" + "nome=" + nome + ", CPF=" + CPF + ", email=" + email + ", senha=" + senha + '}';

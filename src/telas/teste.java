@@ -388,7 +388,7 @@ public class teste extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -408,7 +408,6 @@ public class teste extends javax.swing.JFrame {
 
     private void btnAlterarGerenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarGerenteActionPerformed
         // TODO add your handling code here:
-        enableGerenteFields();
         btnAlterarGerente.setEnabled(false);
         btnSalvarGerente.setEnabled(true);
         btnCancelarGerente.setEnabled(true);
@@ -416,7 +415,6 @@ public class teste extends javax.swing.JFrame {
 
     private void btnSalvarGerenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarGerenteActionPerformed
         // TODO add your handling code here:
-        disableGerenteFields();
         btnAlterarGerente.setEnabled(true);
         btnSalvarGerente.setEnabled(false);
         btnCancelarGerente.setEnabled(false);
@@ -424,7 +422,6 @@ public class teste extends javax.swing.JFrame {
 
     private void btnCancelarGerenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarGerenteActionPerformed
         // TODO add your handling code here:
-        disableGerenteFields();
         btnAlterarGerente.setEnabled(true);
         btnSalvarGerente.setEnabled(false);
         btnCancelarGerente.setEnabled(false);
@@ -432,24 +429,19 @@ public class teste extends javax.swing.JFrame {
 
     private void btnNovoFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoFuncionarioActionPerformed
         // TODO add your handling code here:
-        enableControleFuncionariosFields();
-        disableControleFuncionariosButtons();
+
         btnSalvarFuncionario.setEnabled(true);
         btnCancelarFuncionario.setEnabled(true);
     }//GEN-LAST:event_btnNovoFuncionarioActionPerformed
 
     private void btnSalvarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarFuncionarioActionPerformed
         // TODO add your handling code here:
-        disableControleFuncionariosFields();
-        disableControleFuncionariosButtons();
         btnNovoFuncionario.setEnabled(true);
         btnPesquisarFuncionario.setEnabled(true);
     }//GEN-LAST:event_btnSalvarFuncionarioActionPerformed
 
     private void btnCancelarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarFuncionarioActionPerformed
         // TODO add your handling code here:
-        disableControleFuncionariosFields();
-        disableControleFuncionariosButtons();
         btnNovoFuncionario.setEnabled(true);
         btnPesquisarFuncionario.setEnabled(true);
 
@@ -457,8 +449,6 @@ public class teste extends javax.swing.JFrame {
 
     private void btnPesquisarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarFuncionarioActionPerformed
         // TODO add your handling code here:
-        disableControleFuncionariosFields();
-        disableControleFuncionariosButtons();
         btnBuscarFuncionario.setEnabled(true);
         lblNomeFuncionario.setEnabled(true);
         txtNomeFuncionario.setEnabled(true);

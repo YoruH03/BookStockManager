@@ -9,12 +9,15 @@ package classes;
  * @author Yuri
  */
 public class Gerente extends Usuario{
+    //Classe Gerente herda de Usuário
     private String cadastroGerente;
 
+    //Construtor para Gerente, com os atributos de Usuário
     public Gerente(String nome, String CPF, String email, String senha) {
         super(nome, CPF, email, senha);
     }
 
+    //Construtor para Gernete com os atributos de usuário + gerente
     public Gerente(String nome, String CPF, String email, String senha, String cadastroGerente ) {
         super(nome, CPF, email, senha);
         this.cadastroGerente = cadastroGerente;

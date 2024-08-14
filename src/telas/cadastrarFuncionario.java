@@ -5,19 +5,23 @@
 package telas;
 
 import classes.Funcionario;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Yuri
  */
 public class cadastrarFuncionario extends javax.swing.JFrame {
+    static ArrayList<Funcionario> listaFuncionarios;
 
     /**
      * Creates new form cadastrarFuncionario
      */
     public cadastrarFuncionario() {
         initComponents();
-        
+        listaFuncionarios = new ArrayList();
+
         
         setLocationRelativeTo(null);
     }
@@ -78,6 +82,11 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
         btnCancelarFuncionario.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnCancelarFuncionario.setText("Cancelar");
         btnCancelarFuncionario.setToolTipText("Cancelar operação");
+        btnCancelarFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarFuncionarioActionPerformed(evt);
+            }
+        });
 
         btnSalvarFuncionario.setBackground(new java.awt.Color(51, 255, 0));
         btnSalvarFuncionario.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -143,6 +152,7 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(lblCodigoFuncionario)
+                                .addGap(0, 0, 0)
                                 .addComponent(txtCodigoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(btnCancelarFuncionario))))
                 .addContainerGap(34, Short.MAX_VALUE))
@@ -199,6 +209,11 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
 
     private void btnSalvarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarFuncionarioActionPerformed
         // TODO add your handling code here:
+        if (txtNomeFuncionario.getText().equals("") || ftxCPFFuncionario.getText().equals("") ||
+            txtEmailFuncionario.getText().equals("") || txtSenhaFuncionario.getText().equals("")
+                || txtCodigoFuncionario.getText().equals("")){
+            JOptionPane.showMessageDialog(null,"Todos os campos devem ser inseridos!", "Mensagem",JOptionPane.PLAIN_MESSAGE);
+        }else{
         String nome = txtNomeFuncionario.getText();
         String cpf = ftxCPFFuncionario.getText();
         String email = txtEmailFuncionario.getText();
@@ -206,7 +221,16 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
         String idFuncionario = txtCodigoFuncionario.getText();
         
         Funcionario funcionario = new Funcionario(nome,cpf,email,senha,idFuncionario);
+        listaFuncionarios.add(funcionario);
+        JOptionPane.showMessageDialog(null,"Funcionário cadastrado com sucesso!", "Mensagem",JOptionPane.PLAIN_MESSAGE);
+
+        }
     }//GEN-LAST:event_btnSalvarFuncionarioActionPerformed
+
+    private void btnCancelarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarFuncionarioActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_btnCancelarFuncionarioActionPerformed
 
     /**
      * @param args the command line arguments
