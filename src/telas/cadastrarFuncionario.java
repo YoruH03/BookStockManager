@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  * @author Yuri
  */
 public class cadastrarFuncionario extends javax.swing.JFrame {
-    static ArrayList<Funcionario> listaFuncionarios;
+    static ArrayList<Funcionario> listaFuncionarios = new ArrayList();
 
     /**
      * Creates new form cadastrarFuncionario
@@ -24,6 +24,14 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
 
         
         setLocationRelativeTo(null);
+        limparCampos();
+    }
+    public void limparCampos(){
+        txtNomeFuncionario.setText("");
+        ftxCPFFuncionario.setText("");
+        txtEmailFuncionario.setText("");
+        txtSenhaFuncionario.setText("");
+        txtCodigoFuncionario.setText(String.valueOf(listaFuncionarios.size()+1));
     }
 
     /**

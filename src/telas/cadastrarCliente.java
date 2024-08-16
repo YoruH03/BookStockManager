@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  * @author Yuri
  */
 public class cadastrarCliente extends javax.swing.JFrame {
-    static ArrayList<Cliente> listaClientes;
+    static ArrayList<Cliente> listaClientes = new ArrayList();
 
     /**
      * Creates new form cadastrarCliente
@@ -21,7 +21,6 @@ public class cadastrarCliente extends javax.swing.JFrame {
     public cadastrarCliente() {
         initComponents();
         
-        listaClientes = new ArrayList();
 
         setLocationRelativeTo(null);
         lblTeste.setVisible(false);

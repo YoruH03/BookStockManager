@@ -4,6 +4,14 @@
  */
 package telas;
 
+import classes.Cliente;
+import classes.Funcionario;
+import javax.swing.JOptionPane;
+import static telas.cadastrarCliente.listaClientes;
+import static telas.Menu.logado;
+import static telas.Menu.user;
+import static telas.cadastrarFuncionario.listaFuncionarios;
+
 /**
  *
  * @author Yuri
@@ -54,6 +62,11 @@ public class telaLogin extends javax.swing.JFrame {
         btnEntrar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnEntrar.setText("Entrar");
         btnEntrar.setToolTipText("fazer login");
+        btnEntrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEntrarActionPerformed(evt);
+            }
+        });
 
         btnCancelar.setBackground(new java.awt.Color(255, 0, 0));
         btnCancelar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -66,6 +79,11 @@ public class telaLogin extends javax.swing.JFrame {
 
         lblCadastrarse.setForeground(new java.awt.Color(255, 102, 102));
         lblCadastrarse.setText("Não tem uma conta? Cadastrar-se como cliente.");
+        lblCadastrarse.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblCadastrarseMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -137,6 +155,48 @@ public class telaLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void lblCadastrarseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCadastrarseMouseClicked
+        // TODO add your handling code here:
+        new cadastrarCliente().setVisible(true);
+    }//GEN-LAST:event_lblCadastrarseMouseClicked
+
+    private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
+        // TODO add your handling code here:
+        
+        String emailInput = txtEmail.getText();
+        String senhaInput = txtSenha.getText();
+        
+        
+        if(listaFuncionarios.size()>0){
+        for(Funcionario item : listaFuncionarios){
+            if(item.getEmail().equals(emailInput)&& item.getSenha().equals(senhaInput)){
+                logado = true;
+                user = "funcionario";
+                JOptionPane.showMessageDialog(null,"Entrou como funcionário com sucesso!", "Notificação Login",JOptionPane.PLAIN_MESSAGE);
+                this.setVisible(false);
+
+                break;
+            }
+        }
+        }
+        if(!logado && listaClientes.size() > 0){
+        for(Cliente item:listaClientes){
+
+            if(item.getEmail().equals(emailInput)&& item.getSenha().equals(senhaInput)){
+                logado = true;
+                user = "usuario";
+                JOptionPane.showMessageDialog(null,"Entrou como cliente com sucesso!", "Notificação Login",JOptionPane.PLAIN_MESSAGE);
+                this.setVisible(false);
+
+                break;
+            }
+        }
+        }
+        if(!logado){
+        JOptionPane.showMessageDialog(null, "Email ou senha incorretos.", "Erro de Login", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnEntrarActionPerformed
 
     /**
      * @param args the command line arguments

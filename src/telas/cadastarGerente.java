@@ -20,6 +20,14 @@ public class cadastarGerente extends javax.swing.JFrame {
         initComponents();
         
         setLocationRelativeTo(null);
+        limparCampos();
+    }
+    public void limparCampos(){
+        txtNomeGerente.setText("");
+        txtCPFGerente.setText("");
+        txtEmailGerente.setText("");
+        txtSenhaGerente.setText("");
+        txtCadastroGerente.setText("1");
     }
 
     /**
@@ -90,6 +98,11 @@ public class cadastarGerente extends javax.swing.JFrame {
         btnCancelarGerente.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnCancelarGerente.setText("Cancelar");
         btnCancelarGerente.setToolTipText("cancelar operação");
+        btnCancelarGerente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarGerenteActionPerformed(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel6.setText("Cadastro de Gerentes");
@@ -187,6 +200,11 @@ public class cadastarGerente extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btnSalvarGerenteActionPerformed
+
+    private void btnCancelarGerenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarGerenteActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_btnCancelarGerenteActionPerformed
 
     /**
      * @param args the command line arguments
