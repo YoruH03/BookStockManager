@@ -15,6 +15,8 @@ public class telaPagamento extends javax.swing.JFrame {
      */
     public telaPagamento() {
         initComponents();
+        setLocationRelativeTo(null);
+
     }
 
     /**

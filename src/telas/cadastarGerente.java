@@ -5,6 +5,7 @@
 package telas;
 
 import classes.Gerente;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,6 +13,8 @@ import javax.swing.JOptionPane;
  * @author Yuri
  */
 public class cadastarGerente extends javax.swing.JFrame {
+    static ArrayList<Gerente> listaGerente = new ArrayList();
+
 
     /**
      * Creates new form cadastarGerente

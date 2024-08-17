@@ -26,6 +26,16 @@ public class cadastrarCliente extends javax.swing.JFrame {
         lblTeste.setVisible(false);
         
     }
+    
+    public void clearClienteInfo(){
+        txtNomeCliente.setText("");
+        ftxCPFCliente.setText("");
+        ftxDataCliente.setText("");
+        txtEnderecoCliente.setText("");
+        txtSenhaCliente.setText("");
+        txtEmailCliente.setText("");
+        ftxTelefoneCliente.setText("");
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -267,7 +277,9 @@ public class cadastrarCliente extends javax.swing.JFrame {
         
         Cliente cliente = new Cliente(nome,cpf,email,senha,endereco,nascimentoCliente,telefone);
         listaClientes.add(cliente);
+        clearClienteInfo();
         JOptionPane.showMessageDialog(null,"Cliente criado com sucesso!", "Mensagem",JOptionPane.PLAIN_MESSAGE);
+        this.setVisible(false);
         }
     }//GEN-LAST:event_btnSalvarClienteActionPerformed
 

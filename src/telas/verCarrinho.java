@@ -15,6 +15,8 @@ public class verCarrinho extends javax.swing.JFrame {
      */
     public verCarrinho() {
         initComponents();
+        setLocationRelativeTo(null);
+
     }
 
     /**
@@ -36,6 +38,7 @@ public class verCarrinho extends javax.swing.JFrame {
         lblVisualizarCarrinho = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Visualizar meu carrinho");
 
         tblProdutos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -80,6 +83,11 @@ public class verCarrinho extends javax.swing.JFrame {
         btnConfirmarCompra.setBackground(new java.awt.Color(0, 255, 0));
         btnConfirmarCompra.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnConfirmarCompra.setText("Confirmar compra");
+        btnConfirmarCompra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfirmarCompraActionPerformed(evt);
+            }
+        });
 
         lblVisualizarCarrinho.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblVisualizarCarrinho.setText("Visualizar Carrinho Atual");
@@ -138,6 +146,11 @@ public class verCarrinho extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_btnSairActionPerformed
+
+    private void btnConfirmarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarCompraActionPerformed
+        // TODO add your handling code here:
+        new telaPagamento().setVisible(true);
+    }//GEN-LAST:event_btnConfirmarCompraActionPerformed
 
     /**
      * @param args the command line arguments

@@ -4,7 +4,10 @@
  */
 package telas;
 
+import classes.Gerente;
 import javax.swing.JOptionPane;
+import static telas.cadastarGerente.listaGerente;
+
 
 /**
  *
@@ -26,6 +29,11 @@ public class Menu extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         this.setExtendedState(MAXIMIZED_BOTH);
         verificarLogin(logado);
+        Gerente gerente;
+        gerente = new Gerente("admin","admin","admin@gmail.com","admin");
+        listaGerente.add(gerente);
+        lblLogin.setVisible(false);
+        
         
     }
     /**
@@ -35,19 +43,25 @@ public class Menu extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     public void verificarLogin(boolean logado){
-                //  Habilitar/desabilitar botão de Logout
+        //  Habilitar/desabilitar botão de Logout
         if(logado==true){
             btnLogout.setVisible(true);
-        }else{
-            btnLogout.setVisible(false);
-        }
-        
-        //Habilitar / Desabilitar botão de login
-        if(logado==false){
-            btnLogin.setVisible(true);
-        }else{
-            btnLogin.setVisible(true);
-        }
+            btnLogin.setVisible(false);
+            if(user.equals("cliente")){
+                lblLogin.setVisible(true);
+                lblLogin.setText("Você entrou como cliente!");
+            }else if(user.equals("funcionario")){
+                lblLogin.setVisible(true);
+                lblLogin.setText("Você entrou como funcionário");
+            }else if(user.equals("gerente")){
+                lblLogin.setVisible(true);
+                lblLogin.setText("Você entrou como gerente");
+            }
+            }else{
+                btnLogout.setVisible(false);
+                btnLogin.setVisible(true);
+                lblLogin.setVisible(false);
+            }
         
     }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -56,6 +70,7 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        lblLogin = new javax.swing.JLabel();
         lblBookStockManager = new javax.swing.JLabel();
         btnAtualizarEstoque = new javax.swing.JToggleButton();
         btnVerCarrinho = new javax.swing.JButton();
@@ -91,6 +106,11 @@ public class Menu extends javax.swing.JFrame {
         setIconImage(new javax.swing.ImageIcon(getClass().getResource("/imagens/logo_digitalbooks03_small3.png")).getImage());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblLogin.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        lblLogin.setForeground(new java.awt.Color(255, 0, 0));
+        lblLogin.setText("Você entrou como cliente");
+        jPanel1.add(lblLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, -1, -1));
 
         lblBookStockManager.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblBookStockManager.setForeground(new java.awt.Color(255, 255, 255));
@@ -327,6 +347,11 @@ public class Menu extends javax.swing.JFrame {
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         // TODO add your handling code here:
+        logado=false;
+        user="";
+        verificarLogin(logado);
+        JOptionPane.showMessageDialog(null,"Você acabou de sair do sistema", "Mensagem",JOptionPane.PLAIN_MESSAGE);
+
     }//GEN-LAST:event_btnLogoutActionPerformed
 
     private void mntAreaFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mntAreaFuncionarioActionPerformed
@@ -343,6 +368,7 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
         new telaLogin().setVisible(true);
         
+        
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void mntAtualizarEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mntAtualizarEstoqueActionPerformed
@@ -352,16 +378,19 @@ public class Menu extends javax.swing.JFrame {
 
     private void mntBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mntBuscarActionPerformed
         // TODO add your handling code here:
-        new verProdutos().setVisible(true);
+        new verProdutos_a().setVisible(true);
     }//GEN-LAST:event_mntBuscarActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
+        
         new verCarrinho().setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void btnClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteActionPerformed
         // TODO add your handling code here:
+        verificarLogin(logado);
+
         if(logado==true){
             if(user.equals("gerente") || user.equals("funcionario")){
                 new cadastrarCliente().setVisible(true);
@@ -369,6 +398,8 @@ public class Menu extends javax.swing.JFrame {
                 new areaCliente().setVisible(true);
             }
         }else{
+            JOptionPane.showMessageDialog(null,"Você não entrou no sistema. Crie uma nova conta como Cliente", "Mensagem",JOptionPane.PLAIN_MESSAGE);
+
             new cadastrarCliente().setVisible(true);
         }
 
@@ -381,6 +412,8 @@ public class Menu extends javax.swing.JFrame {
 
     private void btnFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFuncionarioActionPerformed
         // TODO add your handling code here:
+        verificarLogin(logado);
+
         
         if(logado==true){
             if( user.equals("gerente")){
@@ -398,6 +431,8 @@ public class Menu extends javax.swing.JFrame {
 
     private void btnGerenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerenteActionPerformed
         // TODO add your handling code here:
+        
+        verificarLogin(logado);
         if(logado==true){
             if(user.equals("gerente")){
                 new areaGerente().setVisible(true);
@@ -424,7 +459,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void btnAtualizarEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarEstoqueActionPerformed
         // TODO add your handling code here:
-        
+        verificarLogin(logado);
         if(logado==true){
             if(user.equals("funcionario") || user.equals("gerente") ){
                 new ControleEstoque().setVisible(true);
@@ -492,6 +527,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenu jmnPáginasUsuário;
     private javax.swing.JLabel lblBookStockManager;
     private javax.swing.JLabel lblImagem;
+    private javax.swing.JLabel lblLogin;
     private javax.swing.JLabel lblLogo;
     private javax.swing.JMenuItem mntAreaCliente;
     private javax.swing.JMenuItem mntAreaFuncionario;

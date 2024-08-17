@@ -6,10 +6,12 @@ package telas;
 
 import classes.Cliente;
 import classes.Funcionario;
+import classes.Gerente;
 import javax.swing.JOptionPane;
 import static telas.cadastrarCliente.listaClientes;
 import static telas.Menu.logado;
 import static telas.Menu.user;
+import static telas.cadastarGerente.listaGerente;
 import static telas.cadastrarFuncionario.listaFuncionarios;
 
 /**
@@ -23,6 +25,8 @@ public class telaLogin extends javax.swing.JFrame {
      */
     public telaLogin() {
         initComponents();
+        setLocationRelativeTo(null);
+
     }
 
     /**
@@ -45,6 +49,7 @@ public class telaLogin extends javax.swing.JFrame {
         lblCadastrarse = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Tela de Login");
 
         lblLogin.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblLogin.setText("Bem vindo");
@@ -167,7 +172,19 @@ public class telaLogin extends javax.swing.JFrame {
         String emailInput = txtEmail.getText();
         String senhaInput = txtSenha.getText();
         
-        
+        if(listaGerente.size()>0){
+            for(Gerente pessoa : listaGerente){
+                if(pessoa.getEmail().equals(emailInput)&&pessoa.getSenha().equals(senhaInput)){
+                    logado = true;
+                    user = "gerente";
+                    JOptionPane.showMessageDialog(null,"Entrou como gerente com sucesso!", "Notificação Login",JOptionPane.PLAIN_MESSAGE);
+                this.setVisible(false);
+
+                    break;
+                    
+                }
+            }
+        }
         if(listaFuncionarios.size()>0){
         for(Funcionario item : listaFuncionarios){
             if(item.getEmail().equals(emailInput)&& item.getSenha().equals(senhaInput)){
@@ -185,7 +202,7 @@ public class telaLogin extends javax.swing.JFrame {
 
             if(item.getEmail().equals(emailInput)&& item.getSenha().equals(senhaInput)){
                 logado = true;
-                user = "usuario";
+                user = "cliente";
                 JOptionPane.showMessageDialog(null,"Entrou como cliente com sucesso!", "Notificação Login",JOptionPane.PLAIN_MESSAGE);
                 this.setVisible(false);
 
