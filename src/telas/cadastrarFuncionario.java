@@ -5,33 +5,34 @@
 package telas;
 
 import classes.Funcionario;
+import static classes.Funcionario.listaFuncionarios;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+
 
 /**
  *
  * @author Yuri
  */
 public class cadastrarFuncionario extends javax.swing.JFrame {
-    static ArrayList<Funcionario> listaFuncionarios = new ArrayList();
 
     /**
      * Creates new form cadastrarFuncionario
      */
     public cadastrarFuncionario() {
         initComponents();
-        listaFuncionarios = new ArrayList();
 
         
         setLocationRelativeTo(null);
         limparCampos();
+        txtCodigoFuncionario.setEnabled(false);
     }
     public void limparCampos(){
         txtNomeFuncionario.setText("");
         ftxCPFFuncionario.setText("");
         txtEmailFuncionario.setText("");
         txtSenhaFuncionario.setText("");
-        txtCodigoFuncionario.setText(String.valueOf(listaFuncionarios.size()+1));
+        txtCodigoFuncionario.setText(String.valueOf(listaFuncionarios.size()));
     }
 
     /**
@@ -62,8 +63,6 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de funcionários");
         setIconImage(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/technicalsupport_support_representative_person_people_man_1641.png")).getImage());
-
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
         lblCadastroFuncionario.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblCadastroFuncionario.setText("Cadastro de Funcionários");

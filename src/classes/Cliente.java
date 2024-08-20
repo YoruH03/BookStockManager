@@ -18,6 +18,10 @@ public class Cliente extends Usuario{
     private String dataNascimento;
     private String celular;
     private ArrayList carrinho;
+    private String idCliente;
+    public static ArrayList<Cliente> listaClientes = new ArrayList();
+
+    public static  int index_cliente;
     
     
     //Construtor de Cliente com TODOS OS ATRIBUTOS(Atributos de usuário + atributos de cliente)
@@ -26,7 +30,15 @@ public class Cliente extends Usuario{
         this.endereco = endereco;
         this.dataNascimento = dataNascimento;
         this.celular = celular;
+        this.idCliente = String.valueOf(listaClientes.size());
     }
+
+    public Cliente(String nome, String CPF, String email, String senha) {
+        super(nome, CPF, email, senha);
+        this.idCliente = "0";
+    }
+        
+    
         
     //Getters e Setters para os atributos de Cliente
 
@@ -75,6 +87,15 @@ public class Cliente extends Usuario{
         System.out.println("Item adicionado ao carrinho!");
     
 }
+
+    public String getIdCliente() {
+        return idCliente;
+    }
+
+    
+    public static int getIndex_cliente() {
+        return index_cliente;
+    }
     
     
     

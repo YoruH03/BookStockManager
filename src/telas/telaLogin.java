@@ -5,14 +5,16 @@
 package telas;
 
 import classes.Cliente;
+import static classes.Cliente.listaClientes;
 import classes.Funcionario;
+import static classes.Funcionario.listaFuncionarios;
 import classes.Gerente;
 import javax.swing.JOptionPane;
-import static telas.cadastrarCliente.listaClientes;
+//import static telas.cadastrarCliente.listaClientes;
 import static telas.Menu.logado;
 import static telas.Menu.user;
 import static telas.cadastarGerente.listaGerente;
-import static telas.cadastrarFuncionario.listaFuncionarios;
+//import static telas.cadastrarFuncionario.listaFuncionarios;
 
 /**
  *
@@ -190,6 +192,8 @@ public class telaLogin extends javax.swing.JFrame {
             if(item.getEmail().equals(emailInput)&& item.getSenha().equals(senhaInput)){
                 logado = true;
                 user = "funcionario";
+                JOptionPane.showMessageDialog(null,"Credenciais verificadas... pegando indice", "Notificação Login",JOptionPane.PLAIN_MESSAGE);
+                Funcionario.index_func=Integer.parseInt(item.getCadastroFuncionario());//Problema AQUI!!! -> Consertado. Bastou inicializar um índice 0 como string em cadastro Func.
                 JOptionPane.showMessageDialog(null,"Entrou como funcionário com sucesso!", "Notificação Login",JOptionPane.PLAIN_MESSAGE);
                 this.setVisible(false);
 
@@ -203,6 +207,8 @@ public class telaLogin extends javax.swing.JFrame {
             if(item.getEmail().equals(emailInput)&& item.getSenha().equals(senhaInput)){
                 logado = true;
                 user = "cliente";
+                JOptionPane.showMessageDialog(null,"Credenciais verificadas... pegando índice", "Notificação Login",JOptionPane.PLAIN_MESSAGE);
+                Cliente.index_cliente=Integer.parseInt(item.getIdCliente());//PROBLEMA AQUI DE NOVO!!
                 JOptionPane.showMessageDialog(null,"Entrou como cliente com sucesso!", "Notificação Login",JOptionPane.PLAIN_MESSAGE);
                 this.setVisible(false);
 

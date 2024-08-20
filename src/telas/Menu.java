@@ -4,9 +4,15 @@
  */
 package telas;
 
+import classes.Cliente;
+import static classes.Cliente.listaClientes;
+import classes.Funcionario;
+import static classes.Funcionario.listaFuncionarios;
 import classes.Gerente;
 import javax.swing.JOptionPane;
 import static telas.cadastarGerente.listaGerente;
+//import static telas.cadastrarCliente.listaClientes;
+//import static telas.cadastrarFuncionario.listaFuncionarios;
 
 
 /**
@@ -33,6 +39,11 @@ public class Menu extends javax.swing.JFrame {
         gerente = new Gerente("admin","admin","admin@gmail.com","admin");
         listaGerente.add(gerente);
         lblLogin.setVisible(false);
+        Funcionario funcionario;
+        funcionario = new Funcionario("func","func","func@gmail.com","func");
+        listaFuncionarios.add(funcionario);
+        Cliente cliente = new Cliente("user","111-111","user@gmail.com","user","Pernambuco","10/05/1990","999-9999");
+        listaClientes.add(cliente);
         
         
     }
@@ -83,19 +94,6 @@ public class Menu extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         lblLogo = new javax.swing.JLabel();
         lblImagem = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jmnCadastrar = new javax.swing.JMenu();
-        mntCliente = new javax.swing.JMenuItem();
-        mntFuncionario = new javax.swing.JMenuItem();
-        mntGerente = new javax.swing.JMenuItem();
-        jmnFazerConsulta = new javax.swing.JMenu();
-        mntBuscar = new javax.swing.JMenuItem();
-        mntAtualizarEstoque = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jmnPáginasUsuário = new javax.swing.JMenu();
-        mntAreaCliente = new javax.swing.JMenuItem();
-        mntAreaFuncionario = new javax.swing.JMenuItem();
-        mntAreaGerente = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -107,77 +105,78 @@ public class Menu extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblLogin.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        lblLogin.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         lblLogin.setForeground(new java.awt.Color(255, 0, 0));
         lblLogin.setText("Você entrou como cliente");
-        jPanel1.add(lblLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, -1, -1));
+        jPanel1.add(lblLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 60, -1, -1));
 
-        lblBookStockManager.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lblBookStockManager.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         lblBookStockManager.setForeground(new java.awt.Color(255, 255, 255));
         lblBookStockManager.setText("BookStock");
-        jPanel1.add(lblBookStockManager, new org.netbeans.lib.awtextra.AbsoluteConstraints(1580, 180, -1, -1));
+        jPanel1.add(lblBookStockManager, new org.netbeans.lib.awtextra.AbsoluteConstraints(1630, 210, -1, -1));
 
-        btnAtualizarEstoque.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnAtualizarEstoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/62914memo_109205.png"))); // NOI18N
+        btnAtualizarEstoque.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        btnAtualizarEstoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/business_inventory_maintenance_product_box_boxes_2326_64.png"))); // NOI18N
         btnAtualizarEstoque.setText("Atualizar Estoque");
         btnAtualizarEstoque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAtualizarEstoqueActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAtualizarEstoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 590, 350, 110));
+        jPanel1.add(btnAtualizarEstoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 700, 400, 130));
 
-        btnVerCarrinho.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnVerCarrinho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/4105931-add-to-cart-buy-cart-sell-shop-shopping-cart_113919.png"))); // NOI18N
+        btnVerCarrinho.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        btnVerCarrinho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/4105931-add-to-cart-buy-cart-sell-shop-shopping-cart_113919_64.png"))); // NOI18N
         btnVerCarrinho.setText("Ver carrinho");
         btnVerCarrinho.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVerCarrinhoActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVerCarrinho, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 440, 350, 110));
+        jPanel1.add(btnVerCarrinho, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 410, 400, 130));
 
-        btnPesquisar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/searchmagnifierinterfacesymbol1_79893.png"))); // NOI18N
+        btnPesquisar.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        btnPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/searchmagnifierinterfacesymbol1_79893_64.png"))); // NOI18N
         btnPesquisar.setText("Buscar Produto");
         btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPesquisarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnPesquisar, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 440, 350, 110));
+        jPanel1.add(btnPesquisar, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 410, 400, 130));
 
-        btnFuncionario.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/technicalsupport_support_representative_person_people_man_1641.png"))); // NOI18N
+        btnFuncionario.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        btnFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/technicalsupport_support_representative_person_people_man_1641_64.png"))); // NOI18N
         btnFuncionario.setText("Funcionário");
         btnFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFuncionarioActionPerformed(evt);
             }
         });
-        jPanel1.add(btnFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 590, 350, 110));
+        jPanel1.add(btnFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 700, 400, 130));
 
-        btnGerente.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnGerente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/customer_person_people_man_you_1625.png"))); // NOI18N
+        btnGerente.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        btnGerente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/customer_person_people_man_you_1625_64.png"))); // NOI18N
         btnGerente.setText("Gerente");
         btnGerente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGerenteActionPerformed(evt);
             }
         });
-        jPanel1.add(btnGerente, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 590, 350, 110));
+        jPanel1.add(btnGerente, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 700, 400, 130));
 
-        btnCliente.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/person_user_customer_man_male_man_boy_people_1687 (1).png"))); // NOI18N
+        btnCliente.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        btnCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/person_user_customer_man_male_man_boy_people_1687_64.png"))); // NOI18N
         btnCliente.setText("Cliente");
         btnCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClienteActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 440, 350, 110));
+        jPanel1.add(btnCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 410, 400, 130));
 
-        btnLogout.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnLogout.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/logout_90894_64.png"))); // NOI18N
         btnLogout.setText("Logout");
         btnLogout.setToolTipText("Sair do sistema");
         btnLogout.setBorder(null);
@@ -186,9 +185,10 @@ public class Menu extends javax.swing.JFrame {
                 btnLogoutActionPerformed(evt);
             }
         });
-        jPanel1.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 120, 40));
+        jPanel1.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 200, 70));
 
-        btnLogin.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnLogin.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        btnLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/login-square-arrow-button-outline_icon-icons.com_73220_64.png"))); // NOI18N
         btnLogin.setText("Login");
         btnLogin.setToolTipText("Entrar no sistema");
         btnLogin.setBorder(null);
@@ -197,115 +197,18 @@ public class Menu extends javax.swing.JFrame {
                 btnLoginActionPerformed(evt);
             }
         });
-        jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 120, 40));
+        jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 200, 70));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Manager");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1590, 200, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1650, 250, -1, -1));
 
-        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/logo_digitalbooks03_small3.png"))); // NOI18N
-        jPanel1.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1570, 60, 140, 110));
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/livro01.png"))); // NOI18N
+        jPanel1.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1490, 10, 390, 210));
 
-        lblImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/background.jpg"))); // NOI18N
+        lblImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/background_resize.jpg"))); // NOI18N
         jPanel1.add(lblImagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
-
-        jmnCadastrar.setText("Cadastrar");
-        jmnCadastrar.setToolTipText("Cadastrar um  novo usuário");
-
-        mntCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/person_user_customer_man_male_man_boy_people_1687 (1).png"))); // NOI18N
-        mntCliente.setText("Cliente");
-        mntCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mntClienteActionPerformed(evt);
-            }
-        });
-        jmnCadastrar.add(mntCliente);
-
-        mntFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/technicalsupport_support_representative_person_people_man_1641.png"))); // NOI18N
-        mntFuncionario.setText("Funcionário");
-        mntFuncionario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mntFuncionarioActionPerformed(evt);
-            }
-        });
-        jmnCadastrar.add(mntFuncionario);
-
-        mntGerente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/customer_person_people_man_you_1625.png"))); // NOI18N
-        mntGerente.setText("Gerente");
-        mntGerente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mntGerenteActionPerformed(evt);
-            }
-        });
-        jmnCadastrar.add(mntGerente);
-
-        jMenuBar1.add(jmnCadastrar);
-
-        jmnFazerConsulta.setText("Fazer Consulta");
-        jmnFazerConsulta.setToolTipText("Consultar um produto");
-
-        mntBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/searchmagnifierinterfacesymbol1_79893.png"))); // NOI18N
-        mntBuscar.setText("Buscar por produto");
-        mntBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mntBuscarActionPerformed(evt);
-            }
-        });
-        jmnFazerConsulta.add(mntBuscar);
-
-        mntAtualizarEstoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/4105931-add-to-cart-buy-cart-sell-shop-shopping-cart_113919.png"))); // NOI18N
-        mntAtualizarEstoque.setText("Atualizar Estoque");
-        mntAtualizarEstoque.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mntAtualizarEstoqueActionPerformed(evt);
-            }
-        });
-        jmnFazerConsulta.add(mntAtualizarEstoque);
-
-        jMenuItem2.setText("Ver meu Carrinho");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        jmnFazerConsulta.add(jMenuItem2);
-
-        jMenuBar1.add(jmnFazerConsulta);
-
-        jmnPáginasUsuário.setText("Páginas de usuário");
-        jmnPáginasUsuário.setToolTipText("Acessar páginas de usuário");
-
-        mntAreaCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/person_user_customer_man_male_man_boy_people_1687 (1).png"))); // NOI18N
-        mntAreaCliente.setText("Área do Cliente");
-        mntAreaCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mntAreaClienteActionPerformed(evt);
-            }
-        });
-        jmnPáginasUsuário.add(mntAreaCliente);
-
-        mntAreaFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/technicalsupport_support_representative_person_people_man_1641.png"))); // NOI18N
-        mntAreaFuncionario.setText("Área do funcionário");
-        mntAreaFuncionario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mntAreaFuncionarioActionPerformed(evt);
-            }
-        });
-        jmnPáginasUsuário.add(mntAreaFuncionario);
-
-        mntAreaGerente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/customer_person_people_man_you_1625.png"))); // NOI18N
-        mntAreaGerente.setText("Área do Gerente");
-        mntAreaGerente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mntAreaGerenteActionPerformed(evt);
-            }
-        });
-        jmnPáginasUsuário.add(mntAreaGerente);
-
-        jMenuBar1.add(jmnPáginasUsuário);
-
-        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -313,37 +216,15 @@ public class Menu extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 6, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1081, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1081, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void mntGerenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mntGerenteActionPerformed
-        // TODO add your handling code here:
-        new cadastarGerente().setVisible(true);
-    }//GEN-LAST:event_mntGerenteActionPerformed
-
-    private void mntAreaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mntAreaClienteActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_mntAreaClienteActionPerformed
-
-    private void mntFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mntFuncionarioActionPerformed
-        // TODO add your handling code here:
-        new cadastrarFuncionario().setVisible(true);
-    }//GEN-LAST:event_mntFuncionarioActionPerformed
-
-    private void mntClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mntClienteActionPerformed
-        // TODO add your handling code here:
-        new cadastrarCliente().setVisible(true);
-    }//GEN-LAST:event_mntClienteActionPerformed
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         // TODO add your handling code here:
@@ -354,16 +235,6 @@ public class Menu extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnLogoutActionPerformed
 
-    private void mntAreaFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mntAreaFuncionarioActionPerformed
-        // TODO add your handling code here:
-        new areaFuncionario().setVisible(true);
-    }//GEN-LAST:event_mntAreaFuncionarioActionPerformed
-
-    private void mntAreaGerenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mntAreaGerenteActionPerformed
-        // TODO add your handling code here:
-        new areaGerente().setVisible(true);
-    }//GEN-LAST:event_mntAreaGerenteActionPerformed
-
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
         new telaLogin().setVisible(true);
@@ -371,28 +242,13 @@ public class Menu extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnLoginActionPerformed
 
-    private void mntAtualizarEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mntAtualizarEstoqueActionPerformed
-        // TODO add your handling code here:
-        new ControleEstoque().setVisible(true);
-    }//GEN-LAST:event_mntAtualizarEstoqueActionPerformed
-
-    private void mntBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mntBuscarActionPerformed
-        // TODO add your handling code here:
-        new verProdutos_a().setVisible(true);
-    }//GEN-LAST:event_mntBuscarActionPerformed
-
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-        
-        new verCarrinho().setVisible(true);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
     private void btnClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteActionPerformed
         // TODO add your handling code here:
         verificarLogin(logado);
 
         if(logado==true){
             if(user.equals("gerente") || user.equals("funcionario")){
+                JOptionPane.showMessageDialog(null,"Você tem acesso a criar nova conta de cliente","Notificação de acesso a cliente",JOptionPane.ERROR_MESSAGE);
                 new cadastrarCliente().setVisible(true);
             }else{
                 new areaCliente().setVisible(true);
@@ -450,6 +306,8 @@ public class Menu extends javax.swing.JFrame {
     private void btnVerCarrinhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerCarrinhoActionPerformed
         // TODO add your handling code here:
         //Verifica se o usuário está logado no sistema
+        verificarLogin(logado);
+
         if(logado==true){
             new verCarrinho().setVisible(true);
         }else{
@@ -518,24 +376,11 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton btnVerCarrinho;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JMenu jmnCadastrar;
-    private javax.swing.JMenu jmnFazerConsulta;
-    private javax.swing.JMenu jmnPáginasUsuário;
     private javax.swing.JLabel lblBookStockManager;
     private javax.swing.JLabel lblImagem;
     private javax.swing.JLabel lblLogin;
     private javax.swing.JLabel lblLogo;
-    private javax.swing.JMenuItem mntAreaCliente;
-    private javax.swing.JMenuItem mntAreaFuncionario;
-    private javax.swing.JMenuItem mntAreaGerente;
-    private javax.swing.JMenuItem mntAtualizarEstoque;
-    private javax.swing.JMenuItem mntBuscar;
-    private javax.swing.JMenuItem mntCliente;
-    private javax.swing.JMenuItem mntFuncionario;
-    private javax.swing.JMenuItem mntGerente;
     // End of variables declaration//GEN-END:variables
 }

@@ -267,6 +267,11 @@ public class areaGerente extends javax.swing.JFrame {
         txtSenhaFuncionario.setToolTipText("insira a senha do funcionário");
 
         txtCodigoFuncionario.setToolTipText("insira o código do funcionário");
+        txtCodigoFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCodigoFuncionarioActionPerformed(evt);
+            }
+        });
 
         btnNovoFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/add_icon-icons.com_74429 (2).png"))); // NOI18N
         btnNovoFuncionario.setText("Novo");
@@ -512,10 +517,11 @@ public class areaGerente extends javax.swing.JFrame {
 
     private void btnNovoFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoFuncionarioActionPerformed
         // TODO add your handling code here:
-        enableControleFuncionariosFields();
+        //enableControleFuncionariosFields();
         disableControleFuncionariosButtons();
         btnSalvarFuncionario.setEnabled(true);
         btnCancelarFuncionario.setEnabled(true);
+        new cadastrarFuncionario().setVisible(true);
     }//GEN-LAST:event_btnNovoFuncionarioActionPerformed
 
     private void btnCancelarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarFuncionarioActionPerformed
@@ -547,6 +553,10 @@ public class areaGerente extends javax.swing.JFrame {
         
         btnCancelarFuncionario.setEnabled(true);
     }//GEN-LAST:event_btnPesquisarFuncionarioActionPerformed
+
+    private void txtCodigoFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoFuncionarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCodigoFuncionarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -624,6 +634,7 @@ public class areaGerente extends javax.swing.JFrame {
     }
     
     public void disableControleFuncionariosFields(){
+        //NUNCA DEIXE O TXTCODIGOFUNCIONARIO COMO ENABLED=TRUE. CASO ISSO SEJA FEITO E O ÍNDICE DO FUNCIONÁRIO SEJA MUDADO PARA UM VALOR JÁ EXISTENTE, ENTÃO O SISTEMA QUEBRA
         txtNomeFuncionario.setEnabled(false);
         ftxCPFFuncionario.setEnabled(false);
         txtEmailFuncionario.setEnabled(false);
@@ -639,11 +650,12 @@ public class areaGerente extends javax.swing.JFrame {
     }
     
     public void enableControleFuncionariosFields(){
+        //NUNCA DEIXE O TXTCODIGOFUNCIONARIO COMO ENABLED=TRUE. CASO ISSO SEJA FEITO E O ÍNDICE DO FUNCIONÁRIO SEJA MUDADO PARA UM VALOR JÁ EXISTENTE, O SISTEMA QUEBRA
         txtNomeFuncionario.setEnabled(true);
         ftxCPFFuncionario.setEnabled(true);
         txtEmailFuncionario.setEnabled(true);
         txtSenhaFuncionario.setEnabled(true);
-        txtCodigoFuncionario.setEnabled(true);
+        txtCodigoFuncionario.setEnabled(false);//FALSE
         
         lblNomeFuncionario.setEnabled(true);
         lblCPFFuncionario.setEnabled(true);

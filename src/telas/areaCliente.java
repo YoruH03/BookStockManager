@@ -4,6 +4,10 @@
  */
 package telas;
 
+import classes.Cliente;
+import static classes.Cliente.listaClientes;
+//import static telas.cadastrarCliente.listaClientes;
+
 /**
  *
  * @author Yuri
@@ -18,11 +22,9 @@ public class areaCliente extends javax.swing.JFrame {
         initComponents();
         
         setLocationRelativeTo(null);
-        disableClienteFields();
-        disableCarrinhoFields();
         btnSalvarCliente.setEnabled(false);
         btnCancelarCliente.setEnabled(false);
-        btnCancelarCarrinho.setEnabled(false);
+        loadClienteFields();
         
         
     }
@@ -51,21 +53,6 @@ public class areaCliente extends javax.swing.JFrame {
         lblNascimentoCliente.setEnabled(false);
         lblCelularCliente.setEnabled(false);
         }
-        public void disableCarrinhoFields(){
-            txtNumCarrinho.setEnabled(false);
-            txtData.setEnabled(false);
-            txtProdutos.setEnabled(false);
-            txtCodPedido.setEnabled(false);
-            txtCodRastreio.setEnabled(false);
-            txtTotal.setEnabled(false);
-            
-            lblNumCarrinho.setEnabled(false);
-            lblData.setEnabled(false);
-            lblProdutos.setEnabled(false);
-            lblCodPedido.setEnabled(false);
-            lblCodRastreio.setEnabled(false);
-            lblTotal.setEnabled(false);
-        }
         public void enableClienteFields(){
         txtNomeCliente.setEnabled(true);
         txtCPFCliente.setEnabled(true);
@@ -83,23 +70,17 @@ public class areaCliente extends javax.swing.JFrame {
         lblNascimentoCliente.setEnabled(true);
         lblCelularCliente.setEnabled(true);
         }
-        
-        public void enableCarrinhoFields(){
-            txtNumCarrinho.setEnabled(true);
-            txtData.setEnabled(true);
-            txtProdutos.setEnabled(true);
-            txtCodPedido.setEnabled(true);
-            txtCodRastreio.setEnabled(true);
-            txtTotal.setEnabled(true);
-            
-            lblNumCarrinho.setEnabled(true);
-            lblData.setEnabled(true);
-            lblProdutos.setEnabled(true);
-            lblCodPedido.setEnabled(true);
-            lblCodRastreio.setEnabled(true);
-            lblTotal.setEnabled(true);
-            
+        public void loadClienteFields(){
+        Cliente cliente_dados = listaClientes.get(Cliente.index_cliente);
+        txtNomeCliente.setText(cliente_dados.getNome());
+        txtCPFCliente.setText(cliente_dados.getCPF());
+        txtEmailCliente.setText(cliente_dados.getEmail());
+        txtSenhaCliente.setText(cliente_dados.getSenha());
+        txtEnderecoCliente.setText(cliente_dados.getEndereco());
+        ftxNascimentoCliente.setText(cliente_dados.getDataNascimento());
+        ftxTelefone.setText(cliente_dados.getCelular());
         }
+        
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -123,26 +104,9 @@ public class areaCliente extends javax.swing.JFrame {
         ftxNascimentoCliente = new javax.swing.JFormattedTextField();
         ftxTelefone = new javax.swing.JFormattedTextField();
         txtCPFCliente = new javax.swing.JFormattedTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tblCliente = new javax.swing.JTable();
-        lblCarrinhosAnteriores = new javax.swing.JLabel();
         btnSairCliente = new javax.swing.JButton();
-        lblNumCarrinho = new javax.swing.JLabel();
-        lblData = new javax.swing.JLabel();
-        lblProdutos = new javax.swing.JLabel();
-        lblTotal = new javax.swing.JLabel();
-        lblCodPedido = new javax.swing.JLabel();
-        lblCodRastreio = new javax.swing.JLabel();
-        txtNumCarrinho = new javax.swing.JTextField();
-        txtTotal = new javax.swing.JTextField();
-        txtCodPedido = new javax.swing.JTextField();
-        txtCodRastreio = new javax.swing.JTextField();
-        txtData = new javax.swing.JFormattedTextField();
-        btnPesquisarCarrinho = new javax.swing.JButton();
-        btnCancelarCarrinho = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        txtProdutos = new javax.swing.JTextArea();
         lblAreaCliente = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Área do cliente");
@@ -236,32 +200,22 @@ public class areaCliente extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblDadosCliente)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(lblNomeCliente)
-                                        .addGap(2, 2, 2)
-                                        .addComponent(txtNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(lblCPFCliente)
-                                        .addGap(38, 38, 38)
-                                        .addComponent(txtCPFCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(lblNomeCliente)
+                                .addGap(2, 2, 2)
+                                .addComponent(txtNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(btnAlterarCliente)))
+                                .addComponent(lblCPFCliente)
+                                .addGap(38, 38, 38)
+                                .addComponent(txtCPFCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(211, 211, 211)
                                 .addComponent(lblNascimentoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(ftxNascimentoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(36, 36, 36)
-                                .addComponent(btnSalvarCliente)
-                                .addGap(164, 164, 164)
-                                .addComponent(btnCancelarCliente))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(20, 20, 20)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -285,6 +239,14 @@ public class areaCliente extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(txtEnderecoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(45, 45, 45))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnAlterarCliente)
+                .addGap(150, 150, 150)
+                .addComponent(btnSalvarCliente)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnCancelarCliente)
+                .addGap(63, 63, 63))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -311,37 +273,13 @@ public class areaCliente extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCelularCliente)
                     .addComponent(ftxTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 206, Short.MAX_VALUE)
+                .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAlterarCliente)
                     .addComponent(btnSalvarCliente)
                     .addComponent(btnCancelarCliente))
-                .addContainerGap())
+                .addContainerGap(14, Short.MAX_VALUE))
         );
-
-        tblCliente.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "NumCarrinho", "Data do pedido", "Produtos", "Total"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Object.class, java.lang.Double.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(tblCliente);
-
-        lblCarrinhosAnteriores.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblCarrinhosAnteriores.setText("Consultar Carrinhos Antigos");
 
         btnSairCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/exit_icon-icons.com_70975.png"))); // NOI18N
         btnSairCliente.setText("Sair");
@@ -352,56 +290,6 @@ public class areaCliente extends javax.swing.JFrame {
             }
         });
 
-        lblNumCarrinho.setText("NumCarrinho");
-
-        lblData.setText("Data");
-
-        lblProdutos.setText("Produtos");
-
-        lblTotal.setText("Total");
-
-        lblCodPedido.setText("Cod.Pedido");
-
-        lblCodRastreio.setText("Cod.Rastreio");
-
-        txtNumCarrinho.setToolTipText("número do carrinho");
-
-        txtTotal.setToolTipText("valor total");
-
-        txtCodPedido.setToolTipText("código do pedido");
-
-        txtCodRastreio.setToolTipText("código do rastreio");
-
-        try {
-            txtData.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtData.setToolTipText("data do pedido");
-
-        btnPesquisarCarrinho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/searchmagnifierinterfacesymbol1_79893.png"))); // NOI18N
-        btnPesquisarCarrinho.setText("Pesquisar");
-        btnPesquisarCarrinho.setToolTipText("pesquisar por carrinho");
-        btnPesquisarCarrinho.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPesquisarCarrinhoActionPerformed(evt);
-            }
-        });
-
-        btnCancelarCarrinho.setBackground(new java.awt.Color(255, 0, 0));
-        btnCancelarCarrinho.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnCancelarCarrinho.setText("Cancelar");
-        btnCancelarCarrinho.setToolTipText("cancelar operação");
-        btnCancelarCarrinho.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelarCarrinhoActionPerformed(evt);
-            }
-        });
-
-        txtProdutos.setColumns(20);
-        txtProdutos.setRows(5);
-        jScrollPane2.setViewportView(txtProdutos);
-
         lblAreaCliente.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblAreaCliente.setText("Área do Cliente");
 
@@ -410,97 +298,29 @@ public class areaCliente extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnSairCliente)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblAreaCliente)
-                .addGap(487, 487, 487))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 628, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(lblProdutos)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(lblCodRastreio)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtCodRastreio, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lblTotal)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(lblNumCarrinho)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtNumCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lblData)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(lblCodPedido)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtCodPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(128, 128, 128)
-                                    .addComponent(lblCarrinhosAnteriores)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 499, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(4, 4, 4)))
-                        .addGap(10, 72, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addComponent(btnSairCliente)
+                        .addGap(171, 171, 171)
+                        .addComponent(lblAreaCliente))
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnPesquisarCarrinho)
-                        .addGap(147, 147, 147)
-                        .addComponent(btnCancelarCarrinho)
-                        .addGap(64, 64, 64))))
+                        .addGap(30, 30, 30)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 628, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(32, Short.MAX_VALUE))
+            .addComponent(jSeparator1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblAreaCliente)
-                        .addGap(53, 53, 53))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblCarrinhosAnteriores)
-                        .addGap(33, 33, 33)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNumCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblData)
-                    .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblCodPedido)
-                    .addComponent(txtCodPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblNumCarrinho))
+                    .addComponent(btnSairCliente)
+                    .addComponent(lblAreaCliente))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblProdutos)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblCodRastreio)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtCodRastreio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblTotal)
-                        .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCancelarCarrinho)
-                    .addComponent(btnPesquisarCarrinho))
-                .addGap(19, 19, 19)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 45, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnSairCliente)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -541,20 +361,6 @@ public class areaCliente extends javax.swing.JFrame {
         btnSalvarCliente.setEnabled(false);
     }//GEN-LAST:event_btnSalvarClienteActionPerformed
 
-    private void btnPesquisarCarrinhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarCarrinhoActionPerformed
-        // TODO add your handling code here:
-        enableCarrinhoFields();
-        btnCancelarCarrinho.setEnabled(true);
-        btnPesquisarCarrinho.setEnabled(false);
-    }//GEN-LAST:event_btnPesquisarCarrinhoActionPerformed
-
-    private void btnCancelarCarrinhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarCarrinhoActionPerformed
-        // TODO add your handling code here:
-        disableCarrinhoFields();
-        btnPesquisarCarrinho.setEnabled(true);
-        btnCancelarCarrinho.setEnabled(false);
-    }//GEN-LAST:event_btnCancelarCarrinhoActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -566,7 +372,7 @@ public class areaCliente extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("FlatLaf Cupertino Dark".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -592,43 +398,26 @@ public class areaCliente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAlterarCliente;
-    private javax.swing.JButton btnCancelarCarrinho;
     private javax.swing.JButton btnCancelarCliente;
-    private javax.swing.JButton btnPesquisarCarrinho;
     private javax.swing.JButton btnSairCliente;
     private javax.swing.JButton btnSalvarCliente;
     private javax.swing.JFormattedTextField ftxNascimentoCliente;
     private javax.swing.JFormattedTextField ftxTelefone;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblAreaCliente;
     private javax.swing.JLabel lblCPFCliente;
-    private javax.swing.JLabel lblCarrinhosAnteriores;
     private javax.swing.JLabel lblCelularCliente;
-    private javax.swing.JLabel lblCodPedido;
-    private javax.swing.JLabel lblCodRastreio;
     private javax.swing.JLabel lblDadosCliente;
-    private javax.swing.JLabel lblData;
     private javax.swing.JLabel lblEmailCliente;
     private javax.swing.JLabel lblEnderecoCliente;
     private javax.swing.JLabel lblNascimentoCliente;
     private javax.swing.JLabel lblNomeCliente;
-    private javax.swing.JLabel lblNumCarrinho;
-    private javax.swing.JLabel lblProdutos;
     private javax.swing.JLabel lblSenhaCliente;
-    private javax.swing.JLabel lblTotal;
-    private javax.swing.JTable tblCliente;
     private javax.swing.JFormattedTextField txtCPFCliente;
-    private javax.swing.JTextField txtCodPedido;
-    private javax.swing.JTextField txtCodRastreio;
-    private javax.swing.JFormattedTextField txtData;
     private javax.swing.JTextField txtEmailCliente;
     private javax.swing.JTextField txtEnderecoCliente;
     private javax.swing.JTextField txtNomeCliente;
-    private javax.swing.JTextField txtNumCarrinho;
-    private javax.swing.JTextArea txtProdutos;
     private javax.swing.JTextField txtSenhaCliente;
-    private javax.swing.JTextField txtTotal;
     // End of variables declaration//GEN-END:variables
 }

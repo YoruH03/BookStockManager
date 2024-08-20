@@ -5,6 +5,7 @@
 package telas;
 
 import classes.Cliente;
+import static classes.Cliente.listaClientes;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -13,7 +14,7 @@ import javax.swing.JOptionPane;
  * @author Yuri
  */
 public class cadastrarCliente extends javax.swing.JFrame {
-    static ArrayList<Cliente> listaClientes = new ArrayList();
+    //static ArrayList<Cliente> listaClientes = new ArrayList();
 
     /**
      * Creates new form cadastrarCliente

@@ -4,6 +4,10 @@
  */
 package telas;
 
+import classes.Funcionario;
+import static classes.Funcionario.listaFuncionarios;
+//import static telas.cadastrarFuncionario.listaFuncionarios;
+
 /**
  *
  * @author Yuri
@@ -20,6 +24,7 @@ public class areaFuncionario extends javax.swing.JFrame {
         
         btnSalvarFuncionario.setEnabled(false);
         btnCancelarFuncionario.setEnabled(false);
+        loadFuncionarioFields();
         
         setLocationRelativeTo(null);
     }
@@ -43,7 +48,7 @@ public class areaFuncionario extends javax.swing.JFrame {
         txtCPFFuncionario.setEnabled(true);
         txtEmailFuncionario.setEnabled(true);
         txtSenhaFuncionario.setEnabled(true);
-        txtCodigoFuncionario.setEnabled(true);
+        txtCodigoFuncionario.setEnabled(false);//NUNCA DEIXE ELE COMO TRUE
         
         lblNomeFuncionario.setEnabled(true);
         lblCPFFuncionario.setEnabled(true);
@@ -51,7 +56,14 @@ public class areaFuncionario extends javax.swing.JFrame {
         lblSenhaFuncionario.setEnabled(true);
         lblCodFuncionario.setEnabled(true);
     }
-    
+    public void loadFuncionarioFields(){
+        Funcionario funcionario_dados = listaFuncionarios.get(Funcionario.index_func);
+        txtNomeFuncionario.setText(funcionario_dados.getNome());
+        txtCPFFuncionario.setText(funcionario_dados.getCPF());
+        txtEmailFuncionario.setText(funcionario_dados.getEmail());
+        txtSenhaFuncionario.setText(funcionario_dados.getSenha());
+        txtCodigoFuncionario.setText(funcionario_dados.getCadastroFuncionario());
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -81,7 +93,6 @@ public class areaFuncionario extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Área do funcionário");
-        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/imagens/technicalsupport_support_representative_person_people_man_1641.png")).getImage());
 
         lblDadosFuncionario.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblDadosFuncionario.setText("meus dados");
@@ -270,7 +281,7 @@ public class areaFuncionario extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Flatlaf Cupertino Dark".equals(info.getName())) {
+                if ("FlatLaf Cupertino Dark".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
