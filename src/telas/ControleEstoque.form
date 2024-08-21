@@ -26,7 +26,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="48" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
@@ -53,71 +53,69 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="lblPrecoEstoque" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblTituloEstoque" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace min="24" pref="467" max="32767" attributes="0"/>
+                  <Component id="lblControleEstoque" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="386" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          <Component id="lblControleEstoque" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="386" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="btnAlterarItem" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                          <Component id="btnSalvarItem" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="txtTituloEstoque" alignment="0" min="-2" pref="122" max="-2" attributes="0"/>
-                                      <Component id="txtPrecoEstoque" alignment="0" min="-2" pref="122" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lblQuantiaEstoque" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblCodigoEstoque" alignment="0" pref="246" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lblTituloEstoque" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblPrecoEstoque" alignment="1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="txtTituloEstoque" alignment="0" min="-2" pref="122" max="-2" attributes="0"/>
+                              <Component id="txtPrecoEstoque" alignment="0" min="-2" pref="122" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="lblCodigoEstoque" min="-2" pref="128" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="txtCodigoEstoque" min="-2" pref="115" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="56" max="32767" attributes="0"/>
-                                  <Component id="btnAlterarItem" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                                  <Component id="btnSalvarItem" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                                  <Component id="lblQuantiaEstoque" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                  <Component id="txtQuantiaEstoque" min="-2" pref="115" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="txtQuantiaEstoque" min="-2" pref="115" max="-2" attributes="0"/>
-                                      <Component id="txtCodigoEstoque" min="-2" pref="115" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                                          <Component id="lblDescricaoEstoque" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="txtDescricaoEstoque" min="-2" pref="162" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
-                                          <Component id="btnBuscar" min="-2" pref="83" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="btnCancelarItem" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
-                                  <Component id="btnExcluirItem" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="68" max="32767" attributes="0"/>
-                                  <Component id="btnPesquisarItem" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
-                              </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="btnCancelarItem" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                          <Component id="btnExcluirItem" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="lblDescricaoEstoque" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="txtDescricaoEstoque" min="-2" pref="162" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
+                              <Component id="btnBuscar" min="-2" pref="83" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="btnPesquisarItem" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -128,39 +126,49 @@
                   <Component id="lblControleEstoque" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="41" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="lblQuantiaEstoque" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="lblQuantiaEstoque" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtQuantiaEstoque" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="lblCodigoEstoque" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtCodigoEstoque" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="lblDescricaoEstoque" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtDescricaoEstoque" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="btnBuscar" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblCodigoEstoque" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtCodigoEstoque" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnAlterarItem" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnCancelarItem" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnSalvarItem" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnPesquisarItem" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnExcluirItem" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txtQuantiaEstoque" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblDescricaoEstoque" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtDescricaoEstoque" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtTituloEstoque" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblTituloEstoque" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                  <Component id="txtPrecoEstoque" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblPrecoEstoque" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="btnBuscar" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtPrecoEstoque" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblPrecoEstoque" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                  </Group>
-                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btnAlterarItem" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnCancelarItem" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnSalvarItem" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnPesquisarItem" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnExcluirItem" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -304,6 +312,14 @@
               <Font name="Segoe UI" size="24" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Controle do estoque"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="18" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Criar Item"/>
           </Properties>
         </Component>
       </SubComponents>
