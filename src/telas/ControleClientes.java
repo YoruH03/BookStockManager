@@ -281,7 +281,7 @@ public class ControleClientes extends javax.swing.JFrame {
     private void btnNovoFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoFuncionarioActionPerformed
         // TODO add your handling code here:
         //enableControleFuncionariosFields();
-        disableControleFuncionariosButtons();
+        //disableControleFuncionariosButtons();
         btnSalvarFuncionario.setEnabled(true);
         btnCancelarFuncionario.setEnabled(true);
         new cadastrarFuncionario().setVisible(true);
@@ -289,16 +289,16 @@ public class ControleClientes extends javax.swing.JFrame {
 
     private void btnCancelarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarFuncionarioActionPerformed
         // TODO add your handling code here:
-        disableControleFuncionariosFields();
-        disableControleFuncionariosButtons();
+        //disableControleFuncionariosFields();
+        //disableControleFuncionariosButtons();
         btnNovoFuncionario.setEnabled(true);
         btnPesquisarFuncionario.setEnabled(true);
     }//GEN-LAST:event_btnCancelarFuncionarioActionPerformed
 
     private void btnPesquisarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarFuncionarioActionPerformed
         // TODO add your handling code here:
-        disableControleFuncionariosFields();
-        disableControleFuncionariosButtons();
+        //disableControleFuncionariosFields();
+        //disableControleFuncionariosButtons();
         btnBuscarFuncionario.setEnabled(true);
         lblNomeFuncionario.setEnabled(true);
         txtNomeFuncionario.setEnabled(true);
@@ -309,8 +309,8 @@ public class ControleClientes extends javax.swing.JFrame {
 
     private void btnSalvarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarFuncionarioActionPerformed
         // TODO add your handling code here:
-        disableControleFuncionariosFields();
-        disableControleFuncionariosButtons();
+        //disableControleFuncionariosFields();
+        //disableControleFuncionariosButtons();
         btnNovoFuncionario.setEnabled(true);
         btnPesquisarFuncionario.setEnabled(true);
     }//GEN-LAST:event_btnSalvarFuncionarioActionPerformed

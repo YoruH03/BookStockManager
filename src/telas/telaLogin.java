@@ -14,6 +14,8 @@ import javax.swing.JOptionPane;
 import static telas.Menu.logado;
 import static telas.Menu.user;
 import static telas.cadastarGerente.listaGerente;
+//import telas.Menu.verificarLogin();
+
 //import static telas.cadastrarFuncionario.listaFuncionarios;
 
 /**
@@ -196,6 +198,8 @@ public class telaLogin extends javax.swing.JFrame {
                 Funcionario.index_func=Integer.parseInt(item.getCadastroFuncionario());//Problema AQUI!!! -> Consertado. Bastou inicializar um índice 0 como string em cadastro Func.
                 JOptionPane.showMessageDialog(null,"Entrou como funcionário com sucesso!", "Notificação Login",JOptionPane.PLAIN_MESSAGE);
                 this.setVisible(false);
+                //verificarLogin(logado);
+
 
                 break;
             }
@@ -211,6 +215,10 @@ public class telaLogin extends javax.swing.JFrame {
                 Cliente.index_cliente=Integer.parseInt(item.getIdCliente());//PROBLEMA AQUI DE NOVO!!
                 JOptionPane.showMessageDialog(null,"Entrou como cliente com sucesso!", "Notificação Login",JOptionPane.PLAIN_MESSAGE);
                 this.setVisible(false);
+                new Menu().setVisible(true);
+                JPanel panel = new JPanel();
+                panel.repaint();
+                panel.revalidate();
 
                 break;
             }
