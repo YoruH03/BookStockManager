@@ -93,9 +93,9 @@ public class ControleEstoque extends javax.swing.JFrame {
         btnPesquisarItem = new javax.swing.JButton();
         btnExcluirItem = new javax.swing.JButton();
         lblControleEstoque = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnCriar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        mostraProdutos = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Controle do estoque");
@@ -176,8 +176,13 @@ public class ControleEstoque extends javax.swing.JFrame {
         lblControleEstoque.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblControleEstoque.setText("Controle do estoque");
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton1.setText("Criar Item");
+        btnCriar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnCriar.setText("Criar Item");
+        btnCriar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCriarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -191,7 +196,7 @@ public class ControleEstoque extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)
+                        .addComponent(btnCriar)
                         .addGap(50, 50, 50)
                         .addComponent(btnAlterarItem)
                         .addGap(65, 65, 65)
@@ -264,7 +269,7 @@ public class ControleEstoque extends javax.swing.JFrame {
                             .addComponent(btnSalvarItem)
                             .addComponent(btnPesquisarItem)
                             .addComponent(btnExcluirItem)
-                            .addComponent(jButton1)))
+                            .addComponent(btnCriar)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtTituloEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -277,7 +282,7 @@ public class ControleEstoque extends javax.swing.JFrame {
 
         jScrollPane1.setToolTipText("tabela com os produtos em estoque");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        mostraProdutos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -296,7 +301,7 @@ public class ControleEstoque extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(mostraProdutos);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -352,11 +357,18 @@ public class ControleEstoque extends javax.swing.JFrame {
         txtTituloEstoque.setEnabled(true);
         btnBuscar.setEnabled(true);
         txtTituloEstoque.requestFocus();
+        
     }//GEN-LAST:event_btnPesquisarItemActionPerformed
 
     private void btnAlterarItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarItemActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAlterarItemActionPerformed
+
+    private void btnCriarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCriarActionPerformed
+        // TODO add your handling code here:
+        
+        lblTituloEstoque.setEnabled(true);
+    }//GEN-LAST:event_btnCriarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -397,19 +409,19 @@ public class ControleEstoque extends javax.swing.JFrame {
     private javax.swing.JButton btnAlterarItem;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnCancelarItem;
+    private javax.swing.JButton btnCriar;
     private javax.swing.JButton btnExcluirItem;
     private javax.swing.JButton btnPesquisarItem;
     private javax.swing.JButton btnSalvarItem;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblCodigoEstoque;
     private javax.swing.JLabel lblControleEstoque;
     private javax.swing.JLabel lblDescricaoEstoque;
     private javax.swing.JLabel lblPrecoEstoque;
     private javax.swing.JLabel lblQuantiaEstoque;
     private javax.swing.JLabel lblTituloEstoque;
+    private javax.swing.JTable mostraProdutos;
     private javax.swing.JTextField txtCodigoEstoque;
     private javax.swing.JTextField txtDescricaoEstoque;
     private javax.swing.JTextField txtPrecoEstoque;

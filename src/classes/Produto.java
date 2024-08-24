@@ -7,6 +7,9 @@ public class Produto {
     public int quantidadeEstoque;
     public String codigoDoProduto;
     public String descrição;
+    public String genero;
+    public String autor;
+
     
     public Produto(String titulo, double preço, int quantidadeEstoque, String codigoDoProduto, String descrição){
     this.titulo = titulo;
@@ -63,4 +66,21 @@ public class Produto {
     public void setDescrição(String descrição) {
         this.descrição = descrição;
     }
+    
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+    
 }

@@ -161,6 +161,7 @@ public class telaLogin extends javax.swing.JFrame {
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
+        new Menu().setVisible(true);
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void lblCadastrarseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCadastrarseMouseClicked
@@ -196,7 +197,7 @@ public class telaLogin extends javax.swing.JFrame {
                 Funcionario.index_func=Integer.parseInt(item.getCadastroFuncionario());//Problema AQUI!!! -> Consertado. Bastou inicializar um índice 0 como string em cadastro Func.
                 JOptionPane.showMessageDialog(null,"Entrou como funcionário com sucesso!", "Notificação Login",JOptionPane.PLAIN_MESSAGE);
                 this.setVisible(false);
-
+                
                 break;
             }
         }
@@ -211,10 +212,13 @@ public class telaLogin extends javax.swing.JFrame {
                 Cliente.index_cliente=Integer.parseInt(item.getIdCliente());//PROBLEMA AQUI DE NOVO!!
                 JOptionPane.showMessageDialog(null,"Entrou como cliente com sucesso!", "Notificação Login",JOptionPane.PLAIN_MESSAGE);
                 this.setVisible(false);
-
+                
                 break;
             }
         }
+        }
+        if(logado){
+            new Menu().setVisible(true);
         }
         if(!logado){
         JOptionPane.showMessageDialog(null, "Email ou senha incorretos.", "Erro de Login", JOptionPane.ERROR_MESSAGE);

@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package telas;
 
 /**
@@ -15,6 +12,7 @@ public class verProdutos extends javax.swing.JFrame {
      */
     public verProdutos() {
         initComponents();
+        
     }
 
     /**
@@ -27,11 +25,11 @@ public class verProdutos extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        produtoPesquisado = new javax.swing.JScrollPane();
         Pesquisa = new javax.swing.JTextArea();
-        lblProdutos = new javax.swing.JLabel();
+        titulo = new javax.swing.JLabel();
         btnPesquisar = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
+        Tabela = new javax.swing.JScrollPane();
         tabela_produtos = new javax.swing.JTable();
         lblResultadosPesquisa = new javax.swing.JLabel();
         lblNome = new javax.swing.JLabel();
@@ -42,15 +40,21 @@ public class verProdutos extends javax.swing.JFrame {
 
         Pesquisa.setColumns(20);
         Pesquisa.setRows(5);
-        jScrollPane1.setViewportView(Pesquisa);
+        produtoPesquisado.setViewportView(Pesquisa);
 
-        lblProdutos.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
-        lblProdutos.setText("Produtos");
+        titulo.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
+        titulo.setText("Produtos");
 
         btnPesquisar.setText("Pesquisar");
         btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPesquisarActionPerformed(evt);
+            }
+        });
+
+        Tabela.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                TabelaFocusGained(evt);
             }
         });
 
@@ -73,7 +77,7 @@ public class verProdutos extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(tabela_produtos);
+        Tabela.setViewportView(tabela_produtos);
 
         lblResultadosPesquisa.setText("Resultados da pesquisa");
 
@@ -102,17 +106,17 @@ public class verProdutos extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(317, 317, 317)
-                .addComponent(lblProdutos)
+                .addComponent(titulo)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(47, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 653, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Tabela, javax.swing.GroupLayout.PREFERRED_SIZE, 653, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(89, 89, 89))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(58, 58, 58)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 483, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(produtoPesquisado, javax.swing.GroupLayout.PREFERRED_SIZE, 483, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnPesquisar))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -132,17 +136,17 @@ public class verProdutos extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addComponent(lblProdutos)
+                .addComponent(titulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblNome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPesquisar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnPesquisar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(produtoPesquisado, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGap(21, 21, 21)
                 .addComponent(lblResultadosPesquisa)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Tabela, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnComprar)
@@ -186,9 +190,10 @@ public class verProdutos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnComprarActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void TabelaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_TabelaFocusGained
+
+    }//GEN-LAST:event_TabelaFocusGained
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -217,21 +222,22 @@ public class verProdutos extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new verProdutos().setVisible(true);
+                
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea Pesquisa;
+    private javax.swing.JScrollPane Tabela;
     private javax.swing.JButton btnComprar;
     private javax.swing.JButton btnPesquisar;
     private javax.swing.JButton btnSobre;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblNome;
-    private javax.swing.JLabel lblProdutos;
     private javax.swing.JLabel lblResultadosPesquisa;
+    private javax.swing.JScrollPane produtoPesquisado;
     private javax.swing.JTable tabela_produtos;
+    private javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables
 }
