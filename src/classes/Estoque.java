@@ -13,6 +13,9 @@ import java.util.ArrayList;
 public class Estoque {
     private ArrayList estoque;
     
+    public static ArrayList<Cliente> listaClientes = new ArrayList();
+
+    
     /**
      *
      * @param produto

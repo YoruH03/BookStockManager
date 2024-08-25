@@ -24,6 +24,28 @@ public class Menu extends javax.swing.JFrame {
     
     static boolean logado = false;
     static String user;// 'gerente','funcionario','cliente'
+        public void verificarLogin(boolean logado){
+        //  Habilitar/desabilitar botão de Logout
+        if(logado==true){
+            btnLogout.setVisible(true);
+            btnLogin.setVisible(false);
+            if(user.equals("cliente")){
+                lblLogin.setVisible(true);
+                lblLogin.setText("Você entrou como cliente!");
+            }else if(user.equals("funcionario")){
+                lblLogin.setVisible(true);
+                lblLogin.setText("Você entrou como funcionário");
+            }else if(user.equals("gerente")){
+                lblLogin.setVisible(true);
+                lblLogin.setText("Você entrou como gerente");
+            }
+            }else{
+                btnLogout.setVisible(false);
+                btnLogin.setVisible(true);
+                lblLogin.setVisible(false);
+            }
+        
+    }
 
 
     /**
@@ -93,6 +115,7 @@ public class Menu extends javax.swing.JFrame {
                 lblLogin.setVisible(false);
             }
     }
+
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -126,12 +149,12 @@ public class Menu extends javax.swing.JFrame {
         lblLogin.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         lblLogin.setForeground(new java.awt.Color(255, 0, 0));
         lblLogin.setText("Você entrou como cliente");
-        jPanel1.add(lblLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 30, -1, -1));
+        jPanel1.add(lblLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, -1, -1));
 
         lblBookStockManager.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         lblBookStockManager.setForeground(new java.awt.Color(255, 255, 255));
         lblBookStockManager.setText("BookStock");
-        jPanel1.add(lblBookStockManager, new org.netbeans.lib.awtextra.AbsoluteConstraints(1320, 210, -1, -1));
+        jPanel1.add(lblBookStockManager, new org.netbeans.lib.awtextra.AbsoluteConstraints(1580, 210, -1, -1));
 
         btnAtualizarEstoque.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         btnAtualizarEstoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/business_inventory_maintenance_product_box_boxes_2326_64.png"))); // NOI18N
@@ -141,7 +164,7 @@ public class Menu extends javax.swing.JFrame {
                 btnAtualizarEstoqueActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAtualizarEstoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 320, 400, 130));
+        jPanel1.add(btnAtualizarEstoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 570, 400, 130));
 
         btnVerCarrinho.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         btnVerCarrinho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/4105931-add-to-cart-buy-cart-sell-shop-shopping-cart_113919_64.png"))); // NOI18N
@@ -151,7 +174,7 @@ public class Menu extends javax.swing.JFrame {
                 btnVerCarrinhoActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVerCarrinho, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 140, 400, 130));
+        jPanel1.add(btnVerCarrinho, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 390, 400, 130));
 
         btnPesquisar.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         btnPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/searchmagnifierinterfacesymbol1_79893_64.png"))); // NOI18N
@@ -161,7 +184,7 @@ public class Menu extends javax.swing.JFrame {
                 btnPesquisarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnPesquisar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 140, 400, 130));
+        jPanel1.add(btnPesquisar, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 390, 400, 130));
 
         btnFuncionario.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         btnFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/technicalsupport_support_representative_person_people_man_1641_64.png"))); // NOI18N
@@ -171,7 +194,7 @@ public class Menu extends javax.swing.JFrame {
                 btnFuncionarioActionPerformed(evt);
             }
         });
-        jPanel1.add(btnFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 400, 130));
+        jPanel1.add(btnFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 570, 400, 130));
 
         btnGerente.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         btnGerente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/customer_person_people_man_you_1625_64.png"))); // NOI18N
@@ -181,7 +204,7 @@ public class Menu extends javax.swing.JFrame {
                 btnGerenteActionPerformed(evt);
             }
         });
-        jPanel1.add(btnGerente, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 320, 400, 130));
+        jPanel1.add(btnGerente, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 570, 400, 130));
 
         btnCliente.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         btnCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/person_user_customer_man_male_man_boy_people_1687_64.png"))); // NOI18N
@@ -191,7 +214,7 @@ public class Menu extends javax.swing.JFrame {
                 btnClienteActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 400, 130));
+        jPanel1.add(btnCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 390, 400, 130));
 
         btnLogout.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/logout_90894_64.png"))); // NOI18N
@@ -220,20 +243,22 @@ public class Menu extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Manager");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1340, 260, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1600, 260, -1, -1));
 
         lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/livro01.png"))); // NOI18N
-        jPanel1.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 0, 390, 210));
+        jPanel1.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1460, 0, 390, 210));
 
-        lblImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/background_resize.jpg"))); // NOI18N
-        jPanel1.add(lblImagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1610, 800));
+        lblImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/madeira-background.jpg"))); // NOI18N
+        jPanel1.add(lblImagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 1190));
         lblImagem.getAccessibleContext().setAccessibleName("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -249,12 +274,22 @@ public class Menu extends javax.swing.JFrame {
         user="";
         verificarLogin(logado,user);
         JOptionPane.showMessageDialog(null,"Você acabou de sair do sistema", "Mensagem",JOptionPane.PLAIN_MESSAGE);
+        
 
     }//GEN-LAST:event_btnLogoutActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
-        new telaLogin().setVisible(true);
+telaLogin tela = new telaLogin();
+tela.setVisible(true);
+
+// Event-driven approach could be used here to detect successful login
+tela.addWindowListener(new java.awt.event.WindowAdapter() {
+    @Override
+    public void windowClosed(java.awt.event.WindowEvent windowEvent) {
+        verificarLogin(logado);
+    }
+});
         
         this.setVisible(false);
     }//GEN-LAST:event_btnLoginActionPerformed
