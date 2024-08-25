@@ -104,7 +104,6 @@ public class areaCliente extends javax.swing.JFrame {
         ftxNascimentoCliente = new javax.swing.JFormattedTextField();
         ftxTelefone = new javax.swing.JFormattedTextField();
         txtCPFCliente = new javax.swing.JFormattedTextField();
-        btnSairCliente = new javax.swing.JButton();
         lblAreaCliente = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
 
@@ -281,15 +280,6 @@ public class areaCliente extends javax.swing.JFrame {
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
-        btnSairCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/exit_icon-icons.com_70975.png"))); // NOI18N
-        btnSairCliente.setText("Sair");
-        btnSairCliente.setToolTipText("Sair da área do cliente");
-        btnSairCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSairClienteActionPerformed(evt);
-            }
-        });
-
         lblAreaCliente.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblAreaCliente.setText("Área do Cliente");
 
@@ -300,9 +290,7 @@ public class areaCliente extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnSairCliente)
-                        .addGap(171, 171, 171)
+                        .addGap(262, 262, 262)
                         .addComponent(lblAreaCliente))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(30, 30, 30)
@@ -313,9 +301,7 @@ public class areaCliente extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSairCliente)
-                    .addComponent(lblAreaCliente))
+                .addComponent(lblAreaCliente)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -325,12 +311,6 @@ public class areaCliente extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnSairClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairClienteActionPerformed
-        // TODO add your handling code here:
-        this.setVisible(false);
-
-    }//GEN-LAST:event_btnSairClienteActionPerformed
 
     private void txtNomeClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeClienteActionPerformed
         // TODO add your handling code here:
@@ -399,7 +379,6 @@ public class areaCliente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAlterarCliente;
     private javax.swing.JButton btnCancelarCliente;
-    private javax.swing.JButton btnSairCliente;
     private javax.swing.JButton btnSalvarCliente;
     private javax.swing.JFormattedTextField ftxNascimentoCliente;
     private javax.swing.JFormattedTextField ftxTelefone;

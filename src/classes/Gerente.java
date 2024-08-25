@@ -15,6 +15,7 @@ public class Gerente extends Usuario{
     //Construtor para Gerente, com os atributos de Usuário
     public Gerente(String nome, String CPF, String email, String senha) {
         super(nome, CPF, email, senha);
+        this.cadastroGerente = "0";
     }
 
     //Construtor para Gernete com os atributos de usuário + gerente

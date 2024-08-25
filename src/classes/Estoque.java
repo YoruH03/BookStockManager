@@ -11,10 +11,8 @@ import java.util.ArrayList;
  * @author Yuri
  */
 public class Estoque {
-    private ArrayList estoque;
+    public static ArrayList<Produto> estoque = new ArrayList();
     
-    public static ArrayList<Cliente> listaClientes = new ArrayList();
-
     
     /**
      *

@@ -57,7 +57,6 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
         txtCodigoFuncionario = new javax.swing.JTextField();
         btnCancelarFuncionario = new javax.swing.JButton();
         btnSalvarFuncionario = new javax.swing.JButton();
-        btnSairFuncionario = new javax.swing.JButton();
         ftxCPFFuncionario = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -97,20 +96,11 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
 
         btnSalvarFuncionario.setBackground(new java.awt.Color(51, 255, 0));
         btnSalvarFuncionario.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnSalvarFuncionario.setText("Salvar");
-        btnSalvarFuncionario.setToolTipText("Salvar funcionário");
+        btnSalvarFuncionario.setText("Criar Funcionário");
+        btnSalvarFuncionario.setToolTipText("Criar novo funcionário");
         btnSalvarFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalvarFuncionarioActionPerformed(evt);
-            }
-        });
-
-        btnSairFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/exit_icon-icons.com_70975.png"))); // NOI18N
-        btnSairFuncionario.setText("Sair");
-        btnSairFuncionario.setToolTipText("Sair do cadastro de funcionário");
-        btnSairFuncionario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSairFuncionarioActionPerformed(evt);
             }
         });
 
@@ -129,8 +119,7 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnSairFuncionario)
-                        .addGap(137, 137, 137)
+                        .addGap(222, 222, 222)
                         .addComponent(lblCadastroFuncionario))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,7 +130,7 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtNomeFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(ftxCPFFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(ftxCPFFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(30, 30, 30)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -167,12 +156,8 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblCadastroFuncionario)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnSairFuncionario)))
-                .addGap(31, 31, 31)
+                .addComponent(lblCadastroFuncionario)
+                .addGap(51, 51, 51)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNomeFuncionario)
                     .addComponent(lblEmailFuncionario)
@@ -209,11 +194,6 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSairFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairFuncionarioActionPerformed
-        // TODO add your handling code here:
-        this.setVisible(false);
-    }//GEN-LAST:event_btnSairFuncionarioActionPerformed
-
     private void btnSalvarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarFuncionarioActionPerformed
         // TODO add your handling code here:
         if (txtNomeFuncionario.getText().equals("") || ftxCPFFuncionario.getText().equals("") ||
@@ -230,6 +210,8 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
         Funcionario funcionario = new Funcionario(nome,cpf,email,senha,idFuncionario);
         listaFuncionarios.add(funcionario);
         JOptionPane.showMessageDialog(null,"Funcionário cadastrado com sucesso!", "Mensagem",JOptionPane.PLAIN_MESSAGE);
+        limparCampos();
+        this.setVisible(false);
 
         }
     }//GEN-LAST:event_btnSalvarFuncionarioActionPerformed
@@ -276,7 +258,6 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelarFuncionario;
-    private javax.swing.JButton btnSairFuncionario;
     private javax.swing.JButton btnSalvarFuncionario;
     private javax.swing.JFormattedTextField ftxCPFFuncionario;
     private javax.swing.JPanel jPanel1;

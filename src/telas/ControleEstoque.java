@@ -4,6 +4,9 @@
  */
 package telas;
 
+import static classes.Estoque.estoque;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Yuri
@@ -18,6 +21,7 @@ public class ControleEstoque extends javax.swing.JFrame {
 
         disableEstoqueFields();
         disableEstoqueButtons();
+        carregarTabelaProdutos();
         //btnAddItem.setEnabled(true);
         btnPesquisarItem.setEnabled(true);
         
@@ -65,6 +69,34 @@ public class ControleEstoque extends javax.swing.JFrame {
         btnBuscar.setEnabled(false);
         
     }
+    
+    
+    private void carregarTabelaProdutos(){
+        DefaultTableModel modeloTabelaProdutos = new DefaultTableModel(new Object[] {"Título","Autor","Gênero","Preço","Quantia Estoque","Código Produto","Descrição"},0);
+        
+        for(int i=0;i<estoque.size();i++){
+            Object linha[] = new Object[] {estoque.get(i).getTitulo(),
+                                           estoque.get(i).getAutor(),
+                                           estoque.get(i).getGenero(),
+                                           estoque.get(i).getPreço(),
+                                           estoque.get(i).getQuantidadeEstoque(),
+                                           estoque.get(i).getCodigoDoProduto(),
+                                           estoque.get(i).getDescrição()};
+            modeloTabelaProdutos.addRow(linha);
+            
+        }
+        tblMostraProdutos.setModel(modeloTabelaProdutos);
+        
+        tblMostraProdutos.getColumnModel().getColumn(0).setPreferredWidth(WIDTH);
+        tblMostraProdutos.getColumnModel().getColumn(1).setPreferredWidth(WIDTH);
+        tblMostraProdutos.getColumnModel().getColumn(2).setPreferredWidth(WIDTH);
+        tblMostraProdutos.getColumnModel().getColumn(3).setPreferredWidth(WIDTH);
+        tblMostraProdutos.getColumnModel().getColumn(4).setPreferredWidth(WIDTH);
+        tblMostraProdutos.getColumnModel().getColumn(5).setPreferredWidth(WIDTH);
+        tblMostraProdutos.getColumnModel().getColumn(6).setPreferredWidth(WIDTH);
+        
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -95,7 +127,7 @@ public class ControleEstoque extends javax.swing.JFrame {
         lblControleEstoque = new javax.swing.JLabel();
         btnCriar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        mostraProdutos = new javax.swing.JTable();
+        tblMostraProdutos = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Controle do estoque");
@@ -282,26 +314,35 @@ public class ControleEstoque extends javax.swing.JFrame {
 
         jScrollPane1.setToolTipText("tabela com os produtos em estoque");
 
-        mostraProdutos.setModel(new javax.swing.table.DefaultTableModel(
+        tblMostraProdutos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Título", "Preço", "Qnt. Estoque", "Cód. Prod.", "Descrição"
+                "Título", "Autor", "Gênero", "Preço", "Qnt. Estoque", "Cód. Prod.", "Descrição"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Double.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(mostraProdutos);
+        jScrollPane1.setViewportView(tblMostraProdutos);
+        if (tblMostraProdutos.getColumnModel().getColumnCount() > 0) {
+            tblMostraProdutos.getColumnModel().getColumn(0).setPreferredWidth(50);
+            tblMostraProdutos.getColumnModel().getColumn(1).setPreferredWidth(20);
+            tblMostraProdutos.getColumnModel().getColumn(2).setPreferredWidth(15);
+            tblMostraProdutos.getColumnModel().getColumn(3).setPreferredWidth(8);
+            tblMostraProdutos.getColumnModel().getColumn(4).setPreferredWidth(3);
+            tblMostraProdutos.getColumnModel().getColumn(5).setPreferredWidth(5);
+            tblMostraProdutos.getColumnModel().getColumn(6).setPreferredWidth(100);
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -344,6 +385,7 @@ public class ControleEstoque extends javax.swing.JFrame {
         // TODO add your handling code here:
         disableEstoqueFields();
         disableEstoqueButtons();
+        carregarTabelaProdutos();
         //btnAddItem.setEnabled(true);
         btnPesquisarItem.setEnabled(true);
     }//GEN-LAST:event_btnSalvarItemActionPerformed
@@ -366,6 +408,8 @@ public class ControleEstoque extends javax.swing.JFrame {
 
     private void btnCriarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCriarActionPerformed
         // TODO add your handling code here:
+        new CriarNovoProduto().setVisible(true);
+        btnSalvarItem.setEnabled(true);
         
         lblTituloEstoque.setEnabled(true);
     }//GEN-LAST:event_btnCriarActionPerformed
@@ -421,7 +465,7 @@ public class ControleEstoque extends javax.swing.JFrame {
     private javax.swing.JLabel lblPrecoEstoque;
     private javax.swing.JLabel lblQuantiaEstoque;
     private javax.swing.JLabel lblTituloEstoque;
-    private javax.swing.JTable mostraProdutos;
+    private javax.swing.JTable tblMostraProdutos;
     private javax.swing.JTextField txtCodigoEstoque;
     private javax.swing.JTextField txtDescricaoEstoque;
     private javax.swing.JTextField txtPrecoEstoque;

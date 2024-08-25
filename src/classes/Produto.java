@@ -11,8 +11,10 @@ public class Produto {
     public String autor;
 
     
-    public Produto(String titulo, double preço, int quantidadeEstoque, String codigoDoProduto, String descrição){
+    public Produto(String titulo,String autor,String genero, double preço, int quantidadeEstoque, String codigoDoProduto, String descrição){
     this.titulo = titulo;
+    this.autor = autor;
+    this.genero = genero;
     this.preço = preço;
     this.quantidadeEstoque = quantidadeEstoque;
     this.codigoDoProduto = codigoDoProduto;
@@ -82,5 +84,6 @@ public class Produto {
     public void setAutor(String autor) {
         this.autor = autor;
     }
+    
     
 }

@@ -196,6 +196,7 @@ public class cadastarGerente extends javax.swing.JFrame {
         Gerente gerente = new Gerente(nome,cpf,email,senha,idGerente);
         
                     JOptionPane.showMessageDialog(null,"Gerente cadastrado com sucesso!", "Mensagem",JOptionPane.PLAIN_MESSAGE);
+        listaGerente.add(gerente);
         }
         
         
