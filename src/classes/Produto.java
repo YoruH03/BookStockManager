@@ -9,6 +9,7 @@ public class Produto {
     public String descrição;
     public String genero;
     public String autor;
+    public int quantidadeComprada;
 
     
     public Produto(String titulo,String autor,String genero, double preço, int quantidadeEstoque, String codigoDoProduto, String descrição){
@@ -84,6 +85,15 @@ public class Produto {
     public void setAutor(String autor) {
         this.autor = autor;
     }
+
+    public int getQuantidadeComprada() {
+        return quantidadeComprada;
+    }
+
+    public void setQuantidadeComprada(int quantidadeComprada) {
+        this.quantidadeComprada = quantidadeComprada;
+    }
+    
     
     
 }

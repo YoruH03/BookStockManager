@@ -19,6 +19,7 @@ abstract class Usuario {
     protected String email;
     protected String senha;
     static ArrayList<Cliente> listaClientes = new ArrayList(); // Definição de um ArrayList para Clientes
+    static ArrayList<Carrinho> historicoCarrinhos = new ArrayList();
     
     public Usuario(){
         this.listaClientes = new ArrayList();

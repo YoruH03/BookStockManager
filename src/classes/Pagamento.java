@@ -9,7 +9,7 @@ public class Pagamento extends Carrinho{
     private Pedido pedido;
 
     public Pagamento(String formaPagamento, String senha, int numCarrinho, Date data, double total, List<String> produtos) {
-        super(numCarrinho, data, total, produtos);
+        //super(numCarrinho, data, total, produtos);
         this.formaPagamento = formaPagamento;
         this.senha = senha;
     }

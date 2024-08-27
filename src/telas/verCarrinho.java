@@ -4,6 +4,9 @@
  */
 package telas;
 
+import static classes.Carrinho.listaProdutos;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Yuri
@@ -16,7 +19,35 @@ public class verCarrinho extends javax.swing.JFrame {
     public verCarrinho() {
         initComponents();
         setLocationRelativeTo(null);
+        carregarTabelaProdutos();
 
+    }
+    
+    
+    //Carregar a tabela com os funcionários da lista
+    private void carregarTabelaProdutos() {
+            DefaultTableModel modeloTabelaProdutos = new DefaultTableModel(new Object[] {"Titulo","Preço","Quantidade","Cod Produto","Descrição"},0);
+            
+            for(int i=0;i<listaProdutos.size();i++){
+                Object linha[] = new Object[]{listaProdutos.get(i).getTitulo(),
+                                              listaProdutos.get(i).getPreço(),
+                                              listaProdutos.get(i).getQuantidadeComprada()};
+                                              listaProdutos.get(i).getCodigoDoProduto();
+                                              listaProdutos.get(i).getDescrição();
+                
+                modeloTabelaProdutos.addRow(linha);
+                
+            }
+            //Tabela recebe modelo
+            tblProdutos.setModel(modeloTabelaProdutos);
+            
+            tblProdutos.getColumnModel().getColumn(0).setPreferredWidth(50);
+            tblProdutos.getColumnModel().getColumn(1).setPreferredWidth(5);
+            tblProdutos.getColumnModel().getColumn(2).setPreferredWidth(3);
+            tblProdutos.getColumnModel().getColumn(3).setPreferredWidth(3);
+            tblProdutos.getColumnModel().getColumn(4).setPreferredWidth(100);
+            
+            
     }
 
     /**
