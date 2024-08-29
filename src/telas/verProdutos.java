@@ -22,6 +22,7 @@ public class verProdutos extends javax.swing.JFrame {
         carregarTabelaProdutos();
         txtQuantidade.setText("1");
         Produto item;
+        
     }
 
     /**
@@ -171,22 +172,22 @@ public class verProdutos extends javax.swing.JFrame {
                         .addGap(199, 199, 199)
                         .addComponent(btnComprar))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(299, 299, 299)
-                        .addComponent(lblResultadosPesquisa))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(63, 63, 63)
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnPesquisar))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(lblNome)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGap(299, 299, 299)
+                                .addComponent(lblResultadosPesquisa))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGap(27, 27, 27)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(63, 63, 63)
+                                        .addComponent(jLabel1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(lblNome))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnPesquisar)))
                 .addGap(38, 38, 38))
         );
         jPanel1Layout.setVerticalGroup(
@@ -201,8 +202,8 @@ public class verProdutos extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnPesquisar)
-                            .addComponent(txtQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1)))
+                            .addComponent(jLabel1)
+                            .addComponent(txtQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addComponent(lblResultadosPesquisa)
@@ -219,7 +220,7 @@ public class verProdutos extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 813, Short.MAX_VALUE)
+            .addGap(0, 844, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -228,7 +229,7 @@ public class verProdutos extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 463, Short.MAX_VALUE)
+            .addGap(0, 465, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -241,6 +242,56 @@ public class verProdutos extends javax.swing.JFrame {
 
     private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
         // TODO add your handling code here:
+        if (estoque == null || estoque.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "O estoque está vazio ou não foi carregado.", "Erro", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        String tituloPesquisado = txtTitulo.getText().toLowerCase().trim();
+        if (tituloPesquisado.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor, insira um título para pesquisar.", "Aviso", JOptionPane.WARNING_MESSAGE);
+            carregarTabelaProdutos();
+            return;
+        }
+
+
+        DefaultTableModel modeloTabelaProdutos = new DefaultTableModel(new Object[] {"Titulo", "Autor", "Gênero", "Valor", "Quant.Estoque"}, 0);
+
+        boolean produtoEncontrado = false;
+
+        
+        for (Produto produto : estoque) {
+            if (produto != null && produto.getTitulo() != null) {
+                // Verifica se o título do produto contém o texto pesquisado
+                if (produto.getTitulo().toLowerCase().contains(tituloPesquisado)) {
+                    Object novalinha[] = new Object[] {
+                        produto.getTitulo(),
+                        produto.getAutor(),
+                        produto.getGenero(),
+                        produto.getPreço(),
+                        produto.getQuantidadeEstoque()
+                    };
+                    modeloTabelaProdutos.addRow(novalinha);
+                    produtoEncontrado = true; 
+                }
+        }
+        
+        if (!produtoEncontrado) {
+            JOptionPane.showMessageDialog(this, "Nenhum produto encontrado com o título: " + tituloPesquisado, "Resultado da pesquisa", JOptionPane.INFORMATION_MESSAGE);
+        }
+        
+
+        tabela_produtos.setModel(modeloTabelaProdutos);
+        // Ajusta a largura das colunas
+        tabela_produtos.getColumnModel().getColumn(0).setPreferredWidth(100);
+        tabela_produtos.getColumnModel().getColumn(1).setPreferredWidth(50);
+        tabela_produtos.getColumnModel().getColumn(2).setPreferredWidth(14);
+        tabela_produtos.getColumnModel().getColumn(3).setPreferredWidth(8);
+        tabela_produtos.getColumnModel().getColumn(4).setPreferredWidth(3);
+        
+        
+    }
+
     }//GEN-LAST:event_btnPesquisarActionPerformed
 
     private void btnSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSobreActionPerformed
@@ -265,8 +316,11 @@ public class verProdutos extends javax.swing.JFrame {
         for(Produto itemBusca : estoque){
             JOptionPane.showMessageDialog(null,"Busca Iniciada!", "Notificação Adicionar item ao carrinho",JOptionPane.PLAIN_MESSAGE);
             System.out.println("Busca inciada!");
-
-            if(itemBusca.getTitulo().equals(selected)){
+            /*if (Integer.parseInt(txtQuantidade.getText())<=0){
+                JOptionPane.showMessageDialog(null,"Quantidade inválida!",JOptionPane.ERROR_MESSAGE);
+                
+            }*/
+           if(itemBusca.getTitulo().equals(selected)){
                 JOptionPane.showMessageDialog(null,"Item Encontrado!", "Notificação Adicionar item ao carrinho",JOptionPane.PLAIN_MESSAGE);
                 itemComprado = itemBusca;
                 if(Integer.parseInt(txtQuantidade.getText())<itemComprado.getQuantidadeEstoque()){
@@ -287,8 +341,12 @@ public class verProdutos extends javax.swing.JFrame {
 
     private void txtQuantidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtQuantidadeActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtQuantidadeActionPerformed
 
+
+
+    
     private void tabela_produtosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabela_produtosMouseClicked
         // TODO add your handling code here:
         int i = tabela_produtos.getSelectedRow();

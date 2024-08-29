@@ -4,9 +4,12 @@
  */
 package telas;
 
+import classes.Cliente;
 import static classes.Cliente.listaClientes;
+import classes.Funcionario;
 import static classes.Funcionario.listaFuncionarios;
 import classes.Gerente;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import static telas.cadastarGerente.listaGerente;
 
@@ -24,10 +27,13 @@ public class areaGerente extends javax.swing.JFrame {
         
         setLocationRelativeTo(null);
         this.setExtendedState(MAXIMIZED_BOTH);
+        
+        Funcionario func;
+        Cliente cli;
 
         disableGerenteFields();
-        disableControleFuncionariosButtons();
-        disableControleFuncionariosFields();
+        //disableControleFuncionariosButtons();
+        //disableControleFuncionariosFields();
         carregarTabelaFuncionario();
         carregarTabelaCliente();
 
@@ -108,7 +114,7 @@ public class areaGerente extends javax.swing.JFrame {
 
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jPanel1 = new javax.swing.JPanel();
+        dadosGerente = new javax.swing.JPanel();
         lblNomeGerente = new javax.swing.JLabel();
         lblCPFGerente = new javax.swing.JLabel();
         lblEmailGerente = new javax.swing.JLabel();
@@ -123,7 +129,7 @@ public class areaGerente extends javax.swing.JFrame {
         btnAlterarGerente = new javax.swing.JButton();
         btnSalvarGerente = new javax.swing.JButton();
         btnCancelarGerente = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
+        controleFuncionarios = new javax.swing.JPanel();
         lblNomeFuncionario = new javax.swing.JLabel();
         lblCPFFuncionario = new javax.swing.JLabel();
         lblIdFuncionario = new javax.swing.JLabel();
@@ -137,7 +143,7 @@ public class areaGerente extends javax.swing.JFrame {
         btnSalvarFuncionario = new javax.swing.JButton();
         btnExcluirFuncionario = new javax.swing.JButton();
         lblControleFuncionarios = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
+        controleClientes = new javax.swing.JPanel();
         lblControleClientes = new javax.swing.JLabel();
         lblNomeCliente = new javax.swing.JLabel();
         txtNomeCliente = new javax.swing.JTextField();
@@ -170,7 +176,7 @@ public class areaGerente extends javax.swing.JFrame {
         setTitle("Área do Gerente");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(211, 181, 143));
+        dadosGerente.setBackground(new java.awt.Color(211, 181, 143));
 
         lblNomeGerente.setFont(new java.awt.Font("Old English Text MT", 1, 36)); // NOI18N
         lblNomeGerente.setText("Nome");
@@ -244,40 +250,40 @@ public class areaGerente extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout dadosGerenteLayout = new javax.swing.GroupLayout(dadosGerente);
+        dadosGerente.setLayout(dadosGerenteLayout);
+        dadosGerenteLayout.setHorizontalGroup(
+            dadosGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dadosGerenteLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(dadosGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dadosGerenteLayout.createSequentialGroup()
                         .addComponent(lblCPFGerente)
                         .addGap(218, 218, 218))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dadosGerenteLayout.createSequentialGroup()
                         .addComponent(lblEmailGerente)
                         .addGap(209, 209, 209))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dadosGerenteLayout.createSequentialGroup()
+                .addGroup(dadosGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtSenhaGerente, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtEmailGerente, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(ftxCPFGerente, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtNomeGerente)
                     .addComponent(txtIdGerente)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(dadosGerenteLayout.createSequentialGroup()
+                        .addGroup(dadosGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(dadosGerenteLayout.createSequentialGroup()
                                 .addGap(213, 213, 213)
                                 .addComponent(lblNomeGerente))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(dadosGerenteLayout.createSequentialGroup()
                                 .addGap(217, 217, 217)
                                 .addComponent(lblSenhaGerente))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(dadosGerenteLayout.createSequentialGroup()
                                 .addGap(184, 184, 184)
                                 .addComponent(lblIdGerente)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(dadosGerenteLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnAlterarGerente)
                 .addGap(136, 136, 136)
@@ -285,14 +291,14 @@ public class areaGerente extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnCancelarGerente)
                 .addGap(20, 20, 20))
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(dadosGerenteLayout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addComponent(lblAreaGerente)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        dadosGerenteLayout.setVerticalGroup(
+            dadosGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dadosGerenteLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblAreaGerente)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -305,7 +311,7 @@ public class areaGerente extends javax.swing.JFrame {
                 .addComponent(ftxCPFGerente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblEmailGerente)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(txtEmailGerente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(9, 9, 9)
                 .addComponent(lblSenhaGerente)
@@ -316,16 +322,16 @@ public class areaGerente extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtIdGerente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(dadosGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAlterarGerente)
                     .addComponent(btnSalvarGerente)
                     .addComponent(btnCancelarGerente))
                 .addGap(102, 102, 102))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, 530, 670));
+        getContentPane().add(dadosGerente, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, 530, 670));
 
-        jPanel2.setBackground(new java.awt.Color(211, 181, 143));
+        controleFuncionarios.setBackground(new java.awt.Color(211, 181, 143));
 
         lblNomeFuncionario.setFont(new java.awt.Font("Old English Text MT", 0, 18)); // NOI18N
         lblNomeFuncionario.setText("Nome");
@@ -358,6 +364,11 @@ public class areaGerente extends javax.swing.JFrame {
         btnBuscarFuncionario.setFont(new java.awt.Font("Old English Text MT", 0, 18)); // NOI18N
         btnBuscarFuncionario.setText("Buscar");
         btnBuscarFuncionario.setToolTipText("Buscar pelo funcionário");
+        btnBuscarFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarFuncionarioActionPerformed(evt);
+            }
+        });
 
         try {
             ftxCPFFuncionario.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
@@ -411,73 +422,74 @@ public class areaGerente extends javax.swing.JFrame {
         lblControleFuncionarios.setFont(new java.awt.Font("Old English Text MT", 1, 48)); // NOI18N
         lblControleFuncionarios.setText("Controle de funcionários");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout controleFuncionariosLayout = new javax.swing.GroupLayout(controleFuncionarios);
+        controleFuncionarios.setLayout(controleFuncionariosLayout);
+        controleFuncionariosLayout.setHorizontalGroup(
+            controleFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(controleFuncionariosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1)
                 .addContainerGap())
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(controleFuncionariosLayout.createSequentialGroup()
                 .addGap(171, 171, 171)
                 .addComponent(lblControleFuncionarios)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(110, 110, 110)
-                .addComponent(btnNovoFuncionario)
-                .addGap(184, 184, 184)
-                .addComponent(btnSalvarFuncionario)
-                .addGap(170, 170, 170)
-                .addComponent(btnExcluirFuncionario)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblNomeFuncionario)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtNomeFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblCPFFuncionario)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ftxCPFFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lblIdFuncionario)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtCodigoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
-                .addComponent(btnBuscarFuncionario)
-                .addGap(15, 15, 15))
+            .addGroup(controleFuncionariosLayout.createSequentialGroup()
+                .addGroup(controleFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(controleFuncionariosLayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(btnBuscarFuncionario)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnNovoFuncionario)
+                        .addGap(184, 184, 184)
+                        .addComponent(btnSalvarFuncionario)
+                        .addGap(170, 170, 170)
+                        .addComponent(btnExcluirFuncionario))
+                    .addGroup(controleFuncionariosLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblNomeFuncionario)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtNomeFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblCPFFuncionario)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ftxCPFFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblIdFuncionario)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtCodigoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(15, 61, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        controleFuncionariosLayout.setVerticalGroup(
+            controleFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(controleFuncionariosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblControleFuncionarios)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(controleFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(controleFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(lblNomeFuncionario)
                         .addComponent(lblIdFuncionario)
-                        .addComponent(txtCodigoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnBuscarFuncionario))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtCodigoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(controleFuncionariosLayout.createSequentialGroup()
+                        .addGroup(controleFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtNomeFuncionario)
                             .addComponent(lblCPFFuncionario)
                             .addComponent(ftxCPFFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(1, 1, 1)))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(controleFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNovoFuncionario)
                     .addComponent(btnSalvarFuncionario)
-                    .addComponent(btnExcluirFuncionario))
+                    .addComponent(btnExcluirFuncionario)
+                    .addComponent(btnBuscarFuncionario))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 220, 870, 380));
+        getContentPane().add(controleFuncionarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 220, 870, 380));
 
-        jPanel3.setBackground(new java.awt.Color(211, 181, 143));
+        controleClientes.setBackground(new java.awt.Color(211, 181, 143));
 
         lblControleClientes.setFont(new java.awt.Font("Old English Text MT", 1, 36)); // NOI18N
         lblControleClientes.setText("Controle de Clientes");
@@ -542,11 +554,11 @@ public class areaGerente extends javax.swing.JFrame {
             ex.printStackTrace();
         }
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout controleClientesLayout = new javax.swing.GroupLayout(controleClientes);
+        controleClientes.setLayout(controleClientesLayout);
+        controleClientesLayout.setHorizontalGroup(
+            controleClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(controleClientesLayout.createSequentialGroup()
                 .addGap(169, 169, 169)
                 .addComponent(btnNovoCliente)
                 .addGap(213, 213, 213)
@@ -554,14 +566,14 @@ public class areaGerente extends javax.swing.JFrame {
                 .addGap(143, 143, 143)
                 .addComponent(btnExluirCliente)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createSequentialGroup()
+            .addGroup(controleClientesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(controleClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(controleClientesLayout.createSequentialGroup()
+                        .addGroup(controleClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblControleClientes)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
+                            .addGroup(controleClientesLayout.createSequentialGroup()
                                 .addComponent(lblNomeCliente)
                                 .addGap(18, 18, 18)
                                 .addComponent(txtNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -577,12 +589,12 @@ public class areaGerente extends javax.swing.JFrame {
                         .addComponent(btnBuscarCliente)))
                 .addContainerGap())
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        controleClientesLayout.setVerticalGroup(
+            controleClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(controleClientesLayout.createSequentialGroup()
                 .addComponent(lblControleClientes)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(controleClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNomeCliente)
                     .addComponent(txtNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblCPFCliente)
@@ -591,7 +603,7 @@ public class areaGerente extends javax.swing.JFrame {
                     .addComponent(btnBuscarCliente)
                     .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(controleClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNovoCliente)
                     .addComponent(btnSalvarCliente)
                     .addComponent(btnExluirCliente))
@@ -599,7 +611,7 @@ public class areaGerente extends javax.swing.JFrame {
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 660, 940, 390));
+        getContentPane().add(controleClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 660, 940, 390));
 
         lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ÁreaGerente.png"))); // NOI18N
         getContentPane().add(lblBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 1920, 1140));
@@ -638,9 +650,8 @@ public class areaGerente extends javax.swing.JFrame {
 
     private void btnSalvarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarFuncionarioActionPerformed
         // TODO add your handling code here:
-        disableControleFuncionariosFields();
-        disableControleFuncionariosButtons();
         btnNovoFuncionario.setEnabled(true);
+        btnBuscarFuncionario.setEnabled(true);
         
         carregarTabelaFuncionario();
         //btnPesquisarFuncionario.setEnabled(true);
@@ -663,6 +674,58 @@ public class areaGerente extends javax.swing.JFrame {
         // TODO add your handling code here:
         carregarTabelaCliente();
     }//GEN-LAST:event_btnSalvarClienteActionPerformed
+
+    private void btnBuscarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarFuncionarioActionPerformed
+        // TODO add your handling code here:
+        String codigoPesquisa = txtCodigoFuncionario.getText().trim();
+        String nomePesquisa = txtNomeFuncionario.getText().trim();
+        String cpfPesquisa = lblCPFFuncionario.getText().trim();
+
+        DefaultTableModel modeloTabela = (DefaultTableModel) tblControleFuncionarios.getModel();
+        modeloTabela.setRowCount(0); // Limpa as linhas da tabela
+
+        // Verifica se todos os campos de pesquisa estão vazios
+        if (codigoPesquisa.isEmpty() && nomePesquisa.isEmpty() && cpfPesquisa.isEmpty()) {
+            // Caso todos os campos estejam vazios, refaz a tabela
+            for (int i = 0; i < listaFuncionarios.size(); i++) {
+                Funcionario funcionario = listaFuncionarios.get(i);
+                Object linha[] = new Object[]{
+                    funcionario.getCadastroFuncionario(),
+                    funcionario.getNome(),
+                    funcionario.getCPF()
+                };
+                modeloTabela.addRow(linha);
+            }
+            return;
+        }
+
+        boolean encontrou = false;
+
+        // fazer a pesquisa caso algum campo tenha sido preenchido
+        for (int i = 0; i < listaFuncionarios.size(); i++) {
+            Funcionario funcionario = listaFuncionarios.get(i);
+
+            boolean codigoCorresponde = codigoPesquisa.isEmpty() || funcionario.getCadastroFuncionario().equals(codigoPesquisa);
+            boolean nomeCorresponde = nomePesquisa.isEmpty() || funcionario.getNome().toLowerCase().contains(nomePesquisa.toLowerCase());
+            boolean cpfCorresponde = cpfPesquisa.isEmpty() || funcionario.getCPF().equals(cpfPesquisa);
+
+            // Se todos os critérios fornecidos forem verdadeiros, adicione o funcionário na tabela
+            if (codigoCorresponde && nomeCorresponde && cpfCorresponde) {
+                Object linha[] = new Object[]{
+                    funcionario.getCadastroFuncionario(),
+                    funcionario.getNome(),
+                    funcionario.getCPF()
+                };
+                modeloTabela.addRow(linha);
+                encontrou = true;
+            }
+        }
+
+        // Se nenhum funcionário foi encontrado, exiba uma mensagem
+        if (!encontrou) {
+            JOptionPane.showMessageDialog(null, "Nenhum funcionário encontrado", "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnBuscarFuncionarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -784,12 +847,12 @@ public class areaGerente extends javax.swing.JFrame {
     private javax.swing.JButton btnSalvarCliente;
     private javax.swing.JButton btnSalvarFuncionario;
     private javax.swing.JButton btnSalvarGerente;
+    private javax.swing.JPanel controleClientes;
+    private javax.swing.JPanel controleFuncionarios;
+    private javax.swing.JPanel dadosGerente;
     private javax.swing.JFormattedTextField ftxCPFFuncionario;
     private javax.swing.JFormattedTextField ftxCPFGerente;
     private javax.swing.JFormattedTextField jFormattedTextField1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
