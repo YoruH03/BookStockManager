@@ -40,7 +40,17 @@ public class Funcionario extends Usuario{
 
     @Override
     public String toString() {
-        return "Funcionario{" + "cadastroFuncionario=" + cadastroFuncionario + '}';
+        String resultado = super.toString();
+        resultado += resultado + "cadastro de Funcionário: "+this.getCadastroFuncionario();
+        return resultado;
+    }
+    
+    public boolean loginFuncionario(String email, String senha){
+        if(this.email.equals(email)&&this.senha.equals(senha)){
+            return true;
+        }else{
+            return false;
+        }
     }
     
     

@@ -27,7 +27,8 @@ public class areaGerente extends javax.swing.JFrame {
         btnCancelarGerente.setEnabled(false);
         btnSalvarGerente.setEnabled(false);
         btnAlterarGerente.setEnabled(true);
-        
+        btnBuscarFuncionario.setEnabled(true);
+
         btnNovoFuncionario.setEnabled(true);
         //btnPesquisarFuncionario.setEnabled(true);
         loadGerenteInfo();
@@ -253,7 +254,11 @@ public class areaGerente extends javax.swing.JFrame {
                 .addComponent(ftxCPFGerente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblEmailGerente)
+<<<<<<< Updated upstream
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+=======
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+>>>>>>> Stashed changes
                 .addComponent(txtEmailGerente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(9, 9, 9)
                 .addComponent(lblSenhaGerente)
@@ -271,7 +276,7 @@ public class areaGerente extends javax.swing.JFrame {
                 .addGap(102, 102, 102))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, 530, 670));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 530, 700));
 
         jPanel2.setBackground(new java.awt.Color(211, 181, 143));
 
@@ -415,7 +420,11 @@ public class areaGerente extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+<<<<<<< Updated upstream
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 220, 870, 430));
+=======
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 40, 870, 380));
+>>>>>>> Stashed changes
 
         jPanel3.setBackground(new java.awt.Color(211, 181, 143));
 
@@ -434,11 +443,65 @@ public class areaGerente extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Old English Text MT", 0, 18)); // NOI18N
         jButton1.setText("Buscar");
 
+<<<<<<< Updated upstream
         jButton2.setText("Novo");
+=======
+        btnNovoCliente.setFont(new java.awt.Font("Old English Text MT", 0, 18)); // NOI18N
+        btnNovoCliente.setText("Novo");
+        btnNovoCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNovoClienteActionPerformed(evt);
+            }
+        });
+>>>>>>> Stashed changes
 
         jButton3.setText("Salvar");
 
+<<<<<<< Updated upstream
         jButton4.setText("Excluir");
+=======
+        btnExluirCliente.setFont(new java.awt.Font("Old English Text MT", 0, 18)); // NOI18N
+        btnExluirCliente.setText("Excluir");
+        btnExluirCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExluirClienteActionPerformed(evt);
+            }
+        });
+
+        tblControleClientes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Código Cliente", "Nome", "CPF", "Data Nascimento", "Endereço"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(tblControleClientes);
+        if (tblControleClientes.getColumnModel().getColumnCount() > 0) {
+            tblControleClientes.getColumnModel().getColumn(0).setPreferredWidth(3);
+            tblControleClientes.getColumnModel().getColumn(1).setPreferredWidth(50);
+            tblControleClientes.getColumnModel().getColumn(2).setPreferredWidth(14);
+            tblControleClientes.getColumnModel().getColumn(3).setPreferredWidth(10);
+            tblControleClientes.getColumnModel().getColumn(4).setPreferredWidth(100);
+        }
+
+        try {
+            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+>>>>>>> Stashed changes
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -494,10 +557,17 @@ public class areaGerente extends javax.swing.JFrame {
                 .addGap(0, 293, Short.MAX_VALUE))
         );
 
+<<<<<<< Updated upstream
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 670, 940, 390));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ÁreaGerente.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 1920, 1140));
+=======
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 530, 940, 390));
+
+        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Telas/ÁreaGerente.png"))); // NOI18N
+        getContentPane().add(lblBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 1920, 1140));
+>>>>>>> Stashed changes
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -551,6 +621,33 @@ public class areaGerente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCodigoFuncionarioActionPerformed
 
+<<<<<<< Updated upstream
+=======
+    private void btnSalvarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarClienteActionPerformed
+        // TODO add your handling code here:
+        carregarTabelaCliente();
+    }//GEN-LAST:event_btnSalvarClienteActionPerformed
+
+    private void btnExluirClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExluirClienteActionPerformed
+        // TODO add your handling code here:
+        
+        int i = tblControleClientes.getSelectedRow();
+        
+        if(i>=0 && i<listaClientes.size()){
+            listaClientes.remove(i);
+
+        }
+        carregarTabelaCliente();
+    }//GEN-LAST:event_btnExluirClienteActionPerformed
+
+    private void btnNovoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoClienteActionPerformed
+        // TODO add your handling code here:
+        new cadastrarCliente().setVisible(true);
+        btnExluirCliente.setEnabled(false);
+        btnSalvarCliente.setEnabled(true);
+    }//GEN-LAST:event_btnNovoClienteActionPerformed
+
+>>>>>>> Stashed changes
     /**
      * @param args the command line arguments
      */

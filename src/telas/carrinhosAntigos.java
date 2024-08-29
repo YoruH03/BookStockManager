@@ -4,6 +4,11 @@
  */
 package telas;
 
+import classes.Carrinho;
+import static classes.Pagamento.listaCarrinhosAntigos;
+import javax.swing.table.DefaultTableModel;
+import classes.Pagamento;
+
 /**
  *
  * @author Yuri
@@ -18,6 +23,7 @@ public class carrinhosAntigos extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         disableCarrinhoFields();
         btnCancelarCarrinho.setEnabled(false);
+        carregarTabelaCarrinhosAntigos();
         
     }
     
@@ -25,34 +31,54 @@ public class carrinhosAntigos extends javax.swing.JFrame {
             txtNumCarrinho.setEnabled(true);
             txtData.setEnabled(true);
             txtProdutos.setEnabled(true);
-            txtCodPedido.setEnabled(true);
-            txtCodRastreio.setEnabled(true);
             txtTotal.setEnabled(true);
             
             lblNumCarrinho.setEnabled(true);
             lblData.setEnabled(true);
             lblProdutos.setEnabled(true);
-            lblCodPedido.setEnabled(true);
-            lblCodRastreio.setEnabled(true);
             lblTotal.setEnabled(true);
             
         }
             
-                    public void disableCarrinhoFields(){
+        public void disableCarrinhoFields(){
             txtNumCarrinho.setEnabled(false);
             txtData.setEnabled(false);
             txtProdutos.setEnabled(false);
-            txtCodPedido.setEnabled(false);
-            txtCodRastreio.setEnabled(false);
             txtTotal.setEnabled(false);
             
             lblNumCarrinho.setEnabled(false);
             lblData.setEnabled(false);
             lblProdutos.setEnabled(false);
-            lblCodPedido.setEnabled(false);
-            lblCodRastreio.setEnabled(false);
             lblTotal.setEnabled(false);
         }
+
+                    
+        private void carregarTabelaCarrinhosAntigos() {
+            DefaultTableModel modeloTabelaCarrinhosAntigos = new DefaultTableModel(new Object[] {"Num.Carrinho","Data do Pedido","Produtos","Total"},0);
+            
+            for(int i=0;i<listaCarrinhosAntigos.size();i++){
+                Carrinho carrinhoSelecionado = listaCarrinhosAntigos.get(i);
+
+                Object linha[];
+                linha = new Object[]{carrinhoSelecionado.getNumCarrinho(),
+                    carrinhoSelecionado.getData(),
+                    carrinhoSelecionado.mostarProdutos(),
+                    carrinhoSelecionado.getTotal()};
+                
+                modeloTabelaCarrinhosAntigos.addRow(linha);
+                
+            }
+            //Tabela recebe modelo
+            tblCarrinhosAntigos.setModel(modeloTabelaCarrinhosAntigos);
+            
+            tblCarrinhosAntigos.getColumnModel().getColumn(0).setPreferredWidth(3);
+            tblCarrinhosAntigos.getColumnModel().getColumn(1).setPreferredWidth(14);
+            tblCarrinhosAntigos.getColumnModel().getColumn(2).setPreferredWidth(100);
+            tblCarrinhosAntigos.getColumnModel().getColumn(3).setPreferredWidth(5);
+            
+            
+    }
+        
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -65,28 +91,25 @@ public class carrinhosAntigos extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblCliente = new javax.swing.JTable();
+        tblCarrinhosAntigos = new javax.swing.JTable();
         lblCarrinhosAnteriores = new javax.swing.JLabel();
         lblNumCarrinho = new javax.swing.JLabel();
         lblData = new javax.swing.JLabel();
         lblProdutos = new javax.swing.JLabel();
         lblTotal = new javax.swing.JLabel();
-        lblCodPedido = new javax.swing.JLabel();
-        lblCodRastreio = new javax.swing.JLabel();
         txtNumCarrinho = new javax.swing.JTextField();
         txtTotal = new javax.swing.JTextField();
-        txtCodPedido = new javax.swing.JTextField();
-        txtCodRastreio = new javax.swing.JTextField();
         txtData = new javax.swing.JFormattedTextField();
         btnPesquisarCarrinho = new javax.swing.JButton();
         btnCancelarCarrinho = new javax.swing.JButton();
+        btnBuscarCarrinho = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtProdutos = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Consultar carrinhos anteriores");
 
-        tblCliente.setModel(new javax.swing.table.DefaultTableModel(
+        tblCarrinhosAntigos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -105,7 +128,7 @@ public class carrinhosAntigos extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(tblCliente);
+        jScrollPane1.setViewportView(tblCarrinhosAntigos);
 
         lblCarrinhosAnteriores.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblCarrinhosAnteriores.setText("Consultar Carrinhos Antigos");
@@ -118,17 +141,9 @@ public class carrinhosAntigos extends javax.swing.JFrame {
 
         lblTotal.setText("Total");
 
-        lblCodPedido.setText("Cod.Pedido");
-
-        lblCodRastreio.setText("Cod.Rastreio");
-
         txtNumCarrinho.setToolTipText("número do carrinho");
 
         txtTotal.setToolTipText("valor total");
-
-        txtCodPedido.setToolTipText("código do pedido");
-
-        txtCodRastreio.setToolTipText("código do rastreio");
 
         try {
             txtData.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
@@ -156,6 +171,8 @@ public class carrinhosAntigos extends javax.swing.JFrame {
             }
         });
 
+        btnBuscarCarrinho.setText("Buscar");
+
         txtProdutos.setColumns(20);
         txtProdutos.setRows(5);
         jScrollPane2.setViewportView(txtProdutos);
@@ -167,48 +184,44 @@ public class carrinhosAntigos extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(216, 216, 216)
-                        .addComponent(btnPesquisarCarrinho)
-                        .addGap(239, 239, 239)
-                        .addComponent(btnCancelarCarrinho))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(366, 366, 366)
-                        .addComponent(lblCarrinhosAnteriores))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(66, 66, 66)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 885, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                    .addGap(271, 271, 271)
-                                    .addComponent(lblData)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(163, 163, 163)
-                                    .addComponent(lblCodPedido)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtCodPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                            .addComponent(lblTotal)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(133, 133, 133))
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                                    .addComponent(lblNumCarrinho)
-                                                    .addGap(18, 18, 18)
-                                                    .addComponent(txtNumCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                                    .addComponent(lblCodRastreio)
-                                                    .addGap(18, 18, 18)
-                                                    .addComponent(txtCodRastreio, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                            .addGap(67, 67, 67)
-                                            .addComponent(lblProdutos)
-                                            .addGap(18, 18, 18)))
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(91, 91, 91)
+                                .addComponent(lblNumCarrinho)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtNumCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblTotal)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(333, 333, 333))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(366, 366, 366)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(6, 6, 6)
+                                        .addComponent(lblData)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(lblCarrinhosAnteriores)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(216, 216, 216)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(btnBuscarCarrinho)
+                                        .addGap(49, 49, 49)
+                                        .addComponent(lblProdutos)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(btnPesquisarCarrinho)
+                                        .addGap(239, 239, 239)
+                                        .addComponent(btnCancelarCarrinho)))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap(180, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -222,21 +235,14 @@ public class carrinhosAntigos extends javax.swing.JFrame {
                     .addComponent(txtNumCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblData)
                     .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblCodPedido)
-                    .addComponent(txtCodPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblTotal)
+                    .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 27, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(lblProdutos)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtCodRastreio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblCodRastreio))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblTotal)
-                            .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(btnBuscarCarrinho))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnPesquisarCarrinho)
@@ -312,21 +318,18 @@ public class carrinhosAntigos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBuscarCarrinho;
     private javax.swing.JButton btnCancelarCarrinho;
     private javax.swing.JButton btnPesquisarCarrinho;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblCarrinhosAnteriores;
-    private javax.swing.JLabel lblCodPedido;
-    private javax.swing.JLabel lblCodRastreio;
     private javax.swing.JLabel lblData;
     private javax.swing.JLabel lblNumCarrinho;
     private javax.swing.JLabel lblProdutos;
     private javax.swing.JLabel lblTotal;
-    private javax.swing.JTable tblCliente;
-    private javax.swing.JTextField txtCodPedido;
-    private javax.swing.JTextField txtCodRastreio;
+    private javax.swing.JTable tblCarrinhosAntigos;
     private javax.swing.JFormattedTextField txtData;
     private javax.swing.JTextField txtNumCarrinho;
     private javax.swing.JTextArea txtProdutos;

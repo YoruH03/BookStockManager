@@ -70,7 +70,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="90" y="280" width="530" height="670"/>
+          <AbsoluteConstraints x="40" y="210" width="530" height="700"/>
         </Constraint>
       </Constraints>
 
@@ -149,7 +149,11 @@
                   <Component id="ftxCPFGerente" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="lblEmailGerente" min="-2" max="-2" attributes="0"/>
+<<<<<<< Updated upstream
                   <EmptySpace max="32767" attributes="0"/>
+=======
+                  <EmptySpace pref="41" max="32767" attributes="0"/>
+>>>>>>> Stashed changes
                   <Component id="txtEmailGerente" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                   <Component id="lblSenhaGerente" min="-2" max="-2" attributes="0"/>
@@ -314,7 +318,11 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+<<<<<<< Updated upstream
           <AbsoluteConstraints x="910" y="220" width="870" height="430"/>
+=======
+          <AbsoluteConstraints x="900" y="40" width="870" height="380"/>
+>>>>>>> Stashed changes
         </Constraint>
       </Constraints>
 
@@ -550,7 +558,11 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+<<<<<<< Updated upstream
           <AbsoluteConstraints x="850" y="670" width="940" height="390"/>
+=======
+          <AbsoluteConstraints x="830" y="530" width="940" height="390"/>
+>>>>>>> Stashed changes
         </Constraint>
       </Constraints>
 
@@ -666,6 +678,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Novo"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNovoClienteActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton3">
           <Properties>
@@ -676,13 +691,16 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Excluir"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExluirClienteActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imagens/&#xc1;reaGerente.png"/>
+          <Image iconType="3" name="/imagens/Telas/&#xc1;reaGerente.png"/>
         </Property>
       </Properties>
       <Constraints>

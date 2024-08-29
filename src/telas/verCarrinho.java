@@ -4,6 +4,19 @@
  */
 package telas;
 
+<<<<<<< Updated upstream
+=======
+import classes.Carrinho;
+import static classes.Carrinho.listaCarrinho;
+import static classes.Carrinho.listaProdutos;
+import static classes.Estoque.estoque;
+import static classes.Pagamento.listaCarrinhos;
+import static classes.Pagamento.indiceCarrinho;
+import classes.Produto;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
+>>>>>>> Stashed changes
 /**
  *
  * @author Yuri
@@ -16,6 +29,12 @@ public class verCarrinho extends javax.swing.JFrame {
     public verCarrinho() {
         initComponents();
         setLocationRelativeTo(null);
+<<<<<<< Updated upstream
+=======
+        carregarTabelaProdutos();
+        this.setExtendedState(MAXIMIZED_BOTH);
+
+>>>>>>> Stashed changes
 
     }
 
@@ -28,6 +47,7 @@ public class verCarrinho extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblProdutos = new javax.swing.JTable();
         btnRemoverItem = new javax.swing.JButton();
@@ -36,9 +56,17 @@ public class verCarrinho extends javax.swing.JFrame {
         btnConfirmarCompra = new javax.swing.JButton();
         lblVisualizarCarrinho = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Visualizar meu carrinho");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jScrollPane1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jScrollPane1MouseClicked(evt);
+            }
+        });
 
         tblProdutos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -52,7 +80,7 @@ public class verCarrinho extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Double.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.Double.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -92,66 +120,92 @@ public class verCarrinho extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblProdutosCarrinho)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
-                                        .addComponent(btnRemoverItem)
-                                        .addGap(136, 136, 136)
-                                        .addComponent(btnEsvaziarCarrinho)
-                                        .addGap(106, 106, 106)
-                                        .addComponent(btnConfirmarCompra))
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 762, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(250, 250, 250)
-                        .addComponent(lblVisualizarCarrinho)))
-                .addContainerGap(48, Short.MAX_VALUE))
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 810, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(244, 244, 244)
+                            .addComponent(lblVisualizarCarrinho))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(lblProdutosCarrinho)
+                            .addGap(326, 326, 326)
+                            .addComponent(jButton1))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(6, 6, 6)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 762, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(12, 12, 12)
+                            .addComponent(btnRemoverItem)
+                            .addGap(136, 136, 136)
+                            .addComponent(btnEsvaziarCarrinho)
+                            .addGap(106, 106, 106)
+                            .addComponent(btnConfirmarCompra)))
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblVisualizarCarrinho)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblProdutosCarrinho)
-                    .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRemoverItem)
-                    .addComponent(btnEsvaziarCarrinho)
-                    .addComponent(btnConfirmarCompra))
-                .addContainerGap(63, Short.MAX_VALUE))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 510, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(lblVisualizarCarrinho)
+                    .addGap(6, 6, 6)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(3, 3, 3)
+                            .addComponent(lblProdutosCarrinho))
+                        .addComponent(jButton1))
+                    .addGap(12, 12, 12)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(6, 6, 6)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(btnRemoverItem)
+                        .addComponent(btnEsvaziarCarrinho)
+                        .addComponent(btnConfirmarCompra))
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 810, 510));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Telas/VerCarrinho.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnConfirmarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarCompraActionPerformed
         // TODO add your handling code here:
+        if(listaProdutos.size()>0){
+        double contador_total = 0;
+        for(Produto itemListado : listaProdutos){
+            contador_total += (itemListado.getPreço()*itemListado.getQuantidadeComprada());
+        }
+        Carrinho carrinho1 = new Carrinho(1,"27/08/2024",contador_total,listaProdutos);
+        listaCarrinhos.add(carrinho1);
+        indiceCarrinho = 0;
+        
         new telaPagamento().setVisible(true);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "O carrinho não pode estar vazio!", "Erro ao levar para pagamento", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnConfirmarCompraActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         new carrinhosAntigos().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jScrollPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jScrollPane1MouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jScrollPane1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -193,6 +247,8 @@ public class verCarrinho extends javax.swing.JFrame {
     private javax.swing.JButton btnEsvaziarCarrinho;
     private javax.swing.JButton btnRemoverItem;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblProdutosCarrinho;
     private javax.swing.JLabel lblVisualizarCarrinho;

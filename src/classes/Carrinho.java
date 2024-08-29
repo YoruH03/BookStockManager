@@ -8,7 +8,12 @@ public class Carrinho {
     protected int numCarrinho;
     protected Date data;
     protected double total;
+<<<<<<< Updated upstream
     protected List<String> produtos;
+=======
+    public static ArrayList<Produto> listaProdutos = new ArrayList();
+    public static ArrayList<Carrinho> listaCarrinho = new ArrayList();
+>>>>>>> Stashed changes
 
     //Construtor de carrinho. Um vazio e outro com os atributos dados
     public Carrinho() {
@@ -20,6 +25,32 @@ public class Carrinho {
         this.total = total;
         this.produtos = produtos;
     }
+
+    public String mostarProdutos(){
+        String resultado="";
+        for(Produto item: listaProdutos){
+            resultado = resultado +item.getTitulo()+" X "+item.getQuantidadeComprada()+" , ";
+        }
+        return resultado;
+    }
+    public Carrinho(int numCarrinho, String data, double total,ArrayList<Produto> listaProdutos) {
+        this.numCarrinho = numCarrinho;
+        this.data = data;
+        this.total = total;
+        this.listaProdutos = listaProdutos;
+    }
+
+    public static void setListaProdutos(ArrayList<Produto> listaProdutos) {
+        Carrinho.listaProdutos = listaProdutos;
+    }
+
+    public static void setListaCarrinho(ArrayList<Carrinho> listaCarrinho) {
+        Carrinho.listaCarrinho = listaCarrinho;
+    }
+    
+        
+    
+        
         
         
     //Métodos getters e setters para cada um dos atributos
@@ -47,9 +78,20 @@ public class Carrinho {
         this.total = total;
     }
 
+<<<<<<< Updated upstream
     public List<String> getProdutos() {
         return produtos;
     }
+=======
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+
+>>>>>>> Stashed changes
 
     public void setProdutos(List<String> produtos) {
         this.produtos = produtos;

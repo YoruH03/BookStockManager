@@ -47,7 +47,11 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< Updated upstream
           <Component id="jPanel1" min="-2" pref="1081" max="-2" attributes="0"/>
+=======
+          <Component id="jPanel1" min="-2" pref="1064" max="-2" attributes="0"/>
+>>>>>>> Stashed changes
       </Group>
     </DimensionLayout>
   </Layout>
@@ -61,7 +65,7 @@
         <Component class="javax.swing.JLabel" name="lblLogin">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="48" style="1"/>
+              <Font name="Old London" size="60" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="ff" type="rgb"/>
@@ -70,7 +74,11 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+<<<<<<< Updated upstream
               <AbsoluteConstraints x="570" y="60" width="-1" height="-1"/>
+=======
+              <AbsoluteConstraints x="220" y="20" width="890" height="60"/>
+>>>>>>> Stashed changes
             </Constraint>
           </Constraints>
         </Component>
@@ -99,13 +107,18 @@
               <Image iconType="3" name="/imagens/simbolos/business_inventory_maintenance_product_box_boxes_2326_64.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Atualizar Estoque"/>
+            <Property name="contentAreaFilled" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAtualizarEstoqueActionPerformed"/>
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+<<<<<<< Updated upstream
               <AbsoluteConstraints x="1270" y="700" width="400" height="130"/>
+=======
+              <AbsoluteConstraints x="1410" y="620" width="400" height="130"/>
+>>>>>>> Stashed changes
             </Constraint>
           </Constraints>
         </Component>
@@ -118,13 +131,18 @@
               <Image iconType="3" name="/imagens/simbolos/4105931-add-to-cart-buy-cart-sell-shop-shopping-cart_113919_64.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Ver carrinho"/>
+            <Property name="contentAreaFilled" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVerCarrinhoActionPerformed"/>
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+<<<<<<< Updated upstream
               <AbsoluteConstraints x="1270" y="410" width="400" height="130"/>
+=======
+              <AbsoluteConstraints x="1400" y="400" width="400" height="130"/>
+>>>>>>> Stashed changes
             </Constraint>
           </Constraints>
         </Component>
@@ -137,13 +155,18 @@
               <Image iconType="3" name="/imagens/simbolos/searchmagnifierinterfacesymbol1_79893_64.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Buscar Produto"/>
+            <Property name="contentAreaFilled" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPesquisarActionPerformed"/>
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+<<<<<<< Updated upstream
               <AbsoluteConstraints x="750" y="410" width="400" height="130"/>
+=======
+              <AbsoluteConstraints x="790" y="380" width="400" height="130"/>
+>>>>>>> Stashed changes
             </Constraint>
           </Constraints>
         </Component>
@@ -156,13 +179,18 @@
               <Image iconType="3" name="/imagens/simbolos/technicalsupport_support_representative_person_people_man_1641_64.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Funcion&#xe1;rio"/>
+            <Property name="contentAreaFilled" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFuncionarioActionPerformed"/>
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+<<<<<<< Updated upstream
               <AbsoluteConstraints x="250" y="700" width="400" height="130"/>
+=======
+              <AbsoluteConstraints x="100" y="620" width="400" height="130"/>
+>>>>>>> Stashed changes
             </Constraint>
           </Constraints>
         </Component>
@@ -175,32 +203,42 @@
               <Image iconType="3" name="/imagens/simbolos/customer_person_people_man_you_1625_64.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Gerente"/>
+            <Property name="contentAreaFilled" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGerenteActionPerformed"/>
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+<<<<<<< Updated upstream
               <AbsoluteConstraints x="750" y="700" width="400" height="130"/>
+=======
+              <AbsoluteConstraints x="780" y="610" width="400" height="130"/>
+>>>>>>> Stashed changes
             </Constraint>
           </Constraints>
         </Component>
         <Component class="javax.swing.JButton" name="btnCliente">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="36" style="1"/>
+              <Font name="Segoe UI" size="31" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/imagens/simbolos/person_user_customer_man_male_man_boy_people_1687_64.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Cliente"/>
+            <Property name="contentAreaFilled" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClienteActionPerformed"/>
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+<<<<<<< Updated upstream
               <AbsoluteConstraints x="250" y="410" width="400" height="130"/>
+=======
+              <AbsoluteConstraints x="100" y="380" width="400" height="130"/>
+>>>>>>> Stashed changes
             </Constraint>
           </Constraints>
         </Component>
@@ -281,12 +319,20 @@
         <Component class="javax.swing.JLabel" name="lblImagem">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+<<<<<<< Updated upstream
               <Image iconType="3" name="/imagens/background_resize.jpg"/>
+=======
+              <Image iconType="3" name="/imagens/Telas/Menu.png"/>
+>>>>>>> Stashed changes
             </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+<<<<<<< Updated upstream
               <AbsoluteConstraints x="0" y="0" width="1920" height="1080"/>
+=======
+              <AbsoluteConstraints x="0" y="-120" width="-1" height="1290"/>
+>>>>>>> Stashed changes
             </Constraint>
           </Constraints>
         </Component>

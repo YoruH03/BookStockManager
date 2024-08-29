@@ -8,6 +8,7 @@ package telas;
  *
  * @author v
  */
+
 public class verProdutos extends javax.swing.JFrame {
 
     /**
@@ -15,6 +16,13 @@ public class verProdutos extends javax.swing.JFrame {
      */
     public verProdutos() {
         initComponents();
+<<<<<<< Updated upstream
+=======
+        carregarTabelaProdutos();
+        txtQuantidade.setText("1");
+        Produto item;
+        Carrinho carrinho1 = new Carrinho(1,"27/08/2024");
+>>>>>>> Stashed changes
     }
 
     /**
@@ -185,11 +193,67 @@ public class verProdutos extends javax.swing.JFrame {
 
     private void btnComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarActionPerformed
         // TODO add your handling code here:
+<<<<<<< Updated upstream
     }//GEN-LAST:event_btnComprarActionPerformed
 
     /**
      * @param args the command line arguments
      */
+=======
+        int i = tabela_produtos.getSelectedRow();
+        String selected="";
+        System.out.println(i);
+        if(i>=0 && i<estoque.size()){
+            Produto item = estoque.get(i);
+            selected = item.getTitulo();
+            System.out.println(item.getTitulo());
+            txtTitulo.setText(item.getTitulo());
+        }
+        System.out.println("Item selecionado para compra foi: "+selected);
+        System.out.println("Carrinho Criado!");
+        Produto itemComprado;
+        for(Produto itemBusca : estoque){
+            JOptionPane.showMessageDialog(null,"Busca Iniciada!", "Notificação Adicionar item ao carrinho",JOptionPane.PLAIN_MESSAGE);
+            System.out.println("Busca inciada!");
+
+            if(itemBusca.getTitulo().equals(selected)){
+                JOptionPane.showMessageDialog(null,"Item Encontrado!", "Notificação Adicionar item ao carrinho",JOptionPane.PLAIN_MESSAGE);
+                itemComprado = itemBusca;
+                if(Integer.parseInt(txtQuantidade.getText())<itemComprado.getQuantidadeEstoque()){
+                listaProdutos.add(itemComprado);
+                itemComprado.setQuantidadeComprada(Integer.parseInt(txtQuantidade.getText()));
+                itemBusca.setQuantidadeEstoque(itemBusca.getQuantidadeEstoque()-itemComprado.getQuantidadeComprada());
+                JOptionPane.showMessageDialog(null,"Item adicionado ao carrinho com sucesso!", "Notificação Adicionar item ao carrinho",JOptionPane.PLAIN_MESSAGE);
+
+                }
+            }
+        }
+
+        
+    }//GEN-LAST:event_btnComprarActionPerformed
+
+    private void TabelaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_TabelaFocusGained
+
+    }//GEN-LAST:event_TabelaFocusGained
+
+    private void txtQuantidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtQuantidadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtQuantidadeActionPerformed
+
+    private void tabela_produtosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabela_produtosMouseClicked
+        // TODO add your handling code here:
+        int i = tabela_produtos.getSelectedRow();
+        
+        System.out.println(i);
+        if(i>=0 && i<=estoque.size()){
+            Produto item = estoque.get(i);
+            System.out.println(item.getTitulo());
+            txtTitulo.setText(item.getTitulo());
+        }
+        
+    }//GEN-LAST:event_tabela_produtosMouseClicked
+
+>>>>>>> Stashed changes
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

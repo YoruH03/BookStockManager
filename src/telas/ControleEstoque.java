@@ -4,6 +4,14 @@
  */
 package telas;
 
+<<<<<<< Updated upstream
+=======
+import static classes.Estoque.estoque;
+import classes.Produto;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
+>>>>>>> Stashed changes
 /**
  *
  * @author Yuri
@@ -44,7 +52,7 @@ public class ControleEstoque extends javax.swing.JFrame {
         txtTituloEstoque.setEnabled(true);
         txtPrecoEstoque.setEnabled(true);
         txtQuantiaEstoque.setEnabled(true);
-        txtCodigoEstoque.setEnabled(true);
+        txtCodigoEstoque.setEnabled(false);
         txtDescricaoEstoque.setEnabled(true);
         
         lblTituloEstoque.setEnabled(true);
@@ -65,6 +73,45 @@ public class ControleEstoque extends javax.swing.JFrame {
         btnBuscar.setEnabled(false);
         
     }
+<<<<<<< Updated upstream
+=======
+    
+    public void clearEstoqueFields(){
+        txtTituloEstoque.setText("");
+        txtPrecoEstoque.setText("");
+        txtQuantiaEstoque.setText("");
+        txtCodigoEstoque.setText("");
+        txtDescricaoEstoque.setText("");
+    }
+    
+    
+    private void carregarTabelaProdutos(){
+        DefaultTableModel modeloTabelaProdutos = new DefaultTableModel(new Object[] {"Título","Autor","Gênero","Preço","Quantia Estoque","Código Produto","Descrição"},0);
+        
+        for(int i=0;i<estoque.size();i++){
+            Object linha[] = new Object[] {estoque.get(i).getTitulo(),
+                                           estoque.get(i).getAutor(),
+                                           estoque.get(i).getGenero(),
+                                           estoque.get(i).getPreço(),
+                                           estoque.get(i).getQuantidadeEstoque(),
+                                           estoque.get(i).getCodigoDoProduto(),
+                                           estoque.get(i).getDescrição()};
+            modeloTabelaProdutos.addRow(linha);
+            
+        }
+        tblMostraProdutos.setModel(modeloTabelaProdutos);
+        
+        tblMostraProdutos.getColumnModel().getColumn(0).setPreferredWidth(WIDTH);
+        tblMostraProdutos.getColumnModel().getColumn(1).setPreferredWidth(WIDTH);
+        tblMostraProdutos.getColumnModel().getColumn(2).setPreferredWidth(WIDTH);
+        tblMostraProdutos.getColumnModel().getColumn(3).setPreferredWidth(WIDTH);
+        tblMostraProdutos.getColumnModel().getColumn(4).setPreferredWidth(WIDTH);
+        tblMostraProdutos.getColumnModel().getColumn(5).setPreferredWidth(WIDTH);
+        tblMostraProdutos.getColumnModel().getColumn(6).setPreferredWidth(WIDTH);
+        
+        
+    }
+>>>>>>> Stashed changes
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -78,7 +125,6 @@ public class ControleEstoque extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         txtTituloEstoque = new javax.swing.JTextField();
         txtQuantiaEstoque = new javax.swing.JTextField();
-        txtDescricaoEstoque = new javax.swing.JTextField();
         txtPrecoEstoque = new javax.swing.JTextField();
         txtCodigoEstoque = new javax.swing.JTextField();
         lblTituloEstoque = new javax.swing.JLabel();
@@ -93,7 +139,13 @@ public class ControleEstoque extends javax.swing.JFrame {
         btnPesquisarItem = new javax.swing.JButton();
         btnExcluirItem = new javax.swing.JButton();
         lblControleEstoque = new javax.swing.JLabel();
+<<<<<<< Updated upstream
         jButton1 = new javax.swing.JButton();
+=======
+        btnCriar = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        txtDescricaoEstoque = new javax.swing.JTextArea();
+>>>>>>> Stashed changes
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
@@ -108,8 +160,6 @@ public class ControleEstoque extends javax.swing.JFrame {
         });
 
         txtQuantiaEstoque.setToolTipText("insira a quantia em estoque");
-
-        txtDescricaoEstoque.setToolTipText("insira a descrição");
 
         txtPrecoEstoque.setToolTipText("insira o preço do produto");
 
@@ -172,6 +222,11 @@ public class ControleEstoque extends javax.swing.JFrame {
         btnExcluirItem.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnExcluirItem.setText("Excluir");
         btnExcluirItem.setToolTipText("Excluir algum produto do estoque");
+        btnExcluirItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirItemActionPerformed(evt);
+            }
+        });
 
         lblControleEstoque.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblControleEstoque.setText("Controle do estoque");
@@ -179,19 +234,24 @@ public class ControleEstoque extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton1.setText("Criar Item");
 
+        txtDescricaoEstoque.setColumns(20);
+        txtDescricaoEstoque.setRows(5);
+        jScrollPane3.setViewportView(txtDescricaoEstoque);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(24, 467, Short.MAX_VALUE)
-                .addComponent(lblControleEstoque)
-                .addGap(386, 386, 386))
-            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+<<<<<<< Updated upstream
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1)
+=======
+                        .addContainerGap(40, Short.MAX_VALUE)
+                        .addComponent(btnCriar)
+>>>>>>> Stashed changes
                         .addGap(50, 50, 50)
                         .addComponent(btnAlterarItem)
                         .addGap(65, 65, 65)
@@ -200,13 +260,15 @@ public class ControleEstoque extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblTituloEstoque, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblPrecoEstoque, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtTituloEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtPrecoEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(34, 34, 34)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(lblTituloEstoque)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtTituloEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(lblPrecoEstoque)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtPrecoEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(35, 35, 35)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(lblCodigoEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -217,43 +279,45 @@ public class ControleEstoque extends javax.swing.JFrame {
                                 .addGap(33, 33, 33)
                                 .addComponent(txtQuantiaEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(btnCancelarItem)
                         .addGap(69, 69, 69)
-                        .addComponent(btnExcluirItem))
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(lblDescricaoEstoque)
-                            .addGap(18, 18, 18)
-                            .addComponent(txtDescricaoEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addGap(108, 108, 108)
-                            .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnPesquisarItem)
-                .addGap(62, 62, 62))
+                        .addComponent(btnExcluirItem)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnPesquisarItem)
+                        .addGap(62, 62, 62))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 103, Short.MAX_VALUE)
+                        .addComponent(lblDescricaoEstoque)
+                        .addGap(29, 29, 29)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(128, 128, 128))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(lblControleEstoque)
+                        .addGap(406, 406, 406))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(435, 435, 435))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblControleEstoque)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(lblControleEstoque)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(lblQuantiaEstoque)
-                                    .addComponent(txtQuantiaEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(lblCodigoEstoque)
-                                    .addComponent(txtCodigoEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(9, 9, 9)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(lblDescricaoEstoque)
+<<<<<<< Updated upstream
                                     .addComponent(txtDescricaoEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnBuscar)))
@@ -273,6 +337,34 @@ public class ControleEstoque extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtPrecoEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblPrecoEstoque)))))
+=======
+                                    .addComponent(lblQuantiaEstoque)
+                                    .addComponent(txtQuantiaEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtTituloEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblTituloEstoque))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(lblCodigoEstoque)
+                                        .addComponent(txtCodigoEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtPrecoEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(lblPrecoEstoque)))))))
+                .addGap(4, 4, 4)
+                .addComponent(btnBuscar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAlterarItem)
+                    .addComponent(btnCancelarItem)
+                    .addComponent(btnSalvarItem)
+                    .addComponent(btnPesquisarItem)
+                    .addComponent(btnExcluirItem)
+                    .addComponent(btnCriar))
+                .addGap(0, 12, Short.MAX_VALUE))
+>>>>>>> Stashed changes
         );
 
         jScrollPane1.setToolTipText("tabela com os produtos em estoque");
@@ -296,27 +388,45 @@ public class ControleEstoque extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+<<<<<<< Updated upstream
         jScrollPane1.setViewportView(jTable1);
+=======
+        tblMostraProdutos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblMostraProdutosMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tblMostraProdutos);
+        if (tblMostraProdutos.getColumnModel().getColumnCount() > 0) {
+            tblMostraProdutos.getColumnModel().getColumn(0).setPreferredWidth(50);
+            tblMostraProdutos.getColumnModel().getColumn(1).setPreferredWidth(20);
+            tblMostraProdutos.getColumnModel().getColumn(2).setPreferredWidth(15);
+            tblMostraProdutos.getColumnModel().getColumn(3).setPreferredWidth(8);
+            tblMostraProdutos.getColumnModel().getColumn(4).setPreferredWidth(3);
+            tblMostraProdutos.getColumnModel().getColumn(5).setPreferredWidth(5);
+            tblMostraProdutos.getColumnModel().getColumn(6).setPreferredWidth(100);
+        }
+>>>>>>> Stashed changes
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(79, 79, 79)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 820, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(428, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         pack();
@@ -332,6 +442,7 @@ public class ControleEstoque extends javax.swing.JFrame {
         disableEstoqueFields();
         disableEstoqueButtons();
         //btnAddItem.setEnabled(true);
+        clearEstoqueFields();
         btnPesquisarItem.setEnabled(true);
     }//GEN-LAST:event_btnCancelarItemActionPerformed
 
@@ -356,8 +467,58 @@ public class ControleEstoque extends javax.swing.JFrame {
 
     private void btnAlterarItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarItemActionPerformed
         // TODO add your handling code here:
+        enableEstoqueFields();
+        btnSalvarItem.setEnabled(true);
+        btnCancelarItem.setEnabled(true);
+        btnPesquisarItem.setEnabled(true);
+
+        
     }//GEN-LAST:event_btnAlterarItemActionPerformed
 
+<<<<<<< Updated upstream
+=======
+    private void btnCriarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCriarActionPerformed
+        // TODO add your handling code here:
+        new CriarNovoProduto().setVisible(true);
+        btnSalvarItem.setEnabled(true);
+        
+        lblTituloEstoque.setEnabled(true);
+    }//GEN-LAST:event_btnCriarActionPerformed
+
+    private void tblMostraProdutosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblMostraProdutosMouseClicked
+        // TODO add your handling code here:
+        
+        btnAlterarItem.setEnabled(true);
+        btnExcluirItem.setEnabled(true);
+        
+        
+                int i = tblMostraProdutos.getSelectedRow();
+        System.out.println(i);
+        if(i>=0 && i<estoque.size()){
+            Produto item = estoque.get(i);
+            System.out.println(item.getTitulo());
+            txtTituloEstoque.setText(item.getTitulo());
+            txtPrecoEstoque.setText(String.valueOf(item.getPreço()));
+            txtQuantiaEstoque.setText(String.valueOf(item.getQuantidadeEstoque()));
+            txtCodigoEstoque.setText(item.getCodigoDoProduto());
+            txtDescricaoEstoque.setText(item.getDescrição());
+        }
+    }//GEN-LAST:event_tblMostraProdutosMouseClicked
+
+    private void btnExcluirItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirItemActionPerformed
+        // TODO add your handling code here:
+        int i = tblMostraProdutos.getSelectedRow();
+        
+        if(i>=0 && i<estoque.size()){
+            estoque.remove(i);
+
+        }
+        carregarTabelaProdutos();
+
+        
+    }//GEN-LAST:event_btnExcluirItemActionPerformed
+
+>>>>>>> Stashed changes
     /**
      * @param args the command line arguments
      */
@@ -403,7 +564,11 @@ public class ControleEstoque extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+<<<<<<< Updated upstream
     private javax.swing.JTable jTable1;
+=======
+    private javax.swing.JScrollPane jScrollPane3;
+>>>>>>> Stashed changes
     private javax.swing.JLabel lblCodigoEstoque;
     private javax.swing.JLabel lblControleEstoque;
     private javax.swing.JLabel lblDescricaoEstoque;
@@ -411,7 +576,7 @@ public class ControleEstoque extends javax.swing.JFrame {
     private javax.swing.JLabel lblQuantiaEstoque;
     private javax.swing.JLabel lblTituloEstoque;
     private javax.swing.JTextField txtCodigoEstoque;
-    private javax.swing.JTextField txtDescricaoEstoque;
+    private javax.swing.JTextArea txtDescricaoEstoque;
     private javax.swing.JTextField txtPrecoEstoque;
     private javax.swing.JTextField txtQuantiaEstoque;
     private javax.swing.JTextField txtTituloEstoque;

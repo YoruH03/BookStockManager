@@ -4,6 +4,12 @@
  */
 package telas;
 
+import classes.Carrinho;
+import static classes.Carrinho.listaProdutos;
+import static classes.Pagamento.indiceCarrinho;
+import static classes.Pagamento.listaCarrinhos;
+import static classes.Pagamento.listaCarrinhosAntigos;
+
 /**
  *
  * @author Yuri
@@ -16,9 +22,21 @@ public class telaPagamento extends javax.swing.JFrame {
     public telaPagamento() {
         initComponents();
         setLocationRelativeTo(null);
+        
+        txtValorTotal.setText(String.valueOf(carrinhoSelecionado.getTotal()));
+        txtNumCarrinho.setText(String.valueOf(carrinhoSelecionado.getNumCarrinho()));
+        txtProdutos.setText(carrinhoSelecionado.mostarProdutos());
+        
+        
 
     }
+        Carrinho carrinhoSelecionado = listaCarrinhos.get(indiceCarrinho);
 
+    public void resetCampos(){
+        txtValorTotal.setText("");
+        txtNumCarrinho.setText("");
+        txtProdutos.setText("");
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,6 +46,7 @@ public class telaPagamento extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         lblPagamento = new javax.swing.JLabel();
         lblValorTotal = new javax.swing.JLabel();
         txtValorTotal = new javax.swing.JTextField();
@@ -40,8 +59,10 @@ public class telaPagamento extends javax.swing.JFrame {
         txtProdutos = new javax.swing.JTextField();
         btnPagar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("tela de pagamento");
 
         lblPagamento.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblPagamento.setText("Pagamento");
@@ -52,8 +73,11 @@ public class telaPagamento extends javax.swing.JFrame {
 
         lblFormaPagamento.setText("Forma de pagamento");
 
+        buttonGroup1.add(rdbBoleto);
+        rdbBoleto.setSelected(true);
         rdbBoleto.setText("Boleto");
 
+        buttonGroup1.add(rdbPix);
         rdbPix.setText("Pix");
 
         lblNumCarrinho.setText("Número do carrinho");
@@ -63,9 +87,19 @@ public class telaPagamento extends javax.swing.JFrame {
         lblProduto.setText("Produtos");
 
         txtProdutos.setToolTipText("seus produtos");
+        txtProdutos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtProdutosActionPerformed(evt);
+            }
+        });
 
         btnPagar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/3440914-bag-basket-cart-ecommerce-pay-shopping-store_107519.png"))); // NOI18N
         btnPagar.setText("Pagar");
+        btnPagar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPagarActionPerformed(evt);
+            }
+        });
 
         btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/cancel_77947.png"))); // NOI18N
         btnCancelar.setText("Cancelar");
@@ -75,6 +109,10 @@ public class telaPagamento extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel1.setText("Desconto de 5% pagando com Pix!");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -82,42 +120,40 @@ public class telaPagamento extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblValorTotal)
+                            .addComponent(lblNumCarrinho)
+                            .addComponent(lblProduto))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtValorTotal)
+                            .addComponent(txtNumCarrinho)
+                            .addComponent(txtProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(167, 167, 167)
                         .addComponent(lblPagamento))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(53, 53, 53)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnPagar)
-                            .addComponent(lblFormaPagamento))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(rdbBoleto)
-                                .addGap(33, 33, 33)
-                                .addComponent(rdbPix))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(71, 71, 71)
-                                .addComponent(btnCancelar)))))
-                .addContainerGap(50, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(72, 72, 72)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblValorTotal)
-                    .addComponent(lblNumCarrinho)
-                    .addComponent(lblProduto))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtValorTotal, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
-                    .addComponent(txtNumCarrinho)
-                    .addComponent(txtProdutos))
-                .addGap(38, 38, 38))
+                        .addComponent(btnPagar)
+                        .addGap(64, 64, 64)
+                        .addComponent(btnCancelar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblFormaPagamento)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rdbBoleto)
+                        .addGap(33, 33, 33)
+                        .addComponent(rdbPix)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblPagamento)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtValorTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblValorTotal))
@@ -129,16 +165,17 @@ public class telaPagamento extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblProduto)
                     .addComponent(txtProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblFormaPagamento)
                     .addComponent(rdbBoleto)
-                    .addComponent(rdbPix))
-                .addGap(34, 34, 34)
+                    .addComponent(rdbPix)
+                    .addComponent(jLabel1))
+                .addGap(61, 61, 61)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnPagar)
                     .addComponent(btnCancelar))
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         pack();
@@ -148,6 +185,20 @@ public class telaPagamento extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void btnPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagarActionPerformed
+        // TODO add your handling code here:
+        listaCarrinhosAntigos.add(carrinhoSelecionado);
+        listaCarrinhos.remove(indiceCarrinho);
+        listaProdutos.clear();
+        resetCampos();
+        
+        
+    }//GEN-LAST:event_btnPagarActionPerformed
+
+    private void txtProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtProdutosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtProdutosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -187,6 +238,8 @@ public class telaPagamento extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnPagar;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblFormaPagamento;
     private javax.swing.JLabel lblNumCarrinho;
     private javax.swing.JLabel lblPagamento;

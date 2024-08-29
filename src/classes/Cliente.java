@@ -97,6 +97,23 @@ public class Cliente extends Usuario{
         return index_cliente;
     }
     
+    public boolean loginCliente(String email, String senha){
+        if(this.email.equals(email) && this.senha.equals(senha)){
+            return true;
+        }else{
+            return false;
+        }
+        
+    }
+    @Override
+    public String toString(){
+        String resultado = super.toString();
+        resultado += "Endereço: "+this.endereco + "\n"
+                +"Data Nascimento: "+this.dataNascimento+"\n"
+                +" Celular: "+this.celular;
+        return resultado;
+    }
+    
     
     
     

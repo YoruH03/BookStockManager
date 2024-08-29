@@ -31,6 +31,20 @@ public class Gerente extends Usuario{
         this.cadastroGerente = cadastroGerente;
     }
     
+    public boolean LoginGerente(String email,String senha){
+        if(this.email.equals(email)&&this.senha.equals(senha)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    @Override
+    public String toString(){
+        String resultado = super.toString();
+        resultado += "cadastro Gerente: "+this.getCadastroGerente();
+        return resultado;
+    }
+    
     
     
 }
