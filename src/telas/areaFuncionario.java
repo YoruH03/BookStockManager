@@ -76,6 +76,7 @@ public class areaFuncionario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnSair = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         lblDadosFuncionario = new javax.swing.JLabel();
         lblNomeFuncionario = new javax.swing.JLabel();
@@ -97,6 +98,15 @@ public class areaFuncionario extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Área do funcionário");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnSair.setFont(new java.awt.Font("Old London", 0, 48)); // NOI18N
+        btnSair.setText("Sair");
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSair, new org.netbeans.lib.awtextra.AbsoluteConstraints(1650, 10, 130, 60));
 
         lblDadosFuncionario.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblDadosFuncionario.setText("meus dados");
@@ -263,6 +273,11 @@ public class areaFuncionario extends javax.swing.JFrame {
         btnCancelarFuncionario.setEnabled(false);
     }//GEN-LAST:event_btnSalvarFuncionarioActionPerformed
 
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_btnSairActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -301,6 +316,7 @@ public class areaFuncionario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAlterarFuncionario;
     private javax.swing.JButton btnCancelarFuncionario;
+    private javax.swing.JButton btnSair;
     private javax.swing.JButton btnSalvarFuncionario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

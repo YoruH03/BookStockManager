@@ -46,6 +46,15 @@ public class Carrinho {
         }
         
     }
+            public void contarSaldo(){
+                double saldo = 0;
+            for(Produto item : itensNoCarrinho){
+            saldo += item.getPreço()*item.getQuantidadeComprada();
+            
+        }
+            this.total=saldo;
+                
+            }
         
         
     //Métodos getters e setters para cada um dos atributos
@@ -103,6 +112,14 @@ public class Carrinho {
          
          
      }
+
+    public ArrayList<Produto> getItensNoCarrinho() {
+        return itensNoCarrinho;
+    }
+
+    public void setItensNoCarrinho(ArrayList<Produto> itensNoCarrinho) {
+        this.itensNoCarrinho = itensNoCarrinho;
+    }
 
 
 }

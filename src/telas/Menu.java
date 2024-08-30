@@ -181,10 +181,10 @@ public class Menu extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblLogin.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        lblLogin.setFont(new java.awt.Font("Old London", 1, 48)); // NOI18N
         lblLogin.setForeground(new java.awt.Color(255, 0, 0));
         lblLogin.setText("Você entrou como cliente");
-        jPanel1.add(lblLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, -1, -1));
+        jPanel1.add(lblLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 480, 60));
 
         lblBookStockManager.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         lblBookStockManager.setForeground(new java.awt.Color(255, 255, 255));
@@ -199,7 +199,7 @@ public class Menu extends javax.swing.JFrame {
                 btnAtualizarEstoqueActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAtualizarEstoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 570, 400, 130));
+        jPanel1.add(btnAtualizarEstoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(1420, 640, 400, 130));
 
         btnVerCarrinho.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         btnVerCarrinho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/4105931-add-to-cart-buy-cart-sell-shop-shopping-cart_113919_64.png"))); // NOI18N
@@ -209,7 +209,7 @@ public class Menu extends javax.swing.JFrame {
                 btnVerCarrinhoActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVerCarrinho, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 390, 400, 130));
+        jPanel1.add(btnVerCarrinho, new org.netbeans.lib.awtextra.AbsoluteConstraints(1400, 420, 400, 130));
 
         btnPesquisar.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         btnPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/searchmagnifierinterfacesymbol1_79893_64.png"))); // NOI18N
@@ -219,7 +219,7 @@ public class Menu extends javax.swing.JFrame {
                 btnPesquisarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnPesquisar, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 390, 400, 130));
+        jPanel1.add(btnPesquisar, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 400, 400, 130));
 
         btnFuncionario.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         btnFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/technicalsupport_support_representative_person_people_man_1641_64.png"))); // NOI18N
@@ -229,7 +229,7 @@ public class Menu extends javax.swing.JFrame {
                 btnFuncionarioActionPerformed(evt);
             }
         });
-        jPanel1.add(btnFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 570, 400, 130));
+        jPanel1.add(btnFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 640, 400, 130));
 
         btnGerente.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         btnGerente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/customer_person_people_man_you_1625_64.png"))); // NOI18N
@@ -239,7 +239,7 @@ public class Menu extends javax.swing.JFrame {
                 btnGerenteActionPerformed(evt);
             }
         });
-        jPanel1.add(btnGerente, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 570, 400, 130));
+        jPanel1.add(btnGerente, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 640, 400, 130));
 
         btnCliente.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         btnCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/person_user_customer_man_male_man_boy_people_1687_64.png"))); // NOI18N
@@ -249,7 +249,7 @@ public class Menu extends javax.swing.JFrame {
                 btnClienteActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 390, 400, 130));
+        jPanel1.add(btnCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 400, 400, 130));
 
         btnLogout.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/logout_90894_64.png"))); // NOI18N
@@ -336,7 +336,10 @@ tela.addWindowListener(new java.awt.event.WindowAdapter() {
         if(logado==true){
             if(user.equals("gerente") || user.equals("funcionario")){
                 JOptionPane.showMessageDialog(null,"Você tem acesso a criar nova conta de cliente","Notificação de acesso a cliente",JOptionPane.ERROR_MESSAGE);
-                new cadastrarCliente().setVisible(true);
+                int response = JOptionPane.showConfirmDialog(null, "Gostaria de criar uma nova conta como Cliente?","Confirmação",JOptionPane.YES_NO_OPTION);
+                if(response==JOptionPane.YES_OPTION){
+                    new cadastrarCliente().setVisible(true);
+                }
             }else{
                 new areaCliente().setVisible(true);
             }

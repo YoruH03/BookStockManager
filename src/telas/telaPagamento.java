@@ -10,7 +10,10 @@ import static classes.Carrinho.listaProdutos;
 import classes.Cliente;
 import static classes.Cliente.index_cliente;
 import static classes.Cliente.listaClientes;
+import classes.Produto;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import static telas.verCarrinho.aux;
 
 /**
  *
@@ -24,18 +27,22 @@ public class telaPagamento extends javax.swing.JFrame {
     public telaPagamento() {
         initComponents();
         setLocationRelativeTo(null);
+        newCarregarInfoPagamento();
         
-        Cliente cliente = listaClientes.get(index_cliente);
-        System.out.println("Cliente passado");
-        ArrayList<Carrinho> listaCarrinhoDoCliente = cliente.getListaCarrinho();
-        System.out.println("Tamanho da lista: "+cliente.getListaCarrinho().size());
-        System.out.println("ListaResgatada");
-        Carrinho carrinhoSalvo = listaCarrinhoDoCliente.get(listaCarrinhoDoCliente.size()-1);
-        txtValorTotal.setText(String.valueOf(carrinhoSalvo.getTotal()));
-        txtNumCarrinho.setText(String.valueOf(carrinhoSalvo.getNumCarrinho()));
-        txtProdutos.setText(carrinhoSalvo.mostarProdutos(carrinhoSalvo.itensNoCarrinho));
         
 
+    }
+    
+    public void newCarregarInfoPagamento(){
+        Carrinho carrinhoSalvo = aux.get(0);
+        if(rdbPix.isSelected()){
+            double desconto = 0.95*carrinhoSalvo.getTotal();
+            txtValorTotal.setText(String.format("%.2f", desconto));
+        }else if(rdbBoleto.isSelected()){
+        txtValorTotal.setText(String.format("%.2f", carrinhoSalvo.getTotal()));
+        }
+        txtNumCarrinho.setText(String.valueOf(carrinhoSalvo.getNumCarrinho()));
+        txtProdutos.setText(carrinhoSalvo.mostarProdutos(carrinhoSalvo.itensNoCarrinho));
     }
 
     /**
@@ -48,6 +55,7 @@ public class telaPagamento extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         lblPagamento = new javax.swing.JLabel();
         lblValorTotal = new javax.swing.JLabel();
         txtValorTotal = new javax.swing.JTextField();
@@ -73,9 +81,22 @@ public class telaPagamento extends javax.swing.JFrame {
 
         lblFormaPagamento.setText("Forma de pagamento");
 
+        buttonGroup1.add(rdbBoleto);
+        rdbBoleto.setSelected(true);
         rdbBoleto.setText("Boleto");
+        rdbBoleto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rdbBoletoMouseClicked(evt);
+            }
+        });
 
+        buttonGroup1.add(rdbPix);
         rdbPix.setText("Pix");
+        rdbPix.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rdbPixMouseClicked(evt);
+            }
+        });
 
         lblNumCarrinho.setText("Número do carrinho");
 
@@ -177,8 +198,36 @@ public class telaPagamento extends javax.swing.JFrame {
 
     private void btnPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagarActionPerformed
         // TODO add your handling code here:
-        listaProdutos.clear();
+                if(listaProdutos.size()>0){
+            Cliente cliente = listaClientes.get(index_cliente);
+            ArrayList listaCarrinhoDoCliente = cliente.getListaCarrinho();
+            int indexCarrinho = listaCarrinhoDoCliente.size();
+
+            // Clone the ArrayList
+        ArrayList<Produto> clonedList = (ArrayList<Produto>) listaProdutos.clone();
+            Carrinho carrinho1 = new Carrinho(indexCarrinho,"29/08/2024",clonedList);
+            cliente.addCarrinhoLista(carrinho1);
+            listaProdutos.clear();
+            aux.clear();
+            System.out.println("Adicionado ao Histórico!");   
+
+        }
+        JOptionPane.showMessageDialog(null,"Compra realizada com sucesso!","Notificação de compra!",JOptionPane.INFORMATION_MESSAGE);
+        newCarregarInfoPagamento();
+
+    
+        //listaProdutos.clear();
     }//GEN-LAST:event_btnPagarActionPerformed
+
+    private void rdbPixMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rdbPixMouseClicked
+        // TODO add your handling code here:
+        newCarregarInfoPagamento();
+    }//GEN-LAST:event_rdbPixMouseClicked
+
+    private void rdbBoletoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rdbBoletoMouseClicked
+        // TODO add your handling code here:
+        newCarregarInfoPagamento();
+    }//GEN-LAST:event_rdbBoletoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -218,6 +267,7 @@ public class telaPagamento extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnPagar;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel lblFormaPagamento;
     private javax.swing.JLabel lblNumCarrinho;
     private javax.swing.JLabel lblPagamento;

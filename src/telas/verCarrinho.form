@@ -94,7 +94,7 @@
                 <Column editable="true" title="T&#xed;tulo" type="java.lang.String"/>
                 <Column editable="true" title="Pre&#xe7;o" type="java.lang.Double"/>
                 <Column editable="true" title="Quantidade" type="java.lang.Integer"/>
-                <Column editable="true" title="C&#xf3;d. Produto" type="java.lang.Integer"/>
+                <Column editable="true" title="C&#xf3;d. Produto" type="java.lang.String"/>
                 <Column editable="true" title="Descri&#xe7;&#xe3;o" type="java.lang.String"/>
               </Table>
             </Property>
@@ -131,6 +131,9 @@
               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblProdutosMouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -144,6 +147,10 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Remover item"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnRemoverItemMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRemoverItemActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnEsvaziarCarrinho">
       <Properties>
@@ -155,6 +162,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Esvaziar carrinho"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEsvaziarCarrinhoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblProdutosCarrinho">
       <Properties>

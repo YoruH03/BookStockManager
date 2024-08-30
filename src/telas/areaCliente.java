@@ -86,6 +86,8 @@ public class areaCliente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnCarrinhosAnteriores = new javax.swing.JButton();
+        btnSair = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         lblDadosCliente = new javax.swing.JLabel();
         lblNomeCliente = new javax.swing.JLabel();
@@ -111,6 +113,24 @@ public class areaCliente extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Área do cliente");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnCarrinhosAnteriores.setFont(new java.awt.Font("Old London", 0, 48)); // NOI18N
+        btnCarrinhosAnteriores.setText("Acessar Carrinhos Anteriores");
+        btnCarrinhosAnteriores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCarrinhosAnterioresActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnCarrinhosAnteriores, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 920, -1, 70));
+
+        btnSair.setFont(new java.awt.Font("Old London", 0, 48)); // NOI18N
+        btnSair.setText("Sair");
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSair, new org.netbeans.lib.awtextra.AbsoluteConstraints(1660, 30, 130, 60));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -217,7 +237,7 @@ public class areaCliente extends javax.swing.JFrame {
         lblAreaCliente.setText("Área do Cliente");
         jPanel1.add(lblAreaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 22, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 190, 628, 270));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(788, 100, 610, 810));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Telas/ÁreaCliente.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -253,6 +273,16 @@ public class areaCliente extends javax.swing.JFrame {
         btnCancelarCliente.setEnabled(false);
         btnSalvarCliente.setEnabled(false);
     }//GEN-LAST:event_btnSalvarClienteActionPerformed
+
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_btnSairActionPerformed
+
+    private void btnCarrinhosAnterioresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarrinhosAnterioresActionPerformed
+        // TODO add your handling code here:
+        new carrinhosAntigos().setVisible(true);
+    }//GEN-LAST:event_btnCarrinhosAnterioresActionPerformed
 
     /**
      * @param args the command line arguments
@@ -292,6 +322,8 @@ public class areaCliente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAlterarCliente;
     private javax.swing.JButton btnCancelarCliente;
+    private javax.swing.JButton btnCarrinhosAnteriores;
+    private javax.swing.JButton btnSair;
     private javax.swing.JButton btnSalvarCliente;
     private javax.swing.JFormattedTextField ftxNascimentoCliente;
     private javax.swing.JFormattedTextField ftxTelefone;

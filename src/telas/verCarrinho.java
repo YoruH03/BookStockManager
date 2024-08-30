@@ -13,6 +13,8 @@ import static classes.Cliente.index_cliente;
 import static classes.Cliente.listaClientes;
 import classes.Produto;
 import java.util.ArrayList;
+import java.util.Vector;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -20,6 +22,12 @@ import javax.swing.table.DefaultTableModel;
  * @author Yuri
  */
 public class verCarrinho extends javax.swing.JFrame {
+        Cliente cliente = listaClientes.get(index_cliente);//Pegando o ID do cliente
+        ArrayList listaCarrinhoDoCliente = cliente.getListaCarrinho();//Pegando a lista de carrinhos do cliente
+        int indexCarrinho = listaCarrinhoDoCliente.size();//Pegando o tamanho da lista de carrinhos do cliente
+        Carrinho carrinho1 = new Carrinho(indexCarrinho,"29/08/2024");//Criando um novo carrinho vazio de itens com o índice definido na linha anterior
+        public static Vector<Carrinho> aux = new Vector<>(1);  // Initializes a Vector with an initial capacity of 1
+
 
     /**
      * Creates new form verCarrinho
@@ -28,7 +36,7 @@ public class verCarrinho extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         carregarTabelaProdutos();
-
+        btnRemoverItem.setEnabled(false);
     }
     
 
@@ -92,11 +100,16 @@ public class verCarrinho extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Double.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class
+                java.lang.String.class, java.lang.Double.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+        });
+        tblProdutos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblProdutosMouseClicked(evt);
             }
         });
         jScrollPane1.setViewportView(tblProdutos);
@@ -104,10 +117,25 @@ public class verCarrinho extends javax.swing.JFrame {
         btnRemoverItem.setBackground(new java.awt.Color(153, 153, 153));
         btnRemoverItem.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnRemoverItem.setText("Remover item");
+        btnRemoverItem.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnRemoverItemMouseClicked(evt);
+            }
+        });
+        btnRemoverItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoverItemActionPerformed(evt);
+            }
+        });
 
         btnEsvaziarCarrinho.setBackground(new java.awt.Color(255, 0, 0));
         btnEsvaziarCarrinho.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnEsvaziarCarrinho.setText("Esvaziar carrinho");
+        btnEsvaziarCarrinho.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEsvaziarCarrinhoActionPerformed(evt);
+            }
+        });
 
         lblProdutosCarrinho.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblProdutosCarrinho.setText("Meus produtos no carrinho");
@@ -186,28 +214,16 @@ public class verCarrinho extends javax.swing.JFrame {
     private void btnConfirmarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarCompraActionPerformed
         // TODO add your handling code here:
         if(listaProdutos.size()>0){
-            Cliente cliente = listaClientes.get(index_cliente);
-            ArrayList listaCarrinhoDoCliente = cliente.getListaCarrinho();
-            int indexCarrinho = listaCarrinhoDoCliente.size();
-            
-                    // Clone the ArrayList
-        ArrayList<Produto> clonedList = (ArrayList<Produto>) listaProdutos.clone();
-        /*          //DE FATO, ELES POSSUEM REF. DE MEMÓRIA DIFERENTES!!
-            System.out.println("VERIFICANDO SE ELAS POSSUEM MESMA REFERENCIA DE MEMÓRIA");
-
-        // Verify different memory references
-        System.out.println(listaProdutos == clonedList);  // Output: false
-
-        // Verify the contents are the same
-        System.out.println(listaProdutos.equals(clonedList));  // Output: true
-        */
-            Carrinho carrinho1 = new Carrinho(indexCarrinho,"29/08/2024",clonedList);
-            cliente.addCarrinhoLista(carrinho1);
-            listaProdutos.clear();
-            System.out.println("Adicionado ao Histórico!");
+            carrinho1.setItensNoCarrinho(listaProdutos);
+            carrinho1.contarSaldo();
+            aux.add(carrinho1);
             new telaPagamento().setVisible(true);
-
+        }else{
+        JOptionPane.showMessageDialog(null, "Adicione algum item ao carrinho!", "Error ao acessar o pagamento", JOptionPane.ERROR_MESSAGE);
         }
+        carregarTabelaProdutos();
+
+        //}
 
     }//GEN-LAST:event_btnConfirmarCompraActionPerformed
 
@@ -215,6 +231,36 @@ public class verCarrinho extends javax.swing.JFrame {
         // TODO add your handling code here:
         new carrinhosAntigos().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnEsvaziarCarrinhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEsvaziarCarrinhoActionPerformed
+        // TODO add your handling code here:
+                carregarTabelaProdutos();
+
+    }//GEN-LAST:event_btnEsvaziarCarrinhoActionPerformed
+
+    private void btnRemoverItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverItemActionPerformed
+        // TODO add your handling code here:
+        listaProdutos.clear();
+        carregarTabelaProdutos();
+
+    }//GEN-LAST:event_btnRemoverItemActionPerformed
+
+    private void btnRemoverItemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRemoverItemMouseClicked
+        // TODO add your handling code here:
+        int indiceItem = tblProdutos.getSelectedColumn();
+        if (indiceItem>=0 && indiceItem<listaProdutos.size()){
+            
+            listaProdutos.remove(indiceItem);  
+            
+        }
+    carregarTabelaProdutos();
+        
+    }//GEN-LAST:event_btnRemoverItemMouseClicked
+
+    private void tblProdutosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblProdutosMouseClicked
+        // TODO add your handling code here:
+        btnRemoverItem.setEnabled(true);
+    }//GEN-LAST:event_tblProdutosMouseClicked
 
     /**
      * @param args the command line arguments
