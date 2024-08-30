@@ -259,8 +259,6 @@ public class verProdutos extends javax.swing.JFrame {
             txtTitulo.setText(item.getTitulo());
         }
         System.out.println("Item selecionado para compra foi: "+selected);
-        Carrinho carrinho1 = new Carrinho(1,"27/08/2024");
-        System.out.println("Carrinho Criado!");
         Produto itemComprado;
         for(Produto itemBusca : estoque){
             JOptionPane.showMessageDialog(null,"Busca Iniciada!", "Notificação Adicionar item ao carrinho",JOptionPane.PLAIN_MESSAGE);

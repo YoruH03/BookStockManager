@@ -25,6 +25,8 @@ public class areaFuncionario extends javax.swing.JFrame {
         btnSalvarFuncionario.setEnabled(false);
         btnCancelarFuncionario.setEnabled(false);
         loadFuncionarioFields();
+                this.setExtendedState(MAXIMIZED_BOTH);
+
         
         setLocationRelativeTo(null);
     }
@@ -90,9 +92,11 @@ public class areaFuncionario extends javax.swing.JFrame {
         btnCancelarFuncionario = new javax.swing.JButton();
         btnSalvarFuncionario = new javax.swing.JButton();
         lblAreaFuncionario = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Área do funcionário");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblDadosFuncionario.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblDadosFuncionario.setText("meus dados");
@@ -170,7 +174,7 @@ public class areaFuncionario extends javax.swing.JFrame {
                             .addComponent(lblEmailFuncionario)
                             .addComponent(lblSenhaFuncionario)
                             .addComponent(lblCodFuncionario))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -186,9 +190,9 @@ public class areaFuncionario extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnAlterarFuncionario)
-                .addGap(168, 168, 168)
+                .addGap(110, 110, 110)
                 .addComponent(btnSalvarFuncionario)
-                .addGap(129, 129, 129)
+                .addGap(114, 114, 114)
                 .addComponent(btnCancelarFuncionario)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -225,21 +229,10 @@ public class areaFuncionario extends javax.swing.JFrame {
                 .addContainerGap(44, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(45, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 540, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Telas/ÁreaFuncionário.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -309,6 +302,7 @@ public class areaFuncionario extends javax.swing.JFrame {
     private javax.swing.JButton btnAlterarFuncionario;
     private javax.swing.JButton btnCancelarFuncionario;
     private javax.swing.JButton btnSalvarFuncionario;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblAreaFuncionario;
     private javax.swing.JLabel lblCPFFuncionario;

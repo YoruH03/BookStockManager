@@ -323,7 +323,7 @@ public class areaGerente extends javax.swing.JFrame {
                 .addGap(102, 102, 102))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, 530, 670));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 530, 670));
 
         jPanel2.setBackground(new java.awt.Color(211, 181, 143));
 
@@ -386,6 +386,11 @@ public class areaGerente extends javax.swing.JFrame {
             }
         });
         tblControleFuncionarios.setToolTipText("Tabela com os dados de funcionários");
+        tblControleFuncionarios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblControleFuncionariosMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblControleFuncionarios);
         if (tblControleFuncionarios.getColumnModel().getColumnCount() > 0) {
             tblControleFuncionarios.getColumnModel().getColumn(0).setPreferredWidth(3);
@@ -407,6 +412,11 @@ public class areaGerente extends javax.swing.JFrame {
         btnExcluirFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/delete_4219.png"))); // NOI18N
         btnExcluirFuncionario.setText("Excluir");
         btnExcluirFuncionario.setToolTipText("excluir funcionário");
+        btnExcluirFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirFuncionarioActionPerformed(evt);
+            }
+        });
 
         lblControleFuncionarios.setFont(new java.awt.Font("Old English Text MT", 1, 48)); // NOI18N
         lblControleFuncionarios.setText("Controle de funcionários");
@@ -444,7 +454,7 @@ public class areaGerente extends javax.swing.JFrame {
                 .addComponent(lblIdFuncionario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtCodigoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 169, Short.MAX_VALUE)
                 .addComponent(btnBuscarFuncionario)
                 .addGap(15, 15, 15))
         );
@@ -472,10 +482,10 @@ public class areaGerente extends javax.swing.JFrame {
                     .addComponent(btnExcluirFuncionario))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 220, 870, 380));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 30, 980, 420));
 
         jPanel3.setBackground(new java.awt.Color(211, 181, 143));
 
@@ -496,6 +506,11 @@ public class areaGerente extends javax.swing.JFrame {
 
         btnNovoCliente.setFont(new java.awt.Font("Old English Text MT", 0, 18)); // NOI18N
         btnNovoCliente.setText("Novo");
+        btnNovoCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNovoClienteActionPerformed(evt);
+            }
+        });
 
         btnSalvarCliente.setFont(new java.awt.Font("Old English Text MT", 0, 18)); // NOI18N
         btnSalvarCliente.setText("Salvar");
@@ -507,6 +522,11 @@ public class areaGerente extends javax.swing.JFrame {
 
         btnExluirCliente.setFont(new java.awt.Font("Old English Text MT", 0, 18)); // NOI18N
         btnExluirCliente.setText("Excluir");
+        btnExluirCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExluirClienteActionPerformed(evt);
+            }
+        });
 
         tblControleClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -573,7 +593,7 @@ public class areaGerente extends javax.swing.JFrame {
                                 .addComponent(lblCodigoCliente)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtCodCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
                         .addComponent(btnBuscarCliente)))
                 .addContainerGap())
         );
@@ -596,12 +616,12 @@ public class areaGerente extends javax.swing.JFrame {
                     .addComponent(btnSalvarCliente)
                     .addComponent(btnExluirCliente))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 660, 940, 390));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 520, 990, 450));
 
-        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ÁreaGerente.png"))); // NOI18N
+        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Telas/ÁreaGerente.png"))); // NOI18N
         getContentPane().add(lblBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 1920, 1140));
 
         pack();
@@ -663,6 +683,47 @@ public class areaGerente extends javax.swing.JFrame {
         // TODO add your handling code here:
         carregarTabelaCliente();
     }//GEN-LAST:event_btnSalvarClienteActionPerformed
+
+    private void btnExluirClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExluirClienteActionPerformed
+        // TODO add your handling code here:
+        int i = tblControleClientes.getSelectedRow();
+        
+                if (i>=0 && i<listaClientes.size()){
+            
+            listaClientes.remove(i);  
+            
+        }
+    carregarTabelaCliente();
+        
+        
+    
+    }//GEN-LAST:event_btnExluirClienteActionPerformed
+
+    private void btnExcluirFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirFuncionarioActionPerformed
+        // TODO add your handling code here:
+        
+                int i = tblControleClientes.getSelectedRow();
+        
+                if (i>=0 && i<listaFuncionarios.size()){
+            
+            listaFuncionarios.remove(i);  
+            
+        }
+    carregarTabelaFuncionario();
+    }//GEN-LAST:event_btnExcluirFuncionarioActionPerformed
+
+    private void btnNovoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoClienteActionPerformed
+        // TODO add your handling code here:
+        new cadastrarCliente().setVisible(true);
+        btnSalvarCliente.setEnabled(true);
+
+    }//GEN-LAST:event_btnNovoClienteActionPerformed
+
+    private void tblControleFuncionariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblControleFuncionariosMouseClicked
+        // TODO add your handling code here:
+        
+        btnExcluirFuncionario.setEnabled(true);
+    }//GEN-LAST:event_tblControleFuncionariosMouseClicked
 
     /**
      * @param args the command line arguments

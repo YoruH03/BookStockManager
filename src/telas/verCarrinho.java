@@ -4,6 +4,8 @@
  */
 package telas;
 
+import classes.Carrinho;
+import static classes.Carrinho.listaCarrinho;
 import static classes.Carrinho.listaProdutos;
 import javax.swing.table.DefaultTableModel;
 
@@ -83,7 +85,7 @@ public class verCarrinho extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Double.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.Double.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -177,6 +179,10 @@ public class verCarrinho extends javax.swing.JFrame {
     private void btnConfirmarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarCompraActionPerformed
         // TODO add your handling code here:
         new telaPagamento().setVisible(true);
+        if(listaProdutos.size()>0){
+            Carrinho carrinho1 = new Carrinho(1,"29/08/2024",listaProdutos);
+            listaCarrinho.add(carrinho1);
+        }
     }//GEN-LAST:event_btnConfirmarCompraActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
