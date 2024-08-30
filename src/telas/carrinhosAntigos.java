@@ -4,6 +4,14 @@
  */
 package telas;
 
+import classes.Carrinho;
+
+import javax.swing.table.DefaultTableModel;
+import classes.Cliente;
+import static classes.Cliente.index_cliente;
+import static classes.Cliente.listaClientes;
+import java.util.ArrayList;
+
 /**
  *
  * @author Yuri
@@ -18,6 +26,7 @@ public class carrinhosAntigos extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         disableCarrinhoFields();
         btnCancelarCarrinho.setEnabled(false);
+        carregarTabelaCliente();
         
     }
     
@@ -53,6 +62,37 @@ public class carrinhosAntigos extends javax.swing.JFrame {
             lblCodRastreio.setEnabled(false);
             lblTotal.setEnabled(false);
         }
+                    
+        private void carregarTabelaCliente(){
+            DefaultTableModel modeloTabelaCarrinhosAntigos = new DefaultTableModel(new Object[] {"Num.Carrinho","Data Pedido","Produtos","Total"},0);
+            
+            Cliente cliente = listaClientes.get(index_cliente);
+            System.out.println("Cliente passado");
+            ArrayList<Carrinho> listaCarrinhoDoCliente = cliente.getListaCarrinho();
+            System.out.println("Tamanho da lista: "+cliente.getListaCarrinho().size());
+            System.out.println("ListaResgatada");
+            
+            for(int i=0;i<cliente.getListaCarrinho().size();i++){
+                Object linha[] = new Object[] {cliente.getListaCarrinho().get(i).getNumCarrinho(),
+                                               cliente.getListaCarrinho().get(i).getData(),
+                                               cliente.getListaCarrinho().get(i).mostarProdutos(cliente.getListaCarrinho().get(i).itensNoCarrinho),
+                                               cliente.getListaCarrinho().get(i).getTotal()};
+                modeloTabelaCarrinhosAntigos.addRow(linha);
+                
+                
+            }
+            //Tabela recebe modelo de clientes
+            tblCliente.setModel(modeloTabelaCarrinhosAntigos);
+            
+            tblCliente.getColumnModel().getColumn(0).setPreferredWidth(3);
+            tblCliente.getColumnModel().getColumn(1).setPreferredWidth(50);
+            tblCliente.getColumnModel().getColumn(2).setPreferredWidth(14);
+            tblCliente.getColumnModel().getColumn(3).setPreferredWidth(10);
+            //tblCliente.getColumnModel().getColumn(4).setPreferredWidth(100);
+
+
+            
+        }                    
 
     /**
      * This method is called from within the constructor to initialize the form.

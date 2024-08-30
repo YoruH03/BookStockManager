@@ -5,7 +5,12 @@
 package telas;
 
 import classes.Carrinho;
-import static classes.Carrinho.listaCarrinho;
+//import static classes.Carrinho.listaCarrinho;
+import static classes.Carrinho.listaProdutos;
+import classes.Cliente;
+import static classes.Cliente.index_cliente;
+import static classes.Cliente.listaClientes;
+import java.util.ArrayList;
 
 /**
  *
@@ -20,9 +25,15 @@ public class telaPagamento extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         
-        Carrinho carrinhoSalvo = listaCarrinho.get(0);
+        Cliente cliente = listaClientes.get(index_cliente);
+        System.out.println("Cliente passado");
+        ArrayList<Carrinho> listaCarrinhoDoCliente = cliente.getListaCarrinho();
+        System.out.println("Tamanho da lista: "+cliente.getListaCarrinho().size());
+        System.out.println("ListaResgatada");
+        Carrinho carrinhoSalvo = listaCarrinhoDoCliente.get(listaCarrinhoDoCliente.size()-1);
         txtValorTotal.setText(String.valueOf(carrinhoSalvo.getTotal()));
         txtNumCarrinho.setText(String.valueOf(carrinhoSalvo.getNumCarrinho()));
+        txtProdutos.setText(carrinhoSalvo.mostarProdutos(carrinhoSalvo.itensNoCarrinho));
         
 
     }
@@ -76,6 +87,11 @@ public class telaPagamento extends javax.swing.JFrame {
 
         btnPagar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/3440914-bag-basket-cart-ecommerce-pay-shopping-store_107519.png"))); // NOI18N
         btnPagar.setText("Pagar");
+        btnPagar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPagarActionPerformed(evt);
+            }
+        });
 
         btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/cancel_77947.png"))); // NOI18N
         btnCancelar.setText("Cancelar");
@@ -158,6 +174,11 @@ public class telaPagamento extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void btnPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagarActionPerformed
+        // TODO add your handling code here:
+        listaProdutos.clear();
+    }//GEN-LAST:event_btnPagarActionPerformed
 
     /**
      * @param args the command line arguments
