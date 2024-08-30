@@ -94,7 +94,7 @@
                 <Column editable="true" title="T&#xed;tulo" type="java.lang.String"/>
                 <Column editable="true" title="Pre&#xe7;o" type="java.lang.Double"/>
                 <Column editable="true" title="Quantidade" type="java.lang.Integer"/>
-                <Column editable="true" title="C&#xf3;d. Produto" type="java.lang.String"/>
+                <Column editable="true" title="C&#xf3;d. Produto" type="java.lang.Integer"/>
                 <Column editable="true" title="Descri&#xe7;&#xe3;o" type="java.lang.String"/>
               </Table>
             </Property>

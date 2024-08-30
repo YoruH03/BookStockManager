@@ -39,6 +39,7 @@ public class Menu extends javax.swing.JFrame {
         this.setExtendedState(MAXIMIZED_BOTH);
         verificarLogin(logado, user);
         criarContasIniciais();
+        atualizarBotoes();
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -103,7 +104,53 @@ public class Menu extends javax.swing.JFrame {
                 lblLogin.setVisible(false);
             }
     }
+    public void atualizarBotoes(){
+        if(logado==true){
+            if(user.equals("")){
+            btnCliente.setText("Criar conta de Cliente");
+            btnFuncionario.setEnabled(false);
+            btnGerente.setEnabled(false);
+            btnAtualizarEstoque.setEnabled(false);
+            btnVerCarrinho.setEnabled(false);
+            }
+            if(user.equals("cliente")){
+            btnCliente.setText("Área do Cliente");
+            btnFuncionario.setEnabled(false);
+            btnGerente.setEnabled(false);
+            btnAtualizarEstoque.setEnabled(false);
+            btnVerCarrinho.setEnabled(true);
+                
+                
+            }
+            if(user.equals("funcionario")){
+            btnCliente.setText("Criar conta de Cliente");
+            btnFuncionario.setEnabled(true);
+            btnFuncionario.setText("Área do Funcionário");
+            btnGerente.setEnabled(false);
+            btnAtualizarEstoque.setEnabled(true);
+            btnVerCarrinho.setEnabled(true);
+                
+            }
+            if(user.equals("gerente")){
+            btnCliente.setText("Criar conta de Cliente");
+            btnFuncionario.setEnabled(true);
+            btnFuncionario.setText("Criar Funcionário");
+            btnGerente.setEnabled(true);
+            btnGerente.setText("Área do Gerente");
+            btnAtualizarEstoque.setEnabled(true);
+            btnVerCarrinho.setEnabled(true);
 
+            }
+            
+        }else{
+            btnCliente.setText("Criar conta de Cliente");
+            btnFuncionario.setEnabled(false);
+            btnGerente.setEnabled(false);
+            btnAtualizarEstoque.setEnabled(false);
+            btnVerCarrinho.setEnabled(false);
+            
+        }
+    }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -236,8 +283,8 @@ public class Menu extends javax.swing.JFrame {
         lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/livro01.png"))); // NOI18N
         jPanel1.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1460, 0, 390, 210));
 
-        lblImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/madeira-background.jpg"))); // NOI18N
-        jPanel1.add(lblImagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 1190));
+        lblImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Telas/Menu.png"))); // NOI18N
+        jPanel1.add(lblImagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
         lblImagem.getAccessibleContext().setAccessibleName("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

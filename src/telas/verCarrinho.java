@@ -4,7 +4,15 @@
  */
 package telas;
 
+import classes.Carrinho;
+import classes.Usuario;
+//import classes.Usuario.listaCarrinho;
 import static classes.Carrinho.listaProdutos;
+import classes.Cliente;
+import static classes.Cliente.index_cliente;
+import static classes.Cliente.listaClientes;
+import classes.Produto;
+import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -23,6 +31,7 @@ public class verCarrinho extends javax.swing.JFrame {
 
     }
     
+
     
     //Carregar a tabela com os funcionários da lista
     private void carregarTabelaProdutos() {
@@ -83,7 +92,7 @@ public class verCarrinho extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Double.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.Double.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -176,7 +185,30 @@ public class verCarrinho extends javax.swing.JFrame {
 
     private void btnConfirmarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarCompraActionPerformed
         // TODO add your handling code here:
-        new telaPagamento().setVisible(true);
+        if(listaProdutos.size()>0){
+            Cliente cliente = listaClientes.get(index_cliente);
+            ArrayList listaCarrinhoDoCliente = cliente.getListaCarrinho();
+            int indexCarrinho = listaCarrinhoDoCliente.size();
+            
+                    // Clone the ArrayList
+        ArrayList<Produto> clonedList = (ArrayList<Produto>) listaProdutos.clone();
+        /*          //DE FATO, ELES POSSUEM REF. DE MEMÓRIA DIFERENTES!!
+            System.out.println("VERIFICANDO SE ELAS POSSUEM MESMA REFERENCIA DE MEMÓRIA");
+
+        // Verify different memory references
+        System.out.println(listaProdutos == clonedList);  // Output: false
+
+        // Verify the contents are the same
+        System.out.println(listaProdutos.equals(clonedList));  // Output: true
+        */
+            Carrinho carrinho1 = new Carrinho(indexCarrinho,"29/08/2024",clonedList);
+            cliente.addCarrinhoLista(carrinho1);
+            listaProdutos.clear();
+            System.out.println("Adicionado ao Histórico!");
+            new telaPagamento().setVisible(true);
+
+        }
+
     }//GEN-LAST:event_btnConfirmarCompraActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

@@ -57,7 +57,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="90" y="280" width="530" height="670"/>
+          <AbsoluteConstraints x="40" y="220" width="530" height="670"/>
         </Constraint>
       </Constraints>
 
@@ -303,7 +303,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="910" y="220" width="870" height="380"/>
+          <AbsoluteConstraints x="850" y="30" width="980" height="420"/>
         </Constraint>
       </Constraints>
 
@@ -342,7 +342,7 @@
                   <Component id="lblIdFuncionario" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="txtCodigoFuncionario" min="-2" pref="124" max="-2" attributes="0"/>
-                  <EmptySpace pref="59" max="32767" attributes="0"/>
+                  <EmptySpace pref="169" max="32767" attributes="0"/>
                   <Component id="btnBuscarFuncionario" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               </Group>
@@ -377,7 +377,7 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="241" max="-2" attributes="0"/>
-                  <EmptySpace pref="7" max="32767" attributes="0"/>
+                  <EmptySpace pref="47" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -489,6 +489,9 @@
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblControleFuncionariosMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -518,6 +521,9 @@
             <Property name="text" type="java.lang.String" value="Excluir"/>
             <Property name="toolTipText" type="java.lang.String" value="excluir funcion&#xe1;rio"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExcluirFuncionarioActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblControleFuncionarios">
           <Properties>
@@ -537,7 +543,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="840" y="660" width="940" height="390"/>
+          <AbsoluteConstraints x="780" y="520" width="990" height="450"/>
         </Constraint>
       </Constraints>
 
@@ -574,7 +580,7 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="txtCodCliente" min="-2" pref="173" max="-2" attributes="0"/>
-                          <EmptySpace pref="59" max="32767" attributes="0"/>
+                          <EmptySpace pref="109" max="32767" attributes="0"/>
                           <Component id="btnBuscarCliente" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -603,7 +609,7 @@
                       <Component id="btnExluirCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jScrollPane3" pref="272" max="32767" attributes="0"/>
+                  <Component id="jScrollPane3" pref="332" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -660,6 +666,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Novo"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNovoClienteActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnSalvarCliente">
           <Properties>
@@ -679,6 +688,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Excluir"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExluirClienteActionPerformed"/>
+          </Events>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane3">
 
@@ -743,7 +755,7 @@
     <Component class="javax.swing.JLabel" name="lblBackground">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imagens/&#xc1;reaGerente.png"/>
+          <Image iconType="3" name="/imagens/Telas/&#xc1;reaGerente.png"/>
         </Property>
       </Properties>
       <Constraints>

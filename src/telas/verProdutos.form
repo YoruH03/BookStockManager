@@ -86,10 +86,7 @@
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="btnPesquisar" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="lblNome" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="154" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="lblNome" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
