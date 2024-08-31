@@ -217,7 +217,7 @@ public class areaGerente extends javax.swing.JFrame {
         }
         ftxCPFGerente.setToolTipText("insira o CPF");
 
-        lblAreaGerente.setFont(new java.awt.Font("Old English Text MT", 1, 60)); // NOI18N
+        lblAreaGerente.setFont(new java.awt.Font("Old English Text MT", 1, 48)); // NOI18N
         lblAreaGerente.setText("Dados do Gerente");
 
         btnAlterarGerente.setBackground(new java.awt.Color(255, 255, 0));
@@ -254,46 +254,43 @@ public class areaGerente extends javax.swing.JFrame {
         dadosGerente.setLayout(dadosGerenteLayout);
         dadosGerenteLayout.setHorizontalGroup(
             dadosGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dadosGerenteLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(dadosGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dadosGerenteLayout.createSequentialGroup()
-                        .addComponent(lblCPFGerente)
-                        .addGap(218, 218, 218))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dadosGerenteLayout.createSequentialGroup()
-                        .addComponent(lblEmailGerente)
-                        .addGap(209, 209, 209))))
             .addGroup(dadosGerenteLayout.createSequentialGroup()
                 .addGroup(dadosGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtSenhaGerente, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtEmailGerente, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(ftxCPFGerente, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtNomeGerente)
-                    .addComponent(txtIdGerente)
                     .addGroup(dadosGerenteLayout.createSequentialGroup()
+                        .addGap(130, 130, 130)
+                        .addComponent(lblNomeGerente))
+                    .addGroup(dadosGerenteLayout.createSequentialGroup()
+                        .addGap(145, 145, 145)
+                        .addComponent(lblCPFGerente))
+                    .addGroup(dadosGerenteLayout.createSequentialGroup()
+                        .addGap(132, 132, 132)
+                        .addComponent(lblEmailGerente))
+                    .addGroup(dadosGerenteLayout.createSequentialGroup()
+                        .addGap(131, 131, 131)
+                        .addComponent(lblSenhaGerente))
+                    .addGroup(dadosGerenteLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
                         .addGroup(dadosGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(dadosGerenteLayout.createSequentialGroup()
-                                .addGap(213, 213, 213)
-                                .addComponent(lblNomeGerente))
-                            .addGroup(dadosGerenteLayout.createSequentialGroup()
-                                .addGap(217, 217, 217)
-                                .addComponent(lblSenhaGerente))
-                            .addGroup(dadosGerenteLayout.createSequentialGroup()
-                                .addGap(184, 184, 184)
-                                .addComponent(lblIdGerente)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                            .addComponent(txtSenhaGerente, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(dadosGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtNomeGerente)
+                                .addComponent(ftxCPFGerente, javax.swing.GroupLayout.DEFAULT_SIZE, 377, Short.MAX_VALUE)
+                                .addComponent(txtEmailGerente))
+                            .addGroup(dadosGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(btnCancelarGerente)
+                                .addComponent(txtIdGerente, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(dadosGerenteLayout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addComponent(lblIdGerente)))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(dadosGerenteLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnAlterarGerente)
-                .addGap(136, 136, 136)
-                .addComponent(btnSalvarGerente)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnCancelarGerente)
-                .addGap(20, 20, 20))
-            .addGroup(dadosGerenteLayout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(lblAreaGerente)
+                .addGroup(dadosGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, dadosGerenteLayout.createSequentialGroup()
+                        .addComponent(btnAlterarGerente)
+                        .addGap(83, 83, 83)
+                        .addComponent(btnSalvarGerente))
+                    .addComponent(lblAreaGerente))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         dadosGerenteLayout.setVerticalGroup(
@@ -304,32 +301,32 @@ public class areaGerente extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblNomeGerente)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtNomeGerente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lblCPFGerente)
+                .addComponent(txtNomeGerente, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblCPFGerente, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ftxCPFGerente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblEmailGerente)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(txtEmailGerente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(9, 9, 9)
-                .addComponent(lblSenhaGerente)
-                .addGap(18, 18, 18)
+                .addComponent(lblSenhaGerente, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtSenhaGerente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblIdGerente)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtIdGerente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addGap(18, 18, 18)
                 .addGroup(dadosGerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAlterarGerente)
                     .addComponent(btnSalvarGerente)
                     .addComponent(btnCancelarGerente))
-                .addGap(102, 102, 102))
+                .addGap(135, 135, 135))
         );
 
-        getContentPane().add(dadosGerente, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, 530, 670));
+        getContentPane().add(dadosGerente, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 420, 650));
 
         controleFuncionarios.setBackground(new java.awt.Color(211, 181, 143));
 
@@ -427,19 +424,11 @@ public class areaGerente extends javax.swing.JFrame {
         controleFuncionariosLayout.setHorizontalGroup(
             controleFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(controleFuncionariosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
-            .addGroup(controleFuncionariosLayout.createSequentialGroup()
-                .addGap(171, 171, 171)
-                .addComponent(lblControleFuncionarios)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(controleFuncionariosLayout.createSequentialGroup()
                 .addGroup(controleFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(controleFuncionariosLayout.createSequentialGroup()
                         .addGap(12, 12, 12)
-                        .addComponent(btnBuscarFuncionario)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnBuscarFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnNovoFuncionario)
                         .addGap(184, 184, 184)
                         .addComponent(btnSalvarFuncionario)
@@ -459,6 +448,15 @@ public class areaGerente extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtCodigoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(15, 61, Short.MAX_VALUE))
+            .addGroup(controleFuncionariosLayout.createSequentialGroup()
+                .addGroup(controleFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(controleFuncionariosLayout.createSequentialGroup()
+                        .addGap(171, 171, 171)
+                        .addComponent(lblControleFuncionarios))
+                    .addGroup(controleFuncionariosLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 566, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         controleFuncionariosLayout.setVerticalGroup(
             controleFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -483,11 +481,11 @@ public class areaGerente extends javax.swing.JFrame {
                     .addComponent(btnExcluirFuncionario)
                     .addComponent(btnBuscarFuncionario))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
-        getContentPane().add(controleFuncionarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 220, 870, 380));
+        getContentPane().add(controleFuncionarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 210, 870, 380));
 
         controleClientes.setBackground(new java.awt.Color(211, 181, 143));
 
@@ -585,7 +583,7 @@ public class areaGerente extends javax.swing.JFrame {
                                 .addComponent(lblCodigoCliente)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtCodCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                         .addComponent(btnBuscarCliente)))
                 .addContainerGap())
         );
@@ -608,13 +606,14 @@ public class areaGerente extends javax.swing.JFrame {
                     .addComponent(btnSalvarCliente)
                     .addComponent(btnExluirCliente))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE))
         );
 
-        getContentPane().add(controleClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 660, 940, 390));
+        getContentPane().add(controleClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 620, 940, 390));
 
         lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ÁreaGerente.png"))); // NOI18N
-        getContentPane().add(lblBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 1920, 1140));
+        lblBackground.setOpaque(true);
+        getContentPane().add(lblBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -30,7 +30,7 @@ public class telaLogin extends javax.swing.JFrame {
     public telaLogin() {
         initComponents();
         setLocationRelativeTo(null);
-
+        getRootPane().setDefaultButton(btnEntrar);
     }
 
     /**
@@ -183,8 +183,7 @@ public class telaLogin extends javax.swing.JFrame {
                     logado = true;
                     user = "gerente";
                     JOptionPane.showMessageDialog(null,"Entrou como gerente com sucesso!", "Notificação Login",JOptionPane.PLAIN_MESSAGE);
-                this.setVisible(false);
-
+                    this.setVisible(false);
                     break;
                     
                 }

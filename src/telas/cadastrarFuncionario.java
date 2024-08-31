@@ -21,7 +21,7 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
      */
     public cadastrarFuncionario() {
         initComponents();
-
+        getRootPane().setDefaultButton(btnSalvarFuncionario);
         
         setLocationRelativeTo(null);
         limparCampos();

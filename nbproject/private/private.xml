@@ -4,16 +4,19 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/home/v/Downloads/ENGENHARIA%20DA%20COMPUTAÇÃO/4-Semestre/TP1/trabalhoV3/BookStockManager/src/telas/carrinhosAntigos.java</file>
+            <file>file:/home/v/Downloads/ENGENHARIA%20DA%20COMPUTAÇÃO/4-Semestre/TP1/trabalhoV3/BookStockManager/src/telas/CriarNovoProduto.java</file>
+            <file>file:/home/v/Downloads/ENGENHARIA%20DA%20COMPUTAÇÃO/4-Semestre/TP1/trabalhoV3/BookStockManager/src/telas/areaGerente.java</file>
+            <file>file:/home/v/Downloads/ENGENHARIA%20DA%20COMPUTAÇÃO/4-Semestre/TP1/trabalhoV3/BookStockManager/src/telas/telaLogin.java</file>
+            <file>file:/home/v/Downloads/ENGENHARIA%20DA%20COMPUTAÇÃO/4-Semestre/TP1/trabalhoV3/BookStockManager/src/telas/cadastrarFuncionario.java</file>
+            <file>file:/home/v/Downloads/ENGENHARIA%20DA%20COMPUTAÇÃO/4-Semestre/TP1/trabalhoV3/BookStockManager/src/classes/Compra.java</file>
+            <file>file:/home/v/Downloads/ENGENHARIA%20DA%20COMPUTAÇÃO/4-Semestre/TP1/trabalhoV3/BookStockManager/src/telas/verProdutos.java</file>
+            <file>file:/home/v/Downloads/ENGENHARIA%20DA%20COMPUTAÇÃO/4-Semestre/TP1/trabalhoV3/BookStockManager/src/telas/areaCliente.java</file>
+            <file>file:/home/v/Downloads/ENGENHARIA%20DA%20COMPUTAÇÃO/4-Semestre/TP1/trabalhoV3/BookStockManager/src/telas/telaPagamento.java</file>
             <file>file:/home/v/Downloads/ENGENHARIA%20DA%20COMPUTAÇÃO/4-Semestre/TP1/trabalhoV3/BookStockManager/src/telas/verCarrinho.java</file>
             <file>file:/home/v/Downloads/ENGENHARIA%20DA%20COMPUTAÇÃO/4-Semestre/TP1/trabalhoV3/BookStockManager/src/telas/cadastrarCliente.java</file>
             <file>file:/home/v/Downloads/ENGENHARIA%20DA%20COMPUTAÇÃO/4-Semestre/TP1/trabalhoV3/BookStockManager/src/telas/verProdutos_a.java</file>
-            <file>file:/home/v/Downloads/ENGENHARIA%20DA%20COMPUTAÇÃO/4-Semestre/TP1/trabalhoV3/BookStockManager/src/telas/CriarNovoProduto.java</file>
-            <file>file:/home/v/Downloads/ENGENHARIA%20DA%20COMPUTAÇÃO/4-Semestre/TP1/trabalhoV3/BookStockManager/src/telas/areaGerente.java</file>
-            <file>file:/home/v/Downloads/ENGENHARIA%20DA%20COMPUTAÇÃO/4-Semestre/TP1/trabalhoV3/BookStockManager/src/classes/Compra.java</file>
-            <file>file:/home/v/Downloads/ENGENHARIA%20DA%20COMPUTAÇÃO/4-Semestre/TP1/trabalhoV3/BookStockManager/src/telas/verProdutos.java</file>
             <file>file:/home/v/Downloads/ENGENHARIA%20DA%20COMPUTAÇÃO/4-Semestre/TP1/trabalhoV3/BookStockManager/src/telas/Menu.java</file>
-            <file>file:/home/v/Downloads/ENGENHARIA%20DA%20COMPUTAÇÃO/4-Semestre/TP1/trabalhoV3/BookStockManager/src/telas/areaCliente.java</file>
-            <file>file:/home/v/Downloads/ENGENHARIA%20DA%20COMPUTAÇÃO/4-Semestre/TP1/trabalhoV3/BookStockManager/src/telas/telaPagamento.java</file>
+            <file>file:/home/v/Downloads/ENGENHARIA%20DA%20COMPUTAÇÃO/4-Semestre/TP1/trabalhoV3/BookStockManager/src/telas/ControleFuncionarios.java</file>
         </group>
     </open-files>
 </project-private>

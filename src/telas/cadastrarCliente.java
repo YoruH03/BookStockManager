@@ -18,7 +18,7 @@ public class cadastrarCliente extends javax.swing.JFrame {
      */
     public cadastrarCliente() {
         initComponents();
-        
+        getRootPane().setDefaultButton(btnSalvarCliente);
 
         setLocationRelativeTo(null);
         lblTeste.setVisible(false);
