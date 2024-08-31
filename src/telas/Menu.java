@@ -57,6 +57,9 @@ public class Menu extends javax.swing.JFrame {
         listaFuncionarios.add(funcionario);
         Cliente cliente = new Cliente("user","000.000.000-00","user@gmail.com","user","Pernambuco","10/05/1990","999-9999");
         listaClientes.add(cliente);
+        Cliente cliente1 = new Cliente("Alberto","010.034.123-00","alberto@gmail.com","alberto","Brasília","15/12/2000","888-8888");
+        listaClientes.add(cliente1);
+
         Produto produto1 = new Produto("Eragon","Christopher Paolini","Aventura",15.69,3,"1","Eragon se torna um cavaleiro de Dragão");
         estoque.add(produto1);
             
@@ -184,16 +187,17 @@ public class Menu extends javax.swing.JFrame {
         lblLogin.setFont(new java.awt.Font("Old London", 1, 48)); // NOI18N
         lblLogin.setForeground(new java.awt.Color(255, 0, 0));
         lblLogin.setText("Você entrou como cliente");
-        jPanel1.add(lblLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 480, 60));
+        jPanel1.add(lblLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 1060, 60));
 
         lblBookStockManager.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         lblBookStockManager.setForeground(new java.awt.Color(255, 255, 255));
         lblBookStockManager.setText("BookStock");
         jPanel1.add(lblBookStockManager, new org.netbeans.lib.awtextra.AbsoluteConstraints(1580, 210, -1, -1));
 
-        btnAtualizarEstoque.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        btnAtualizarEstoque.setFont(new java.awt.Font("Old London", 1, 36)); // NOI18N
         btnAtualizarEstoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/business_inventory_maintenance_product_box_boxes_2326_64.png"))); // NOI18N
         btnAtualizarEstoque.setText("Atualizar Estoque");
+        btnAtualizarEstoque.setContentAreaFilled(false);
         btnAtualizarEstoque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAtualizarEstoqueActionPerformed(evt);
@@ -201,9 +205,10 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(btnAtualizarEstoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(1420, 640, 400, 130));
 
-        btnVerCarrinho.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        btnVerCarrinho.setFont(new java.awt.Font("Old London", 1, 36)); // NOI18N
         btnVerCarrinho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/4105931-add-to-cart-buy-cart-sell-shop-shopping-cart_113919_64.png"))); // NOI18N
         btnVerCarrinho.setText("Ver carrinho");
+        btnVerCarrinho.setContentAreaFilled(false);
         btnVerCarrinho.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVerCarrinhoActionPerformed(evt);
@@ -211,9 +216,10 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(btnVerCarrinho, new org.netbeans.lib.awtextra.AbsoluteConstraints(1400, 420, 400, 130));
 
-        btnPesquisar.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        btnPesquisar.setFont(new java.awt.Font("Old London", 1, 36)); // NOI18N
         btnPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/searchmagnifierinterfacesymbol1_79893_64.png"))); // NOI18N
         btnPesquisar.setText("Buscar Produto");
+        btnPesquisar.setContentAreaFilled(false);
         btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPesquisarActionPerformed(evt);
@@ -221,9 +227,10 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(btnPesquisar, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 400, 400, 130));
 
-        btnFuncionario.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        btnFuncionario.setFont(new java.awt.Font("Old London", 1, 36)); // NOI18N
         btnFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/technicalsupport_support_representative_person_people_man_1641_64.png"))); // NOI18N
         btnFuncionario.setText("Funcionário");
+        btnFuncionario.setContentAreaFilled(false);
         btnFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFuncionarioActionPerformed(evt);
@@ -231,9 +238,10 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(btnFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 640, 400, 130));
 
-        btnGerente.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        btnGerente.setFont(new java.awt.Font("Old London", 1, 36)); // NOI18N
         btnGerente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/customer_person_people_man_you_1625_64.png"))); // NOI18N
         btnGerente.setText("Gerente");
+        btnGerente.setContentAreaFilled(false);
         btnGerente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGerenteActionPerformed(evt);
@@ -241,9 +249,10 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(btnGerente, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 640, 400, 130));
 
-        btnCliente.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        btnCliente.setFont(new java.awt.Font("Old London", 1, 36)); // NOI18N
         btnCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/person_user_customer_man_male_man_boy_people_1687_64.png"))); // NOI18N
         btnCliente.setText("Cliente");
+        btnCliente.setContentAreaFilled(false);
         btnCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClienteActionPerformed(evt);
@@ -291,9 +300,7 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -308,7 +315,8 @@ public class Menu extends javax.swing.JFrame {
         logado=false;
         user="";
         verificarLogin(logado,user);
-        JOptionPane.showMessageDialog(null,"Você acabou de sair do sistema", "Mensagem",JOptionPane.PLAIN_MESSAGE);
+        JOptionPane.showMessageDialog(null,"Você acabou de sair do sistema", "Mensagem",JOptionPane.INFORMATION_MESSAGE);
+
         
 
     }//GEN-LAST:event_btnLogoutActionPerformed
@@ -344,9 +352,12 @@ tela.addWindowListener(new java.awt.event.WindowAdapter() {
                 new areaCliente().setVisible(true);
             }
         }else{
-            JOptionPane.showMessageDialog(null,"Você não entrou no sistema. Crie uma nova conta como Cliente", "Mensagem",JOptionPane.PLAIN_MESSAGE);
+            int response = JOptionPane.showConfirmDialog(null, "Você não entrou no sistema. Gostaria de criar uma nova conta como Cliente?","Confirmação",JOptionPane.YES_NO_OPTION);
+            if(response==JOptionPane.YES_OPTION){
+                new cadastrarCliente().setVisible(true);
+            }
 
-            new cadastrarCliente().setVisible(true);
+            //new cadastrarCliente().setVisible(true);
         }
 
     }//GEN-LAST:event_btnClienteActionPerformed

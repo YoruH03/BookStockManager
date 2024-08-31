@@ -7,6 +7,7 @@ package telas;
 import static classes.Cliente.listaClientes;
 import static classes.Funcionario.listaFuncionarios;
 import classes.Gerente;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import static telas.cadastarGerente.listaGerente;
 
@@ -108,6 +109,7 @@ public class areaGerente extends javax.swing.JFrame {
 
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        btnSair = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         lblNomeGerente = new javax.swing.JLabel();
         lblCPFGerente = new javax.swing.JLabel();
@@ -169,6 +171,15 @@ public class areaGerente extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Área do Gerente");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnSair.setFont(new java.awt.Font("Old London", 0, 48)); // NOI18N
+        btnSair.setText("Sair");
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSair, new org.netbeans.lib.awtextra.AbsoluteConstraints(1780, 10, 130, 60));
 
         jPanel1.setBackground(new java.awt.Color(211, 181, 143));
 
@@ -380,9 +391,16 @@ public class areaGerente extends javax.swing.JFrame {
             Class[] types = new Class [] {
                 java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
         tblControleFuncionarios.setToolTipText("Tabela com os dados de funcionários");
@@ -542,9 +560,16 @@ public class areaGerente extends javax.swing.JFrame {
             Class[] types = new Class [] {
                 java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
         jScrollPane3.setViewportView(tblControleClientes);
@@ -642,9 +667,17 @@ public class areaGerente extends javax.swing.JFrame {
     private void btnSalvarGerenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarGerenteActionPerformed
         // TODO add your handling code here:
         disableGerenteFields();
+        Gerente gerente1 = listaGerente.get(0);
+        gerente1.setNome(txtNomeGerente.getText());
+        gerente1.setCPF(ftxCPFGerente.getText());
+        gerente1.setEmail(txtEmailGerente.getText());
+        gerente1.setSenha(txtSenhaGerente.getText());
+        gerente1.setCadastroGerente(txtIdGerente.getText());
         btnAlterarGerente.setEnabled(true);
         btnSalvarGerente.setEnabled(false);
         btnCancelarGerente.setEnabled(false);
+                JOptionPane.showMessageDialog(null, "Dados atualizados com sucesso!", "Atualização de dados", JOptionPane.INFORMATION_MESSAGE);
+
     }//GEN-LAST:event_btnSalvarGerenteActionPerformed
 
     private void btnCancelarGerenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarGerenteActionPerformed
@@ -661,8 +694,10 @@ public class areaGerente extends javax.swing.JFrame {
         disableControleFuncionariosFields();
         disableControleFuncionariosButtons();
         btnNovoFuncionario.setEnabled(true);
-        
+        JOptionPane.showMessageDialog(null, "Dados atualizados com sucesso!", "Atualização de dados", JOptionPane.INFORMATION_MESSAGE);
+
         carregarTabelaFuncionario();
+
         //btnPesquisarFuncionario.setEnabled(true);
     }//GEN-LAST:event_btnSalvarFuncionarioActionPerformed
 
@@ -681,6 +716,8 @@ public class areaGerente extends javax.swing.JFrame {
 
     private void btnSalvarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarClienteActionPerformed
         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Dados atualizados com sucesso!", "Atualização de dados", JOptionPane.INFORMATION_MESSAGE);
+
         carregarTabelaCliente();
     }//GEN-LAST:event_btnSalvarClienteActionPerformed
 
@@ -724,6 +761,11 @@ public class areaGerente extends javax.swing.JFrame {
         
         btnExcluirFuncionario.setEnabled(true);
     }//GEN-LAST:event_tblControleFuncionariosMouseClicked
+
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_btnSairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -842,6 +884,7 @@ public class areaGerente extends javax.swing.JFrame {
     private javax.swing.JButton btnExluirCliente;
     private javax.swing.JButton btnNovoCliente;
     private javax.swing.JButton btnNovoFuncionario;
+    private javax.swing.JButton btnSair;
     private javax.swing.JButton btnSalvarCliente;
     private javax.swing.JButton btnSalvarFuncionario;
     private javax.swing.JButton btnSalvarGerente;

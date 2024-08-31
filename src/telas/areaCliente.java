@@ -5,7 +5,9 @@
 package telas;
 
 import classes.Cliente;
+import static classes.Cliente.index_cliente;
 import static classes.Cliente.listaClientes;
+import javax.swing.JOptionPane;
 //import static telas.cadastrarCliente.listaClientes;
 
 /**
@@ -25,6 +27,7 @@ public class areaCliente extends javax.swing.JFrame {
         btnSalvarCliente.setEnabled(false);
         btnCancelarCliente.setEnabled(false);
         loadClienteFields();
+        disableClienteFields();
                 this.setExtendedState(MAXIMIZED_BOTH);
 
         
@@ -121,7 +124,7 @@ public class areaCliente extends javax.swing.JFrame {
                 btnCarrinhosAnterioresActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCarrinhosAnteriores, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 920, -1, 70));
+        getContentPane().add(btnCarrinhosAnteriores, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 20, -1, 70));
 
         btnSair.setFont(new java.awt.Font("Old London", 0, 48)); // NOI18N
         btnSair.setText("Sair");
@@ -268,10 +271,26 @@ public class areaCliente extends javax.swing.JFrame {
 
     private void btnSalvarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarClienteActionPerformed
         // TODO add your handling code here:
+        Cliente cliente = listaClientes.get(index_cliente);
+        cliente.setNome(txtNomeCliente.getText());
+        cliente.setCPF(txtCPFCliente.getText());
+        cliente.setCelular(ftxTelefone.getText());
+        cliente.setDataNascimento(ftxNascimentoCliente.getText());
+        cliente.setEmail(txtEmailCliente.getText());
+        cliente.setSenha(txtSenhaCliente.getText());
+        cliente.setEndereco(txtEnderecoCliente.getText());
+        
+        
+        
+        
+        
+        
         disableClienteFields();
         btnAlterarCliente.setEnabled(true);
         btnCancelarCliente.setEnabled(false);
         btnSalvarCliente.setEnabled(false);
+        JOptionPane.showMessageDialog(null, "Dados atualizados com sucesso!", "Atualização de dados", JOptionPane.INFORMATION_MESSAGE);
+
     }//GEN-LAST:event_btnSalvarClienteActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
@@ -281,7 +300,7 @@ public class areaCliente extends javax.swing.JFrame {
 
     private void btnCarrinhosAnterioresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarrinhosAnterioresActionPerformed
         // TODO add your handling code here:
-        new carrinhosAntigos().setVisible(true);
+        new verCarrinho().setVisible(true);
     }//GEN-LAST:event_btnCarrinhosAnterioresActionPerformed
 
     /**

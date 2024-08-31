@@ -10,9 +10,17 @@ import static classes.Carrinho.listaProdutos;
 import classes.Cliente;
 import static classes.Cliente.index_cliente;
 import static classes.Cliente.listaClientes;
+import classes.Funcionario;
+import static classes.Funcionario.index_func;
+import static classes.Funcionario.listaFuncionarios;
+import classes.Gerente;
 import classes.Produto;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import static telas.Menu.user;
+import static telas.cadastarGerente.listaGerente;
 import static telas.verCarrinho.aux;
 
 /**
@@ -198,22 +206,58 @@ public class telaPagamento extends javax.swing.JFrame {
 
     private void btnPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagarActionPerformed
         // TODO add your handling code here:
-                if(listaProdutos.size()>0){
-            Cliente cliente = listaClientes.get(index_cliente);
-            ArrayList listaCarrinhoDoCliente = cliente.getListaCarrinho();
-            int indexCarrinho = listaCarrinhoDoCliente.size();
+        LocalDate today = LocalDate.now();
 
-            // Clone the ArrayList
-        ArrayList<Produto> clonedList = (ArrayList<Produto>) listaProdutos.clone();
-            Carrinho carrinho1 = new Carrinho(indexCarrinho,"29/08/2024",clonedList);
-            cliente.addCarrinhoLista(carrinho1);
+        // Define a date format (e.g., "dd/MM/yyyy")
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+        // Convert the date to a string
+        String formattedDate = today.format(formatter);
+        newCarregarInfoPagamento();
+            if(listaProdutos.size()>0){
+                if(user.equals("cliente")){
+                Cliente cliente = listaClientes.get(index_cliente);
+                ArrayList listaCarrinhoDoCliente = cliente.getListaCarrinho();
+                int indexCarrinho = listaCarrinhoDoCliente.size();
+
+                // Clone the ArrayList
+                ArrayList<Produto> clonedList = (ArrayList<Produto>) listaProdutos.clone();
+                Carrinho carrinho1 = new Carrinho(indexCarrinho,formattedDate,clonedList);
+                carrinho1.setTotal(Double.parseDouble(txtValorTotal.getText()));
+                cliente.addCarrinhoLista(carrinho1);
+                    
+                }
+                if(user.equals("funcionario")){
+                    Funcionario funcionario = listaFuncionarios.get(index_func);
+                    ArrayList listaCarrinhoDoFuncionario = funcionario.getListaCarrinhoFuncionario();
+                    int indexCarrinho = listaCarrinhoDoFuncionario.size();
+                    
+                    ArrayList<Produto> clonedList = (ArrayList<Produto>) listaProdutos.clone();
+                    Carrinho carrinho2 = new Carrinho(indexCarrinho,formattedDate,clonedList);
+                    carrinho2.setTotal(Double.parseDouble(txtValorTotal.getText()));
+
+                    funcionario.addListaCarrinhosFuncionarios(carrinho2);
+                    
+                }
+                    if(user.equals("gerente")){
+                    Gerente gerente = listaGerente.get(0);
+                    ArrayList listaCarrinhoDoGerente = gerente.getListaCarrinhoGerente();
+                    int indexCarrinho = listaCarrinhoDoGerente.size();
+                    
+                    ArrayList<Produto> clonedList = (ArrayList<Produto>) listaProdutos.clone();
+                    Carrinho carrinho2 = new Carrinho(indexCarrinho,formattedDate,clonedList);
+                    carrinho2.setTotal(Double.parseDouble(txtValorTotal.getText()));
+
+                    gerente.addListaCarrinhosGerente(carrinho2);
+                    
+                }
             listaProdutos.clear();
             aux.clear();
             System.out.println("Adicionado ao Histórico!");   
 
         }
         JOptionPane.showMessageDialog(null,"Compra realizada com sucesso!","Notificação de compra!",JOptionPane.INFORMATION_MESSAGE);
-        newCarregarInfoPagamento();
+        this.setVisible(false);
 
     
         //listaProdutos.clear();

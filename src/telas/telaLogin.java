@@ -180,7 +180,7 @@ public class telaLogin extends javax.swing.JFrame {
         
         String emailInput = txtEmail.getText();
         String senhaInput = String.valueOf(pswSenha.getPassword());
-        
+        Gerente gerente = null;
         if(listaGerente.size()>0){
             for(Gerente pessoa : listaGerente){
                 if(pessoa.getEmail().equals(emailInput)&&pessoa.getSenha().equals(senhaInput)){

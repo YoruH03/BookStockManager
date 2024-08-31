@@ -21,7 +21,6 @@ public class cadastrarCliente extends javax.swing.JFrame {
         
 
         setLocationRelativeTo(null);
-        lblTeste.setVisible(false);
         
     }
     
@@ -238,7 +237,7 @@ public class cadastrarCliente extends javax.swing.JFrame {
 
     private void btnSalvarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarClienteActionPerformed
         // TODO add your handling code here:
-        
+        boolean jaExiste = false;
         if (txtNomeCliente.getText().equals("") || ftxCPFCliente.getText().equals("") ||
             ftxDataCliente.getText().equals("") || txtEnderecoCliente.getText().equals("")
                 || txtSenhaCliente.getText().equals("")|| txtEmailCliente.getText().equals("")
@@ -253,11 +252,22 @@ public class cadastrarCliente extends javax.swing.JFrame {
         String email = txtEmailCliente.getText();
         String telefone = ftxTelefoneCliente.getText();
         
+        for(Cliente pessoa : listaClientes){
+            if(pessoa.getEmail().equals(email)){
+                jaExiste=true;
+                JOptionPane.showMessageDialog(null, "Já existe um cliente cadastrado com esse Email!", "Error ao criar conta", JOptionPane.ERROR_MESSAGE);
+                break;
+            }else{
+                
+            }
+        }
+        if(!jaExiste){
         Cliente cliente = new Cliente(nome,cpf,email,senha,endereco,nascimentoCliente,telefone);
         listaClientes.add(cliente);
         clearClienteInfo();
         JOptionPane.showMessageDialog(null,"Cliente criado com sucesso!", "Mensagem",JOptionPane.PLAIN_MESSAGE);
         this.setVisible(false);
+        }
         }
     }//GEN-LAST:event_btnSalvarClienteActionPerformed
 

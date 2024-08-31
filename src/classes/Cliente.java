@@ -10,7 +10,7 @@ import java.util.ArrayList;
  *
  * @author Yuri
  */
-public class Cliente extends Usuario{
+public class Cliente extends Usuario implements OperadorSistema{
     //A classe de cliente herda de funcionário
     
     //Declaração de atributos privados para o cliente
@@ -99,6 +99,32 @@ public class Cliente extends Usuario{
 
     public void addCarrinhoLista(Carrinho carrinho){
         listaCarrinho.add(carrinho);
+    }
+
+    @Override
+    public boolean login(String email, String senha) {
+        for(Cliente pessoa : listaClientes){
+            if(email.equals(pessoa.email) && senha.equals(pessoa.senha)){
+            return true;
+        }
+        }
+        return false;
+                
+    }
+
+    @Override
+    public boolean logout() {
+        return false;
+    }
+
+    @Override
+    public void pesquisar(String titulo) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void consultarEmail(String cpf) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
     

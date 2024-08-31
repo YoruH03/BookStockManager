@@ -10,7 +10,11 @@ import javax.swing.table.DefaultTableModel;
 import classes.Cliente;
 import static classes.Cliente.index_cliente;
 import static classes.Cliente.listaClientes;
+import classes.Funcionario;
+import static classes.Funcionario.index_func;
+import static classes.Funcionario.listaFuncionarios;
 import java.util.ArrayList;
+import static telas.Menu.user;
 
 /**
  *
@@ -26,8 +30,17 @@ public class carrinhosAntigos extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         disableCarrinhoFields();
         btnCancelarCarrinho.setEnabled(false);
-        carregarTabelaCliente();
-        
+        System.out.println("User é igual a "+user);
+        if(user.equals("cliente")){
+            carregarTabelaCliente();
+        }
+        if(user.equals("funcionario")){
+            carregarTabelaFuncionarioPedidos();
+        }
+        if(user.equals("gerente")){
+            
+        }
+
     }
     
             public void enableCarrinhoFields(){
@@ -92,7 +105,42 @@ public class carrinhosAntigos extends javax.swing.JFrame {
 
 
             
-        }                    
+        }
+        private void carregarTabelaFuncionarioPedidos(){
+            System.out.println("Está acessando a função de pedidos de funcionário!");
+            DefaultTableModel modeloTabelaCarrinhosAntigos = new DefaultTableModel(new Object[] {"Num.Carrinho","Data Pedido","Produtos","Total"},0);
+            
+            Funcionario funcionario = listaFuncionarios.get(index_func);
+            ArrayList<Carrinho> listaCarrinhoDoFuncionario = funcionario.getListaCarrinhoFuncionario();
+            
+
+            Cliente cliente = listaClientes.get(index_cliente);
+            System.out.println("Cliente passado");
+            ArrayList<Carrinho> listaCarrinhoDoCliente = cliente.getListaCarrinho();
+            System.out.println("Tamanho da lista: "+cliente.getListaCarrinho().size());
+            System.out.println("ListaResgatada");
+            
+            for(int i=0;i<cliente.getListaCarrinho().size();i++){
+                Object linha[] = new Object[] {funcionario.getListaCarrinhoFuncionario().get(i).getNumCarrinho(),
+                                               funcionario.getListaCarrinhoFuncionario().get(i).getData(),
+                                               funcionario.getListaCarrinhoFuncionario().get(i).mostarProdutos(funcionario.getListaCarrinho().get(i).itensNoCarrinho),
+                                               funcionario.getListaCarrinhoFuncionario().get(i).getTotal()};
+                modeloTabelaCarrinhosAntigos.addRow(linha);
+                
+                
+            }
+            //Tabela recebe modelo de clientes
+            tblCliente.setModel(modeloTabelaCarrinhosAntigos);
+            
+            tblCliente.getColumnModel().getColumn(0).setPreferredWidth(3);
+            tblCliente.getColumnModel().getColumn(1).setPreferredWidth(50);
+            tblCliente.getColumnModel().getColumn(2).setPreferredWidth(14);
+            tblCliente.getColumnModel().getColumn(3).setPreferredWidth(10);
+            //tblCliente.getColumnModel().getColumn(4).setPreferredWidth(100);
+
+
+            
+        }
 
     /**
      * This method is called from within the constructor to initialize the form.
