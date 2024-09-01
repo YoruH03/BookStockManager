@@ -22,6 +22,8 @@ public abstract class Usuario {
     public static ArrayList<Carrinho> historicoCarrinhos = new ArrayList();
     public ArrayList<Carrinho> listaCarrinho = new ArrayList();
     private Carrinho carrinho;
+    public static boolean usuario_logado = false;
+    public static String usuario_tipo ="";
     
     
 

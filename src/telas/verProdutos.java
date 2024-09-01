@@ -19,9 +19,12 @@ public class verProdutos extends javax.swing.JFrame {
      */
     public verProdutos() {
         initComponents();
+        setLocationRelativeTo(null);
+        this.setExtendedState(MAXIMIZED_BOTH);
         carregarTabelaProdutos();
         txtQuantidade.setText("1");
         Produto item;
+        btnSobre.setEnabled(false);
     }
 
     /**
@@ -70,11 +73,18 @@ public class verProdutos extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         txtQuantidade = new javax.swing.JTextField();
         txtTitulo = new javax.swing.JTextField();
+        btnSair = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Busca por produtos");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        titulo.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
-        titulo.setText("Produtos");
+        jPanel1.setBackground(new java.awt.Color(237, 224, 182));
+
+        titulo.setFont(new java.awt.Font("Old London", 0, 36)); // NOI18N
+        titulo.setText("Pesquisar por produtos");
+        titulo.setToolTipText("");
 
         btnPesquisar.setText("Pesquisar");
         btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
@@ -124,8 +134,8 @@ public class verProdutos extends javax.swing.JFrame {
 
         lblResultadosPesquisa.setText("Resultados da pesquisa");
 
-        lblNome.setFont(new java.awt.Font("Inter", 0, 14)); // NOI18N
-        lblNome.setText("Nome:");
+        lblNome.setFont(new java.awt.Font("Old London", 0, 24)); // NOI18N
+        lblNome.setText("Titulo:");
 
         btnSobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/information_info_1565.png"))); // NOI18N
         btnSobre.setText("Sobre");
@@ -143,6 +153,7 @@ public class verProdutos extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Old London", 0, 18)); // NOI18N
         jLabel1.setText("Quantidade");
 
         txtQuantidade.addActionListener(new java.awt.event.ActionListener() {
@@ -156,55 +167,52 @@ public class verProdutos extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(317, 317, 317)
-                .addComponent(titulo)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Tabela, javax.swing.GroupLayout.PREFERRED_SIZE, 653, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(89, 89, 89))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(149, 149, 149)
-                        .addComponent(btnSobre)
-                        .addGap(199, 199, 199)
-                        .addComponent(btnComprar))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(299, 299, 299)
-                        .addComponent(lblResultadosPesquisa))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(63, 63, 63)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(122, 122, 122)
+                                        .addComponent(btnSobre)
+                                        .addGap(199, 199, 199)
+                                        .addComponent(btnComprar))
+                                    .addComponent(Tabela, javax.swing.GroupLayout.PREFERRED_SIZE, 653, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblNome))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(titulo)
+                                    .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnPesquisar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnPesquisar))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(lblNome)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                .addGap(38, 38, 38))
+                                .addComponent(txtQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(296, 296, 296)
+                        .addComponent(lblResultadosPesquisa)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(titulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(lblNome)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnPesquisar)
-                            .addComponent(txtQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1)))
-                    .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
+                        .addGap(41, 41, 41)
+                        .addComponent(lblNome, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnPesquisar)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                 .addComponent(lblResultadosPesquisa)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Tabela, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -212,35 +220,82 @@ public class verProdutos extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnComprar)
                     .addComponent(btnSobre))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 813, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 463, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 310, 760, 490));
+
+        btnSair.setFont(new java.awt.Font("Old London", 0, 48)); // NOI18N
+        btnSair.setText("Sair");
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSair, new org.netbeans.lib.awtextra.AbsoluteConstraints(1720, 20, 130, 60));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/BuscarItem.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
         // TODO add your handling code here:
+                if (estoque == null || estoque.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "O estoque está vazio ou não foi carregado.", "Erro", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        String tituloPesquisado = txtTitulo.getText().toLowerCase().trim();
+        String tituloPesquisadoPuro = txtTitulo.getText();
+        if (tituloPesquisado.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor, insira um título para pesquisar.", "Aviso", JOptionPane.WARNING_MESSAGE);
+            carregarTabelaProdutos();
+            return;
+        }
+
+
+        DefaultTableModel modeloTabelaProdutos = new DefaultTableModel(new Object[] {"Titulo", "Autor", "Gênero", "Valor", "Quant.Estoque"}, 0);
+
+        boolean produtoEncontrado = false;
+
+        
+        for (Produto produto : estoque) {
+            if (produto != null && produto.getTitulo() != null) {
+                // Verifica se o título do produto contém o texto pesquisado
+                if (produto.getTitulo().toLowerCase().contains(tituloPesquisado)) {
+                    Object novalinha[] = new Object[] {
+                        produto.getTitulo(),
+                        produto.getAutor(),
+                        produto.getGenero(),
+                        produto.getPreço(),
+                        produto.getQuantidadeEstoque()
+                    };
+                    modeloTabelaProdutos.addRow(novalinha);
+                    produtoEncontrado = true; 
+                }
+        }
+        
+        /*if (!produtoEncontrado) {
+            JOptionPane.showMessageDialog(this, "Nenhum produto encontrado com o título: " + tituloPesquisadoPuro, "Resultado da pesquisa", JOptionPane.INFORMATION_MESSAGE);
+        }*/
+        
+if (produtoEncontrado) {
+        tabela_produtos.setModel(modeloTabelaProdutos);
+        // Ajusta a largura das colunas
+        tabela_produtos.getColumnModel().getColumn(0).setPreferredWidth(100);
+        tabela_produtos.getColumnModel().getColumn(1).setPreferredWidth(50);
+        tabela_produtos.getColumnModel().getColumn(2).setPreferredWidth(14);
+        tabela_produtos.getColumnModel().getColumn(3).setPreferredWidth(8);
+        tabela_produtos.getColumnModel().getColumn(4).setPreferredWidth(3);
+}else{
+                JOptionPane.showMessageDialog(this, "Nenhum produto encontrado com o título: " + tituloPesquisadoPuro, "Resultado da pesquisa", JOptionPane.INFORMATION_MESSAGE);
+        carregarTabelaProdutos(); // Load all products if no matches found
+
+}
+        
+    }//GEN-LAST:event_btnPesquisarActionPerformed
     }//GEN-LAST:event_btnPesquisarActionPerformed
 
     private void btnSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSobreActionPerformed
@@ -249,23 +304,39 @@ public class verProdutos extends javax.swing.JFrame {
 
     private void btnComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarActionPerformed
         // TODO add your handling code here:
-        int i = tabela_produtos.getSelectedRow();
+        //int i = tabela_produtos.getSelectedRow();
+        int row = tabela_produtos.getSelectedRow();
+        int column = tabela_produtos.getSelectedColumn();
+        Object produtoPesquisado = tabela_produtos.getValueAt(row,0);
+        System.out.println("Value selected at: "+produtoPesquisado);
+        String inputBusca = String.valueOf(produtoPesquisado);
+        txtTitulo.setText(inputBusca);
+        System.out.println("Item do inputBusca a ser aparecido na caixa de texto"+inputBusca);
         String selected="";
-        System.out.println(i);
+        //System.out.println(i);
+        for(Produto itemEstoque : estoque){
+            if(itemEstoque.getTitulo().equals(inputBusca)){
+            Produto item = itemEstoque;
+            selected = item.getTitulo();
+            System.out.println(item.getTitulo());
+            txtTitulo.setText(item.getTitulo());
+            }
+        }
+        /*
         if(i>=0 && i<estoque.size()){
             Produto item = estoque.get(i);
             selected = item.getTitulo();
             System.out.println(item.getTitulo());
             txtTitulo.setText(item.getTitulo());
-        }
+        }*/
         System.out.println("Item selecionado para compra foi: "+selected);
         Produto itemComprado;
         for(Produto itemBusca : estoque){
-            JOptionPane.showMessageDialog(null,"Busca Iniciada!", "Notificação Adicionar item ao carrinho",JOptionPane.PLAIN_MESSAGE);
+           // JOptionPane.showMessageDialog(null,"Busca Iniciada!", "Notificação Adicionar item ao carrinho",JOptionPane.PLAIN_MESSAGE);
             System.out.println("Busca inciada!");
 
             if(itemBusca.getTitulo().equals(selected)){
-                JOptionPane.showMessageDialog(null,"Item Encontrado!", "Notificação Adicionar item ao carrinho",JOptionPane.PLAIN_MESSAGE);
+                //JOptionPane.showMessageDialog(null,"Item Encontrado!", "Notificação Adicionar item ao carrinho",JOptionPane.PLAIN_MESSAGE);
                 itemComprado = itemBusca;
                 if(Integer.parseInt(txtQuantidade.getText())<itemComprado.getQuantidadeEstoque()){
                 listaProdutos.add(itemComprado);
@@ -290,15 +361,28 @@ public class verProdutos extends javax.swing.JFrame {
     private void tabela_produtosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabela_produtosMouseClicked
         // TODO add your handling code here:
         int i = tabela_produtos.getSelectedRow();
+        int row = tabela_produtos.getSelectedRow();
+        int column = tabela_produtos.getSelectedColumn();
+        Object produtoPesquisado = tabela_produtos.getValueAt(row,0);
+        System.out.println("Value selected at: "+produtoPesquisado);
+        String inputBusca = String.valueOf(produtoPesquisado);
+        txtTitulo.setText(inputBusca);
+        System.out.println("Item do inputBusca a ser aparecido na caixa de texto"+inputBusca);
+        //String nomePesquisado = tabela_produtos.getCom
         
-        System.out.println(i);
+        /*System.out.println(i);
         if(i>=0 && i<estoque.size()){
             Produto item = estoque.get(i);
             System.out.println(item.getTitulo());
             txtTitulo.setText(item.getTitulo());
-        }
+        }*/
         
     }//GEN-LAST:event_tabela_produtosMouseClicked
+
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_btnSairActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -337,8 +421,10 @@ public class verProdutos extends javax.swing.JFrame {
     private javax.swing.JScrollPane Tabela;
     private javax.swing.JButton btnComprar;
     private javax.swing.JButton btnPesquisar;
+    private javax.swing.JButton btnSair;
     private javax.swing.JButton btnSobre;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblResultadosPesquisa;

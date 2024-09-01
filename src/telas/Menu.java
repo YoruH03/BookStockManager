@@ -334,7 +334,7 @@ tela.addWindowListener(new java.awt.event.WindowAdapter() {
 
         if(logado==true){
             if(user.equals("gerente") || user.equals("funcionario")){
-                JOptionPane.showMessageDialog(null,"Você tem acesso a criar nova conta de cliente","Notificação de acesso a cliente",JOptionPane.ERROR_MESSAGE);
+                //JOptionPane.showMessageDialog(null,"Você tem acesso a criar nova conta de cliente","Notificação de acesso a cliente",JOptionPane.ERROR_MESSAGE);
                 int response = JOptionPane.showConfirmDialog(null, "Gostaria de criar uma nova conta como Cliente?","Confirmação",JOptionPane.YES_NO_OPTION);
                 if(response==JOptionPane.YES_OPTION){
                     cadastrosFlag = "cliente";
@@ -366,10 +366,13 @@ tela.addWindowListener(new java.awt.event.WindowAdapter() {
         
         if(logado==true){
             if( user.equals("gerente")){
-                    cadastrosFlag="funcionario";
+                int response = JOptionPane.showConfirmDialog(null, "Gostaria de criar uma nova conta como Funcionário?","Confirmação",JOptionPane.YES_NO_OPTION);
+                if(response==JOptionPane.YES_OPTION){
+                    cadastrosFlag = "funcionario";
                     new cadastros().setVisible(true);
+                }
             }else if(user.equals("funcionario")){
-                    cadastrosFlag="funcionario";
+                    //cadastrosFlag="funcionario";
                     new areaFuncionario().setVisible(true);
                     }
             else{
