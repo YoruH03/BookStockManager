@@ -212,10 +212,10 @@ public class telaLogin extends javax.swing.JFrame {
                     
                 }
             }
-            
+            /*
             if (!emailCorreto && !senhaCorreta && !logado) {
                 JOptionPane.showMessageDialog(null, "Email e senha incorretos!", "Erro de Login", JOptionPane.ERROR_MESSAGE);
-            }
+            }*/
             if(emailCorreto&&senhaCorreta&&logado){
                 user="gerente";
                 JOptionPane.showMessageDialog(null,"Entrou como gerente com sucesso!", "Notificação Login",JOptionPane.PLAIN_MESSAGE);
@@ -231,17 +231,7 @@ public class telaLogin extends javax.swing.JFrame {
                     emailCorreto = false;
                     senhaCorreta = true;
                     
-                }else if(item.getEmail().equals(emailInput)&&item.getSenha().equals(senhaInput)){
-                    emailCorreto = true;
-                    senhaCorreta = true;
-                    logado = true;
-                    //user = "gerente";
-                    //JOptionPane.showMessageDialog(null,"Entrou como gerente com sucesso!", "Notificação Login",JOptionPane.PLAIN_MESSAGE);
-                    //this.setVisible(false);
-                    break;
-                    
-                }
-            if(item.getEmail().equals(emailInput)&& item.getSenha().equals(senhaInput)){
+                }else             if(item.getEmail().equals(emailInput)&& item.getSenha().equals(senhaInput)){
                 emailCorreto = true;
                 senhaCorreta = true;
                 logado = true;
@@ -259,9 +249,6 @@ public class telaLogin extends javax.swing.JFrame {
                 break;
             }
         }
-            if (!emailCorreto && !senhaCorreta && !logado) {
-                JOptionPane.showMessageDialog(null, "Email e senha incorretos!", "Erro de Login", JOptionPane.ERROR_MESSAGE);
-            }
         }
         if(!logado && listaClientes.size() > 0){
         for(Cliente item:listaClientes){
@@ -276,6 +263,11 @@ public class telaLogin extends javax.swing.JFrame {
                     emailCorreto = true;
                     senhaCorreta = true;
                     logado = true;
+                    user = "cliente";
+                    JOptionPane.showMessageDialog(null,"Credenciais verificadas... pegando índice", "Notificação Login",JOptionPane.PLAIN_MESSAGE);
+                    Cliente.index_cliente=Integer.parseInt(item.getIdCliente());//PROBLEMA AQUI DE NOVO!!
+                    JOptionPane.showMessageDialog(null,"Entrou como cliente com sucesso!", "Notificação Login",JOptionPane.PLAIN_MESSAGE);
+                    this.setVisible(false);
                     //user = "gerente";
                     //JOptionPane.showMessageDialog(null,"Entrou como gerente com sucesso!", "Notificação Login",JOptionPane.PLAIN_MESSAGE);
                     //this.setVisible(false);
@@ -283,7 +275,7 @@ public class telaLogin extends javax.swing.JFrame {
                     
                 }
 
-            if(item.getEmail().equals(emailInput)&& item.getSenha().equals(senhaInput)){
+            /*if(item.getEmail().equals(emailInput)&& item.getSenha().equals(senhaInput)){
                 emailCorreto = true;
                 senhaCorreta = true;
                 logado = true;
@@ -295,23 +287,23 @@ public class telaLogin extends javax.swing.JFrame {
                 
 
                 break;
-            }
+            }*/
         }
                     if (!emailCorreto && !senhaCorreta && !logado) {
-                JOptionPane.showMessageDialog(null, "Email e senha incorretos!", "Erro de Login", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Email ou senha incorretos!", "Erro de Login", JOptionPane.ERROR_MESSAGE);
             }
         
-            if(emailCorreto&&senhaCorreta&&logado){
+            /*if(emailCorreto&&senhaCorreta&&logado){
                 user="gerente";
                 JOptionPane.showMessageDialog(null,"Entrou como gerente com sucesso!", "Notificação Login",JOptionPane.PLAIN_MESSAGE);
                 this.setVisible(false);
-            }
+            }*/
         }
         if(logado){
             new Menu().setVisible(true);
         }
         if(!logado){
-        JOptionPane.showMessageDialog(null, "Email ou senha incorretos.", "Erro de Login", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Email ou senha incorretos!", "Erro de Login", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnEntrarActionPerformed
 
