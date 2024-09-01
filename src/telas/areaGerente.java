@@ -10,6 +10,7 @@ import classes.Gerente;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import static telas.cadastarGerente.listaGerente;
+import static telas.cadastros.cadastrosFlag;
 
 /**
  *
@@ -704,10 +705,11 @@ public class areaGerente extends javax.swing.JFrame {
     private void btnNovoFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoFuncionarioActionPerformed
         // TODO add your handling code here:
         //enableControleFuncionariosFields();
+        cadastrosFlag="funcionario";
         disableControleFuncionariosButtons();
         btnSalvarFuncionario.setEnabled(true);
         //btnCancelarFuncionario.setEnabled(true);
-        new cadastrarFuncionario().setVisible(true);
+        new cadastros().setVisible(true);
     }//GEN-LAST:event_btnNovoFuncionarioActionPerformed
 
     private void txtCodigoFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoFuncionarioActionPerformed
@@ -751,7 +753,8 @@ public class areaGerente extends javax.swing.JFrame {
 
     private void btnNovoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoClienteActionPerformed
         // TODO add your handling code here:
-        new cadastrarCliente().setVisible(true);
+        cadastrosFlag="cliente";
+        new cadastros().setVisible(true);
         btnSalvarCliente.setEnabled(true);
 
     }//GEN-LAST:event_btnNovoClienteActionPerformed

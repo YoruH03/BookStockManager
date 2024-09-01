@@ -15,6 +15,7 @@ import static telas.Menu.logado;
 import static telas.Menu.user;
 import static telas.cadastarGerente.listaGerente;
 //import telas.Menu.verificarLogin();
+import static telas.cadastros.cadastrosFlag;
 
 //import static telas.cadastrarFuncionario.listaFuncionarios;
 
@@ -53,6 +54,7 @@ public class telaLogin extends javax.swing.JFrame {
         btnCancelar = new javax.swing.JButton();
         lblCadastrarse = new javax.swing.JLabel();
         pswSenha = new javax.swing.JPasswordField();
+        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -158,6 +160,9 @@ public class telaLogin extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 220, 610, 470));
 
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/logo_v3.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 830, 780));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Telas/Login.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -172,7 +177,10 @@ public class telaLogin extends javax.swing.JFrame {
 
     private void lblCadastrarseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCadastrarseMouseClicked
         // TODO add your handling code here:
-        new cadastrarCliente().setVisible(true);
+        cadastrosFlag="cliente";
+        user="cadastro";
+        new cadastros().setVisible(true);
+        user="";
     }//GEN-LAST:event_lblCadastrarseMouseClicked
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
@@ -280,6 +288,7 @@ public class telaLogin extends javax.swing.JFrame {
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnEntrar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblCadastrarse;
     private javax.swing.JLabel lblEmail;

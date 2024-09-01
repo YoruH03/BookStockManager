@@ -10,6 +10,7 @@ import static classes.Funcionario.index_func;
 import static classes.Funcionario.listaFuncionarios;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import static telas.cadastros.cadastrosFlag;
 //import static telas.cadastrarFuncionario.listaFuncionarios;
 
 /**
@@ -469,7 +470,9 @@ public class areaFuncionario extends javax.swing.JFrame {
 
     private void btnNovoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoClienteActionPerformed
         // TODO add your handling code here:
-        new cadastrarCliente().setVisible(true);
+        
+        cadastrosFlag="cliente";
+        new cadastros().setVisible(true);
         btnSalvarCliente.setEnabled(true);
     }//GEN-LAST:event_btnNovoClienteActionPerformed
 

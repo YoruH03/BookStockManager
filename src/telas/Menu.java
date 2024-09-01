@@ -13,6 +13,7 @@ import classes.Gerente;
 import classes.Produto;
 import javax.swing.JOptionPane;
 import static telas.cadastarGerente.listaGerente;
+import static telas.cadastros.cadastrosFlag;
 //import static telas.cadastrarCliente.listaClientes;
 //import static telas.cadastrarFuncionario.listaFuncionarios;
 
@@ -111,6 +112,7 @@ public class Menu extends javax.swing.JFrame {
         if(logado==true){
             if(user.equals("")){
             btnCliente.setText("Criar conta de Cliente");
+            btnFuncionario.setText("Área do Funcionário");
             btnFuncionario.setEnabled(false);
             btnGerente.setEnabled(false);
             btnAtualizarEstoque.setEnabled(false);
@@ -161,7 +163,6 @@ public class Menu extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         lblLogin = new javax.swing.JLabel();
-        lblBookStockManager = new javax.swing.JLabel();
         btnAtualizarEstoque = new javax.swing.JToggleButton();
         btnVerCarrinho = new javax.swing.JButton();
         btnPesquisar = new javax.swing.JButton();
@@ -170,7 +171,6 @@ public class Menu extends javax.swing.JFrame {
         btnCliente = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
         btnLogin = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         lblLogo = new javax.swing.JLabel();
         lblImagem = new javax.swing.JLabel();
 
@@ -180,19 +180,14 @@ public class Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu principal");
-        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/imagens/logo_digitalbooks03_small3.png")).getImage());
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/imagens/logo_128.png")).getImage());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblLogin.setFont(new java.awt.Font("Old London", 1, 48)); // NOI18N
-        lblLogin.setForeground(new java.awt.Color(255, 0, 0));
+        lblLogin.setFont(new java.awt.Font("Old London", 1, 80)); // NOI18N
+        lblLogin.setForeground(new java.awt.Color(255, 255, 255));
         lblLogin.setText("Você entrou como cliente");
-        jPanel1.add(lblLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 1060, 60));
-
-        lblBookStockManager.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        lblBookStockManager.setForeground(new java.awt.Color(255, 255, 255));
-        lblBookStockManager.setText("BookStock");
-        jPanel1.add(lblBookStockManager, new org.netbeans.lib.awtextra.AbsoluteConstraints(1580, 210, -1, -1));
+        jPanel1.add(lblLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, -10, 1060, 100));
 
         btnAtualizarEstoque.setFont(new java.awt.Font("Old London", 1, 36)); // NOI18N
         btnAtualizarEstoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/business_inventory_maintenance_product_box_boxes_2326_64.png"))); // NOI18N
@@ -284,13 +279,8 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 200, 70));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Manager");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1600, 260, -1, -1));
-
-        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/livro01.png"))); // NOI18N
-        jPanel1.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1460, 0, 390, 210));
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/logo256.png"))); // NOI18N
+        jPanel1.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1470, 20, -1, 250));
 
         lblImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Telas/Menu.png"))); // NOI18N
         jPanel1.add(lblImagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -316,6 +306,7 @@ public class Menu extends javax.swing.JFrame {
         user="";
         verificarLogin(logado,user);
         JOptionPane.showMessageDialog(null,"Você acabou de sair do sistema", "Mensagem",JOptionPane.INFORMATION_MESSAGE);
+        atualizarBotoes();
 
         
 
@@ -346,7 +337,8 @@ tela.addWindowListener(new java.awt.event.WindowAdapter() {
                 JOptionPane.showMessageDialog(null,"Você tem acesso a criar nova conta de cliente","Notificação de acesso a cliente",JOptionPane.ERROR_MESSAGE);
                 int response = JOptionPane.showConfirmDialog(null, "Gostaria de criar uma nova conta como Cliente?","Confirmação",JOptionPane.YES_NO_OPTION);
                 if(response==JOptionPane.YES_OPTION){
-                    new cadastrarCliente().setVisible(true);
+                    cadastrosFlag = "cliente";
+                    new cadastros().setVisible(true);
                 }
             }else{
                 new areaCliente().setVisible(true);
@@ -354,7 +346,7 @@ tela.addWindowListener(new java.awt.event.WindowAdapter() {
         }else{
             int response = JOptionPane.showConfirmDialog(null, "Você não entrou no sistema. Gostaria de criar uma nova conta como Cliente?","Confirmação",JOptionPane.YES_NO_OPTION);
             if(response==JOptionPane.YES_OPTION){
-                new cadastrarCliente().setVisible(true);
+                new cadastros().setVisible(true);
             }
 
             //new cadastrarCliente().setVisible(true);
@@ -374,8 +366,10 @@ tela.addWindowListener(new java.awt.event.WindowAdapter() {
         
         if(logado==true){
             if( user.equals("gerente")){
-            new cadastrarFuncionario().setVisible(true);
+                    cadastrosFlag="funcionario";
+                    new cadastros().setVisible(true);
             }else if(user.equals("funcionario")){
+                    cadastrosFlag="funcionario";
                     new areaFuncionario().setVisible(true);
                     }
             else{
@@ -475,11 +469,9 @@ tela.addWindowListener(new java.awt.event.WindowAdapter() {
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnPesquisar;
     private javax.swing.JButton btnVerCarrinho;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel lblBookStockManager;
     private javax.swing.JLabel lblImagem;
     private javax.swing.JLabel lblLogin;
     private javax.swing.JLabel lblLogo;
