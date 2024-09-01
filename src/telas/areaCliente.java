@@ -111,10 +111,12 @@ public class areaCliente extends javax.swing.JFrame {
         ftxTelefone = new javax.swing.JFormattedTextField();
         txtCPFCliente = new javax.swing.JFormattedTextField();
         lblAreaCliente = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Área do cliente");
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/aventureiro64.png")).getImage());
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnCarrinhosAnteriores.setFont(new java.awt.Font("Old London", 0, 48)); // NOI18N
@@ -124,7 +126,7 @@ public class areaCliente extends javax.swing.JFrame {
                 btnCarrinhosAnterioresActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCarrinhosAnteriores, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 20, -1, 70));
+        getContentPane().add(btnCarrinhosAnteriores, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, -1, 70));
 
         btnSair.setFont(new java.awt.Font("Old London", 0, 48)); // NOI18N
         btnSair.setText("Sair");
@@ -135,49 +137,60 @@ public class areaCliente extends javax.swing.JFrame {
         });
         getContentPane().add(btnSair, new org.netbeans.lib.awtextra.AbsoluteConstraints(1660, 30, 130, 60));
 
+        jPanel1.setBackground(new java.awt.Color(211, 181, 143));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblDadosCliente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblDadosCliente.setText("meus dados");
-        jPanel1.add(lblDadosCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 26, -1, -1));
+        lblDadosCliente.setFont(new java.awt.Font("Old London", 1, 24)); // NOI18N
+        lblDadosCliente.setText("Meus Dados");
+        jPanel1.add(lblDadosCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 26, 130, 30));
 
+        lblNomeCliente.setFont(new java.awt.Font("Old London", 0, 36)); // NOI18N
         lblNomeCliente.setText("Nome");
-        jPanel1.add(lblNomeCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 68, -1, -1));
+        jPanel1.add(lblNomeCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 80, 50));
 
+        lblCPFCliente.setFont(new java.awt.Font("Old London", 0, 36)); // NOI18N
         lblCPFCliente.setText("CPF");
-        jPanel1.add(lblCPFCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 120, -1, -1));
+        jPanel1.add(lblCPFCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 70, 70));
 
+        lblEmailCliente.setFont(new java.awt.Font("Old London", 0, 36)); // NOI18N
         lblEmailCliente.setText("E-mail");
-        jPanel1.add(lblEmailCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 68, -1, -1));
+        jPanel1.add(lblEmailCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 100, 50));
 
+        lblSenhaCliente.setFont(new java.awt.Font("Old London", 0, 36)); // NOI18N
         lblSenhaCliente.setText("Senha");
-        jPanel1.add(lblSenhaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(222, 120, -1, -1));
+        jPanel1.add(lblSenhaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 130, 50));
 
+        lblEnderecoCliente.setFont(new java.awt.Font("Old London", 0, 36)); // NOI18N
         lblEnderecoCliente.setText("Endereço");
-        jPanel1.add(lblEnderecoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(424, 68, -1, -1));
+        jPanel1.add(lblEnderecoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 130, 50));
 
-        lblNascimentoCliente.setText("data de nascimento");
-        jPanel1.add(lblNascimentoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(408, 120, -1, -1));
+        lblNascimentoCliente.setFont(new java.awt.Font("Old London", 0, 36)); // NOI18N
+        lblNascimentoCliente.setText("Data de nascimento");
+        jPanel1.add(lblNascimentoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, 260, 50));
 
+        txtNomeCliente.setFont(new java.awt.Font("Old London", 0, 24)); // NOI18N
         txtNomeCliente.setToolTipText("Nome do cliente");
         txtNomeCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNomeClienteActionPerformed(evt);
             }
         });
-        jPanel1.add(txtNomeCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 65, 159, -1));
+        jPanel1.add(txtNomeCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 560, 40));
 
+        txtEmailCliente.setFont(new java.awt.Font("Old London", 0, 24)); // NOI18N
         txtEmailCliente.setToolTipText("email cadastrado");
-        jPanel1.add(txtEmailCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 65, 115, -1));
+        jPanel1.add(txtEmailCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 560, 40));
 
+        txtSenhaCliente.setFont(new java.awt.Font("Old London", 0, 24)); // NOI18N
         txtSenhaCliente.setToolTipText("senha do cliente");
-        jPanel1.add(txtSenhaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 117, 115, -1));
+        jPanel1.add(txtSenhaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 550, 30));
 
+        txtEnderecoCliente.setFont(new java.awt.Font("Old London", 0, 24)); // NOI18N
         txtEnderecoCliente.setToolTipText("endereço salvo");
-        jPanel1.add(txtEnderecoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(486, 65, 107, -1));
+        jPanel1.add(txtEnderecoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 550, 40));
 
         btnSalvarCliente.setBackground(new java.awt.Color(51, 204, 0));
-        btnSalvarCliente.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnSalvarCliente.setFont(new java.awt.Font("Old London", 1, 36)); // NOI18N
         btnSalvarCliente.setText("Salvar");
         btnSalvarCliente.setToolTipText("salvar as alterações");
         btnSalvarCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -185,10 +198,10 @@ public class areaCliente extends javax.swing.JFrame {
                 btnSalvarClienteActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSalvarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(245, 204, -1, -1));
+        jPanel1.add(btnSalvarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 730, -1, 60));
 
         btnAlterarCliente.setBackground(new java.awt.Color(255, 255, 0));
-        btnAlterarCliente.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnAlterarCliente.setFont(new java.awt.Font("Old London", 1, 36)); // NOI18N
         btnAlterarCliente.setText("Alterar");
         btnAlterarCliente.setToolTipText("alterar os dados");
         btnAlterarCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -196,10 +209,10 @@ public class areaCliente extends javax.swing.JFrame {
                 btnAlterarClienteActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAlterarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 204, -1, -1));
+        jPanel1.add(btnAlterarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 730, -1, 60));
 
         btnCancelarCliente.setBackground(new java.awt.Color(255, 0, 0));
-        btnCancelarCliente.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnCancelarCliente.setFont(new java.awt.Font("Old London", 1, 36)); // NOI18N
         btnCancelarCliente.setText("Cancelar");
         btnCancelarCliente.setToolTipText("cancelar a operação");
         btnCancelarCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -207,10 +220,11 @@ public class areaCliente extends javax.swing.JFrame {
                 btnCancelarClienteActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCancelarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(472, 204, -1, -1));
+        jPanel1.add(btnCancelarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 730, -1, 60));
 
+        lblCelularCliente.setFont(new java.awt.Font("Old London", 0, 36)); // NOI18N
         lblCelularCliente.setText("Celular");
-        jPanel1.add(lblCelularCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 160, -1, -1));
+        jPanel1.add(lblCelularCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, 160, 50));
 
         try {
             ftxNascimentoCliente.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
@@ -218,7 +232,8 @@ public class areaCliente extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         ftxNascimentoCliente.setToolTipText("data de nascimento do cliente");
-        jPanel1.add(ftxNascimentoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(518, 117, 75, -1));
+        ftxNascimentoCliente.setFont(new java.awt.Font("Old London", 0, 24)); // NOI18N
+        jPanel1.add(ftxNascimentoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 484, 550, 40));
 
         try {
             ftxTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-####")));
@@ -226,7 +241,8 @@ public class areaCliente extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         ftxTelefone.setToolTipText("número de contato");
-        jPanel1.add(ftxTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 157, -1, -1));
+        ftxTelefone.setFont(new java.awt.Font("Old London", 0, 24)); // NOI18N
+        jPanel1.add(ftxTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, 560, 40));
 
         try {
             txtCPFCliente.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
@@ -234,11 +250,15 @@ public class areaCliente extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         txtCPFCliente.setToolTipText("CPF do cliente");
-        jPanel1.add(txtCPFCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 117, 83, -1));
+        txtCPFCliente.setFont(new java.awt.Font("Old London", 0, 24)); // NOI18N
+        jPanel1.add(txtCPFCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 560, 40));
 
-        lblAreaCliente.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblAreaCliente.setFont(new java.awt.Font("Old London", 1, 36)); // NOI18N
         lblAreaCliente.setText("Área do Cliente");
-        jPanel1.add(lblAreaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 22, -1, -1));
+        jPanel1.add(lblAreaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, -1, 50));
+
+        jSeparator1.setForeground(new java.awt.Color(150, 114, 69));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 610, 10));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(788, 100, 610, 810));
 
@@ -348,6 +368,7 @@ public class areaCliente extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField ftxTelefone;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblAreaCliente;
     private javax.swing.JLabel lblCPFCliente;
     private javax.swing.JLabel lblCelularCliente;

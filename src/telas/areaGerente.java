@@ -171,8 +171,10 @@ public class areaGerente extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Área do Gerente");
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/rei64.png")).getImage());
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnSair.setBackground(new java.awt.Color(255, 0, 0));
         btnSair.setFont(new java.awt.Font("Old London", 0, 48)); // NOI18N
         btnSair.setText("Sair");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
@@ -357,8 +359,8 @@ public class areaGerente extends javax.swing.JFrame {
             }
         });
 
+        btnNovoFuncionario.setBackground(new java.awt.Color(51, 255, 153));
         btnNovoFuncionario.setFont(new java.awt.Font("Old English Text MT", 0, 18)); // NOI18N
-        btnNovoFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/add_icon-icons.com_74429 (2).png"))); // NOI18N
         btnNovoFuncionario.setText("Novo");
         btnNovoFuncionario.setToolTipText("Adicionar novo funcionário");
         btnNovoFuncionario.addActionListener(new java.awt.event.ActionListener() {
@@ -370,6 +372,11 @@ public class areaGerente extends javax.swing.JFrame {
         btnBuscarFuncionario.setFont(new java.awt.Font("Old English Text MT", 0, 18)); // NOI18N
         btnBuscarFuncionario.setText("Buscar");
         btnBuscarFuncionario.setToolTipText("Buscar pelo funcionário");
+        btnBuscarFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarFuncionarioActionPerformed(evt);
+            }
+        });
 
         try {
             ftxCPFFuncionario.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
@@ -417,8 +424,8 @@ public class areaGerente extends javax.swing.JFrame {
             tblControleFuncionarios.getColumnModel().getColumn(2).setPreferredWidth(14);
         }
 
+        btnSalvarFuncionario.setBackground(new java.awt.Color(0, 255, 0));
         btnSalvarFuncionario.setFont(new java.awt.Font("Old English Text MT", 0, 18)); // NOI18N
-        btnSalvarFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/Save_37110.png"))); // NOI18N
         btnSalvarFuncionario.setText("Salvar");
         btnSalvarFuncionario.setToolTipText("Salvar dados do funcionário");
         btnSalvarFuncionario.addActionListener(new java.awt.event.ActionListener() {
@@ -427,8 +434,8 @@ public class areaGerente extends javax.swing.JFrame {
             }
         });
 
+        btnExcluirFuncionario.setBackground(new java.awt.Color(102, 102, 102));
         btnExcluirFuncionario.setFont(new java.awt.Font("Old English Text MT", 0, 18)); // NOI18N
-        btnExcluirFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/delete_4219.png"))); // NOI18N
         btnExcluirFuncionario.setText("Excluir");
         btnExcluirFuncionario.setToolTipText("excluir funcionário");
         btnExcluirFuncionario.addActionListener(new java.awt.event.ActionListener() {
@@ -473,9 +480,9 @@ public class areaGerente extends javax.swing.JFrame {
                 .addComponent(lblIdFuncionario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtCodigoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 169, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
                 .addComponent(btnBuscarFuncionario)
-                .addGap(15, 15, 15))
+                .addGap(83, 83, 83))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -501,7 +508,7 @@ public class areaGerente extends javax.swing.JFrame {
                     .addComponent(btnExcluirFuncionario))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 30, 980, 420));
@@ -523,6 +530,7 @@ public class areaGerente extends javax.swing.JFrame {
         btnBuscarCliente.setFont(new java.awt.Font("Old English Text MT", 0, 18)); // NOI18N
         btnBuscarCliente.setText("Buscar");
 
+        btnNovoCliente.setBackground(new java.awt.Color(51, 255, 153));
         btnNovoCliente.setFont(new java.awt.Font("Old English Text MT", 0, 18)); // NOI18N
         btnNovoCliente.setText("Novo");
         btnNovoCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -531,6 +539,7 @@ public class areaGerente extends javax.swing.JFrame {
             }
         });
 
+        btnSalvarCliente.setBackground(new java.awt.Color(0, 255, 0));
         btnSalvarCliente.setFont(new java.awt.Font("Old English Text MT", 0, 18)); // NOI18N
         btnSalvarCliente.setText("Salvar");
         btnSalvarCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -539,6 +548,7 @@ public class areaGerente extends javax.swing.JFrame {
             }
         });
 
+        btnExluirCliente.setBackground(new java.awt.Color(102, 102, 102));
         btnExluirCliente.setFont(new java.awt.Font("Old English Text MT", 0, 18)); // NOI18N
         btnExluirCliente.setText("Excluir");
         btnExluirCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -603,7 +613,9 @@ public class areaGerente extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jScrollPane3)
+                        .addContainerGap())
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblControleClientes)
@@ -619,9 +631,9 @@ public class areaGerente extends javax.swing.JFrame {
                                 .addComponent(lblCodigoCliente)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtCodCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
-                        .addComponent(btnBuscarCliente)))
-                .addContainerGap())
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                        .addComponent(btnBuscarCliente)
+                        .addGap(38, 38, 38))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -769,6 +781,10 @@ public class areaGerente extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_btnSairActionPerformed
+
+    private void btnBuscarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarFuncionarioActionPerformed
+        // TODO add your handling code here:  
+    }//GEN-LAST:event_btnBuscarFuncionarioActionPerformed
 
     /**
      * @param args the command line arguments

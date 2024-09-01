@@ -56,13 +56,23 @@ public class Menu extends javax.swing.JFrame {
         Funcionario funcionario;
         funcionario = new Funcionario("func","000.000.000-00","func@gmail.com","func");
         listaFuncionarios.add(funcionario);
-        Cliente cliente = new Cliente("user","000.000.000-00","user@gmail.com","user","Pernambuco","10/05/1990","999-9999");
+        Cliente cliente = new Cliente("user","000.000.000-00","user@gmail.com","user","Pernambuco","10/05/1990","99999-9999");
         listaClientes.add(cliente);
-        Cliente cliente1 = new Cliente("Alberto","010.034.123-00","alberto@gmail.com","alberto","Brasília","15/12/2000","888-8888");
+        Cliente cliente1 = new Cliente("Alberto","010.034.123-00","alberto@gmail.com","alberto","Brasília","15/12/2000","88888-8888");
         listaClientes.add(cliente1);
 
         Produto produto1 = new Produto("Eragon","Christopher Paolini","Aventura",15.69,3,"1","Eragon se torna um cavaleiro de Dragão");
         estoque.add(produto1);
+        Produto produto2 = new Produto("Diario de um banana","Jeff Kiney","Comédia",10.40,5,"2","Diário de Greg Heffley");
+        estoque.add(produto2);
+        Produto produto3 = new Produto("Eldest","Christopher Paolini","Aventura",20.69,6,"3","Eragon e Murtagh lutam na campina ardente");
+        estoque.add(produto3);
+        Produto produto4 = new Produto("Brisingr","Christopher Paolini","Aventura",18.29,6,"4","Eragon treina com Oromis");
+        estoque.add(produto4);
+        Produto produto5 = new Produto("Herança","Christopher Paolini","Aventura",24.89,6,"5","Eragon luta contra o Rei Galbatorix");
+        estoque.add(produto5);
+
+
             
         }
     }
@@ -171,6 +181,7 @@ public class Menu extends javax.swing.JFrame {
         btnCliente = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
         btnLogin = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         lblLogo = new javax.swing.JLabel();
         lblImagem = new javax.swing.JLabel();
 
@@ -223,7 +234,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.add(btnPesquisar, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 400, 400, 130));
 
         btnFuncionario.setFont(new java.awt.Font("Old London", 1, 36)); // NOI18N
-        btnFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/technicalsupport_support_representative_person_people_man_1641_64.png"))); // NOI18N
+        btnFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/cavaleiro64.png"))); // NOI18N
         btnFuncionario.setText("Funcionário");
         btnFuncionario.setContentAreaFilled(false);
         btnFuncionario.addActionListener(new java.awt.event.ActionListener() {
@@ -234,7 +245,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.add(btnFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 640, 400, 130));
 
         btnGerente.setFont(new java.awt.Font("Old London", 1, 36)); // NOI18N
-        btnGerente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/customer_person_people_man_you_1625_64.png"))); // NOI18N
+        btnGerente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/rei64.png"))); // NOI18N
         btnGerente.setText("Gerente");
         btnGerente.setContentAreaFilled(false);
         btnGerente.addActionListener(new java.awt.event.ActionListener() {
@@ -245,7 +256,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.add(btnGerente, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 640, 400, 130));
 
         btnCliente.setFont(new java.awt.Font("Old London", 1, 36)); // NOI18N
-        btnCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/person_user_customer_man_male_man_boy_people_1687_64.png"))); // NOI18N
+        btnCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/aventureiro64.png"))); // NOI18N
         btnCliente.setText("Cliente");
         btnCliente.setContentAreaFilled(false);
         btnCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -279,8 +290,18 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 200, 70));
 
+        jButton1.setBackground(new java.awt.Color(255, 0, 0));
+        jButton1.setFont(new java.awt.Font("Old London", 0, 48)); // NOI18N
+        jButton1.setText("Fechar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1715, 20, 160, 70));
+
         lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/logo256.png"))); // NOI18N
-        jPanel1.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1470, 20, -1, 250));
+        jPanel1.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 100, -1, 250));
 
         lblImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Telas/Menu.png"))); // NOI18N
         jPanel1.add(lblImagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -428,6 +449,11 @@ tela.addWindowListener(new java.awt.event.WindowAdapter() {
             }
     }//GEN-LAST:event_btnAtualizarEstoqueActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -472,6 +498,7 @@ tela.addWindowListener(new java.awt.event.WindowAdapter() {
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnPesquisar;
     private javax.swing.JButton btnVerCarrinho;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;

@@ -262,6 +262,7 @@ public class verCarrinho extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Visualizar meu carrinho");
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/carrinho64.png")).getImage());
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(99, 83, 39));
@@ -356,39 +357,38 @@ public class verCarrinho extends javax.swing.JFrame {
                 .addContainerGap(590, Short.MAX_VALUE)
                 .addComponent(btnVerCarrinhosAntigos)
                 .addGap(16, 16, 16))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(264, 264, 264)
+                .addComponent(lblVisualizarCarrinho)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                    .addContainerGap(43, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblProdutosCarrinho, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
-                                        .addComponent(btnRemoverItem)
-                                        .addGap(136, 136, 136)
-                                        .addComponent(btnEsvaziarCarrinho)
-                                        .addGap(106, 106, 106)
-                                        .addComponent(btnConfirmarCompra))
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 762, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(lblProdutosCarrinho, javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(244, 244, 244)
-                            .addComponent(lblVisualizarCarrinho)))
+                            .addGap(6, 6, 6)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGap(6, 6, 6)
+                                    .addComponent(btnRemoverItem)
+                                    .addGap(136, 136, 136)
+                                    .addComponent(btnEsvaziarCarrinho)
+                                    .addGap(106, 106, 106)
+                                    .addComponent(btnConfirmarCompra))
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 762, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addContainerGap()))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(71, 71, 71)
+                .addComponent(lblVisualizarCarrinho)
+                .addGap(39, 39, 39)
                 .addComponent(btnVerCarrinhosAntigos)
                 .addContainerGap(368, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(33, 33, 33)
-                    .addComponent(lblVisualizarCarrinho)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGap(71, 71, 71)
                     .addComponent(lblProdutosCarrinho)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -645,6 +645,7 @@ public class verCarrinho extends javax.swing.JFrame {
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 390, 1000, 520));
 
+        btnSair.setBackground(new java.awt.Color(255, 51, 0));
         btnSair.setFont(new java.awt.Font("Old London", 0, 36)); // NOI18N
         btnSair.setText("Sair");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
@@ -710,13 +711,16 @@ public class verCarrinho extends javax.swing.JFrame {
 
     private void btnEsvaziarCarrinhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEsvaziarCarrinhoActionPerformed
         // TODO add your handling code here:
+        listaProdutos.clear();
                 carregarTabelaProdutos();
 
     }//GEN-LAST:event_btnEsvaziarCarrinhoActionPerformed
 
     private void btnRemoverItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverItemActionPerformed
         // TODO add your handling code here:
-        listaProdutos.clear();
+        int index = tblProdutos.getSelectedRow();
+        listaProdutos.remove(index);
+        //listaProdutos.clear();
         carregarTabelaProdutos();
 
     }//GEN-LAST:event_btnRemoverItemActionPerformed

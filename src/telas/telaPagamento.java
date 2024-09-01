@@ -76,6 +76,7 @@ public class telaPagamento extends javax.swing.JFrame {
         txtProdutos = new javax.swing.JTextField();
         btnPagar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela pagamento");
@@ -100,6 +101,7 @@ public class telaPagamento extends javax.swing.JFrame {
 
         buttonGroup1.add(rdbPix);
         rdbPix.setText("Pix");
+        rdbPix.setToolTipText("Pague no pix para 5% de desconto!");
         rdbPix.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 rdbPixMouseClicked(evt);
@@ -130,6 +132,9 @@ public class telaPagamento extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setForeground(new java.awt.Color(0, 153, 0));
+        jLabel1.setText("Desconto de 5% no pix!");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -145,15 +150,19 @@ public class telaPagamento extends javax.swing.JFrame {
                             .addComponent(btnPagar)
                             .addComponent(lblFormaPagamento))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addGap(71, 71, 71)
+                                    .addComponent(btnCancelar))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(18, 18, 18)
+                                    .addComponent(rdbBoleto)
+                                    .addGap(33, 33, 33)
+                                    .addComponent(rdbPix)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(rdbBoleto)
-                                .addGap(33, 33, 33)
-                                .addComponent(rdbPix))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGap(71, 71, 71)
-                                .addComponent(btnCancelar)))))
-                .addContainerGap(50, Short.MAX_VALUE))
+                                .addComponent(jLabel1)))))
+                .addContainerGap(38, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(72, 72, 72)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,11 +198,13 @@ public class telaPagamento extends javax.swing.JFrame {
                     .addComponent(lblFormaPagamento)
                     .addComponent(rdbBoleto)
                     .addComponent(rdbPix))
-                .addGap(34, 34, 34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnPagar)
                     .addComponent(btnCancelar))
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         pack();
@@ -312,6 +323,7 @@ public class telaPagamento extends javax.swing.JFrame {
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnPagar;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblFormaPagamento;
     private javax.swing.JLabel lblNumCarrinho;
     private javax.swing.JLabel lblPagamento;
