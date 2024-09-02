@@ -712,9 +712,32 @@ public class verCarrinho extends javax.swing.JFrame {
 
     private void btnEsvaziarCarrinhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEsvaziarCarrinhoActionPerformed
         // TODO add your handling code here:
-        listaProdutos.clear();
-                carregarTabelaProdutos();
+        // Obtenha o número total de linhas da tabela
+        int rowCount = tblProdutos.getRowCount();
 
+        for (int row = 0; row < rowCount; row++) {
+            // Pega o nome do produto da linha atual
+            Object produtoPesquisado = tblProdutos.getValueAt(row, 0);
+            String inputBusca = String.valueOf(produtoPesquisado);
+
+            // Pega a quantidade do produto da linha atual
+            Object quantPesquisado = tblProdutos.getValueAt(row, 2);
+            String quantBuscastr = String.valueOf(quantPesquisado);
+            int quantBusca = Integer.parseInt(quantBuscastr);
+
+            // Procura o item correspondente no estoque e atualiza a quantidade
+            for (Produto itemEstoque : estoque) {
+                if (itemEstoque.getTitulo().equals(inputBusca)) {
+                    itemEstoque.setQuantidadeEstoque(itemEstoque.getQuantidadeEstoque() + quantBusca);
+                }
+            }
+        }
+
+        // Remove todos os itens da lista
+        listaProdutos.clear();
+
+        // Recarrega a tabela de produtos
+        carregarTabelaProdutos();
     }//GEN-LAST:event_btnEsvaziarCarrinhoActionPerformed
 
     private void btnRemoverItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverItemActionPerformed
