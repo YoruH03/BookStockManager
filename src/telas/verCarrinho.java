@@ -11,6 +11,7 @@ import static classes.Carrinho.listaProdutos;
 import classes.Cliente;
 import static classes.Cliente.index_cliente;
 import static classes.Cliente.listaClientes;
+import static classes.Estoque.estoque;
 import classes.Funcionario;
 import static classes.Funcionario.index_func;
 import static classes.Funcionario.listaFuncionarios;
@@ -718,11 +719,25 @@ public class verCarrinho extends javax.swing.JFrame {
 
     private void btnRemoverItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverItemActionPerformed
         // TODO add your handling code here:
-        int index = tblProdutos.getSelectedRow();
-        listaProdutos.remove(index);
+        int row = tblProdutos.getSelectedRow();
+        
+        //pega o nome do produto 
+        Object produtoPesquisado = tblProdutos.getValueAt(row,0);
+        String inputBusca = String.valueOf(produtoPesquisado);
+        //pega a quantidade do produto
+        Object quantPesquisado = tblProdutos.getValueAt(row,2);
+        String quantBuscastr = String.valueOf(quantPesquisado);
+        int quantBusca = Integer.parseInt(quantBuscastr);
+        
+        for(Produto itemEstoque : estoque){
+            if(itemEstoque.getTitulo().equals(inputBusca)){
+            Produto item = itemEstoque;
+            item.setQuantidadeEstoque(item.getQuantidadeEstoque()+quantBusca);
+            }
+        }
+        listaProdutos.remove(row);
         //listaProdutos.clear();
         carregarTabelaProdutos();
-
     }//GEN-LAST:event_btnRemoverItemActionPerformed
 
     private void btnRemoverItemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRemoverItemMouseClicked

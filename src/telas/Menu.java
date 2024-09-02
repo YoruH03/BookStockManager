@@ -197,8 +197,9 @@ public class Menu extends javax.swing.JFrame {
 
         lblLogin.setFont(new java.awt.Font("Old London", 1, 80)); // NOI18N
         lblLogin.setForeground(new java.awt.Color(255, 255, 255));
+        lblLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLogin.setText("Você entrou como cliente");
-        jPanel1.add(lblLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, -10, 1060, 100));
+        jPanel1.add(lblLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 1060, 100));
 
         btnAtualizarEstoque.setFont(new java.awt.Font("Old London", 1, 36)); // NOI18N
         btnAtualizarEstoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/business_inventory_maintenance_product_box_boxes_2326_64.png"))); // NOI18N
@@ -242,7 +243,7 @@ public class Menu extends javax.swing.JFrame {
                 btnFuncionarioActionPerformed(evt);
             }
         });
-        jPanel1.add(btnFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 640, 400, 130));
+        jPanel1.add(btnFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 630, 400, 130));
 
         btnGerente.setFont(new java.awt.Font("Old London", 1, 36)); // NOI18N
         btnGerente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/rei64.png"))); // NOI18N
@@ -293,12 +294,15 @@ public class Menu extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(255, 0, 0));
         jButton1.setFont(new java.awt.Font("Old London", 0, 48)); // NOI18N
         jButton1.setText("Fechar");
+        jButton1.setToolTipText("");
+        jButton1.setAlignmentY(0.0F);
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1715, 20, 160, 70));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1715, 20, 160, 60));
 
         lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/logo256.png"))); // NOI18N
         jPanel1.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 100, -1, 250));

@@ -21,6 +21,7 @@ public class verProdutos extends javax.swing.JFrame {
     public verProdutos() {
         initComponents();
         setLocationRelativeTo(null);
+        getRootPane().setDefaultButton(btnPesquisar);
         this.setExtendedState(MAXIMIZED_BOTH);
         carregarTabelaProdutos();
         txtQuantidade.setText("1");
@@ -334,7 +335,7 @@ if (produtoEncontrado) {
 
 }
         
-    //GEN-LAST:event_btnPesquisarActionPerformed
+                                                
     }//GEN-LAST:event_btnPesquisarActionPerformed
 
     private void btnSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSobreActionPerformed
