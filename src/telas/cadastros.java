@@ -69,7 +69,7 @@ public class cadastros extends javax.swing.JFrame {
         }
         else if((user.equals("gerente")|| user.equals("funcionario")&&cadastrosFlag.equals("criarItem"))){
             jPanelCriarItem.setVisible(true);
-        }else if(cadastrosFlag.equals("cliente")){
+        }else if(user.equals("anonimo")){
             System.out.println("User é anônimo");
             jPanelCliente.setVisible(true);
         }

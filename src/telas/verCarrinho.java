@@ -53,20 +53,22 @@ public class verCarrinho extends javax.swing.JFrame {
         }else{
             btnEsvaziarCarrinho.setEnabled(false);
         }
+        System.out.println("A quantidade comprada é:"+listaProdutos.get(0).getQuantidadeComprada());
+        System.out.println("O gênero do livro comprado é:"+listaProdutos.get(0).getGenero());
     }
     
 
     
     //Carregar a tabela com os funcionários da lista
     private void carregarTabelaProdutos() {
-            DefaultTableModel modeloTabelaProdutos = new DefaultTableModel(new Object[] {"Titulo","Preço","Quantidade","Cod Produto","Descrição"},0);
+            DefaultTableModel modeloTabelaProdutos = new DefaultTableModel(new Object[] {"Titulo","Autor","Preço","Quantidade","Gênero"},0);
             
             for(int i=0;i<listaProdutos.size();i++){
                 Object linha[] = new Object[]{listaProdutos.get(i).getTitulo(),
-                                              listaProdutos.get(i).getPreço(),
-                                              listaProdutos.get(i).getQuantidadeComprada()};
-                                              listaProdutos.get(i).getCodigoDoProduto();
-                                              listaProdutos.get(i).getDescrição();
+                                              listaProdutos.get(i).getAutor(),
+                                              listaProdutos.get(i).getPreço()};
+                                              listaProdutos.get(i).getQuantidadeComprada();
+                                              listaProdutos.get(i).getGenero();
                 
                 modeloTabelaProdutos.addRow(linha);
                 
@@ -86,15 +88,15 @@ public class verCarrinho extends javax.swing.JFrame {
             txtNumCarrinho.setEnabled(true);
             txtData.setEnabled(true);
             txtProdutos.setEnabled(true);
-            txtCodPedido.setEnabled(true);
-            txtCodRastreio.setEnabled(true);
+            //txtCodPedido.setEnabled(true);
+            //txtCodRastreio.setEnabled(true);
             txtTotal.setEnabled(true);
             
             lblNumCarrinho.setEnabled(true);
             lblData.setEnabled(true);
             lblProdutos.setEnabled(true);
-            lblCodPedido.setEnabled(true);
-            lblCodRastreio.setEnabled(true);
+            //lblCodPedido.setEnabled(true);
+            //lblCodRastreio.setEnabled(true);
             lblTotal.setEnabled(true);
             
         }
@@ -103,15 +105,15 @@ public class verCarrinho extends javax.swing.JFrame {
             txtNumCarrinho.setEnabled(false);
             txtData.setEnabled(false);
             txtProdutos.setEnabled(false);
-            txtCodPedido.setEnabled(false);
-            txtCodRastreio.setEnabled(false);
+            //txtCodPedido.setEnabled(false);
+            //txtCodRastreio.setEnabled(false);
             txtTotal.setEnabled(false);
             
             lblNumCarrinho.setEnabled(false);
             lblData.setEnabled(false);
             lblProdutos.setEnabled(false);
-            lblCodPedido.setEnabled(false);
-            lblCodRastreio.setEnabled(false);
+            //lblCodPedido.setEnabled(false);
+            //lblCodRastreio.setEnabled(false);
             lblTotal.setEnabled(false);
         }
                     
@@ -180,7 +182,7 @@ public class verCarrinho extends javax.swing.JFrame {
 
             
         }
-                                private void carregarTabelaGerentePedidos(){
+        private void carregarTabelaGerentePedidos(){
             System.out.println("Está acessando a função de pedidos de gerente!");
             DefaultTableModel modeloTabelaCarrinhosAntigos = new DefaultTableModel(new Object[] {"Num.Carrinho","Data Pedido","Produtos","Total"},0);
             
@@ -215,6 +217,12 @@ public class verCarrinho extends javax.swing.JFrame {
 
             
         }
+        private void clearCarrinhoFields(){
+            txtNumCarrinho.setText("");
+            txtTotal.setText("");
+            txtData.setText("");
+            txtProdutos.setText("");
+        }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -244,12 +252,8 @@ public class verCarrinho extends javax.swing.JFrame {
         lblData = new javax.swing.JLabel();
         lblProdutos = new javax.swing.JLabel();
         lblTotal = new javax.swing.JLabel();
-        lblCodPedido = new javax.swing.JLabel();
-        lblCodRastreio = new javax.swing.JLabel();
         txtNumCarrinho = new javax.swing.JTextField();
         txtTotal = new javax.swing.JTextField();
-        txtCodPedido = new javax.swing.JTextField();
-        txtCodRastreio = new javax.swing.JTextField();
         txtData = new javax.swing.JFormattedTextField();
         btnPesquisarCarrinho = new javax.swing.JButton();
         btnCancelarCarrinho = new javax.swing.JButton();
@@ -277,11 +281,11 @@ public class verCarrinho extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Título", "Preço", "Quantidade", "Cód. Produto", "Descrição"
+                "Título", "Autor", "Preço", "Quantidade", "Gênero"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Double.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.Integer.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false
@@ -469,17 +473,9 @@ public class verCarrinho extends javax.swing.JFrame {
 
         lblTotal.setText("Total");
 
-        lblCodPedido.setText("Cod.Pedido");
-
-        lblCodRastreio.setText("Cod.Rastreio");
-
         txtNumCarrinho.setToolTipText("número do carrinho");
 
         txtTotal.setToolTipText("valor total");
-
-        txtCodPedido.setToolTipText("código do pedido");
-
-        txtCodRastreio.setToolTipText("código do rastreio");
 
         try {
             txtData.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
@@ -526,6 +522,27 @@ public class verCarrinho extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(337, 337, 337)
+                        .addComponent(lblData)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(143, 143, 143)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(lblNumCarrinho)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtNumCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(132, 132, 132)
+                                .addComponent(lblProdutos))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGap(42, 42, 42)
+                                .addComponent(lblTotal)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(384, 384, 384)
                         .addComponent(lblCarrinhosAnteriores)
                         .addGap(130, 130, 130)
@@ -535,39 +552,6 @@ public class verCarrinho extends javax.swing.JFrame {
                         .addComponent(btnPesquisarCarrinho)
                         .addGap(239, 239, 239)
                         .addComponent(btnCancelarCarrinho))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(66, 66, 66)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
-                                .addGap(271, 271, 271)
-                                .addComponent(lblData)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(163, 163, 163)
-                                .addComponent(lblCodPedido)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtCodPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel6Layout.createSequentialGroup()
-                                        .addComponent(lblTotal)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(133, 133, 133))
-                                    .addGroup(jPanel6Layout.createSequentialGroup()
-                                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                                .addComponent(lblNumCarrinho)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(txtNumCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                                .addComponent(lblCodRastreio)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(txtCodRastreio, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGap(67, 67, 67)
-                                        .addComponent(lblProdutos)
-                                        .addGap(18, 18, 18)))
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 885, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -581,26 +565,21 @@ public class verCarrinho extends javax.swing.JFrame {
                     .addComponent(lblCarrinhosAnteriores)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNumCarrinho)
-                    .addComponent(txtNumCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblData)
-                    .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblCodPedido)
-                    .addComponent(txtCodPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lblProdutos)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtCodRastreio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblCodRastreio))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lblNumCarrinho)
+                                .addComponent(txtNumCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblData)
+                                .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblProdutos))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblTotal)
-                            .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 1, Short.MAX_VALUE))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnPesquisarCarrinho)
@@ -622,7 +601,7 @@ public class verCarrinho extends javax.swing.JFrame {
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 12, Short.MAX_VALUE))
         );
 
@@ -745,6 +724,7 @@ public class verCarrinho extends javax.swing.JFrame {
     private void btnPesquisarCarrinhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarCarrinhoActionPerformed
         // TODO add your handling code here:
         enableCarrinhoFields();
+        clearCarrinhoFields();
         btnCancelarCarrinho.setEnabled(true);
         btnPesquisarCarrinho.setEnabled(false);
     }//GEN-LAST:event_btnPesquisarCarrinhoActionPerformed
@@ -768,7 +748,24 @@ public class verCarrinho extends javax.swing.JFrame {
 
     private void tblClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblClienteMouseClicked
         // TODO add your handling code here:
-        enableCarrinhoFields();
+        //enableCarrinhoFields();
+        int row = tblCliente.getSelectedRow();
+        int column = tblCliente.getSelectedColumn();
+        Object carrinhoPesquisado = tblCliente.getValueAt(row,0);
+        String inputBuscaString = String.valueOf(carrinhoPesquisado);
+        int inputBuscaInt = Integer.parseInt(inputBuscaString);
+        
+        String selected="";
+        for(Carrinho itemCarrinho : cliente.getListaCarrinho()){
+            if(itemCarrinho.getNumCarrinho()==(inputBuscaInt)){
+            Carrinho carrinho = itemCarrinho;
+            txtNumCarrinho.setText(String.valueOf(carrinho.getNumCarrinho()));
+            txtData.setText(String.valueOf(carrinho.getData()));
+            txtTotal.setText(String.valueOf(carrinho.getTotal()));
+            txtProdutos.setText(carrinho.mostrarProdutos());
+            
+            }
+        }
     }//GEN-LAST:event_tblClienteMouseClicked
 
     /**
@@ -826,8 +823,6 @@ public class verCarrinho extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel lblCarrinhosAnteriores;
-    private javax.swing.JLabel lblCodPedido;
-    private javax.swing.JLabel lblCodRastreio;
     private javax.swing.JLabel lblData;
     private javax.swing.JLabel lblNumCarrinho;
     private javax.swing.JLabel lblProdutos;
@@ -836,8 +831,6 @@ public class verCarrinho extends javax.swing.JFrame {
     private javax.swing.JLabel lblVisualizarCarrinho;
     private javax.swing.JTable tblCliente;
     private javax.swing.JTable tblProdutos;
-    private javax.swing.JTextField txtCodPedido;
-    private javax.swing.JTextField txtCodRastreio;
     private javax.swing.JFormattedTextField txtData;
     private javax.swing.JTextField txtNumCarrinho;
     private javax.swing.JTextArea txtProdutos;

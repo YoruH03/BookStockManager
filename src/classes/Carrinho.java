@@ -10,9 +10,8 @@ public class Carrinho {
     protected String data;
     protected double total;
     public static ArrayList<Produto> listaProdutos = new ArrayList();
-    //public static ArrayList<Carrinho> listaCarrinho = new ArrayList();
     private String idCliente;
-        public  ArrayList<Produto> itensNoCarrinho = new ArrayList();
+    public  ArrayList<Produto> itensNoCarrinho = new ArrayList();
 
 
     //Construtor de carrinho. Um vazio e outro com os atributos dados
@@ -25,36 +24,64 @@ public class Carrinho {
     }
     
     
-    
-        public Carrinho(int numCarrinho, String data,ArrayList<Produto> itensNoCarrinho) {
-        this.numCarrinho = numCarrinho;
-        this.data = data;
-        this.itensNoCarrinho = itensNoCarrinho;
-        this.total = 0;
-        double saldo = 0;
-            for(Produto item : itensNoCarrinho){
-            saldo += item.getPreço()*item.getQuantidadeComprada();
+    //Esse construtor já calcula o saldo
+    public Carrinho(int numCarrinho, String data,ArrayList<Produto> itensNoCarrinho) {
+    this.numCarrinho = numCarrinho;
+    this.data = data;
+    this.itensNoCarrinho = itensNoCarrinho;
+    this.total = 0;
+    double saldo = 0;
+        for(Produto item : itensNoCarrinho){
+        saldo += item.getPreço()*item.getQuantidadeComprada();
             
         }
             this.total=saldo;
     }
-        
-            public void verificarCarrinho(Cliente cliente){
+    
+    public void verificarCarrinho(Cliente cliente){
         if(cliente.getIdCliente().equals(this.getidCliente())){
             cliente.getListaCarrinho();
-            
         }
         
     }
-            public void contarSaldo(){
-                double saldo = 0;
-            for(Produto item : itensNoCarrinho){
-            saldo += item.getPreço()*item.getQuantidadeComprada();
-            
+    //Método separado para contar o saldo do carrinho
+    public void contarSaldo(){
+        double saldo = 0;
+        for(Produto item : itensNoCarrinho){
+        saldo += item.getPreço()*item.getQuantidadeComprada();   
         }
-            this.total=saldo;
-                
-            }
+        this.total=saldo;                
+    }
+    //Método de adicionar item ao carrinho
+        public void addItem(Produto item){
+        itensNoCarrinho.add(item);
+        
+    }
+    //Método de remover produto do carrinho
+     public void removeProduto(int i){
+         itensNoCarrinho.remove(i);
+     }
+     public void clearLista(){
+         listaProdutos.clear();
+     }
+     
+     public String mostarProdutos(ArrayList<Produto> itensNoCarrinho){
+         String resumo="";
+         for(Produto item: itensNoCarrinho){
+             resumo = resumo + " "+item.getTitulo()+"*"+item.getQuantidadeComprada();
+             
+         }
+         return resumo;
+         
+         
+     }
+     public String mostrarProdutos(){
+         String resumo="";
+         for(Produto item: this.itensNoCarrinho){
+             resumo = resumo+" "+item.getTitulo()+"*"+item.getQuantidadeComprada()+",";
+         }
+         return resumo;
+     }
         
         
     //Métodos getters e setters para cada um dos atributos
@@ -90,28 +117,6 @@ public class Carrinho {
     public void setIdCarrinho(String idCarrinho) {
         this.idCliente = idCliente;
     }
-    
-    public void addItem(Produto item){
-        itensNoCarrinho.add(item);
-        
-    }
-     public void removeProduto(int i){
-         itensNoCarrinho.remove(i);
-     }
-     public void clearLista(){
-         itensNoCarrinho.clear();
-     }
-     
-     public String mostarProdutos(ArrayList<Produto> itensNoCarrinho){
-         String resumo="";
-         for(Produto item: itensNoCarrinho){
-             resumo = resumo + " "+item.getTitulo()+"*"+item.getQuantidadeComprada();
-             
-         }
-         return resumo;
-         
-         
-     }
 
     public ArrayList<Produto> getItensNoCarrinho() {
         return itensNoCarrinho;

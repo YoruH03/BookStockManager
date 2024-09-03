@@ -143,10 +143,10 @@
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="5" rowCount="4">
                         <Column editable="false" title="T&#xed;tulo" type="java.lang.String"/>
+                        <Column editable="false" title="Autor" type="java.lang.String"/>
                         <Column editable="false" title="Pre&#xe7;o" type="java.lang.Double"/>
                         <Column editable="false" title="Quantidade" type="java.lang.Integer"/>
-                        <Column editable="false" title="C&#xf3;d. Produto" type="java.lang.String"/>
-                        <Column editable="false" title="Descri&#xe7;&#xe3;o" type="java.lang.String"/>
+                        <Column editable="false" title="G&#xea;nero" type="java.lang.String"/>
                       </Table>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -318,7 +318,7 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jPanel6" min="-2" pref="488" max="-2" attributes="0"/>
+                      <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="12" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -338,6 +338,32 @@
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="337" max="-2" attributes="0"/>
+                                  <Component id="lblData" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="txtData" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="lblNumCarrinho" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="txtNumCarrinho" min="-2" pref="77" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="132" max="-2" attributes="0"/>
+                                          <Component id="lblProdutos" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                                          <Component id="lblTotal" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="txtTotal" min="-2" pref="54" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane3" min="-2" pref="419" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="384" max="-2" attributes="0"/>
                                   <Component id="lblCarrinhosAnteriores" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
@@ -348,49 +374,6 @@
                                   <Component id="btnPesquisarCarrinho" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="239" max="-2" attributes="0"/>
                                   <Component id="btnCancelarCarrinho" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="271" max="-2" attributes="0"/>
-                                          <Component id="lblData" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="txtData" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="163" max="-2" attributes="0"/>
-                                          <Component id="lblCodPedido" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="txtCodPedido" min="-2" pref="135" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Group type="102" alignment="1" attributes="0">
-                                                  <Component id="lblTotal" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="txtTotal" min="-2" pref="54" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="133" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="1" attributes="0">
-                                                  <Group type="103" groupAlignment="1" attributes="0">
-                                                      <Group type="102" alignment="1" attributes="0">
-                                                          <Component id="lblNumCarrinho" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                          <Component id="txtNumCarrinho" min="-2" pref="77" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Group type="102" alignment="1" attributes="0">
-                                                          <Component id="lblCodRastreio" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                          <Component id="txtCodRastreio" min="-2" pref="160" max="-2" attributes="0"/>
-                                                      </Group>
-                                                  </Group>
-                                                  <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
-                                                  <Component id="lblProdutos" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <Component id="jScrollPane3" min="-2" pref="419" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
@@ -410,31 +393,25 @@
                               <Component id="jButton1" min="-2" pref="44" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblNumCarrinho" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtNumCarrinho" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblData" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtData" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblCodPedido" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtCodPedido" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="unrelated" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                  <Component id="lblProdutos" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane3" alignment="0" min="-2" pref="63" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="txtCodRastreio" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblCodRastreio" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="lblNumCarrinho" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtNumCarrinho" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblData" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtData" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="lblProdutos" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="lblTotal" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtTotal" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <EmptySpace min="0" pref="1" max="32767" attributes="0"/>
                               </Group>
+                              <Component id="jScrollPane3" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
@@ -528,16 +505,6 @@
                     <Property name="text" type="java.lang.String" value="Total"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="lblCodPedido">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Cod.Pedido"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="lblCodRastreio">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Cod.Rastreio"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JTextField" name="txtNumCarrinho">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="n&#xfa;mero do carrinho"/>
@@ -546,16 +513,6 @@
                 <Component class="javax.swing.JTextField" name="txtTotal">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="valor total"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtCodPedido">
-                  <Properties>
-                    <Property name="toolTipText" type="java.lang.String" value="c&#xf3;digo do pedido"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtCodRastreio">
-                  <Properties>
-                    <Property name="toolTipText" type="java.lang.String" value="c&#xf3;digo do rastreio"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JFormattedTextField" name="txtData">

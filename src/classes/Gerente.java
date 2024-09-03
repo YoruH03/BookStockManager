@@ -59,6 +59,9 @@ public class Gerente extends Usuario implements OperadorSistema{
     public void consultarEmail(String cpf) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+    public void addListaCarrinhosGerente(Carrinho carrinho2) {
+        listaCarrinhoGerente.add(carrinho2);    
+    }
 
     public ArrayList<Carrinho> getListaCarrinhoGerente() {
         return listaCarrinhoGerente;
@@ -67,9 +70,6 @@ public class Gerente extends Usuario implements OperadorSistema{
     public void setListaCarrinhoGerente(ArrayList<Carrinho> listaCarrinhoGerente) {
         this.listaCarrinhoGerente = listaCarrinhoGerente;
     }
-    
-        public void addListaCarrinhosGerente(Carrinho carrinho2) {
-        listaCarrinhoGerente.add(carrinho2);        
-    }
+        
     
 }

@@ -5,6 +5,7 @@ import classes.Carrinho;
 import static classes.Carrinho.listaProdutos;
 import static classes.Estoque.estoque;
 import classes.Produto;
+import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import static telas.Menu.logado;
@@ -14,7 +15,7 @@ import static telas.Menu.logado;
  * @author v
  */
 public class verProdutos extends javax.swing.JFrame {
-
+        public static Vector<Produto> auxProduto = new Vector<>(1);
     /**
      * Creates new form verProdutos
      */
@@ -26,6 +27,9 @@ public class verProdutos extends javax.swing.JFrame {
         txtQuantidade.setText("1");
         Produto item;
         btnSobre.setEnabled(false);
+        Produto produto1 = estoque.get(0);
+        auxProduto.add(produto1);
+
     }
 
     /**
@@ -95,6 +99,7 @@ public class verProdutos extends javax.swing.JFrame {
         titulo.setText("Pesquisar por produtos");
         titulo.setToolTipText("");
 
+        btnPesquisar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnPesquisar.setText("Pesquisar");
         btnPesquisar.setToolTipText("Pesquisar por título ou autor");
         btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
@@ -154,7 +159,8 @@ public class verProdutos extends javax.swing.JFrame {
         lblNome.setFont(new java.awt.Font("Old London", 0, 24)); // NOI18N
         lblNome.setText("Titulo:");
 
-        btnSobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/information_info_1565.png"))); // NOI18N
+        btnSobre.setBackground(new java.awt.Color(0, 153, 255));
+        btnSobre.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnSobre.setText("Sobre");
         btnSobre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -162,7 +168,8 @@ public class verProdutos extends javax.swing.JFrame {
             }
         });
 
-        btnComprar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/accept_icon-icons.com_74428.png"))); // NOI18N
+        btnComprar.setBackground(new java.awt.Color(0, 204, 0));
+        btnComprar.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnComprar.setText("Adicionar ao carrinho");
         btnComprar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -201,20 +208,21 @@ public class verProdutos extends javax.swing.JFrame {
                                 .addComponent(txtQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(122, 122, 122)
-                                        .addComponent(btnSobre)
-                                        .addGap(199, 199, 199)
-                                        .addComponent(btnComprar))
                                     .addComponent(Tabela, javax.swing.GroupLayout.PREFERRED_SIZE, 653, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lblNome)
                                     .addComponent(txtAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 74, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(122, 122, 122)
+                                .addComponent(btnSobre)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnComprar)
+                                .addGap(85, 85, 85))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(lblAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnPesquisar)
-                                .addGap(142, 142, 142))))
+                                .addGap(172, 172, 172))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(296, 296, 296)
                         .addComponent(lblResultadosPesquisa)))
@@ -235,24 +243,25 @@ public class verProdutos extends javax.swing.JFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnPesquisar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtAutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addComponent(lblResultadosPesquisa)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Tabela, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnComprar)
-                    .addComponent(btnSobre))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSobre)
+                    .addComponent(btnComprar))
                 .addContainerGap())
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 310, 760, 510));
 
+        btnSair.setBackground(new java.awt.Color(255, 0, 0));
         btnSair.setFont(new java.awt.Font("Old London", 0, 48)); // NOI18N
         btnSair.setText("Sair");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
@@ -334,11 +343,25 @@ if (produtoEncontrado) {
 
 }
         
-    //GEN-LAST:event_btnPesquisarActionPerformed
+                                                
     }//GEN-LAST:event_btnPesquisarActionPerformed
 
     private void btnSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSobreActionPerformed
         // TODO add your handling code here:
+        int row = tabela_produtos.getSelectedRow();
+        int column = tabela_produtos.getSelectedColumn();
+        Object produtoPesquisado = tabela_produtos.getValueAt(row,0);
+        String inputBusca = String.valueOf(produtoPesquisado);
+        String selected="";
+        for(Produto itemEstoque : estoque){
+            if(itemEstoque.getTitulo().equals(inputBusca)){
+            Produto item = itemEstoque;
+            selected = item.getTitulo();
+            auxProduto.set(0,item);
+            }
+        }
+        new infoProduto().setVisible(true);
+        
     }//GEN-LAST:event_btnSobreActionPerformed
 
     private void btnComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarActionPerformed
@@ -418,14 +441,6 @@ if (produtoEncontrado) {
         //txtTitulo.setText(inputBusca);
         System.out.println("Item do inputBusca a ser aparecido na caixa de texto"+inputBusca);
         btnSobre.setEnabled(true);
-        //String nomePesquisado = tabela_produtos.getCom
-        
-        /*System.out.println(i);
-        if(i>=0 && i<estoque.size()){
-            Produto item = estoque.get(i);
-            System.out.println(item.getTitulo());
-            txtTitulo.setText(item.getTitulo());
-        }*/
         
     }//GEN-LAST:event_tabela_produtosMouseClicked
 
