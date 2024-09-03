@@ -14,11 +14,15 @@ import classes.Funcionario;
 import static classes.Funcionario.index_func;
 import static classes.Funcionario.listaFuncionarios;
 import classes.Gerente;
+import classes.Pagamento;
+import classes.Pedido;
 import classes.Produto;
+//import static classes.Usuario.historicoCarrinhosTotais;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import static telas.Menu.historicoCarrinhosTotais;
 import static telas.Menu.user;
 import static telas.cadastarGerente.listaGerente;
 import static telas.verCarrinho.aux;
@@ -28,6 +32,8 @@ import static telas.verCarrinho.aux;
  * @author Yuri
  */
 public class telaPagamento extends javax.swing.JFrame {
+    Pedido pedido = new Pedido();
+    Pagamento pagamento = new Pagamento();
 
     /**
      * Creates new form telaPagamento
@@ -46,11 +52,17 @@ public class telaPagamento extends javax.swing.JFrame {
         if(rdbPix.isSelected()){
             double desconto = 0.95*carrinhoSalvo.getTotal();
             txtValorTotal.setText(String.format("%.2f", desconto));
+            pagamento.setFormaPagamento("Pix");
         }else if(rdbBoleto.isSelected()){
         txtValorTotal.setText(String.format("%.2f", carrinhoSalvo.getTotal()));
+        pagamento.setFormaPagamento("Boleto");
+
         }
         txtNumCarrinho.setText(String.valueOf(carrinhoSalvo.getNumCarrinho()));
         txtProdutos.setText(carrinhoSalvo.mostarProdutos(carrinhoSalvo.itensNoCarrinho));
+        carrinhoSalvo.setPagamento(pagamento);
+        System.out.println("Carrinho Salvo tem o pagamento de:"+pagamento.getFormaPagamento());
+        System.out.println("Carrinho salvo tem o pedido de:"+pedido.getCodPedido());
     }
 
     /**
@@ -225,6 +237,8 @@ public class telaPagamento extends javax.swing.JFrame {
         // Convert the date to a string
         String formattedDate = today.format(formatter);
         newCarregarInfoPagamento();
+        historicoCarrinhosTotais+=1;
+        System.out.println(historicoCarrinhosTotais);
             if(listaProdutos.size()>0){
                 if(user.equals("cliente")){
                 Cliente cliente = listaClientes.get(index_cliente);
@@ -235,7 +249,14 @@ public class telaPagamento extends javax.swing.JFrame {
                 ArrayList<Produto> clonedList = (ArrayList<Produto>) listaProdutos.clone();
                 Carrinho carrinho1 = new Carrinho(indexCarrinho,formattedDate,clonedList);
                 carrinho1.setTotal(Double.parseDouble(txtValorTotal.getText()));
+                carrinho1.setPagamento(pagamento);
                 cliente.addCarrinhoLista(carrinho1);
+                pagamento.setPedido(pedido);
+                pedido.setCodPedido(historicoCarrinhosTotais);
+                                pagamento.setPedido(pedido);
+                            pedido.setCodPedido(historicoCarrinhosTotais);
+                    carrinho1.setPagamento(pagamento);
+
                     
                 }
                 if(user.equals("funcionario")){
@@ -246,8 +267,12 @@ public class telaPagamento extends javax.swing.JFrame {
                     ArrayList<Produto> clonedList = (ArrayList<Produto>) listaProdutos.clone();
                     Carrinho carrinho2 = new Carrinho(indexCarrinho,formattedDate,clonedList);
                     carrinho2.setTotal(Double.parseDouble(txtValorTotal.getText()));
+                    carrinho2.setPagamento(pagamento);
 
                     funcionario.addListaCarrinhosFuncionarios(carrinho2);
+                                                pagamento.setPedido(pedido);
+                            pedido.setCodPedido(historicoCarrinhosTotais);
+                    carrinho2.setPagamento(pagamento);
                     
                 }
                     if(user.equals("gerente")){
@@ -258,10 +283,18 @@ public class telaPagamento extends javax.swing.JFrame {
                     ArrayList<Produto> clonedList = (ArrayList<Produto>) listaProdutos.clone();
                     Carrinho carrinho2 = new Carrinho(indexCarrinho,formattedDate,clonedList);
                     carrinho2.setTotal(Double.parseDouble(txtValorTotal.getText()));
+                        System.out.println("Lista de carrinhos do gerente é de tamanho:"+gerente.getListaCarrinhoGerente().size());
+                    carrinho2.setPagamento(pagamento);
+
 
                     gerente.addListaCarrinhosGerente(carrinho2);
+                        System.out.println("Adicionado. Tamanho agora é:"+gerente.getListaCarrinhoGerente());
+                                                    pagamento.setPedido(pedido);
+                            pedido.setCodPedido(historicoCarrinhosTotais);
                     
                 }
+            System.out.println();
+
             listaProdutos.clear();
             aux.clear();
             System.out.println("Adicionado ao Histórico!");   

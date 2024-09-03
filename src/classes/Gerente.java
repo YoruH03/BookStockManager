@@ -71,5 +71,10 @@ public class Gerente extends Usuario implements OperadorSistema{
         public void addListaCarrinhosGerente(Carrinho carrinho2) {
         listaCarrinhoGerente.add(carrinho2);        
     }
+
+    @Override
+    public void esqueciSenha(String email, String cpf, String novaSenha) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }

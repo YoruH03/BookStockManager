@@ -2,14 +2,14 @@ package classes;
 
 
 public class Produto {
-    public String titulo;
-    public double preço;
-    public int quantidadeEstoque;
-    public String codigoDoProduto;
-    public String descrição;
-    public String genero;
-    public String autor;
-    public int quantidadeComprada;
+    private String titulo;
+    private double preço;
+    private int quantidadeEstoque;
+    private String codigoDoProduto;
+    private String descrição;
+    private String genero;
+    private String autor;
+    private int quantidadeComprada;
 
     
     public Produto(String titulo,String autor,String genero, double preço, int quantidadeEstoque, String codigoDoProduto, String descrição){

@@ -99,6 +99,7 @@ public class verProdutos extends javax.swing.JFrame {
         titulo.setText("Pesquisar por produtos");
         titulo.setToolTipText("");
 
+        btnPesquisar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnPesquisar.setText("Pesquisar");
         btnPesquisar.setToolTipText("Pesquisar por título ou autor");
         btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
@@ -158,7 +159,8 @@ public class verProdutos extends javax.swing.JFrame {
         lblNome.setFont(new java.awt.Font("Old London", 0, 24)); // NOI18N
         lblNome.setText("Titulo:");
 
-        btnSobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/information_info_1565.png"))); // NOI18N
+        btnSobre.setBackground(new java.awt.Color(0, 102, 204));
+        btnSobre.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnSobre.setText("Sobre");
         btnSobre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -166,7 +168,8 @@ public class verProdutos extends javax.swing.JFrame {
             }
         });
 
-        btnComprar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/accept_icon-icons.com_74428.png"))); // NOI18N
+        btnComprar.setBackground(new java.awt.Color(51, 204, 0));
+        btnComprar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnComprar.setText("Adicionar ao carrinho");
         btnComprar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -362,58 +365,52 @@ if (produtoEncontrado) {
     private void btnComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarActionPerformed
         // TODO add your handling code here:
         //int i = tabela_produtos.getSelectedRow();
-        if(!logado){
-            JOptionPane.showMessageDialog(null, "Entre com uma conta para poder adicionar ao carrinho!", "Erro ao adicionar para carrinho", JOptionPane.ERROR_MESSAGE);
-        }else{
+    if(!logado){
+        JOptionPane.showMessageDialog(null, "Entre com uma conta para poder adicionar ao carrinho!", "Erro ao adicionar para carrinho", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
 
-        int row = tabela_produtos.getSelectedRow();
-        int column = tabela_produtos.getSelectedColumn();
-        Object produtoPesquisado = tabela_produtos.getValueAt(row,0);
-        System.out.println("Value selected at: "+produtoPesquisado);
-        String inputBusca = String.valueOf(produtoPesquisado);
-        txtTitulo.setText(inputBusca);
-        System.out.println("Item do inputBusca a ser aparecido na caixa de texto"+inputBusca);
-        String selected="";
-        //System.out.println(i);
-        for(Produto itemEstoque : estoque){
-            if(itemEstoque.getTitulo().equals(inputBusca)){
-            Produto item = itemEstoque;
-            selected = item.getTitulo();
-            System.out.println(item.getTitulo());
-            txtTitulo.setText(item.getTitulo());
-            }
+    int row = tabela_produtos.getSelectedRow();
+    if(row == -1) {
+        JOptionPane.showMessageDialog(null, "Por favor, selecione um produto na tabela.", "Erro ao adicionar para carrinho", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    Object produtoPesquisado = tabela_produtos.getValueAt(row, 0);
+    String inputBusca = String.valueOf(produtoPesquisado);
+    txtTitulo.setText(inputBusca);
+    System.out.println("Item do inputBusca a ser aparecido na caixa de texto: " + inputBusca);
+
+    String selected = "";
+    for(Produto itemEstoque : estoque){
+        if(itemEstoque.getTitulo().equals(inputBusca)){
+            selected = itemEstoque.getTitulo();
+            txtTitulo.setText(itemEstoque.getTitulo());
+            System.out.println(itemEstoque.getTitulo());
+            break;
         }
-        /*
-        if(i>=0 && i<estoque.size()){
-            Produto item = estoque.get(i);
-            selected = item.getTitulo();
-            System.out.println(item.getTitulo());
-            txtTitulo.setText(item.getTitulo());
-        }*/
-        System.out.println("Item selecionado para compra foi: "+selected);
-        Produto itemComprado;
-        for(Produto itemBusca : estoque){
-           // JOptionPane.showMessageDialog(null,"Busca Iniciada!", "Notificação Adicionar item ao carrinho",JOptionPane.PLAIN_MESSAGE);
-            System.out.println("Busca inciada!");
+    }
 
-            if(itemBusca.getTitulo().equals(selected)){
-                //JOptionPane.showMessageDialog(null,"Item Encontrado!", "Notificação Adicionar item ao carrinho",JOptionPane.PLAIN_MESSAGE);
-                itemComprado = itemBusca;
-                if(Integer.parseInt(txtQuantidade.getText())<=itemComprado.getQuantidadeEstoque()){
-                listaProdutos.add(itemComprado);
-                itemComprado.setQuantidadeComprada(Integer.parseInt(txtQuantidade.getText()));
-                itemBusca.setQuantidadeEstoque(itemBusca.getQuantidadeEstoque()-itemComprado.getQuantidadeComprada());
-                JOptionPane.showMessageDialog(null,"Item adicionado ao carrinho com sucesso!", "Notificação Adicionar item ao carrinho",JOptionPane.PLAIN_MESSAGE);
+    System.out.println("Item selecionado para compra foi: " + selected);
+    for(Produto itemBusca : estoque){
+        if(itemBusca.getTitulo().equals(selected)){
+            int quantidadeDesejada = Integer.parseInt(txtQuantidade.getText());
 
-                }else if(itemComprado.getQuantidadeEstoque()==0){
-                 JOptionPane.showMessageDialog(null, "Não há mais estoque para este item", "Erro ao adicionar item ao carrinho", JOptionPane.ERROR_MESSAGE);   
-                }else if(Integer.parseInt(txtQuantidade.getText())>itemComprado.getQuantidadeEstoque()){
-                    JOptionPane.showMessageDialog(null, "Quantidade inserida acima da disponível!", "Erro ao adicionar item ao carrinho", JOptionPane.ERROR_MESSAGE);   
-                }
+            if(quantidadeDesejada <= itemBusca.getQuantidadeEstoque()){
+                itemBusca.setQuantidadeComprada(quantidadeDesejada);
+                listaProdutos.add(itemBusca);
+                itemBusca.setQuantidadeEstoque(itemBusca.getQuantidadeEstoque() - quantidadeDesejada);
+                JOptionPane.showMessageDialog(null, "Item adicionado ao carrinho com sucesso!", "Notificação Adicionar item ao carrinho", JOptionPane.PLAIN_MESSAGE);
+            } else if(itemBusca.getQuantidadeEstoque() == 0){
+                JOptionPane.showMessageDialog(null, "Não há mais estoque para este item", "Erro ao adicionar item ao carrinho", JOptionPane.ERROR_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "Quantidade inserida acima da disponível!", "Erro ao adicionar item ao carrinho", JOptionPane.ERROR_MESSAGE);
             }
+            break;
         }
-}
-        carregarTabelaProdutos();
+    }
+
+    carregarTabelaProdutos();
         
     }//GEN-LAST:event_btnComprarActionPerformed
 

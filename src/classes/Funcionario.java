@@ -79,6 +79,11 @@ public class Funcionario extends Usuario implements OperadorSistema{
     public void setListaCarrinhoFuncionario(ArrayList<Carrinho> listaCarrinhoFuncionario) {
         this.listaCarrinhoFuncionario = listaCarrinhoFuncionario;
     }
+
+    @Override
+    public void esqueciSenha(String email, String cpf, String novaSenha) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     
     

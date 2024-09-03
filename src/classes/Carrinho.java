@@ -11,8 +11,9 @@ public class Carrinho {
     protected double total;
     public static ArrayList<Produto> listaProdutos = new ArrayList();
     //public static ArrayList<Carrinho> listaCarrinho = new ArrayList();
-    private String idCliente;
-        public  ArrayList<Produto> itensNoCarrinho = new ArrayList();
+    public  ArrayList<Produto> itensNoCarrinho = new ArrayList();
+    private Pedido pedido = new Pedido();
+    private Pagamento pagamento;
 
 
     //Construtor de carrinho. Um vazio e outro com os atributos dados
@@ -39,14 +40,7 @@ public class Carrinho {
             this.total=saldo;
     }
         
-            public void verificarCarrinho(Cliente cliente){
-        if(cliente.getIdCliente().equals(this.getidCliente())){
-            cliente.getListaCarrinho();
-            
-        }
-        
-    }
-            public void contarSaldo(){
+    public void contarSaldo(){
                 double saldo = 0;
             for(Produto item : itensNoCarrinho){
             saldo += item.getPreço()*item.getQuantidadeComprada();
@@ -83,19 +77,11 @@ public class Carrinho {
         return data;
     }
 
-    public String getidCliente() {
-        return idCliente;
-    }
-
-    public void setIdCarrinho(String idCarrinho) {
-        this.idCliente = idCliente;
-    }
-    
     public void addItem(Produto item){
         itensNoCarrinho.add(item);
         
     }
-     public void removeProduto(int i){
+     public void removeItem(int i){
          itensNoCarrinho.remove(i);
      }
      public void clearLista(){
@@ -127,6 +113,23 @@ public class Carrinho {
     public void setItensNoCarrinho(ArrayList<Produto> itensNoCarrinho) {
         this.itensNoCarrinho = itensNoCarrinho;
     }
+
+    public Pedido getPedido() {
+        return pedido;
+    }
+
+    public void setPedido(Pedido pedido) {
+        this.pedido = pedido;
+    }
+
+    public Pagamento getPagamento() {
+        return pagamento;
+    }
+
+    public void setPagamento(Pagamento pagamento) {
+        this.pagamento = pagamento;
+    }
+
 
 
 }

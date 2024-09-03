@@ -6,7 +6,13 @@ import java.util.List;
 public class Pagamento extends Carrinho{
     private String formaPagamento;
     private String senha;
-    private Pedido pedido;
+    private Pedido pedido = new Pedido();
+
+    public Pagamento() {
+        this.formaPagamento="nada";
+    }
+    
+    
 
     public Pagamento(String formaPagamento, String senha, int numCarrinho, Date data, double total, List<String> produtos) {
         //super(numCarrinho, data, total, produtos);

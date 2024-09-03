@@ -29,6 +29,8 @@ public class Menu extends javax.swing.JFrame {
     static boolean logado = false;
     static String user="anonimo";// 'gerente','funcionario','cliente'
     Estoque estoqueLoja = new Estoque();
+    public static int historicoCarrinhosTotais = 0;
+
 
 
     /**
@@ -75,7 +77,35 @@ public class Menu extends javax.swing.JFrame {
         estoqueLoja.addEstoque(produto4);
         Produto produto5 = new Produto("Herança","Christopher Paolini","Aventura",24.89,6,"5","Eragon luta contra o Rei Galbatorix");
         estoqueLoja.addEstoque(produto5);
+        Produto produto6 = new Produto("O Senhor dos Anéis: A Sociedade do Anel", "J.R.R. Tolkien", "Fantasia", 29.99, 4, "6", "A primeira parte da épica trilogia de O Senhor dos Anéis");
+        estoqueLoja.addEstoque(produto6);
 
+        Produto produto7 = new Produto("O Hobbit", "J.R.R. Tolkien", "Fantasia", 19.99, 7, "7", "A jornada de Bilbo Bolseiro até a Montanha Solitária");
+        estoqueLoja.addEstoque(produto7);
+
+        Produto produto8 = new Produto("1984", "George Orwell", "Ficção Distópica", 22.50, 10, "8", "Uma visão perturbadora de um futuro totalitário");
+        estoqueLoja.addEstoque(produto8);
+
+        Produto produto9 = new Produto("A Revolução dos Bichos", "George Orwell", "Fábula Política", 14.90, 8, "9", "Uma sátira ao regime soviético");
+        estoqueLoja.addEstoque(produto9);
+
+        Produto produto10 = new Produto("Harry Potter e a Pedra Filosofal", "J.K. Rowling", "Fantasia", 35.00, 12, "10", "O início da jornada mágica de Harry Potter");
+        estoqueLoja.addEstoque(produto10);
+
+        Produto produto11 = new Produto("O Código Da Vinci", "Dan Brown", "Suspense", 25.99, 9, "11", "Robert Langdon desvenda segredos antigos em uma trama cheia de mistério");
+        estoqueLoja.addEstoque(produto11);
+
+        Produto produto12 = new Produto("Orgulho e Preconceito", "Jane Austen", "Romance", 17.99, 5, "12", "Uma crítica à sociedade inglesa do século XIX através de uma história de amor");
+        estoqueLoja.addEstoque(produto12);
+
+        Produto produto13 = new Produto("A Arte da Guerra", "Sun Tzu", "Estratégia", 12.80, 15, "13", "Um clássico sobre estratégias militares e de liderança");
+        estoqueLoja.addEstoque(produto13);
+
+        Produto produto14 = new Produto("O Pequeno Príncipe", "Antoine de Saint-Exupéry", "Infantil", 18.50, 10, "14", "Uma fábula sobre amor, perda e amizade");
+        estoqueLoja.addEstoque(produto14);
+
+        Produto produto15 = new Produto("O Nome do Vento", "Patrick Rothfuss", "Fantasia", 28.00, 6, "15", "A história de Kvothe, um mago lendário");
+        estoqueLoja.addEstoque(produto15);
 
             
         }

@@ -119,7 +119,7 @@ public class verCarrinho extends javax.swing.JFrame {
         }
                     
         private void carregarTabelaCliente(){
-            DefaultTableModel modeloTabelaCarrinhosAntigos = new DefaultTableModel(new Object[] {"Num.Carrinho","Data Pedido","Produtos","Total"},0);
+            DefaultTableModel modeloTabelaCarrinhosAntigos = new DefaultTableModel(new Object[] {"Num.Carrinho","Data Pedido","Produtos","Total","Forma Pagamento","Pedido"},0);
             
             Cliente cliente = listaClientes.get(index_cliente);
             System.out.println("Cliente passado");
@@ -131,7 +131,12 @@ public class verCarrinho extends javax.swing.JFrame {
                 Object linha[] = new Object[] {cliente.getListaCarrinho().get(i).getNumCarrinho(),
                                                cliente.getListaCarrinho().get(i).getData(),
                                                cliente.getListaCarrinho().get(i).mostarProdutos(cliente.getListaCarrinho().get(i).itensNoCarrinho),
-                                               cliente.getListaCarrinho().get(i).getTotal()};
+                                               cliente.getListaCarrinho().get(i).getTotal(),
+                                               cliente.getListaCarrinho().get(i).getPagamento().getFormaPagamento(),
+                                               cliente.getListaCarrinho().get(i).getPedido().getCodPedido(),
+
+                                               
+                };
                 modeloTabelaCarrinhosAntigos.addRow(linha);
                 
                 
@@ -224,6 +229,12 @@ public class verCarrinho extends javax.swing.JFrame {
             txtData.setText("");
             txtProdutos.setText("");
         }
+    private void preencherCamposCarrinho(Carrinho carrinho) {
+    txtNumCarrinho.setText(String.valueOf(carrinho.getNumCarrinho()));
+    txtData.setText(String.valueOf(carrinho.getData()));
+    txtTotal.setText(String.valueOf(carrinho.getTotal()));
+    txtProdutos.setText(carrinho.mostrarProdutos());
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -433,20 +444,20 @@ public class verCarrinho extends javax.swing.JFrame {
 
         tblCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "NumCarrinho", "Data do pedido", "Produtos", "Total"
+                "NumCarrinho", "Data do pedido", "Produtos", "Total", "Forma Pagamento", "Pedido"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Object.class, java.lang.Double.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.Object.class, java.lang.Double.class, java.lang.String.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -565,7 +576,7 @@ public class verCarrinho extends javax.swing.JFrame {
                                 .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(128, 128, 128)
                                 .addComponent(btnBuscarCarrinho)))))
-                .addContainerGap(169, Short.MAX_VALUE))
+                .addContainerGap(229, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -800,7 +811,7 @@ public class verCarrinho extends javax.swing.JFrame {
         String inputBuscaString = String.valueOf(carrinhoPesquisado);
         int inputBuscaInt = Integer.parseInt(inputBuscaString);
         System.out.println("item encontrado pela busca foi:"+inputBuscaString);
-        
+        System.out.println("O tipo de usuário é:"+user);
         String selected="";
         if(user.equals("cliente")){
         for(Carrinho itemCarrinho : cliente.getListaCarrinho()){
@@ -814,8 +825,8 @@ public class verCarrinho extends javax.swing.JFrame {
             }
         }
         }
-        else if(user.equals("funcionario")){
-                    for(Carrinho itemCarrinho : funcionario.getListaCarrinho()){
+        if(user.equals("funcionario")){
+                    for(Carrinho itemCarrinho : funcionario.getListaCarrinhoFuncionario()){
             if(itemCarrinho.getNumCarrinho()==(inputBuscaInt)){
             Carrinho carrinho = itemCarrinho;
             txtNumCarrinho.setText(String.valueOf(carrinho.getNumCarrinho()));
@@ -825,11 +836,17 @@ public class verCarrinho extends javax.swing.JFrame {
             
             }
         }
-        }else if(user.equals("gerente")){
-            for(Carrinho itemCarrinho : gerente.getListaCarrinho()){
+        }if(user.equals("gerente")){
+            System.out.println("Entrou na função de gerente");
+            System.out.println("Tamanho da lista de gerente é:"+gerente.getListaCarrinhoGerente().size());
+            for(Carrinho itemCarrinho : gerente.getListaCarrinhoGerente()){
+                System.out.println("Iniciou o for loop");
             if(itemCarrinho.getNumCarrinho()==(inputBuscaInt)){
+                System.out.println("Encontrou o carrinho");
             Carrinho carrinho = itemCarrinho;
+                System.out.println("Definiu a cópia");
             txtNumCarrinho.setText(String.valueOf(carrinho.getNumCarrinho()));
+                System.out.println("Começou a definir os parametros de texto");
             txtData.setText(String.valueOf(carrinho.getData()));
             txtTotal.setText(String.valueOf(carrinho.getTotal()));
             txtProdutos.setText(carrinho.mostrarProdutos());
