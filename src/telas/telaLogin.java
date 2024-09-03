@@ -60,6 +60,7 @@ public class telaLogin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela de Login");
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/login64.png")).getImage());
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setOpaque(false);

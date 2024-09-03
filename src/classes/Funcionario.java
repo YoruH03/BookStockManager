@@ -21,7 +21,7 @@ public class Funcionario extends Usuario implements OperadorSistema{
     //Construtor de Funcionário
     public Funcionario(String nome, String CPF, String email, String senha) {
         super(nome, CPF, email, senha);
-        this.cadastroFuncionario= "0";
+        this.cadastroFuncionario= String.valueOf(listaFuncionarios.size());
         //this.cadastroFuncionario=String.valueOf(listaFuncionarios.size());
     }
 

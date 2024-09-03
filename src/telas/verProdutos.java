@@ -5,6 +5,7 @@ import classes.Carrinho;
 import static classes.Carrinho.listaProdutos;
 import static classes.Estoque.estoque;
 import classes.Produto;
+import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import static telas.Menu.logado;
@@ -14,7 +15,7 @@ import static telas.Menu.logado;
  * @author v
  */
 public class verProdutos extends javax.swing.JFrame {
-
+        public static Vector<Produto> auxProduto = new Vector<>(1);
     /**
      * Creates new form verProdutos
      */
@@ -27,6 +28,8 @@ public class verProdutos extends javax.swing.JFrame {
         txtQuantidade.setText("1");
         Produto item;
         btnSobre.setEnabled(false);
+        Produto produto1 = estoque.get(0);
+        auxProduto.add(produto1);
     }
 
     /**
@@ -340,6 +343,20 @@ if (produtoEncontrado) {
 
     private void btnSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSobreActionPerformed
         // TODO add your handling code here:
+        int row = tabela_produtos.getSelectedRow();
+        int column = tabela_produtos.getSelectedColumn();
+        Object produtoPesquisado = tabela_produtos.getValueAt(row,0);
+        String inputBusca = String.valueOf(produtoPesquisado);
+        String selected="";
+        for(Produto itemEstoque : estoque){
+            if(itemEstoque.getTitulo().equals(inputBusca)){
+            Produto item = itemEstoque;
+            selected = item.getTitulo();
+            auxProduto.set(0,item);
+            }
+        }
+        new infoProduto().setVisible(true);
+
     }//GEN-LAST:event_btnSobreActionPerformed
 
     private void btnComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarActionPerformed
@@ -416,17 +433,8 @@ if (produtoEncontrado) {
         Object produtoPesquisado = tabela_produtos.getValueAt(row,0);
         System.out.println("Value selected at: "+produtoPesquisado);
         String inputBusca = String.valueOf(produtoPesquisado);
-        //txtTitulo.setText(inputBusca);
         System.out.println("Item do inputBusca a ser aparecido na caixa de texto"+inputBusca);
         btnSobre.setEnabled(true);
-        //String nomePesquisado = tabela_produtos.getCom
-        
-        /*System.out.println(i);
-        if(i>=0 && i<estoque.size()){
-            Produto item = estoque.get(i);
-            System.out.println(item.getTitulo());
-            txtTitulo.setText(item.getTitulo());
-        }*/
         
     }//GEN-LAST:event_tabela_produtosMouseClicked
 

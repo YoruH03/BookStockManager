@@ -6,6 +6,7 @@ package telas;
 
 import classes.Cliente;
 import static classes.Cliente.listaClientes;
+import classes.Estoque;
 import static classes.Estoque.estoque;
 import classes.Funcionario;
 import static classes.Funcionario.listaFuncionarios;
@@ -26,7 +27,8 @@ import static telas.cadastros.cadastrosFlag;
 public class Menu extends javax.swing.JFrame {
     
     static boolean logado = false;
-    static String user;// 'gerente','funcionario','cliente'
+    static String user="anonimo";// 'gerente','funcionario','cliente'
+    Estoque estoqueLoja = new Estoque();
 
 
     /**
@@ -56,21 +58,23 @@ public class Menu extends javax.swing.JFrame {
         Funcionario funcionario;
         funcionario = new Funcionario("func","000.000.000-00","func@gmail.com","func");
         listaFuncionarios.add(funcionario);
+        Funcionario funcionario1= new Funcionario("Carlos","111.111.111-11","carlos@gmail.com","carlos");
+        listaFuncionarios.add(funcionario1);
         Cliente cliente = new Cliente("user","000.000.000-00","user@gmail.com","user","Pernambuco","10/05/1990","99999-9999");
         listaClientes.add(cliente);
         Cliente cliente1 = new Cliente("Alberto","010.034.123-00","alberto@gmail.com","alberto","Brasília","15/12/2000","88888-8888");
         listaClientes.add(cliente1);
 
         Produto produto1 = new Produto("Eragon","Christopher Paolini","Aventura",15.69,3,"1","Eragon se torna um cavaleiro de Dragão");
-        estoque.add(produto1);
+        estoqueLoja.addEstoque(produto1);
         Produto produto2 = new Produto("Diario de um banana","Jeff Kiney","Comédia",10.40,5,"2","Diário de Greg Heffley");
-        estoque.add(produto2);
+        estoqueLoja.addEstoque(produto2);
         Produto produto3 = new Produto("Eldest","Christopher Paolini","Aventura",20.69,6,"3","Eragon e Murtagh lutam na campina ardente");
-        estoque.add(produto3);
+        estoqueLoja.addEstoque(produto3);
         Produto produto4 = new Produto("Brisingr","Christopher Paolini","Aventura",18.29,6,"4","Eragon treina com Oromis");
-        estoque.add(produto4);
+        estoqueLoja.addEstoque(produto4);
         Produto produto5 = new Produto("Herança","Christopher Paolini","Aventura",24.89,6,"5","Eragon luta contra o Rei Galbatorix");
-        estoque.add(produto5);
+        estoqueLoja.addEstoque(produto5);
 
 
             
@@ -441,6 +445,7 @@ tela.addWindowListener(new java.awt.event.WindowAdapter() {
     private void btnAtualizarEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarEstoqueActionPerformed
         // TODO add your handling code here:
         verificarLogin(logado,user);
+        System.out.println("User é "+user);
         if(logado==true){
             if(user.equals("funcionario") || user.equals("gerente") ){
                 new ControleEstoque().setVisible(true);

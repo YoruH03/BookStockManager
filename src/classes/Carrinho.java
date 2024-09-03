@@ -99,7 +99,7 @@ public class Carrinho {
          itensNoCarrinho.remove(i);
      }
      public void clearLista(){
-         itensNoCarrinho.clear();
+         listaProdutos.clear();
      }
      
      public String mostarProdutos(ArrayList<Produto> itensNoCarrinho){
@@ -111,6 +111,13 @@ public class Carrinho {
          return resumo;
          
          
+     }
+        public String mostrarProdutos(){
+         String resumo="";
+         for(Produto item: this.itensNoCarrinho){
+             resumo = resumo+" "+item.getTitulo()+"*"+item.getQuantidadeComprada()+",";
+         }
+         return resumo;
      }
 
     public ArrayList<Produto> getItensNoCarrinho() {
