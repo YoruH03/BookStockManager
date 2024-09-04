@@ -23,7 +23,8 @@ public class Cliente extends Usuario implements OperadorSistema{
     public static ArrayList<Cliente> listaClientes = new ArrayList();
     public ArrayList<Carrinho> listaCarrinho = new ArrayList();
 
-
+    //Esse index serve para que a lista de clientes seja acessada na hora do login e o cliente certo seja buscado
+    //MUITO IMPORTANTE.
     public static  int index_cliente;
     
     
@@ -40,6 +41,7 @@ public class Cliente extends Usuario implements OperadorSistema{
         super(nome, CPF, email, senha);
         this.idCliente = "0";
     }
+    //Método de login que é implementado pelo OperadorSistema
         @Override
     public boolean login(String email, String senha) {
         for(Cliente pessoa : listaClientes){
@@ -50,12 +52,12 @@ public class Cliente extends Usuario implements OperadorSistema{
         return false;
                 
     }
-
+    //Método de logout que é implementado pelo OperadorSistema
     @Override
     public boolean logout() {
         return logado=false;
     }
-
+    //Método de pesquisar que é implementado pelo OperadorSistema.
     @Override
     public void pesquisar(String titulo) {
         for(Produto produto:estoque){
@@ -66,7 +68,7 @@ public class Cliente extends Usuario implements OperadorSistema{
         
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-
+    //Serve para retornar o email do cliente
     @Override
     public String consultarEmail(String cpf,String nome) {
         boolean found = false;
@@ -84,7 +86,7 @@ public class Cliente extends Usuario implements OperadorSistema{
             return this.getEmail();
         }
 }
-
+    //Permite que o cliente redefina a sua senha
     @Override
     public void esqueciSenha(String email, String cpf, String novaSenha) {
         for(Cliente cliente : listaClientes){
@@ -93,6 +95,10 @@ public class Cliente extends Usuario implements OperadorSistema{
             }
         }
     }
+        public void Comprar(String produto,int Quantidade){
+        System.out.println("Item adicionado ao carrinho!");
+    
+}
         
     
         
@@ -131,10 +137,7 @@ public class Cliente extends Usuario implements OperadorSistema{
     
     
     
-    public void Comprar(String produto,int Quantidade){
-        System.out.println("Item adicionado ao carrinho!");
-    
-}
+
 
     public String getIdCliente() {
         return idCliente;

@@ -19,12 +19,13 @@ public class Funcionario extends Usuario implements OperadorSistema{
     public static ArrayList<Funcionario> listaFuncionarios = new ArrayList();
     private ArrayList<Carrinho> listaCarrinhoFuncionario = new ArrayList();
 
+    //Construtor vazio de funcionário
     public Funcionario() {
     }
 
     
     
-    //Construtor de Funcionário
+    //Construtor de Funcionário com vários atributos
     public Funcionario(String nome, String CPF, String email, String senha) {
         super(nome, CPF, email, senha);
         this.cadastroFuncionario= String.valueOf(listaFuncionarios.size());
@@ -37,12 +38,12 @@ public class Funcionario extends Usuario implements OperadorSistema{
         this.cadastroFuncionario = cadastroFuncionario;
     }
 
-
+    //Método toString que retorna o funcionário com seu cadastro
     @Override
     public String toString() {
         return "Funcionario{" + "cadastroFuncionario=" + cadastroFuncionario + '}';
     }
-
+    //Método de login que é implementado pela interface
     @Override
     public boolean login(String email, String senha) {
         for(Funcionario func: listaFuncionarios){
@@ -51,12 +52,13 @@ public class Funcionario extends Usuario implements OperadorSistema{
             }
         }return false;
     }
-
+    //Método de logout
     @Override
     public boolean logout() {
         return logado=false;
     }
 
+    //Pesquisar por um produto em específico
     @Override
     public void pesquisar(String titulo) {
         for(Produto produto:estoque){
@@ -66,6 +68,7 @@ public class Funcionario extends Usuario implements OperadorSistema{
         }     
     }
 
+    //Consulta por emails
     @Override
     public String consultarEmail(String cpf,String nome) {
         boolean encontrado = false;
@@ -79,8 +82,17 @@ public class Funcionario extends Usuario implements OperadorSistema{
         }else{
             return this.getEmail();
         }
-}
-
+    }
+    //Método de esquecer a senha que permite o usuário redefinir a sua senha com uma nova
+    @Override
+    public void esqueciSenha(String email, String cpf, String novaSenha) {
+        for(Funcionario func : listaFuncionarios){
+            if((func.getCPF().equals(cpf))&&(func.getEmail().equals(email))){
+                func.setSenha(novaSenha);
+            }
+        }
+    }
+    //Métodos Getters e Setters para listas de carrinhos
     public void addListaCarrinhosFuncionarios(Carrinho carrinho2) {
         listaCarrinhoFuncionario.add(carrinho2);        
     }
@@ -93,14 +105,6 @@ public class Funcionario extends Usuario implements OperadorSistema{
         this.listaCarrinhoFuncionario = listaCarrinhoFuncionario;
     }
 
-    @Override
-    public void esqueciSenha(String email, String cpf, String novaSenha) {
-        for(Funcionario func : listaFuncionarios){
-            if((func.getCPF().equals(cpf))&&(func.getEmail().equals(email))){
-                func.setSenha(novaSenha);
-            }
-        }
-    }
         public String getCadastroFuncionario() {
         return cadastroFuncionario;
     }
