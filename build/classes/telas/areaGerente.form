@@ -121,7 +121,7 @@
                           <Component id="btnAlterarGerente" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
                           <Component id="btnSalvarGerente" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="94" max="32767" attributes="0"/>
+                          <EmptySpace pref="67" max="32767" attributes="0"/>
                           <Component id="btnCancelarGerente" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       </Group>
@@ -171,11 +171,11 @@
                   <Component id="lblIdGerente" min="-2" pref="40" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="txtIdGerente" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="53" max="32767" attributes="0"/>
+                  <EmptySpace pref="41" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btnAlterarGerente" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnSalvarGerente" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnCancelarGerente" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnAlterarGerente" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="btnSalvarGerente" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="btnCancelarGerente" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
               </Group>
@@ -226,7 +226,7 @@
         <Component class="javax.swing.JTextField" name="txtNomeGerente">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Old English Text MT" size="24" style="0"/>
+              <Font name="Segoe UI" size="18" style="0"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="insira o nome"/>
           </Properties>
@@ -237,7 +237,7 @@
         <Component class="javax.swing.JTextField" name="txtEmailGerente">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Old English Text MT" size="24" style="0"/>
+              <Font name="Segoe UI" size="18" style="0"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="insira o e-mail"/>
           </Properties>
@@ -245,7 +245,7 @@
         <Component class="javax.swing.JTextField" name="txtSenhaGerente">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Old English Text MT" size="24" style="0"/>
+              <Font name="Segoe UI" size="18" style="0"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="defina uma senha"/>
           </Properties>
@@ -253,7 +253,7 @@
         <Component class="javax.swing.JTextField" name="txtIdGerente">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Old English Text MT" size="24" style="0"/>
+              <Font name="Segoe UI" size="18" style="0"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="defina um Id Gerente"/>
           </Properties>
@@ -264,6 +264,9 @@
               <Format format="###.###.###-##" subtype="-1" type="5"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="insira o CPF"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="18" style="0"/>
+            </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblAreaGerente">
@@ -280,7 +283,7 @@
               <Color blue="0" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="18" style="1"/>
+              <Font name="Old London" size="24" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Alterar"/>
             <Property name="toolTipText" type="java.lang.String" value="alterar os dados j&#xe1; existentes"/>
@@ -295,7 +298,7 @@
               <Color blue="0" green="ff" red="0" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="18" style="1"/>
+              <Font name="Old London" size="24" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Salvar"/>
             <Property name="toolTipText" type="java.lang.String" value="Salvar os dados"/>
@@ -310,7 +313,7 @@
               <Color blue="0" green="0" red="ff" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="18" style="1"/>
+              <Font name="Old London" size="24" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Cancelar"/>
             <Property name="toolTipText" type="java.lang.String" value="Cancelar a opera&#xe7;&#xe3;o"/>

@@ -290,7 +290,7 @@ public class areaFuncionario extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblNomeFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtNomeFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNomeFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblCPFFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -307,13 +307,13 @@ public class areaFuncionario extends javax.swing.JFrame {
                 .addComponent(lblCodFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtCodigoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(86, 86, 86)
+                .addGap(56, 56, 56)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnAlterarFuncionario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnCancelarFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnSalvarFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(28, 28, 28))
+                .addGap(58, 58, 58))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 210, 540, 700));
@@ -332,7 +332,7 @@ public class areaFuncionario extends javax.swing.JFrame {
         lblCodigoCliente.setFont(new java.awt.Font("Old English Text MT", 0, 18)); // NOI18N
         lblCodigoCliente.setText("Código de Cliente");
 
-        btnBuscarCliente.setFont(new java.awt.Font("Old English Text MT", 0, 18)); // NOI18N
+        btnBuscarCliente.setFont(new java.awt.Font("Old London", 0, 20)); // NOI18N
         btnBuscarCliente.setText("Buscar");
         btnBuscarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -341,7 +341,7 @@ public class areaFuncionario extends javax.swing.JFrame {
         });
 
         btnNovoCliente.setBackground(new java.awt.Color(0, 255, 204));
-        btnNovoCliente.setFont(new java.awt.Font("Old English Text MT", 0, 18)); // NOI18N
+        btnNovoCliente.setFont(new java.awt.Font("Old London", 0, 20)); // NOI18N
         btnNovoCliente.setText("Novo");
         btnNovoCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -350,7 +350,7 @@ public class areaFuncionario extends javax.swing.JFrame {
         });
 
         btnSalvarCliente.setBackground(new java.awt.Color(51, 255, 0));
-        btnSalvarCliente.setFont(new java.awt.Font("Old English Text MT", 0, 18)); // NOI18N
+        btnSalvarCliente.setFont(new java.awt.Font("Old London", 0, 20)); // NOI18N
         btnSalvarCliente.setText("Salvar");
         btnSalvarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -359,7 +359,7 @@ public class areaFuncionario extends javax.swing.JFrame {
         });
 
         btnExluirCliente.setBackground(new java.awt.Color(102, 102, 102));
-        btnExluirCliente.setFont(new java.awt.Font("Old English Text MT", 0, 18)); // NOI18N
+        btnExluirCliente.setFont(new java.awt.Font("Old London", 0, 20)); // NOI18N
         btnExluirCliente.setText("Excluir");
         btnExluirCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -451,7 +451,7 @@ public class areaFuncionario extends javax.swing.JFrame {
                     .addComponent(btnExluirCliente)
                     .addComponent(btnBuscarCliente))
                 .addGap(8, 8, 8)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 600, 410));
@@ -476,6 +476,7 @@ public class areaFuncionario extends javax.swing.JFrame {
         btnAlterarFuncionario.setEnabled(true);
         btnSalvarFuncionario.setEnabled(false);
         btnCancelarFuncionario.setEnabled(false);
+        loadFuncionarioFields();
         
         
     }//GEN-LAST:event_btnCancelarFuncionarioActionPerformed

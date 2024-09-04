@@ -147,7 +147,7 @@
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="lblNomeFuncionario" min="-2" pref="42" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="txtNomeFuncionario" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="txtNomeFuncionario" min="-2" pref="44" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="lblCPFFuncionario" min="-2" pref="50" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -164,7 +164,7 @@
                   <Component id="lblCodFuncionario" min="-2" pref="54" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="txtCodigoFuncionario" min="-2" pref="42" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="btnAlterarFuncionario" alignment="1" min="-2" pref="56" max="-2" attributes="0"/>
                       <Group type="103" alignment="1" groupAlignment="3" attributes="0">
@@ -172,7 +172,7 @@
                           <Component id="btnSalvarFuncionario" alignment="3" min="-2" pref="56" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -402,7 +402,7 @@
                       <Component id="btnBuscarCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                  <Component id="jScrollPane3" pref="285" max="32767" attributes="0"/>
+                  <Component id="jScrollPane3" pref="300" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -447,7 +447,7 @@
         <Component class="javax.swing.JButton" name="btnBuscarCliente">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Old English Text MT" size="18" style="0"/>
+              <Font name="Old London" size="20" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Buscar"/>
           </Properties>
@@ -461,7 +461,7 @@
               <Color blue="cc" green="ff" red="0" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Old English Text MT" size="18" style="0"/>
+              <Font name="Old London" size="20" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Novo"/>
           </Properties>
@@ -475,7 +475,7 @@
               <Color blue="0" green="ff" red="33" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Old English Text MT" size="18" style="0"/>
+              <Font name="Old London" size="20" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Salvar"/>
           </Properties>
@@ -489,7 +489,7 @@
               <Color blue="66" green="66" red="66" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Old English Text MT" size="18" style="0"/>
+              <Font name="Old London" size="20" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Excluir"/>
           </Properties>

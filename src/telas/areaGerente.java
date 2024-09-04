@@ -210,7 +210,7 @@ public class areaGerente extends javax.swing.JFrame {
         lblIdGerente.setFont(new java.awt.Font("Old London", 0, 36)); // NOI18N
         lblIdGerente.setText("Id Gerente");
 
-        txtNomeGerente.setFont(new java.awt.Font("Old English Text MT", 0, 24)); // NOI18N
+        txtNomeGerente.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txtNomeGerente.setToolTipText("insira o nome");
         txtNomeGerente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -218,13 +218,13 @@ public class areaGerente extends javax.swing.JFrame {
             }
         });
 
-        txtEmailGerente.setFont(new java.awt.Font("Old English Text MT", 0, 24)); // NOI18N
+        txtEmailGerente.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txtEmailGerente.setToolTipText("insira o e-mail");
 
-        txtSenhaGerente.setFont(new java.awt.Font("Old English Text MT", 0, 24)); // NOI18N
+        txtSenhaGerente.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txtSenhaGerente.setToolTipText("defina uma senha");
 
-        txtIdGerente.setFont(new java.awt.Font("Old English Text MT", 0, 24)); // NOI18N
+        txtIdGerente.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txtIdGerente.setToolTipText("defina um Id Gerente");
 
         try {
@@ -233,12 +233,13 @@ public class areaGerente extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         ftxCPFGerente.setToolTipText("insira o CPF");
+        ftxCPFGerente.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         lblAreaGerente.setFont(new java.awt.Font("Old London", 0, 48)); // NOI18N
         lblAreaGerente.setText("Dados do Gerente");
 
         btnAlterarGerente.setBackground(new java.awt.Color(255, 255, 0));
-        btnAlterarGerente.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnAlterarGerente.setFont(new java.awt.Font("Old London", 1, 24)); // NOI18N
         btnAlterarGerente.setText("Alterar");
         btnAlterarGerente.setToolTipText("alterar os dados já existentes");
         btnAlterarGerente.addActionListener(new java.awt.event.ActionListener() {
@@ -248,7 +249,7 @@ public class areaGerente extends javax.swing.JFrame {
         });
 
         btnSalvarGerente.setBackground(new java.awt.Color(0, 255, 0));
-        btnSalvarGerente.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnSalvarGerente.setFont(new java.awt.Font("Old London", 1, 24)); // NOI18N
         btnSalvarGerente.setText("Salvar");
         btnSalvarGerente.setToolTipText("Salvar os dados");
         btnSalvarGerente.addActionListener(new java.awt.event.ActionListener() {
@@ -258,7 +259,7 @@ public class areaGerente extends javax.swing.JFrame {
         });
 
         btnCancelarGerente.setBackground(new java.awt.Color(255, 0, 0));
-        btnCancelarGerente.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnCancelarGerente.setFont(new java.awt.Font("Old London", 1, 24)); // NOI18N
         btnCancelarGerente.setText("Cancelar");
         btnCancelarGerente.setToolTipText("Cancelar a operação");
         btnCancelarGerente.addActionListener(new java.awt.event.ActionListener() {
@@ -299,7 +300,7 @@ public class areaGerente extends javax.swing.JFrame {
                         .addComponent(btnAlterarGerente)
                         .addGap(136, 136, 136)
                         .addComponent(btnSalvarGerente)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                         .addComponent(btnCancelarGerente)
                         .addGap(20, 20, 20))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -340,11 +341,11 @@ public class areaGerente extends javax.swing.JFrame {
                 .addComponent(lblIdGerente, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtIdGerente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAlterarGerente)
-                    .addComponent(btnSalvarGerente)
-                    .addComponent(btnCancelarGerente))
+                    .addComponent(btnAlterarGerente, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSalvarGerente, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCancelarGerente, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(102, 102, 102))
         );
 
