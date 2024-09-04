@@ -28,4 +28,7 @@ public class Estoque {
     public int retornarTamanhoEstoque(){
         return estoque.size();
     }
+    public void limparEstoque(){
+        estoque.clear();
+    }
 }

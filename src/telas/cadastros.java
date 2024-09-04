@@ -9,6 +9,7 @@ import static classes.Cliente.listaClientes;
 import static classes.Estoque.estoque;
 import classes.Funcionario;
 import static classes.Funcionario.listaFuncionarios;
+import classes.Gerente;
 import classes.Produto;
 import static classes.Usuario.user;
 import javax.swing.JOptionPane;
@@ -19,6 +20,9 @@ import javax.swing.JOptionPane;
  */
 public class cadastros extends javax.swing.JFrame {
     static String cadastrosFlag="";
+    Cliente cli = new Cliente();
+    Funcionario func = new Funcionario();
+    Gerente ger = new Gerente();
 
     /**
      * Creates new form cadastros
@@ -34,6 +38,8 @@ public class cadastros extends javax.swing.JFrame {
         txtCodigoProduto.setText(String.valueOf(estoque.size()));
         txtCodigoFuncionario.setEnabled(false);
         txtCodigoFuncionario.setText(String.valueOf(listaFuncionarios.size()));
+        jPanelEsqueciSenha.setVisible(false);
+        jPanelConsultarEmail.setVisible(false);
     }
 
     public void clearClienteInfo(){
@@ -74,7 +80,13 @@ public class cadastros extends javax.swing.JFrame {
         }else if(user.equals("anonimo")){
             System.out.println("User é anônimo");
             jPanelCliente.setVisible(true);
-        } 
+        }else if(user.equals("anonimo")&&cadastrosFlag.equals("consultarEmail")){
+            System.out.println("User é anonimo e quer consultar Email");
+            jPanelConsultarEmail.setVisible(true);
+        }else if(user.equals("anonimo")&&cadastrosFlag.equals("esqueciSenha")){
+            System.out.println("User é anonimo e esqueceu a senha");
+            jPanelEsqueciSenha.setVisible(true);
+        }
     }
 
     /**
@@ -141,6 +153,28 @@ public class cadastros extends javax.swing.JFrame {
         btnSalvarFuncionario = new javax.swing.JButton();
         ftxCPFFuncionario = new javax.swing.JFormattedTextField();
         btnSair = new javax.swing.JButton();
+        jPanelEsqueciSenha = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        txtEmail = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        pswNovaSenha = new javax.swing.JPasswordField();
+        ftxCPFEsqueci = new javax.swing.JFormattedTextField();
+        jPanelConsultarEmail = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        btnConsultarEmail = new javax.swing.JButton();
+        btnCancelarEmail = new javax.swing.JButton();
+        txtEmailConsulta = new javax.swing.JTextField();
+        ftxCPFConsulta = new javax.swing.JFormattedTextField();
+        jLabel18 = new javax.swing.JLabel();
+        txtNomeConsulta = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -233,7 +267,7 @@ public class cadastros extends javax.swing.JFrame {
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtQuantiaEstoque)
                                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(53, 192, Short.MAX_VALUE))
+                        .addGap(53, 68, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel3)
@@ -292,7 +326,7 @@ public class cadastros extends javax.swing.JFrame {
             .addGroup(jPanelCriarItemLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         jPanelCriarItemLayout.setVerticalGroup(
             jPanelCriarItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -302,7 +336,7 @@ public class cadastros extends javax.swing.JFrame {
                 .addContainerGap(28, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanelCriarItem, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 530, 950, 410));
+        getContentPane().add(jPanelCriarItem, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 630, 840, 410));
 
         jPanelCliente.setBackground(new java.awt.Color(123, 57, 23));
 
@@ -484,7 +518,7 @@ public class cadastros extends javax.swing.JFrame {
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanelCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 640, 400));
+        getContentPane().add(jPanelCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 640, 400));
 
         jPanelFuncionario.setBackground(new java.awt.Color(123, 57, 23));
 
@@ -622,7 +656,7 @@ public class cadastros extends javax.swing.JFrame {
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanelFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 180, 770, 280));
+        getContentPane().add(jPanelFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 290, 770, 280));
 
         btnSair.setFont(new java.awt.Font("Old London", 0, 48)); // NOI18N
         btnSair.setText("Sair");
@@ -632,6 +666,225 @@ public class cadastros extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnSair, new org.netbeans.lib.awtextra.AbsoluteConstraints(1740, 20, 130, 60));
+
+        jPanelEsqueciSenha.setBackground(new java.awt.Color(123, 57, 23));
+        jPanelEsqueciSenha.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+
+        jPanel5.setBackground(new java.awt.Color(248, 237, 220));
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel11.setText("Esqueci Senha");
+
+        jLabel12.setText("CPF");
+
+        jLabel13.setText("Email");
+
+        jLabel14.setText("Nova senha");
+
+        jButton1.setBackground(new java.awt.Color(51, 204, 0));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton1.setText("Alterar Senha");
+
+        jButton2.setBackground(new java.awt.Color(255, 0, 0));
+        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton2.setText("Cancelar");
+
+        try {
+            ftxCPFEsqueci.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel12)
+                                    .addComponent(jLabel13)
+                                    .addComponent(jLabel14))
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addGap(38, 38, 38)
+                                        .addComponent(pswNovaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton2))))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(89, 89, 89)
+                        .addComponent(jLabel11)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                    .addContainerGap(116, Short.MAX_VALUE)
+                    .addComponent(ftxCPFEsqueci, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap()))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addComponent(jLabel11)
+                .addGap(44, 44, 44)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(pswNovaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel12)
+                        .addGap(38, 38, 38)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel13)
+                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabel14)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addGap(55, 55, 55))
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addGap(76, 76, 76)
+                    .addComponent(ftxCPFEsqueci, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(258, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout jPanelEsqueciSenhaLayout = new javax.swing.GroupLayout(jPanelEsqueciSenha);
+        jPanelEsqueciSenha.setLayout(jPanelEsqueciSenhaLayout);
+        jPanelEsqueciSenhaLayout.setHorizontalGroup(
+            jPanelEsqueciSenhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelEsqueciSenhaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(7, Short.MAX_VALUE))
+        );
+        jPanelEsqueciSenhaLayout.setVerticalGroup(
+            jPanelEsqueciSenhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelEsqueciSenhaLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(187, 187, 187))
+        );
+
+        getContentPane().add(jPanelEsqueciSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 40, 300, 370));
+
+        jPanelConsultarEmail.setBackground(new java.awt.Color(123, 57, 23));
+
+        jPanel7.setBackground(new java.awt.Color(248, 237, 220));
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel15.setText("Consultar Email");
+
+        jLabel16.setText("CPF");
+
+        jLabel17.setText("Email");
+
+        btnConsultarEmail.setBackground(new java.awt.Color(0, 204, 0));
+        btnConsultarEmail.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnConsultarEmail.setText("Consultar Email");
+        btnConsultarEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultarEmailActionPerformed(evt);
+            }
+        });
+
+        btnCancelarEmail.setBackground(new java.awt.Color(255, 0, 0));
+        btnCancelarEmail.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnCancelarEmail.setText("Cancelar");
+        btnCancelarEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarEmailActionPerformed(evt);
+            }
+        });
+
+        try {
+            ftxCPFConsulta.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        jLabel18.setText("Nome");
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(jLabel17)
+                        .addGap(39, 39, 39)
+                        .addComponent(txtEmailConsulta))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel7Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnConsultarEmail)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                        .addComponent(btnCancelarEmail))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel16)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel18)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(ftxCPFConsulta)
+                            .addComponent(txtNomeConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE))))
+                .addGap(26, 26, 26))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel15)
+                .addGap(91, 91, 91))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addComponent(jLabel15)
+                .addGap(32, 32, 32)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(ftxCPFConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(txtNomeConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnConsultarEmail)
+                    .addComponent(btnCancelarEmail))
+                .addGap(53, 53, 53)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(txtEmailConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(106, 106, 106))
+        );
+
+        javax.swing.GroupLayout jPanelConsultarEmailLayout = new javax.swing.GroupLayout(jPanelConsultarEmail);
+        jPanelConsultarEmail.setLayout(jPanelConsultarEmailLayout);
+        jPanelConsultarEmailLayout.setHorizontalGroup(
+            jPanelConsultarEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelConsultarEmailLayout.createSequentialGroup()
+                .addContainerGap(16, Short.MAX_VALUE)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
+        );
+        jPanelConsultarEmailLayout.setVerticalGroup(
+            jPanelConsultarEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelConsultarEmailLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(20, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanelConsultarEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 420, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Telas/Cadastro.png"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -745,6 +998,29 @@ public class cadastros extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnSairActionPerformed
 
+    private void btnCancelarEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarEmailActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_btnCancelarEmailActionPerformed
+
+    private void btnConsultarEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarEmailActionPerformed
+        // TODO add your handling code here:
+        /*
+        String cpf = ftxCPFConsulta.getText();
+        String nome = txtNomeConsulta.getText();
+        String ans="";
+        ans = cli.consultarEmail(cpf,nome);
+        if(ans.equals("Email não encontrado")){
+            ans = func.consultarEmail(cpf,nome);
+            txtEmailConsulta.setText(ans);//É func;
+            
+            
+        }else{
+            txtEmailConsulta.setText(ans);//É cliente
+        }
+        */
+    }//GEN-LAST:event_btnConsultarEmailActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -783,17 +1059,31 @@ public class cadastros extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnCancelarCliente;
+    private javax.swing.JButton btnCancelarEmail;
     private javax.swing.JButton btnCancelarFuncionario;
+    private javax.swing.JButton btnConsultarEmail;
     private javax.swing.JButton btnCriarNovoItem;
     private javax.swing.JButton btnSair;
     private javax.swing.JButton btnSalvarCliente;
     private javax.swing.JButton btnSalvarFuncionario;
     private javax.swing.JFormattedTextField ftxCPFCliente;
+    private javax.swing.JFormattedTextField ftxCPFConsulta;
+    private javax.swing.JFormattedTextField ftxCPFEsqueci;
     private javax.swing.JFormattedTextField ftxCPFFuncionario;
     private javax.swing.JFormattedTextField ftxDataCliente;
     private javax.swing.JFormattedTextField ftxTelefoneCliente;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -804,9 +1094,13 @@ public class cadastros extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanelCliente;
+    private javax.swing.JPanel jPanelConsultarEmail;
     private javax.swing.JPanel jPanelCriarItem;
+    private javax.swing.JPanel jPanelEsqueciSenha;
     private javax.swing.JPanel jPanelFuncionario;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblCPFCliente;
@@ -821,16 +1115,20 @@ public class cadastros extends javax.swing.JFrame {
     private javax.swing.JLabel lblSenhaCliente;
     private javax.swing.JLabel lblSenhaFuncionario;
     private javax.swing.JLabel lblTelefoneCliente;
+    private javax.swing.JPasswordField pswNovaSenha;
     private javax.swing.JTextArea txtAreaDescricao;
     private javax.swing.JTextField txtAutor;
     private javax.swing.JTextField txtCodigoFuncionario;
     private javax.swing.JTextField txtCodigoProduto;
     private javax.swing.JLabel txtDataCliente;
+    private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtEmailCliente;
+    private javax.swing.JTextField txtEmailConsulta;
     private javax.swing.JTextField txtEmailFuncionario;
     private javax.swing.JTextField txtEnderecoCliente;
     private javax.swing.JTextField txtGenero;
     private javax.swing.JTextField txtNomeCliente;
+    private javax.swing.JTextField txtNomeConsulta;
     private javax.swing.JTextField txtNomeFuncionario;
     private javax.swing.JTextField txtPreco;
     private javax.swing.JTextField txtQuantiaEstoque;

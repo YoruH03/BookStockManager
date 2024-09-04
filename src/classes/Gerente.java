@@ -22,19 +22,16 @@ public class Gerente extends Usuario implements OperadorSistema{
         this.cadastroGerente = "0";
     }
 
+    public Gerente() {
+    }
+    
+
     //Construtor para Gernete com os atributos de usuário + gerente
     public Gerente(String nome, String CPF, String email, String senha, String cadastroGerente ) {
         super(nome, CPF, email, senha);
         this.cadastroGerente = cadastroGerente;
     }
 
-    public String getCadastroGerente() {
-        return cadastroGerente;
-    }
-
-    public void setCadastroGerente(String cadastroGerente) {
-        this.cadastroGerente = cadastroGerente;
-    }
 
     @Override
     public boolean login(String email, String senha) {
@@ -43,6 +40,9 @@ public class Gerente extends Usuario implements OperadorSistema{
         }
         return false;
         
+    }
+    public void addListaCarrinhosGerente(Carrinho carrinho2) {
+        listaCarrinhoGerente.add(carrinho2);        
     }
 
     @Override
@@ -57,11 +57,15 @@ public class Gerente extends Usuario implements OperadorSistema{
     }
 
     @Override
-    public void consultarEmail(String cpf) {
-            if(this.getCPF().equals(cpf)){
-                System.out.println(this.getEmail());
-            }
+    public String consultarEmail(String cpf,String nome) {
+        return"admin@gmail.com";
         }
+        @Override
+    public void esqueciSenha(String email, String cpf, String novaSenha) {
+            if((this.getCPF().equals(cpf))&&(this.getEmail().equals(email))){
+                this.setSenha(novaSenha);
+            }
+        }    
 
     public ArrayList<Carrinho> getListaCarrinhoGerente() {
         return listaCarrinhoGerente;
@@ -71,14 +75,11 @@ public class Gerente extends Usuario implements OperadorSistema{
         this.listaCarrinhoGerente = listaCarrinhoGerente;
     }
     
-        public void addListaCarrinhosGerente(Carrinho carrinho2) {
-        listaCarrinhoGerente.add(carrinho2);        
+            public String getCadastroGerente() {
+        return cadastroGerente;
     }
 
-    @Override
-    public void esqueciSenha(String email, String cpf, String novaSenha) {
-            if((this.getCPF().equals(cpf))&&(this.getEmail().equals(email))){
-                this.setSenha(novaSenha);
-            }
-        }    
+    public void setCadastroGerente(String cadastroGerente) {
+        this.cadastroGerente = cadastroGerente;
+    }
     }

@@ -57,6 +57,7 @@ public class verCarrinho extends javax.swing.JFrame {
         }else{
             btnEsvaziarCarrinho.setEnabled(false);
         }
+        carregarTabelaCliente();
     }
     
 
@@ -120,7 +121,7 @@ public class verCarrinho extends javax.swing.JFrame {
         }
                     
         private void carregarTabelaCliente(){
-            DefaultTableModel modeloTabelaCarrinhosAntigos = new DefaultTableModel(new Object[] {"Num.Carrinho","Data Pedido","Produtos","Total","Forma Pagamento","Pedido"},0);
+            DefaultTableModel modeloTabelaCarrinhosAntigos = new DefaultTableModel(new Object[] {"Num.Carrinho","Data Pedido","Produtos","Total","Forma Pagamento"},0);
             
             Cliente cliente = listaClientes.get(index_cliente);
             System.out.println("Cliente passado");
@@ -134,7 +135,7 @@ public class verCarrinho extends javax.swing.JFrame {
                                                cliente.getListaCarrinho().get(i).mostarProdutos(cliente.getListaCarrinho().get(i).itensNoCarrinho),
                                                cliente.getListaCarrinho().get(i).getTotal(),
                                                cliente.getListaCarrinho().get(i).getPagamento().getFormaPagamento(),
-                                               cliente.getListaCarrinho().get(i).getPedido().getCodPedido(),
+                                               //cliente.getListaCarrinho().get(i).getPedido().getCodPedido(),
 
                                                
                 };
@@ -156,7 +157,7 @@ public class verCarrinho extends javax.swing.JFrame {
         }   
                 private void carregarTabelaFuncionarioPedidos(){
             System.out.println("Está acessando a função de pedidos de funcionário!");
-            DefaultTableModel modeloTabelaCarrinhosAntigos = new DefaultTableModel(new Object[] {"Num.Carrinho","Data Pedido","Produtos","Total"},0);
+            DefaultTableModel modeloTabelaCarrinhosAntigos = new DefaultTableModel(new Object[] {"Num.Carrinho","Data Pedido","Produtos","Total","Forma Pagamento"},0);
             
             Funcionario funcionario = listaFuncionarios.get(index_func);
             ArrayList<Carrinho> listaCarrinhoDoFuncionario = funcionario.getListaCarrinhoFuncionario();
@@ -170,7 +171,9 @@ public class verCarrinho extends javax.swing.JFrame {
                 Object linha[] = new Object[] {funcionario.getListaCarrinhoFuncionario().get(i).getNumCarrinho(),
                                                funcionario.getListaCarrinhoFuncionario().get(i).getData(),
                                                funcionario.getListaCarrinhoFuncionario().get(i).mostarProdutos(funcionario.getListaCarrinhoFuncionario().get(i).itensNoCarrinho),
-                                               funcionario.getListaCarrinhoFuncionario().get(i).getTotal()};
+                                               funcionario.getListaCarrinhoFuncionario().get(i).getTotal(),
+                                               funcionario.getListaCarrinhoFuncionario().get(i).getPagamento().getFormaPagamento()
+                };
                 modeloTabelaCarrinhosAntigos.addRow(linha);
                 
                 
@@ -191,7 +194,7 @@ public class verCarrinho extends javax.swing.JFrame {
         }
                                 private void carregarTabelaGerentePedidos(){
             System.out.println("Está acessando a função de pedidos de gerente!");
-            DefaultTableModel modeloTabelaCarrinhosAntigos = new DefaultTableModel(new Object[] {"Num.Carrinho","Data Pedido","Produtos","Total"},0);
+            DefaultTableModel modeloTabelaCarrinhosAntigos = new DefaultTableModel(new Object[] {"Num.Carrinho","Data Pedido","Produtos","Total","Forma Pagamento"},0);
             
             Gerente gerente = listaGerente.get(0);
             ArrayList<Carrinho> listaCarrinhoDoFuncionario = gerente.getListaCarrinhoGerente();
@@ -205,7 +208,9 @@ public class verCarrinho extends javax.swing.JFrame {
                 Object linha[] = new Object[] {gerente.getListaCarrinhoGerente().get(i).getNumCarrinho(),
                                                gerente.getListaCarrinhoGerente().get(i).getData(),
                                                gerente.getListaCarrinhoGerente().get(i).mostarProdutos(gerente.getListaCarrinhoGerente().get(i).itensNoCarrinho),
-                                               gerente.getListaCarrinhoGerente().get(i).getTotal()};
+                                               gerente.getListaCarrinhoGerente().get(i).getTotal(),
+                                               gerente.getListaCarrinhoGerente().get(i).getPagamento().getFormaPagamento()
+                };
                 modeloTabelaCarrinhosAntigos.addRow(linha);
                 
                 

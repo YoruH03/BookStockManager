@@ -37,6 +37,8 @@ public class telaLogin extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         this.setExtendedState(MAXIMIZED_BOTH);
         getRootPane().setDefaultButton(btnEntrar);
+        lblConsultarEmail.setVisible(false);
+        lblEsqueciSenha.setVisible(false);
 
     }
     /**
@@ -57,6 +59,8 @@ public class telaLogin extends javax.swing.JFrame {
         btnCancelar = new javax.swing.JButton();
         lblCadastrarse = new javax.swing.JLabel();
         pswSenha = new javax.swing.JPasswordField();
+        lblEsqueciSenha = new javax.swing.JLabel();
+        lblConsultarEmail = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -115,6 +119,24 @@ public class telaLogin extends javax.swing.JFrame {
             }
         });
 
+        lblEsqueciSenha.setFont(new java.awt.Font("Old London", 1, 30)); // NOI18N
+        lblEsqueciSenha.setForeground(new java.awt.Color(255, 102, 102));
+        lblEsqueciSenha.setText("Esqueci a senha");
+        lblEsqueciSenha.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblEsqueciSenhaMouseClicked(evt);
+            }
+        });
+
+        lblConsultarEmail.setFont(new java.awt.Font("Old London", 1, 30)); // NOI18N
+        lblConsultarEmail.setForeground(new java.awt.Color(255, 102, 102));
+        lblConsultarEmail.setText("Consultar Email");
+        lblConsultarEmail.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblConsultarEmailMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -128,8 +150,15 @@ public class telaLogin extends javax.swing.JFrame {
                         .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(pswSenha, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lblEmail, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblSenha, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblConsultarEmail))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(lblSenha)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblEsqueciSenha)
+                            .addGap(13, 13, 13))
                         .addComponent(txtEmail, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 502, Short.MAX_VALUE)))
                 .addGap(0, 87, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -146,11 +175,17 @@ public class telaLogin extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(lblLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblConsultarEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(6, 6, 6)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24)
-                .addComponent(lblSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblEsqueciSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(pswSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -314,6 +349,18 @@ public class telaLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEmailActionPerformed
 
+    private void lblConsultarEmailMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblConsultarEmailMouseClicked
+        // TODO add your handling code here:
+        cadastrosFlag = "consultarEmail";
+        new cadastros().setVisible(true);
+    }//GEN-LAST:event_lblConsultarEmailMouseClicked
+
+    private void lblEsqueciSenhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEsqueciSenhaMouseClicked
+        // TODO add your handling code here:
+        cadastrosFlag = "esqueciSenha";
+        new cadastros().setVisible(true);
+    }//GEN-LAST:event_lblEsqueciSenhaMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -356,7 +403,9 @@ public class telaLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblCadastrarse;
+    private javax.swing.JLabel lblConsultarEmail;
     private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblEsqueciSenha;
     private javax.swing.JLabel lblLogin;
     private javax.swing.JLabel lblSenha;
     private javax.swing.JPasswordField pswSenha;

@@ -21,7 +21,26 @@ public class Pagamento extends Carrinho{
     }
 
 
-    public String getFormaPagamento() {
+
+    
+    
+    public void MudarFormaDePagamento(String formaPagamento){
+        this.formaPagamento = formaPagamento;
+    }
+    public boolean Pagar(String senha){
+        if(senha == this.senha){
+            System.out.println("Pagamento aprovado");
+            return true;
+        }else{
+            System.out.println("");
+            return false;
+        }
+    }
+
+    public Pedido getPedido() {
+        return pedido;
+    }
+        public String getFormaPagamento() {
         return formaPagamento;
     }
 
@@ -37,18 +56,5 @@ public class Pagamento extends Carrinho{
         this.senha = senha;
     }
     
-    
-    public void MudarFormaDePagamento(String formaPagamento){
-        this.formaPagamento = formaPagamento;
-    }
-    public boolean Pagar(String senha){
-        if(senha == this.senha){
-            System.out.println("Pagamento aprovado");
-            return true;
-        }else{
-            System.out.println("");
-            return false;
-        }
-    }
     
 }

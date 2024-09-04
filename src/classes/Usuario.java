@@ -39,6 +39,22 @@ public abstract class Usuario implements OperadorSistema{
         this.email = email;
         this.senha = senha;
     }
+        //Override com o toString
+    @Override
+    public String toString() {
+        return "Usuario{" + "nome=" + nome + ", CPF=" + CPF + ", email=" + email + ", senha=" + senha + '}';
+    }
+    
+    public void esqueciSenha(String CPF,String senhanova){
+        if (CPF.equals(this.CPF)){
+            this.senha = senhanova;
+            System.out.println("Senha atualizada com sucesso!");
+            
+        }
+    }
+        public String Consultar(String titulo){
+        return titulo;
+    }
     
     //Definição de Getters e Setters para o Usuário, com seus respectivos atributos
 
@@ -74,23 +90,8 @@ public abstract class Usuario implements OperadorSistema{
         this.senha = senha;
     } 
     
-    public String Consultar(String titulo){
-        return titulo;
-    }
 
-    //Override com o toString
-    @Override
-    public String toString() {
-        return "Usuario{" + "nome=" + nome + ", CPF=" + CPF + ", email=" + email + ", senha=" + senha + '}';
-    }
-    
-    public void esqueciSenha(String CPF,String senhanova){
-        if (CPF.equals(this.CPF)){
-            this.senha = senhanova;
-            System.out.println("Senha atualizada com sucesso!");
-            
-        }
-    }
+
 
     public ArrayList<Carrinho> getListaCarrinho() {
         return listaCarrinho;

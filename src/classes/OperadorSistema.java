@@ -13,5 +13,5 @@ public interface OperadorSistema {
     boolean logout();
     void pesquisar(String titulo);
     void esqueciSenha(String email,String cpf,String novaSenha);
-    void consultarEmail(String cpf);
+    String consultarEmail(String cpf,String nome);
 }

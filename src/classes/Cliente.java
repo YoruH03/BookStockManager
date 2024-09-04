@@ -6,6 +6,7 @@ package classes;
 
 import static classes.Estoque.estoque;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -38,6 +39,59 @@ public class Cliente extends Usuario implements OperadorSistema{
     public Cliente(String nome, String CPF, String email, String senha) {
         super(nome, CPF, email, senha);
         this.idCliente = "0";
+    }
+        @Override
+    public boolean login(String email, String senha) {
+        for(Cliente pessoa : listaClientes){
+            if(email.equals(pessoa.email) && senha.equals(pessoa.senha)){
+            return true;
+        }
+        }
+        return false;
+                
+    }
+
+    @Override
+    public boolean logout() {
+        return logado=false;
+    }
+
+    @Override
+    public void pesquisar(String titulo) {
+        for(Produto produto:estoque){
+            if(produto.getTitulo().equals(titulo)){
+                System.out.println("Produto Encontrado");
+            }
+        }
+        
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public String consultarEmail(String cpf,String nome) {
+        boolean found = false;
+        for(Cliente cli:listaClientes){
+            if(cli.getCPF().equals(cpf) && cli.getNome().equals(nome)){
+                found = true;
+                return this.getEmail();
+            }
+        }
+        if(!found){
+            JOptionPane.showMessageDialog(null, "Email não encontrado como cliente no sistema!", "Busca por email", JOptionPane.ERROR_MESSAGE);
+            return "Email não encontrado";
+        }else{
+            JOptionPane.showMessageDialog(null, "Email encontrado com sucesso!", "Busca por email", JOptionPane.INFORMATION_MESSAGE);
+            return this.getEmail();
+        }
+}
+
+    @Override
+    public void esqueciSenha(String email, String cpf, String novaSenha) {
+        for(Cliente cliente : listaClientes){
+            if((cliente.getCPF().equals(cpf))&&(cliente.getEmail().equals(email))){
+                cliente.setSenha(novaSenha);
+            }
+        }
     }
         
     
@@ -102,50 +156,6 @@ public class Cliente extends Usuario implements OperadorSistema{
         listaCarrinho.add(carrinho);
     }
 
-    @Override
-    public boolean login(String email, String senha) {
-        for(Cliente pessoa : listaClientes){
-            if(email.equals(pessoa.email) && senha.equals(pessoa.senha)){
-            return true;
-        }
-        }
-        return false;
-                
-    }
-
-    @Override
-    public boolean logout() {
-        return logado=false;
-    }
-
-    @Override
-    public void pesquisar(String titulo) {
-        for(Produto produto:estoque){
-            if(produto.getTitulo().equals(titulo)){
-                System.out.println("Produto Encontrado");
-            }
-        }
-        
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void consultarEmail(String cpf) {
-        for(Cliente cliente : listaClientes){
-            if(cliente.getCPF().equals(cpf)){
-                System.out.println(cliente.getEmail());
-            }
-        }
-    }
-
-    @Override
-    public void esqueciSenha(String email, String cpf, String novaSenha) {
-        for(Cliente cliente : listaClientes){
-            if((cliente.getCPF().equals(cpf))&&(cliente.getEmail().equals(email))){
-                cliente.setSenha(novaSenha);
-            }
-        }
-    }
     
     
     
