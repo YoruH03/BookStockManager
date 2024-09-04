@@ -150,7 +150,7 @@ public class areaCliente extends javax.swing.JFrame {
 
         lblCPFCliente.setFont(new java.awt.Font("Old London", 0, 36)); // NOI18N
         lblCPFCliente.setText("CPF");
-        jPanel1.add(lblCPFCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 70, 70));
+        jPanel1.add(lblCPFCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 70, 70));
 
         lblEmailCliente.setFont(new java.awt.Font("Old London", 0, 36)); // NOI18N
         lblEmailCliente.setText("E-mail");
@@ -158,15 +158,15 @@ public class areaCliente extends javax.swing.JFrame {
 
         lblSenhaCliente.setFont(new java.awt.Font("Old London", 0, 36)); // NOI18N
         lblSenhaCliente.setText("Senha");
-        jPanel1.add(lblSenhaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 130, 50));
+        jPanel1.add(lblSenhaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 130, 50));
 
         lblEnderecoCliente.setFont(new java.awt.Font("Old London", 0, 36)); // NOI18N
         lblEnderecoCliente.setText("Endereço");
-        jPanel1.add(lblEnderecoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 130, 50));
+        jPanel1.add(lblEnderecoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 130, 50));
 
         lblNascimentoCliente.setFont(new java.awt.Font("Old London", 0, 36)); // NOI18N
         lblNascimentoCliente.setText("Data de nascimento");
-        jPanel1.add(lblNascimentoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, 260, 50));
+        jPanel1.add(lblNascimentoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, 260, 50));
 
         txtNomeCliente.setFont(new java.awt.Font("Old London", 0, 24)); // NOI18N
         txtNomeCliente.setToolTipText("Nome do cliente");
@@ -183,11 +183,11 @@ public class areaCliente extends javax.swing.JFrame {
 
         txtSenhaCliente.setFont(new java.awt.Font("Old London", 0, 24)); // NOI18N
         txtSenhaCliente.setToolTipText("senha do cliente");
-        jPanel1.add(txtSenhaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 550, 30));
+        jPanel1.add(txtSenhaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 550, 40));
 
         txtEnderecoCliente.setFont(new java.awt.Font("Old London", 0, 24)); // NOI18N
         txtEnderecoCliente.setToolTipText("endereço salvo");
-        jPanel1.add(txtEnderecoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 550, 40));
+        jPanel1.add(txtEnderecoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 550, 40));
 
         btnSalvarCliente.setBackground(new java.awt.Color(51, 204, 0));
         btnSalvarCliente.setFont(new java.awt.Font("Old London", 1, 36)); // NOI18N
@@ -224,7 +224,7 @@ public class areaCliente extends javax.swing.JFrame {
 
         lblCelularCliente.setFont(new java.awt.Font("Old London", 0, 36)); // NOI18N
         lblCelularCliente.setText("Celular");
-        jPanel1.add(lblCelularCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, 160, 50));
+        jPanel1.add(lblCelularCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 560, 160, 50));
 
         try {
             ftxNascimentoCliente.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
@@ -233,7 +233,7 @@ public class areaCliente extends javax.swing.JFrame {
         }
         ftxNascimentoCliente.setToolTipText("data de nascimento do cliente");
         ftxNascimentoCliente.setFont(new java.awt.Font("Old London", 0, 24)); // NOI18N
-        jPanel1.add(ftxNascimentoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 484, 550, 40));
+        jPanel1.add(ftxNascimentoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, 550, 50));
 
         try {
             ftxTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-####")));
@@ -242,7 +242,7 @@ public class areaCliente extends javax.swing.JFrame {
         }
         ftxTelefone.setToolTipText("número de contato");
         ftxTelefone.setFont(new java.awt.Font("Old London", 0, 24)); // NOI18N
-        jPanel1.add(ftxTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, 560, 40));
+        jPanel1.add(ftxTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 620, 560, 40));
 
         try {
             txtCPFCliente.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
@@ -251,7 +251,7 @@ public class areaCliente extends javax.swing.JFrame {
         }
         txtCPFCliente.setToolTipText("CPF do cliente");
         txtCPFCliente.setFont(new java.awt.Font("Old London", 0, 24)); // NOI18N
-        jPanel1.add(txtCPFCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 560, 40));
+        jPanel1.add(txtCPFCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 560, 50));
 
         lblAreaCliente.setFont(new java.awt.Font("Old London", 1, 36)); // NOI18N
         lblAreaCliente.setText("Área do Cliente");

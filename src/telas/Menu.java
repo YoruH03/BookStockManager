@@ -137,6 +137,13 @@ public class Menu extends javax.swing.JFrame {
 
         Produto produto15 = new Produto("O Nome do Vento", "Patrick Rothfuss", "Fantasia", 28.00, 6, "15", "A história de Kvothe, um mago lendário");
         estoqueLoja.addEstoque(produto15);
+        
+        Produto produto16 = new Produto("Bleach:TYBW","Tite Kubo","Ação",32.00,10,"16","Yhwach, o rei Quincy selado há 1000 anos recupera seu poder e ataca a Soul Society");
+        estoqueLoja.addEstoque(produto16);
+        
+        Produto produto17 = new Produto("Bleach: Arrankar","Tite Kubo","Fantasia",30.00,12,"17","Aizen cria os Espadas e domina o Hueco Mundo");
+        estoqueLoja.addEstoque(produto17);
+        
 
             
         }
