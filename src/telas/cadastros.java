@@ -330,7 +330,7 @@ public class cadastros extends javax.swing.JFrame {
                 .addContainerGap(28, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanelCriarItem, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 630, 840, 410));
+        getContentPane().add(jPanelCriarItem, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 480, 840, 410));
 
         jPanelCliente.setBackground(new java.awt.Color(123, 57, 23));
 
@@ -646,12 +646,12 @@ public class cadastros extends javax.swing.JFrame {
         jPanelFuncionarioLayout.setVerticalGroup(
             jPanelFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelFuncionarioLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addGap(19, 19, 19)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanelFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 290, 770, 280));
+        getContentPane().add(jPanelFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 110, 770, 280));
 
         btnSair.setFont(new java.awt.Font("Old London", 0, 48)); // NOI18N
         btnSair.setText("Sair");
@@ -879,7 +879,7 @@ public class cadastros extends javax.swing.JFrame {
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanelConsultarEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 420, -1, -1));
+        getContentPane().add(jPanelConsultarEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 580, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Telas/Cadastro.png"))); // NOI18N
         jLabel1.setText("jLabel1");
