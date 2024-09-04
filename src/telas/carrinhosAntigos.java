@@ -13,8 +13,9 @@ import static classes.Cliente.listaClientes;
 import classes.Funcionario;
 import static classes.Funcionario.index_func;
 import static classes.Funcionario.listaFuncionarios;
+import static classes.Usuario.user;
 import java.util.ArrayList;
-import static telas.Menu.user;
+//import static telas.Menu.user;
 
 /**
  *

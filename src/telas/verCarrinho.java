@@ -17,11 +17,12 @@ import static classes.Funcionario.index_func;
 import static classes.Funcionario.listaFuncionarios;
 import classes.Gerente;
 import classes.Produto;
+import static classes.Usuario.user;
 import java.util.ArrayList;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import static telas.Menu.user;
+//import static telas.Menu.user;
 import static telas.cadastarGerente.listaGerente;
 
 /**

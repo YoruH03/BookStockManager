@@ -4,6 +4,7 @@
  */
 package classes;
 
+import static classes.Estoque.estoque;
 import java.util.ArrayList;
 
 /**
@@ -114,22 +115,36 @@ public class Cliente extends Usuario implements OperadorSistema{
 
     @Override
     public boolean logout() {
-        return false;
+        return logado=false;
     }
 
     @Override
     public void pesquisar(String titulo) {
+        for(Produto produto:estoque){
+            if(produto.getTitulo().equals(titulo)){
+                System.out.println("Produto Encontrado");
+            }
+        }
+        
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
     public void consultarEmail(String cpf) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        for(Cliente cliente : listaClientes){
+            if(cliente.getCPF().equals(cpf)){
+                System.out.println(cliente.getEmail());
+            }
+        }
     }
 
     @Override
     public void esqueciSenha(String email, String cpf, String novaSenha) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        for(Cliente cliente : listaClientes){
+            if((cliente.getCPF().equals(cpf))&&(cliente.getEmail().equals(email))){
+                cliente.setSenha(novaSenha);
+            }
+        }
     }
     
     

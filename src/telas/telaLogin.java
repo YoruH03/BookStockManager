@@ -11,13 +11,15 @@ import static classes.Funcionario.listaFuncionarios;
 import classes.Gerente;
 import javax.swing.JOptionPane;
 //import static telas.cadastrarCliente.listaClientes;
-import static telas.Menu.logado;
-import static telas.Menu.user;
+//import static telas.Menu.logado;
+//import static telas.Menu.user;
 import static telas.cadastarGerente.listaGerente;
 //import telas.Menu.verificarLogin();
 import static telas.cadastros.cadastrosFlag;
-import static classes.Cliente.usuario_tipo;
+//import static classes.Cliente.usuario_tipo;
 import classes.Usuario;
+import static classes.Usuario.user;
+import static classes.Usuario.logado;
 
 //import static telas.cadastrarFuncionario.listaFuncionarios;
 

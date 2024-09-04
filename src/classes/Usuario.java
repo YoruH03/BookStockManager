@@ -21,8 +21,8 @@ public abstract class Usuario implements OperadorSistema{
     static ArrayList<Cliente> listaClientes = new ArrayList(); // Definição de um ArrayList para Clientes
     public ArrayList<Carrinho> listaCarrinho = new ArrayList();
     private Carrinho carrinho;
-    public static boolean usuario_logado = false;
-    public static String usuario_tipo ="";
+    public static boolean logado = false;
+    public static String user ="anonimo";
     
     
 

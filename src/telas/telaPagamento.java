@@ -17,13 +17,14 @@ import classes.Gerente;
 import classes.Pagamento;
 import classes.Pedido;
 import classes.Produto;
+import static classes.Usuario.user;
 //import static classes.Usuario.historicoCarrinhosTotais;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import static telas.Menu.historicoCarrinhosTotais;
-import static telas.Menu.user;
+//import static telas.Menu.user;
 import static telas.cadastarGerente.listaGerente;
 import static telas.verCarrinho.aux;
 

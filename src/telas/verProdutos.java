@@ -5,10 +5,11 @@ import classes.Carrinho;
 import static classes.Carrinho.listaProdutos;
 import static classes.Estoque.estoque;
 import classes.Produto;
+import static classes.Usuario.logado;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import static telas.Menu.logado;
+//import static telas.Menu.logado;
 
 /**
  *

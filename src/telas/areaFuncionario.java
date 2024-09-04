@@ -4,6 +4,7 @@
  */
 package telas;
 
+import classes.Cliente;
 import static classes.Cliente.listaClientes;
 import classes.Funcionario;
 import static classes.Funcionario.index_func;
@@ -138,7 +139,7 @@ public class areaFuncionario extends javax.swing.JFrame {
         btnExluirCliente = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         tblControleClientes = new javax.swing.JTable();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        txtCPFCliente = new javax.swing.JFormattedTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -388,7 +389,7 @@ public class areaFuncionario extends javax.swing.JFrame {
         jScrollPane3.setViewportView(tblControleClientes);
 
         try {
-            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+            txtCPFCliente.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -410,7 +411,7 @@ public class areaFuncionario extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(lblCPFCliente)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtCPFCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
                                 .addComponent(btnNovoCliente)
                                 .addGap(78, 78, 78)
@@ -442,7 +443,7 @@ public class areaFuncionario extends javax.swing.JFrame {
                     .addComponent(lblCPFCliente)
                     .addComponent(lblCodigoCliente)
                     .addComponent(txtCodCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCPFCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNovoCliente)
@@ -528,6 +529,23 @@ public class areaFuncionario extends javax.swing.JFrame {
 
     private void btnBuscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarClienteActionPerformed
         // TODO add your handling code here:
+        String nomePesquisado = txtNomeCliente.getText();
+        String cpfPesquisado = txtCPFCliente.getText();
+        String codPesquisado = txtCodCliente.getText();
+        Cliente cli;
+        for(Cliente cliente : listaClientes){
+        if(cliente.getNome().equals(nomePesquisado) || 
+           cliente.getCPF().equals(cpfPesquisado) || 
+           cliente.getIdCliente().equals(codPesquisado)){
+            cli = cliente;
+        txtNomeCliente.setText(cli.getNome());
+        txtCPFCliente.setText(cli.getCPF());
+        txtCodCliente.setText(cli.getIdCliente());
+        int rowIndex = Integer.parseInt(cli.getIdCliente());
+         tblControleClientes.setRowSelectionInterval(rowIndex, rowIndex);
+            break;
+        }
+    }
     }//GEN-LAST:event_btnBuscarClienteActionPerformed
 
     /**
@@ -574,7 +592,6 @@ public class areaFuncionario extends javax.swing.JFrame {
     private javax.swing.JButton btnSair;
     private javax.swing.JButton btnSalvarCliente;
     private javax.swing.JButton btnSalvarFuncionario;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
@@ -591,6 +608,7 @@ public class areaFuncionario extends javax.swing.JFrame {
     private javax.swing.JLabel lblNomeFuncionario;
     private javax.swing.JLabel lblSenhaFuncionario;
     private javax.swing.JTable tblControleClientes;
+    private javax.swing.JFormattedTextField txtCPFCliente;
     private javax.swing.JTextField txtCPFFuncionario;
     private javax.swing.JTextField txtCodCliente;
     private javax.swing.JTextField txtCodigoFuncionario;

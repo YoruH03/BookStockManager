@@ -4,6 +4,8 @@
  */
 package classes;
 
+import static classes.Cliente.listaClientes;
+import static classes.Estoque.estoque;
 import java.util.ArrayList;
 
 /**
@@ -55,17 +57,25 @@ public class Funcionario extends Usuario implements OperadorSistema{
 
     @Override
     public boolean logout() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return logado=false;
     }
 
     @Override
     public void pesquisar(String titulo) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        for(Produto produto:estoque){
+            if(produto.getTitulo().equals(titulo)){
+                System.out.println("Produto Encontrado");
+            }
+        }     
     }
 
     @Override
     public void consultarEmail(String cpf) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        for(Cliente cliente : listaClientes){
+            if(cliente.getCPF().equals(cpf)){
+                System.out.println(cliente.getEmail());
+            }
+        }    
     }
 
     public void addListaCarrinhosFuncionarios(Carrinho carrinho2) {
@@ -82,7 +92,11 @@ public class Funcionario extends Usuario implements OperadorSistema{
 
     @Override
     public void esqueciSenha(String email, String cpf, String novaSenha) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        for(Funcionario func : listaFuncionarios){
+            if((func.getCPF().equals(cpf))&&(func.getEmail().equals(email))){
+                func.setSenha(novaSenha);
+            }
+        }
     }
     
     

@@ -10,8 +10,8 @@ import static classes.Estoque.estoque;
 import classes.Funcionario;
 import static classes.Funcionario.listaFuncionarios;
 import classes.Produto;
+import static classes.Usuario.user;
 import javax.swing.JOptionPane;
-import static telas.Menu.user;
 
 /**
  *

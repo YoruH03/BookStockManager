@@ -47,18 +47,21 @@ public class Gerente extends Usuario implements OperadorSistema{
 
     @Override
     public boolean logout() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return logado = false;
     }
 
     @Override
     public void pesquisar(String titulo) {
+        
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
     public void consultarEmail(String cpf) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+            if(this.getCPF().equals(cpf)){
+                System.out.println(this.getEmail());
+            }
+        }
 
     public ArrayList<Carrinho> getListaCarrinhoGerente() {
         return listaCarrinhoGerente;
@@ -74,7 +77,8 @@ public class Gerente extends Usuario implements OperadorSistema{
 
     @Override
     public void esqueciSenha(String email, String cpf, String novaSenha) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+            if((this.getCPF().equals(cpf))&&(this.getEmail().equals(email))){
+                this.setSenha(novaSenha);
+            }
+        }    
     }
-    
-}

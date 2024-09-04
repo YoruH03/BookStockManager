@@ -12,6 +12,8 @@ import classes.Funcionario;
 import static classes.Funcionario.listaFuncionarios;
 import classes.Gerente;
 import classes.Produto;
+import static classes.Usuario.logado;
+import static classes.Usuario.user;
 import javax.swing.JOptionPane;
 import static telas.cadastarGerente.listaGerente;
 import static telas.cadastros.cadastrosFlag;
@@ -26,8 +28,8 @@ import static telas.cadastros.cadastrosFlag;
 
 public class Menu extends javax.swing.JFrame {
     
-    static boolean logado = false;
-    static String user="anonimo";// 'gerente','funcionario','cliente'
+    //static boolean logado = false;
+    //static String user="anonimo";// 'gerente','funcionario','cliente'
     Estoque estoqueLoja = new Estoque();
     public static int historicoCarrinhosTotais = 0;
 
@@ -62,10 +64,39 @@ public class Menu extends javax.swing.JFrame {
         listaFuncionarios.add(funcionario);
         Funcionario funcionario1= new Funcionario("Carlos","111.111.111-11","carlos@gmail.com","carlos");
         listaFuncionarios.add(funcionario1);
+        Funcionario funcionario10 = new Funcionario("Ana", "222.222.222-22", "ana@gmail.com", "ana123");
+        listaFuncionarios.add(funcionario10);
+
+        Funcionario funcionario2 = new Funcionario("Bruno", "333.333.333-33", "bruno@gmail.com", "bruno123");
+        listaFuncionarios.add(funcionario2);
+
+        Funcionario funcionario3 = new Funcionario("Camila", "444.444.444-44", "camila@gmail.com", "camila123");
+        listaFuncionarios.add(funcionario3);
+
+        Funcionario funcionario4 = new Funcionario("Diego", "555.555.555-55", "diego@gmail.com", "diego123");
+        listaFuncionarios.add(funcionario4);
+
+        Funcionario funcionario5 = new Funcionario("Elisa", "666.666.666-66", "elisa@gmail.com", "elisa123");
+        listaFuncionarios.add(funcionario5);
         Cliente cliente = new Cliente("user","000.000.000-00","user@gmail.com","user","Pernambuco","10/05/1990","99999-9999");
         listaClientes.add(cliente);
         Cliente cliente1 = new Cliente("Alberto","010.034.123-00","alberto@gmail.com","alberto","Brasília","15/12/2000","88888-8888");
         listaClientes.add(cliente1);
+        Cliente cliente10 = new Cliente("Alice", "777.777.777-77", "alice@gmail.com", "alice123", "Rua A, 123", "01/01/1985", "(11) 98765-4321");
+        listaClientes.add(cliente10);
+
+        Cliente cliente2 = new Cliente("Bernardo", "888.888.888-88", "bernardo@gmail.com", "bernardo123", "Avenida B, 456", "02/02/1990", "(21) 99876-5432");
+        listaClientes.add(cliente2);
+
+        Cliente cliente3 = new Cliente("Cecília", "999.999.999-99", "cecilia@gmail.com", "cecilia123", "Praça C, 789", "03/03/1995", "(31) 90987-6543");
+        listaClientes.add(cliente3);
+
+        Cliente cliente4 = new Cliente("Daniel", "000.000.000-00", "daniel@gmail.com", "daniel123", "Travessa D, 101", "04/04/1980", "(41) 91234-5678");
+        listaClientes.add(cliente4);
+        
+        Cliente cliente5 = new Cliente("Eva", "111.111.111-11", "eva@gmail.com", "eva123", "Rua E, 202", "05/05/1988", "(51) 92345-6789");
+        listaClientes.add(cliente5);
+
 
         Produto produto1 = new Produto("Eragon","Christopher Paolini","Aventura",15.69,3,"1","Eragon se torna um cavaleiro de Dragão");
         estoqueLoja.addEstoque(produto1);
