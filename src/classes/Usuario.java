@@ -10,8 +10,8 @@ import java.util.ArrayList;
  *
  * @author Yuri
  */
+//Definição da classe abstrata Usuário
 public abstract class Usuario implements OperadorSistema{
-    //Definição da classe abstrata Usuário
     
     //Definição de atributos protegidos para a classe abstrata usuário
     protected String nome;
@@ -19,18 +19,17 @@ public abstract class Usuario implements OperadorSistema{
     protected String email;
     protected String senha;
     static ArrayList<Cliente> listaClientes = new ArrayList(); // Definição de um ArrayList para Clientes
-    public ArrayList<Carrinho> listaCarrinho = new ArrayList();
+    public ArrayList<Carrinho> listaCarrinho = new ArrayList(); // Definição de um ArrayLista para os carrinhos do usuário
     private Carrinho carrinho;
     public static boolean logado = false;
-    public static String user ="anonimo";
+    public static String user ="anonimo"; // seta o usuário padrão como anônimo
     
     
-
-    
+    //método construtor do usuário sem argumentos de entrada (não usado na versão final)
     public Usuario(){
         this.listaClientes = new ArrayList();
-        
     }
+    
     //Definição de construtor para Usuário
     public Usuario(String nome,String CPF,String email,String senha){
         this.listaClientes = new ArrayList();
@@ -39,25 +38,23 @@ public abstract class Usuario implements OperadorSistema{
         this.email = email;
         this.senha = senha;
     }
-        //Override com o toString
+    
+    //método toString sobrescrito da versão herdada
     @Override
     public String toString() {
         return "Usuario{" + "nome=" + nome + ", CPF=" + CPF + ", email=" + email + ", senha=" + senha + '}';
     }
     
+    //método para a redefinição da senha
     public void esqueciSenha(String CPF,String senhanova){
+        //verifica se o cpf está correto
         if (CPF.equals(this.CPF)){
             this.senha = senhanova;
             System.out.println("Senha atualizada com sucesso!");
-            
         }
-    }
-        public String Consultar(String titulo){
-        return titulo;
     }
     
     //Definição de Getters e Setters para o Usuário, com seus respectivos atributos
-
     public String getNome() {
         return nome;
     }
@@ -90,13 +87,9 @@ public abstract class Usuario implements OperadorSistema{
         this.senha = senha;
     } 
     
-
-
-
+    //método para pegar a lista de carrinhos do cliente
     public ArrayList<Carrinho> getListaCarrinho() {
         return listaCarrinho;
     }
-    
-    
     
 }

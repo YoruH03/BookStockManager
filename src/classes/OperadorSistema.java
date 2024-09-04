@@ -8,6 +8,7 @@ package classes;
  *
  * @author Yuri
  */
+//Definição da Interface: operador do sistema
 public interface OperadorSistema {
     boolean login(String email,String senha);
     boolean logout();
