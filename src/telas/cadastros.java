@@ -80,12 +80,6 @@ public class cadastros extends javax.swing.JFrame {
         }else if(user.equals("anonimo")){
             System.out.println("User é anônimo");
             jPanelCliente.setVisible(true);
-        }else if(user.equals("anonimo")&&cadastrosFlag.equals("consultarEmail")){
-            System.out.println("User é anonimo e quer consultar Email");
-            jPanelConsultarEmail.setVisible(true);
-        }else if(user.equals("anonimo")&&cadastrosFlag.equals("esqueciSenha")){
-            System.out.println("User é anonimo e esqueceu a senha");
-            jPanelEsqueciSenha.setVisible(true);
         }
     }
 

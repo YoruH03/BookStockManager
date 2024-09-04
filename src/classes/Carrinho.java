@@ -89,21 +89,19 @@ public class Carrinho {
      }
      
      public String mostarProdutos(ArrayList<Produto> itensNoCarrinho){
-         String resumo="";
-         for(Produto item: itensNoCarrinho){
-             resumo = resumo + " "+item.getTitulo()+"*"+item.getQuantidadeComprada();
-             
-         }
-         return resumo;
-         
+        StringBuilder resumo = new StringBuilder();
+        for (Produto item : itensNoCarrinho) {
+            resumo.append(item.getTitulo()).append("*").append(item.getQuantidadeComprada()).append("\n");
+        }
+            return resumo.toString();
          
      }
         public String mostrarProdutos(){
-         String resumo="";
-         for(Produto item: this.itensNoCarrinho){
-             resumo = resumo+" "+item.getTitulo()+"*"+item.getQuantidadeComprada()+",";
-         }
-         return resumo;
+        StringBuilder resumo = new StringBuilder();
+        for (Produto item : this.itensNoCarrinho) {
+            resumo.append(item.getTitulo()).append("*").append(item.getQuantidadeComprada()).append("\n");
+        }
+            return resumo.toString();
      }
 
     public ArrayList<Produto> getItensNoCarrinho() {

@@ -58,6 +58,7 @@ public class verCarrinho extends javax.swing.JFrame {
             btnEsvaziarCarrinho.setEnabled(false);
         }
         carregarTabelaCliente();
+        
     }
     
 
@@ -69,9 +70,9 @@ public class verCarrinho extends javax.swing.JFrame {
             for(int i=0;i<listaProdutos.size();i++){
                 Object linha[] = new Object[]{listaProdutos.get(i).getTitulo(),
                                               listaProdutos.get(i).getAutor(),
-                                              listaProdutos.get(i).getPreço()};
-                                              listaProdutos.get(i).getQuantidadeComprada();
-                                              listaProdutos.get(i).getGenero();
+                                              listaProdutos.get(i).getPreço(),
+                                              listaProdutos.get(i).getQuantidadeComprada(),
+                                              listaProdutos.get(i).getGenero()};
                 
                 modeloTabelaProdutos.addRow(linha);
                 
@@ -273,12 +274,9 @@ public class verCarrinho extends javax.swing.JFrame {
         txtNumCarrinho = new javax.swing.JTextField();
         txtTotal = new javax.swing.JTextField();
         txtData = new javax.swing.JFormattedTextField();
-        btnPesquisarCarrinho = new javax.swing.JButton();
-        btnCancelarCarrinho = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         txtProdutos = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
-        btnBuscarCarrinho = new javax.swing.JButton();
         btnSair = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -300,14 +298,14 @@ public class verCarrinho extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Título", "Preço", "Quantidade", "Cód. Produto", "Descrição"
+                "Título", "Autor", "Preço", "Quantidade", "Gênero"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Double.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.Integer.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, true, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -450,20 +448,20 @@ public class verCarrinho extends javax.swing.JFrame {
 
         tblCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "NumCarrinho", "Data do pedido", "Produtos", "Total", "Forma Pagamento", "Pedido"
+                "NumCarrinho", "Data do pedido", "Produtos", "Total", "Forma Pagamento"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Object.class, java.lang.Double.class, java.lang.String.class, java.lang.Integer.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.Object.class, java.lang.Double.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -503,25 +501,6 @@ public class verCarrinho extends javax.swing.JFrame {
         }
         txtData.setToolTipText("data do pedido");
 
-        btnPesquisarCarrinho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/simbolos/searchmagnifierinterfacesymbol1_79893.png"))); // NOI18N
-        btnPesquisarCarrinho.setText("Pesquisar");
-        btnPesquisarCarrinho.setToolTipText("pesquisar por carrinho");
-        btnPesquisarCarrinho.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPesquisarCarrinhoActionPerformed(evt);
-            }
-        });
-
-        btnCancelarCarrinho.setBackground(new java.awt.Color(255, 0, 0));
-        btnCancelarCarrinho.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnCancelarCarrinho.setText("Cancelar");
-        btnCancelarCarrinho.setToolTipText("cancelar operação");
-        btnCancelarCarrinho.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelarCarrinhoActionPerformed(evt);
-            }
-        });
-
         txtProdutos.setColumns(20);
         txtProdutos.setRows(5);
         jScrollPane3.setViewportView(txtProdutos);
@@ -531,14 +510,6 @@ public class verCarrinho extends javax.swing.JFrame {
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
-            }
-        });
-
-        btnBuscarCarrinho.setText("Buscar");
-        btnBuscarCarrinho.setToolTipText("buscar por numCarrinho ou Data");
-        btnBuscarCarrinho.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarCarrinhoActionPerformed(evt);
             }
         });
 
@@ -553,11 +524,6 @@ public class verCarrinho extends javax.swing.JFrame {
                         .addComponent(lblCarrinhosAnteriores)
                         .addGap(130, 130, 130)
                         .addComponent(jButton1))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(216, 216, 216)
-                        .addComponent(btnPesquisarCarrinho)
-                        .addGap(239, 239, 239)
-                        .addComponent(btnCancelarCarrinho))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 885, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -579,9 +545,7 @@ public class verCarrinho extends javax.swing.JFrame {
                                 .addGap(70, 70, 70)
                                 .addComponent(lblData)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(128, 128, 128)
-                                .addComponent(btnBuscarCarrinho)))))
+                                .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(229, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
@@ -596,8 +560,7 @@ public class verCarrinho extends javax.swing.JFrame {
                     .addComponent(lblNumCarrinho)
                     .addComponent(txtNumCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblData)
-                    .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBuscarCarrinho))
+                    .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -605,11 +568,7 @@ public class verCarrinho extends javax.swing.JFrame {
                         .addComponent(lblTotal)
                         .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnPesquisarCarrinho)
-                    .addComponent(btnCancelarCarrinho))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(63, 63, 63)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
         );
@@ -714,33 +673,37 @@ public class verCarrinho extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVerCarrinhosAntigosActionPerformed
 
     private void btnEsvaziarCarrinhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEsvaziarCarrinhoActionPerformed
-        // TODO add your handling code here:
-        // Obtenha o número total de linhas da tabela
-        int rowCount = tblProdutos.getRowCount();
+    // Get the total number of rows in the table
+    int rowCount = tblProdutos.getRowCount();
 
-        for (int row = 0; row < rowCount; row++) {
-            // Pega o nome do produto da linha atual
-            Object produtoPesquisado = tblProdutos.getValueAt(row, 0);
-            String inputBusca = String.valueOf(produtoPesquisado);
+    for (int row = 0; row < rowCount; row++) {  // Loop until rowCount - 1
+        // Get the name of the product from the current row
+        Object produtoPesquisado = tblProdutos.getValueAt(row, 0);
+        String inputBusca = String.valueOf(produtoPesquisado);
 
-            // Pega a quantidade do produto da linha atual
-            Object quantPesquisado = tblProdutos.getValueAt(row, 2);
-            String quantBuscastr = String.valueOf(quantPesquisado);
-            int quantBusca = Integer.parseInt(quantBuscastr);
-
-            // Procura o item correspondente no estoque e atualiza a quantidade
-            for (Produto itemEstoque : estoque) {
-                if (itemEstoque.getTitulo().equals(inputBusca)) {
-                    itemEstoque.setQuantidadeEstoque(itemEstoque.getQuantidadeEstoque() + quantBusca);
-                }
-            }
+        // Get the quantity of the product from the current row
+        Object quantPesquisado = tblProdutos.getValueAt(row, 3);
+        
+        if (quantPesquisado == null) {
+            continue; // Skip this row if quantity is null
         }
 
-        // Remove todos os itens da lista
-        listaProdutos.clear();
+        String quantBuscastr = String.valueOf(quantPesquisado);
+        int quantBusca = Integer.parseInt(quantBuscastr);
 
-        // Recarrega a tabela de produtos
-        carregarTabelaProdutos();
+        // Find the corresponding item in stock and update the quantity
+        for (Produto itemEstoque : estoque) {
+            if (itemEstoque.getTitulo().equals(inputBusca)) {
+                itemEstoque.setQuantidadeEstoque(itemEstoque.getQuantidadeEstoque() + quantBusca);
+            }
+        }
+    }
+
+    // Clear the list of products
+    listaProdutos.clear();
+
+    // Reload the product table
+    carregarTabelaProdutos();
     }//GEN-LAST:event_btnEsvaziarCarrinhoActionPerformed
 
     private void btnRemoverItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverItemActionPerformed
@@ -751,7 +714,7 @@ public class verCarrinho extends javax.swing.JFrame {
         Object produtoPesquisado = tblProdutos.getValueAt(row,0);
         String inputBusca = String.valueOf(produtoPesquisado);
         //pega a quantidade do produto
-        Object quantPesquisado = tblProdutos.getValueAt(row,2);
+        Object quantPesquisado = tblProdutos.getValueAt(row,3);
         String quantBuscastr = String.valueOf(quantPesquisado);
         int quantBusca = Integer.parseInt(quantBuscastr);
         
@@ -782,21 +745,6 @@ public class verCarrinho extends javax.swing.JFrame {
         // TODO add your handling code here:
         btnRemoverItem.setEnabled(true);
     }//GEN-LAST:event_tblProdutosMouseClicked
-
-    private void btnPesquisarCarrinhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarCarrinhoActionPerformed
-        // TODO add your handling code here:
-        enableCarrinhoFields();
-        clearCarrinhoFields();
-        btnCancelarCarrinho.setEnabled(true);
-        btnPesquisarCarrinho.setEnabled(false);
-    }//GEN-LAST:event_btnPesquisarCarrinhoActionPerformed
-
-    private void btnCancelarCarrinhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarCarrinhoActionPerformed
-        // TODO add your handling code here:
-        disableCarrinhoFields();
-        btnPesquisarCarrinho.setEnabled(true);
-        btnCancelarCarrinho.setEnabled(false);
-    }//GEN-LAST:event_btnCancelarCarrinhoActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         // TODO add your handling code here:
@@ -862,110 +810,6 @@ public class verCarrinho extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_tblClienteMouseClicked
 
-    private void btnBuscarCarrinhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarCarrinhoActionPerformed
-        // TODO add your handling code here:
-        /*
-        String numCarrinhoPesquisado = txtNumCarrinho.getText().toLowerCase().trim();
-        String dataPesquisada = txtData.getText().toLowerCase().trim();
-        String numCarrinhoPesquisadoPuro = txtNumCarrinho.getText();
-        String dataPesquisadaPura = txtData.getText();
-        if (numCarrinhoPesquisado.isEmpty()&& dataPesquisada.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Por favor, insira um título ou autor ou código de produto para pesquisar.", "Aviso", JOptionPane.WARNING_MESSAGE);
-            carregarTabelaCliente();
-            return;
-        }
-
-
-        DefaultTableModel modeloTabelaProdutos = new DefaultTableModel(new Object[] {"NumCarrinho", "Data do Pedido", "Produtos", "Total"}, 0);
-
-        boolean produtoEncontrado = false;
-
-        boolean numCarrinhoVazio = numCarrinhoPesquisado.isBlank();
-        boolean dataPesquisadaVazia = dataPesquisada.isBlank();
-    if(user.equals("cliente")){
-         for (Carrinho carrinho : cliente.getListaCarrinho()) {
-        if (carrinho != null) {
-            boolean matchesNumCarrinho = numCarrinhoVazio || carrinho.getNumCarrinho() == Integer.parseInt(numCarrinhoPesquisado);
-            boolean matchesDataPesquisada = dataPesquisada.isBlank() || carrinho.getData().toLowerCase().contains(dataPesquisada);
-            
-            if (matchesNumCarrinho && matchesDataPesquisada) {
-                Object novalinha[] = new Object[]{
-                    carrinho.getNumCarrinho(),
-                    carrinho.getData(),
-                    carrinho.mostrarProdutos(),
-                    carrinho.getTotal(),
-                };
-                modeloTabelaProdutos.addRow(novalinha);
-                produtoEncontrado = true;
-            }
-        }
-    }    
-    }
-    if(user.equals("funcionario")){
-                 for (Carrinho carrinho : funcionario.getListaCarrinho()) {
-        if (carrinho != null) {
-            boolean matchesNumCarrinho = numCarrinhoVazio || carrinho.getNumCarrinho() == Integer.parseInt(numCarrinhoPesquisado);
-            boolean matchesDataPesquisada = dataPesquisada.isBlank() || carrinho.getData().toLowerCase().contains(dataPesquisada);
-            
-            if (matchesNumCarrinho && matchesDataPesquisada) {
-                Object novalinha[] = new Object[]{
-                    carrinho.getNumCarrinho(),
-                    carrinho.getData(),
-                    carrinho.mostrarProdutos(),
-                    carrinho.getTotal(),
-                };
-                modeloTabelaProdutos.addRow(novalinha);
-                produtoEncontrado = true;
-            }
-        }
-    } 
-        
-    }
-    if(user.equals("gerente")){
-        for (Carrinho carrinho : gerente.getListaCarrinho()) {
-        if (carrinho != null) {
-            boolean matchesNumCarrinho = numCarrinhoVazio || carrinho.getNumCarrinho() == Integer.parseInt(numCarrinhoPesquisado);
-            boolean matchesDataPesquisada = dataPesquisada.isBlank() || carrinho.getData().toLowerCase().contains(dataPesquisada);
-            
-            if (matchesNumCarrinho && matchesDataPesquisada) {
-                Object novalinha[] = new Object[]{
-                    carrinho.getNumCarrinho(),
-                    carrinho.getData(),
-                    carrinho.mostrarProdutos(),
-                    carrinho.getTotal(),
-                };
-                modeloTabelaProdutos.addRow(novalinha);
-                produtoEncontrado = true;
-            }
-        }
-    } 
-        
-}
-if (produtoEncontrado) {
-        tblCliente.setModel(modeloTabelaProdutos);
-        // Ajusta a largura das colunas
-        tblCliente.getColumnModel().getColumn(0).setPreferredWidth(100);
-        tblCliente.getColumnModel().getColumn(1).setPreferredWidth(50);
-        tblCliente.getColumnModel().getColumn(2).setPreferredWidth(14);
-        tblCliente.getColumnModel().getColumn(3).setPreferredWidth(8);
-        tblCliente.getColumnModel().getColumn(4).setPreferredWidth(3);
-}else{
-    if(numCarrinhoPesquisado.isEmpty()){
-                JOptionPane.showMessageDialog(this, "Nenhum produto encontrado com o número: " + numCarrinhoPesquisadoPuro, "Resultado da pesquisa", JOptionPane.INFORMATION_MESSAGE);
-        carregarTabelaCliente(); // Load all products if no matches found//Para cliente
-    }
-    if(dataPesquisada.isEmpty()){
-            JOptionPane.showMessageDialog(this, "Nenhum produto encontrado na data: " + dataPesquisadaPura, "Resultado da pesquisa", JOptionPane.INFORMATION_MESSAGE);
-            carregarTabelaCliente();
-    }
-    if((!numCarrinhoPesquisado.isEmpty())&&(!dataPesquisada.isEmpty())){
-        JOptionPane.showMessageDialog(this, "Nenhum produto encontrado com o número: " + numCarrinhoPesquisadoPuro +" e a data: "+dataPesquisadaPura, "Resultado da pesquisa", JOptionPane.INFORMATION_MESSAGE);
-        carregarTabelaCliente();
-    }
-
-}*/
-    }//GEN-LAST:event_btnBuscarCarrinhoActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -1002,11 +846,8 @@ if (produtoEncontrado) {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBuscarCarrinho;
-    private javax.swing.JButton btnCancelarCarrinho;
     private javax.swing.JButton btnConfirmarCompra;
     private javax.swing.JButton btnEsvaziarCarrinho;
-    private javax.swing.JButton btnPesquisarCarrinho;
     private javax.swing.JButton btnRemoverItem;
     private javax.swing.JButton btnSair;
     private javax.swing.JButton btnVerCarrinhosAntigos;
